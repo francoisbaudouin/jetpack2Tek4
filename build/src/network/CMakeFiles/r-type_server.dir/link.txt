@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/r-type_server.dir/__/game/main.cpp.o -o r-type_server 
