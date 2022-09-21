@@ -1,5 +1,5 @@
-set(INCROOT ${PROJECT_SOURCE_DIR}/src/game)
-set(SRCROOT ${PROJECT_SOURCE_DIR}/src/game)
+set(INCROOT ${PROJECT_SOURCE_DIR}/src/network)
+set(SRCROOT ${PROJECT_SOURCE_DIR}/src/network)
 
 # adding subb diirectory
 add_subdirectory(initialization)
