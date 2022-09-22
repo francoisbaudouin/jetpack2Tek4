@@ -5,7 +5,4 @@
 ** configuration
 */
 
-int config(void)
-{
-    return (0);
-}
+int config(void) { return (0); }
