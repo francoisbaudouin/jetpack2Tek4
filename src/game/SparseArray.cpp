@@ -6,10 +6,10 @@
 */
 
 #include "SparseArray.hpp"
-#include "Position.hpp"
-#include "Controllable.hpp"
-#include "Velocity.hpp"
-#include "Drawable.hpp"
+#include "components/Position.hpp"
+#include "components/Controllable.hpp"
+#include "components/Velocity.hpp"
+#include "components/Drawable.hpp"
 #include <iostream>
 
 
