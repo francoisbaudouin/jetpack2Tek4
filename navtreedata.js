@@ -22,7 +22,16 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "R-Type", "index.html", ]
+  [ "R-Type", "index.html", [
+    [ "R-TYPE aka JETPACK2TEK4", "md__r_e_a_d_m_e.html", [
+      [ "<em>Epitech Tek3 Project</em>", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
+      [ "autotoc_md2", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
+      [ "INSTALLATION", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
+      [ "BUILD", "md__r_e_a_d_m_e.html#autotoc_md5", null ],
+      [ "DOCUMENTATION", "md__r_e_a_d_m_e.html#autotoc_md6", null ],
+      [ "DEVELOPERS PART", "md__r_e_a_d_m_e.html#autotoc_md7", null ]
+    ] ]
+  ] ]
 ];
 
 var NAVTREEINDEX =
