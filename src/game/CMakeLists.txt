@@ -8,8 +8,17 @@ add_subdirectory(components)
 
 set(TARGET_NAME r-type_client)
 
-add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
+set(SRC
+  ${SRCROOT}/SparseArray.cpp
+)
 
+set(INCDIRS ${INCROOT})
+
+add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${TARGET})
+
+target_include_directories(${TARGET_NAME} PRIVATE ${INCDIRS})
+target_include_directories(${TARGET_NAME} PUBLIC ${INCROOT})
+target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_custom_command(TARGET ${TARGET_NAME}
         POST_BUILD
