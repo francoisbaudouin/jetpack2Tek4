@@ -3,9 +3,6 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/game)
 
 # adding subb diirectory
 # Exemple: add_subdirectory(connexion)
-
-add_subdirectory(components)
-
 set(TARGET_NAME r-type_client)
 
 set(SRC
@@ -15,14 +12,10 @@ set(SRC
   ${INCROOT}/Registery.hpp
 )
 
-set(INCDIRS ${INCROOT})
+include(CompilerFlags)
 
-add_executable(${TARGET_NAME} ${SRC} ${SRCROOT}/main.cpp)
-
-target_include_directories(${TARGET_NAME} PRIVATE ${INCDIRS})
-target_include_directories(${TARGET_NAME} PUBLIC ${INCROOT})
-target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
 
 add_custom_command(TARGET ${TARGET_NAME}
-        POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${TARGET_NAME}> ${PROJECT_SOURCE_DIR})
+  POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${TARGET_NAME}> ${PROJECT_SOURCE_DIR})
