@@ -6,11 +6,17 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/game)
 set(TARGET_NAME r-type_client)
 
 set(SRC
+  ${SRC}
   ${SRCROOT}/SparseArray.cpp
-  ${INCROOT}/SparseArray.hpp
+  ${SRCROOT}/SparseArray.hpp
   ${SRCROOT}/Registery.cpp
-  ${INCROOT}/Registery.hpp
+  ${SRCROOT}/Registery.hpp
 )
+
+set(INCDIRS
+  ${INCDIRS}
+  ${INCROOT}
+  PARENT_SCOPE)
 
 include(CompilerFlags)
 

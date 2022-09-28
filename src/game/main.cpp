@@ -7,8 +7,8 @@
 
 #include "Registery.hpp"
 
-int main(void) 
+int main(void)
 {
-  Registery reg;
-  return (0);
+    Registery reg;
+    return (0);
 }
