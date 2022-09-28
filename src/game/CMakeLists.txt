@@ -13,14 +13,17 @@ set(SRC
   ${SRCROOT}/Registery.hpp
 )
 
-set(INCDIRS
-  ${INCDIRS}
-  ${INCROOT}
-  PARENT_SCOPE)
+set(INCDIRS ${INCROOT})
+
+add_subdirectory(components)
 
 include(CompilerFlags)
 
-add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
+add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp
+                              ${SRCROOT}/SparseArray.cpp
+                              ${INCROOT}/SparseArray.hpp
+                              ${SRCROOT}/Registery.cpp
+                              ${INCROOT}/Registery.hpp)
 
 add_custom_command(TARGET ${TARGET_NAME}
   POST_BUILD
