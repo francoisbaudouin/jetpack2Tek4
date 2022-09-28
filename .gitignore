@@ -34,3 +34,5 @@
 #folder buidl
 build
 .vscode
+r-type_server
+r-type_client
