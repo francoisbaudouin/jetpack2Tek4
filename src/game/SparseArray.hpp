@@ -9,7 +9,6 @@
 #include <vector>
 #include <string>
 #include <any>
-#include <iostream>
 
 template<typename Component> // You can also mirror the definition of std :: vector ,that takes an additional allocator .
 class SparseArray {

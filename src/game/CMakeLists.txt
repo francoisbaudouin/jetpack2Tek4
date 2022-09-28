@@ -10,11 +10,14 @@ set(TARGET_NAME r-type_client)
 
 set(SRC
   ${SRCROOT}/SparseArray.cpp
+  ${INCROOT}/SparseArray.hpp
+  ${SRCROOT}/Registery.cpp
+  ${INCROOT}/Registery.hpp
 )
 
 set(INCDIRS ${INCROOT})
 
-add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${TARGET})
+add_executable(${TARGET_NAME} ${SRC} ${SRCROOT}/main.cpp)
 
 target_include_directories(${TARGET_NAME} PRIVATE ${INCDIRS})
 target_include_directories(${TARGET_NAME} PUBLIC ${INCROOT})
