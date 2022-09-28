@@ -5,6 +5,4 @@
 ** main
 */
 
-#define FILE_PATH_CONFiG "./src/network/config.ini"
-
 int main(void) { return (0); }
