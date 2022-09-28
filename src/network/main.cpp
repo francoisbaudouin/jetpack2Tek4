@@ -5,11 +5,6 @@
 ** main
 */
 
-int main(void) { return (0); }
+#define FILE_PATH_CONFiG "./src/network/config.ini"
 
-void test(int test)
-{
-    for (int i = 0; i < 5; i++) {
-        char *t;
-    }
-}
+int main(void) { return (0); }
