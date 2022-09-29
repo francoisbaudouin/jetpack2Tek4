@@ -20,10 +20,8 @@ add_subdirectory(components)
 include(CompilerFlags)
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp
-                              ${SRCROOT}/SparseArray.cpp
-                              ${INCROOT}/SparseArray.hpp
-                              ${SRCROOT}/Registery.cpp
-                              ${INCROOT}/Registery.hpp)
+  ${SRCROOT}/Registery.cpp
+  ${SRCROOT}/Registery.hpp)
 
 add_custom_command(TARGET ${TARGET_NAME}
   POST_BUILD
