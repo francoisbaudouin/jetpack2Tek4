@@ -7,21 +7,18 @@ set(TARGET_NAME r-type_client)
 
 set(SRC
   ${SRC}
-  ${SRCROOT}/SparseArray.cpp
-  ${SRCROOT}/SparseArray.hpp
-  ${SRCROOT}/Registery.cpp
-  ${SRCROOT}/Registery.hpp
+  ${SRCROOT}/Entity.cpp
+  ${SRCROOT}/Entity.hpp
 )
 
 set(INCDIRS ${INCROOT})
 
 add_subdirectory(components)
+add_subdirectory(systems)
 
 include(CompilerFlags)
 
-add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp
-  ${SRCROOT}/Registery.cpp
-  ${SRCROOT}/Registery.hpp)
+add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 
 add_custom_command(TARGET ${TARGET_NAME}
   POST_BUILD

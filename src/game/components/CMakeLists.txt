@@ -13,7 +13,6 @@ set(SRC
     ${INCROOT}/Drawable.hpp
     ${SRCROOT}/Velocity.cpp
     ${INCROOT}/Velocity.hpp
-    ${SRCROOT}/IComponent.cpp
     ${INCROOT}/IComponent.hpp
     PARENT_SCOPE
 )

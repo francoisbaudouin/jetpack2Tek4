@@ -11,19 +11,19 @@
 class Position : public AComponent {
   public:
     Position();
-    Position(int x, int y);
+    Position(float x, float y);
     ~Position();
 
   //getters 
-  int getX() const;
-  int getY() const;
+  float getX() const;
+  float getY() const;
 
   //setters
-  void setX(int x);
-  void setY(int y);
+  void setX(float x);
+  void setY(float y);
   //member function
 
   private:
-    int _x;
-    int _y;
+    float _x;
+    float _y;
 };
