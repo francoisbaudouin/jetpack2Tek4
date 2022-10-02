@@ -5,30 +5,33 @@
 ** main
 */
 
+#include "Client.hpp"
 #include "Entity.hpp"
-#include "components/Position.hpp"
 #include "components/Drawable.hpp"
+#include "components/Position.hpp"
 #include "systems/Display.hpp"
 
 void test(Entity &ent)
 {
-  Display dis;
+    Display dis;
 
-  dis.addData(ent);
-  const std::vector<t_data> data = dis.getData();
-  dis.clearData();
+    dis.addData(ent);
+    const std::vector<t_data> data = dis.getData();
+    dis.clearData();
 
-  std::cout << data.size() << std::endl;
-  std::cout << data.begin()->id << std::endl;
-  std::cout << data.begin()->pos[0] << " " << data.begin()->pos[1] << std::endl;
+    std::cout << data.size() << std::endl;
+    std::cout << data.begin()->id << std::endl;
+    std::cout << data.begin()->pos[0] << " " << data.begin()->pos[1] << std::endl;
 }
 
-int main(void) 
+int main(void)
 {
-  Entity ent(0);
+    Entity ent(0);
 
-  ent.addComponent<Position>();
-  ent.addComponent<Drawable>();
-  test(ent);
-  return (0);
+    ent.addComponent<Position>();
+    ent.addComponent<Drawable>();
+    test(ent);
+    Client client;
+    client.run();
+    return (0);
 }

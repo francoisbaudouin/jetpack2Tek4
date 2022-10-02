@@ -21,6 +21,7 @@ void Display::addData(Entity &ent)
         return;
 
     t_data data;
+    data.type = "Ennemy";
     Position &pos = ent.getComponent<Position>();
     data.pos = {pos.getX(), pos.getY()};
     data.id = ent.getId();

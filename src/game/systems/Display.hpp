@@ -12,13 +12,7 @@
 #include <string>
 #include <vector>
 #include "../Entity.hpp"
-
-struct t_data {
-    size_t id;
-    std::array<float, 2> pos;
-    std::array<float, 2> size;
-    std::string type;
-};
+#include "../data.hpp"
 
 class Display {
   public:

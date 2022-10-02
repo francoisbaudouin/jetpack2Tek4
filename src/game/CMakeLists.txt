@@ -9,6 +9,10 @@ set(SRC
   ${SRC}
   ${SRCROOT}/Entity.cpp
   ${SRCROOT}/Entity.hpp
+  ${SRCROOT}/Client.cpp
+  ${SRCROOT}/Client.hpp
+  ${SRCROOT}/SpritesMap.cpp
+  ${SRCROOT}/SpritesMap.hpp
 )
 
 set(INCDIRS ${INCROOT})
@@ -19,6 +23,7 @@ add_subdirectory(systems)
 include(CompilerFlags)
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
+target_link_libraries(${TARGET_NAME} sfml-audio sfml-graphics sfml-network sfml-system)
 
 add_custom_command(TARGET ${TARGET_NAME}
   POST_BUILD
