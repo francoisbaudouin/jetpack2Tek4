@@ -5,11 +5,10 @@
 ** main
 */
 
-int main(void) { return (0); }
+#include <asio.hpp>
 
-void test(int test)
-{
-    for (int i = 0; i < 5; i++) {
-        char *t;
-    }
-}
+#include <boost/array.hpp>
+#include <boost/asio.hpp>
+#include <iostream>
+
+int main(void) { return (0); }
