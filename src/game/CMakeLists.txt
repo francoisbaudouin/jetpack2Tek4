@@ -7,7 +7,13 @@ set(TARGET_NAME r-type_client)
 
 include(CompilerFlags)
 
+set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
+set(THREADS_PREFER_PTHREAD_FLAG TRUE)
+find_package(Threads REQUIRED)
+
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
+
+target_link_libraries(${TARGET_NAME} Threads::Threads)
 
 add_custom_command(TARGET ${TARGET_NAME}
   POST_BUILD
