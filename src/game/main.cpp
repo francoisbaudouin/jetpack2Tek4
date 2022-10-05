@@ -5,4 +5,11 @@
 ** main
 */
 
-int main(void) { return (0); }
+#include "Client.hpp"
+
+int main(void)
+{
+  Client client;
+  client.run();
+  return (0);
+}

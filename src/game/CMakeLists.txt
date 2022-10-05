@@ -5,9 +5,24 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/game)
 # Exemple: add_subdirectory(connexion)
 set(TARGET_NAME r-type_client)
 
+set(SRC
+  ${SRC}
+  ${SRCROOT}/Client.cpp
+  ${SRCROOT}/Client.hpp
+)
+
+set(INCDIRS ${INCROOT})
+
+# add_subdirectory(client)
+
 include(CompilerFlags)
 
-add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
+
+add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp
+${SRCROOT}/Client.cpp 
+${SRCROOT}/Client.hpp
+)
+target_link_libraries(${TARGET_NAME} sfml-audio sfml-graphics sfml-network sfml-system)
 
 add_custom_command(TARGET ${TARGET_NAME}
   POST_BUILD
