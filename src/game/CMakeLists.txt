@@ -7,6 +7,8 @@ set(TARGET_NAME r-type_client)
 
 set(SRC
   ${SRC}
+  ${SRCROOT}/Entity.cpp
+  ${SRCROOT}/Entity.hpp
   ${SRCROOT}/Client.cpp
   ${SRCROOT}/Client.hpp
   ${SRCROOT}/SpritesMap.cpp
@@ -15,17 +17,14 @@ set(SRC
 
 set(INCDIRS ${INCROOT})
 
-# add_subdirectory(client)
+add_subdirectory(components)
+add_subdirectory(systems)
 
 include(CompilerFlags)
+include(CompilerFlags)
 
+add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 
-add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp
-${SRCROOT}/Client.cpp 
-${SRCROOT}/Client.hpp
-${SRCROOT}/SpritesMap.cpp
-${SRCROOT}/SpritesMap.hpp
-)
 target_link_libraries(${TARGET_NAME} sfml-audio sfml-graphics sfml-network sfml-system)
 
 add_custom_command(TARGET ${TARGET_NAME}
