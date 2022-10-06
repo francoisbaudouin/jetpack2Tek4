@@ -4,7 +4,12 @@ set(SRCROOT ${SRCROOT}/client)
 set(SRC
     ${SRC}
     ${SRCROOT}/Client.cpp
-    ${INCROOT}/Client.hpp
+    ${SRCROOT}/Client.hpp
+    ${SRCROOT}/data.hpp
+    ${SRCROOT}/SpritesMap.cpp
+    ${SRCROOT}/SpritesMap.hpp
+    ${SRCROOT}/TextureDatabase.cpp
+    ${SRCROOT}/TextureDatabase.hpp
     PARENT_SCOPE
 )
 
