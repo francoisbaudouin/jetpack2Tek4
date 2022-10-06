@@ -4,14 +4,45 @@
 ** File description:
 ** main
 */
+#define RUNNING 1
 
 #include <iostream>
-#include <thread>
-#include "boost/asio.hpp"
-#include "initialization/Loadconfig.hpp"
-using boost::asio::ip::udp;
+#include <boost/asio.hpp>
+#include <boost/array.hpp>
+#include <ctime>
+#include <string>
 
-std::string read_(boost::asio::ip::tcp::socket & socket) {
+std::string make_daytime_string()
+{
+	std::time_t now = std::time(0);
+
+	return std::ctime(&now);
+}
+
+int main()
+{
+	try {
+		boost::array<char, 1> receiveBuffer;
+		boost::asio::io_context ioContext;
+		boost::asio::ip::udp::endpoint remoteEndpoint;
+		boost::asio::ip::udp::socket socket(ioContext, boost::asio::ip::udp::endpoint(boost::asio::ip::udp::v4(), 8080));
+		boost::system::error_code ignoredError;
+		std::string message;
+
+		while (RUNNING) {
+			socket.receive_from(boost::asio::buffer(receiveBuffer), remoteEndpoint);
+			message = make_daytime_string();
+			socket.send_to(boost::asio::buffer(message), remoteEndpoint, 0, ignoredError);
+		}
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+		return 84;
+	}
+
+	return 0;
+}
+
+/* std::string read_(boost::asio::ip::tcp::socket & socket) {
        boost::asio::streambuf buf;
        boost::asio::read_until( socket, buf, "\n" );
        std::string data = boost::asio::buffer_cast<const char*>(buf.data());
@@ -39,4 +70,4 @@ int main(void)
     send_(socket_, "Hello From Server!");
     std::cout << "Servent sent Hello message to Client!" << std::endl;
     return 0;
-}
+} */

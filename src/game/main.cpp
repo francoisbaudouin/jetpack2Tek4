@@ -4,35 +4,40 @@
 ** File description:
 ** main
 */
+#define RUNNING 1
 
 #include <boost/asio.hpp>
 #include <iostream>
-#include <thread>
+#include <boost/array.hpp>
 
-int main()
+int main(int ac, char **av)
 {
-    boost::asio::io_service io_service;
-    // socket creation
-    boost::asio::ip::tcp::socket socket(io_service);
-    // connection
-    socket.connect(boost::asio::ip::tcp::endpoint(boost::asio::ip::address::from_string("127.0.0.1"), 1234));
-    // request/message from client
-    const std::string msg = "Hello from Client!\n";
-    boost::system::error_code error;
-    boost::asio::write(socket, boost::asio::buffer(msg), error);
-    if (!error) {
-        std::cout << "Client sent hello message!" << std::endl;
-    } else {
-        std::cout << "send failed: " << error.message() << std::endl;
-    }
-    // getting response from server
-    boost::asio::streambuf receive_buffer;
-    boost::asio::read(socket, receive_buffer, boost::asio::transfer_all(), error);
-    if (error && error != boost::asio::error::eof) {
-        std::cout << "receive failed: " << error.message() << std::endl;
-    } else {
-        const char *data = boost::asio::buffer_cast<const char *>(receive_buffer.data());
-        std::cout << data << std::endl;
-    }
-    return 0;
+	try {
+		boost::array<char, 1> sendBuffer = {{0}};
+		boost::array<char, 128> receiveBuffer;
+		boost::asio::io_context ioContext;
+		boost::asio::ip::udp::resolver resolver(ioContext);
+		boost::asio::ip::udp::endpoint receiverEndpoint;
+		boost::asio::ip::udp::socket socket(ioContext);
+		boost::asio::ip::udp::endpoint senderEndpoint;
+		size_t len;
+
+		if (ac != 2) {
+			std::cerr << "Usage: client <host>" << std::endl;
+			return 84;
+		}
+
+		receiverEndpoint = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(av[1]), 8080);
+		socket.open(boost::asio::ip::udp::v4());
+		while (RUNNING) {
+			socket.send_to(boost::asio::buffer(sendBuffer), receiverEndpoint);
+			len = socket.receive_from(boost::asio::buffer(receiveBuffer), senderEndpoint);
+			std::cout.write(receiveBuffer.data(), len);
+		}
+	} catch (std::exception &e) {
+		std::cerr << e.what() << std::endl;
+		return 84;
+	}
+
+	return 0;
 }
