@@ -14,19 +14,15 @@ namespace ecs
 {
     class AComponent : public IComponent {
       public:
-        AComponent();
+        AComponent(const size_t entId);
         ~AComponent();
 
-        // interface function
-        std::string getName() const;
-
-        // setters
-        void setName(std::string);
-        bool _isEnabled;
-        std::string _name;
+        size_t getEntId() const;
+        void setEntId(const size_t entId);
 
       protected:
-      private:
+        size_t _entId;
+        
     };
 } // namespace ecs
 

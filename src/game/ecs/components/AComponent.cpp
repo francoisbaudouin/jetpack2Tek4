@@ -5,15 +5,14 @@
 ** AComponent
 */
 
-
 #include "AComponent.hpp"
 
 using namespace ecs;
 
-AComponent::AComponent() : _name("Undefined component") {}
+AComponent::AComponent(const size_t entId) { _entId = entId; }
 
 AComponent::~AComponent() {}
 
-std::string AComponent::getName() const { return _name; }
+size_t AComponent::getEntId() const { return (_entId); }
 
-void AComponent::setName(std::string name) { _name = name; }
+void AComponent::setEntId(const size_t entId) { _entId = entId; }
