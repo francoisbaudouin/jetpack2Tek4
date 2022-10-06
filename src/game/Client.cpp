@@ -6,6 +6,8 @@
 */
 
 #include "Client.hpp"
+#include "data.hpp"
+#include <iostream>
 
 Client::Client() : _window(sf::VideoMode(800, 600), "Client window")
 {
@@ -26,6 +28,7 @@ void Client::run()
         if (event.type == sf::Event::Closed)
             _window.close();
     }
+    //_spritesMap.update(dataVec);
     _spritesMap.displaySprites(_window);
     _window.display();
     _window.clear();

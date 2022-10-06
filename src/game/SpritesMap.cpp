@@ -10,18 +10,13 @@
 
 SpritesMap::SpritesMap()
 {
-  sf::Sprite playerSprite;
-  sf::Sprite ennemySprite;
+  sf::Texture pTexture;
+  sf::Texture eTexture;
 
-  _ennemyTexture.loadFromFile("src/game/assets/ohnonmonstermunch.png");
-  _playerTexture.loadFromFile("src/game/assets/vesso.png");
+  pTexture.loadFromFile("src/game/assets/vesso.png");
+  eTexture.loadFromFile("src/game/assets/ohnonmonstermunch.png");
 
-  playerSprite.setTexture(_playerTexture);
-  ennemySprite.setTexture(_ennemyTexture);
-  ennemySprite.setPosition(sf::Vector2f{100, 0});
-
-
-  _spritesMap = {{0, playerSprite}, {1, ennemySprite}};
+  _textureDatabase = {{"Player", pTexture}, {"Ennemy", eTexture}};
 }
 
 SpritesMap::~SpritesMap()
@@ -29,6 +24,27 @@ SpritesMap::~SpritesMap()
 }
 
 //member function
+
+void SpritesMap::update(data datas)
+{
+  if (_spritesMap.contains(datas.id)) {
+    _spritesMap[datas.id].setPosition(sf::Vector2f(datas.pos[0], datas.pos[1]));
+  } else {
+    sf::Sprite sprite;
+    sprite.setTexture(_textureDatabase[datas.type]);
+    sprite.setPosition(sf::Vector2f(datas.pos[0], datas.pos[1]));
+    _spritesMap.insert({datas.id, sprite});
+  }
+}
+
+void SpritesMap::update(std::vector<data> datasVec)
+{
+  if (datasVec.size() == 0)
+    return;
+  for (size_t i = 0; i < datasVec.size(); i++) {
+    update(datasVec[i]);
+  }
+}
 
 void SpritesMap::displaySprites(sf::RenderWindow &window)
 {
