@@ -7,30 +7,38 @@
 #include <ctime>
 #include <iostream>
 #include <string>
+#define ASIO_HAS_BOOST_BIND
+
 #include <asio.hpp>
+
+#include <boost/asio.hpp>
+#include <boost/array.hpp>
+
+#define RUNNING 1
 
 std::string make_daytime_string()
 {
-	using namespace std;
-	time_t now = time(0);
-	return ctime(&now);
+	std::time_t now = std::time(0);
+
+	return std::ctime(&now);
 }
 
-int main(void)
+int main()
 {
 	try {
-		asio::io_context io_context;
-		asio::ip::tcp::acceptor acceptor(io_context, asio::ip::tcp::endpoint(asio::ip::tcp::v4(), 8080));
-		for (;;) {
-			asio::ip::tcp::socket socket(io_context);
-			acceptor.accept(socket);
+		boost::asio::io_context io_context;
+		boost::asio::ip::udp::socket socket(io_context, boost::asio::ip::udp::endpoint(boost::asio::ip::udp::v4(), 8080));
+		while (RUNNING) {
+			boost::array<char, 1> receiveBuffer;
+			boost::asio::ip::udp::endpoint remoteEndpoint;
+			socket.receive_from(boost::asio::buffer(receiveBuffer), remoteEndpoint);
 			std::string message = make_daytime_string();
-
-			asio::error_code ignored_error;
-			asio::write(socket, asio::buffer(message), ignored_error);
+			boost::system::error_code ignoredError;
+			socket.send_to(boost::asio::buffer(message), remoteEndpoint, 0, ignoredError);
 		}
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
+		return 84;
 	}
 
 	return 0;
