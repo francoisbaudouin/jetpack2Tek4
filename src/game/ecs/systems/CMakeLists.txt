@@ -5,6 +5,8 @@ set(SRC
     ${SRC}
     ${SRCROOT}/Display.cpp
     ${SRCROOT}/Display.hpp
+    # ${SRCROOT}/Move.cpp
+    # ${SRCROOT}/Move.hpp
     PARENT_SCOPE
 )
 
