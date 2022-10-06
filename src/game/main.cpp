@@ -5,53 +5,34 @@
 ** main
 */
 #include <iostream>
-// #include <boost/array.hpp>
-// #include <asio.hpp>
+#include <boost/array.hpp>
+#include <boost/asio.hpp>
 
-// using asio::ip::tcp;
-
-// int main(int ac, char **av)
-// {
-// 	try {
-// 		if (ac != 2) {
-// 			std::cerr << "Usage: client <host>" << std::endl;
-// 			return 1;
-// 		}
-// 		asio::io_context io_context;
-// 		tcp::resolver resolver(io_context);
-// 		tcp::resolver::results_type endpoints = resolver.resolve(av[1], "daytime");
-// 		tcp::socket socket(io_context);
-// 		asio::connect(socket, endpoints);
-// 		for (;;) {
-// 			boost::array<char, 128> buf;
-// 			asio::error_code error;
-
-// 			size_t len = socket.read_some(asio::buffer(buf), error);
-// 			if (error == asio::error::eof)
-// 				break;
-// 			else if (error)
-// 				throw asio::system_error(error);
-
-// 			std::cout.write(buf.data(), len);
-// 		}
-// 	} catch (std::exception &e) {
-// 		std::cerr << e.what() << std::endl;
-// 	}
-// 	return (0);
-// }
-
-#include <SFML/Network.hpp>
+#define RUNNING 1
 
 int main(int ac, char **av)
 {
-	if (ac != 2)
-		std::cout << "Usage: ./r-type_client <host>" << std::endl;
-
 	try {
-		sf::UdpSocket socket;
-		socket.bind(8080);
-		sf::IpAddress sender;
-		if (socket.receive(data, 100, receve))
+		boost::array<char, 1> sendBuf = {{0}};
+		boost::array<char, 128> recvBuf;
+		boost::asio::io_context ioContext;
+		boost::asio::ip::udp::resolver resolver(ioContext);
+		boost::asio::ip::udp::endpoint receiverEndpoint(boost::asio::ip::address::from_string(av[1]), 8080);
+		boost::asio::ip::udp::socket socket(ioContext);
+		boost::asio::ip::udp::endpoint senderEndpoint;
+		size_t len;
+
+		if (ac != 2) {
+			std::cerr << "Usage: client <host>" << std::endl;
+			return 84;
+		}
+
+		socket.open(boost::asio::ip::udp::v4());
+		while (RUNNING) {
+			socket.send_to(boost::asio::buffer(sendBuf), receiverEndpoint);
+			len = socket.receive_from(boost::asio::buffer(recvBuf), senderEndpoint);
+			std::cout.write(recvBuf.data(), len);
+		}
 	} catch (std::exception &e) {
 		std::cerr << e.what() << std::endl;
 		return 84;
