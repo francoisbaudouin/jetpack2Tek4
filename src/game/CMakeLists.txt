@@ -7,18 +7,12 @@ set(TARGET_NAME r-type_client)
 
 set(SRC
   ${SRC}
-  ${SRCROOT}/Entity.cpp
-  ${SRCROOT}/Entity.hpp
-  ${SRCROOT}/Client.cpp
-  ${SRCROOT}/Client.hpp
-  ${SRCROOT}/SpritesMap.cpp
-  ${SRCROOT}/SpritesMap.hpp
 )
 
 set(INCDIRS ${INCROOT})
 
-add_subdirectory(components)
-add_subdirectory(systems)
+add_subdirectory(ecs)
+add_subdirectory(client)
 
 include(CompilerFlags)
 include(CompilerFlags)
