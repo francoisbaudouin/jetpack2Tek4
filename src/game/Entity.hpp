@@ -16,26 +16,28 @@
 #include <typeinfo>
 #include <unordered_map>
 
-class Entity {
-  public:
-    Entity(const size_t);
-    ~Entity();
+namespace ecs
+{
+    class Entity {
+      public:
+        Entity(const size_t);
+        ~Entity();
 
-    template <class Component, typename... CompArgs> Component &addComponent(CompArgs &&...);
+        template <class Component, typename... CompArgs> Component &addComponent(CompArgs &&...);
 
-    template <class Component> bool hasComponent() const;
+        template <class Component> bool hasComponent() const;
 
-    template <class Component> Component &getComponent();
+        template <class Component> Component &getComponent();
 
-    template <class Component> Component &replaceComponent(const Component &comp);
+        template <class Component> Component &replaceComponent(const Component &comp);
 
-    template <class Component> void removeComponent();
+        template <class Component> void removeComponent();
 
-    size_t getId();
+        size_t getId();
 
-  private:
-    std::unordered_map<std::type_index, std::any> _comps;
-    size_t _id;
-};
-
+      private:
+        std::unordered_map<std::type_index, std::any> _comps;
+        size_t _id;
+    };
+} // namespace ecs
 #endif //__ENTITY__

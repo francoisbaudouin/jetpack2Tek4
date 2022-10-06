@@ -5,7 +5,9 @@
 ** SpritesMap
 */
 
-#pragma once
+#ifndef SPRITESMAP_HPP_
+#define SPRITESMAP_HPP_
+
 #include <unordered_map>
 #include <SFML/Graphics.hpp>
 #include <string>
@@ -17,8 +19,8 @@ class SpritesMap {
     ~SpritesMap();
 
     //member function
-    void update(data);
-    void update(std::vector<data>);
+    void update(t_data);
+    void update(std::vector<t_data>);
     void displaySprites(sf::RenderWindow &);
   protected:
   private:
@@ -27,3 +29,5 @@ class SpritesMap {
     std::unordered_map<std::string, sf::Texture> _textureDatabase;
     std::unordered_map<size_t, sf::Sprite> _spritesMap;
 };
+
+#endif /* !SPRITESMAP_HPP_ */

@@ -5,13 +5,17 @@
 ** data
 */
 
-#pragma once
+#ifndef DATA_HPP_
+#define DATA_HPP_
+
 #include <array>
 #include <string>
 
-struct data {
+struct t_data {
   size_t id;
   std::array<float, 2> pos;
   std::array<float, 2> size;
   std::string type;
 };
+
+#endif /* !DATA_HPP_ */

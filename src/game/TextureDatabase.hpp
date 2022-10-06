@@ -5,7 +5,8 @@
 ** TextureDatabase
 */
 
-#pragma once
+#ifndef TEXTUREDATABASE_HPP_
+#define TEXTUREDATABASE_HPP_
 
 /* THIS IS FOR THE FUTURE */
 
@@ -17,3 +18,5 @@ class TextureDatabase {
   protected:
   private:
 };
+
+#endif /* !TEXTUREDATABASE_HPP_ */

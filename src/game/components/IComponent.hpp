@@ -1,17 +1,24 @@
 /*
 ** EPITECH PROJECT, 2022
-** boostrap
+** jetpack2Tek4
 ** File description:
 ** IComponent
 */
 
-#pragma once
+#ifndef ICOMPONENT_HPP_
+#define ICOMPONENT_HPP_
+
 #include <string>
 
-class IComponent {
-  public:
-    virtual ~IComponent() = default;
-    virtual std::string getName() const = 0;
+namespace ecs
+{
+    class IComponent {
+      public:
+        virtual ~IComponent() = default;
+        virtual std::string getName() const = 0;
 
-  private:
-};
+      private:
+    };
+} // namespace ecs
+
+#endif /* !ICOMPONENT_HPP_ */

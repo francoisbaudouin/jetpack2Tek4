@@ -5,22 +5,15 @@
 ** AComponent
 */
 
+
 #include "AComponent.hpp"
 
-AComponent::AComponent() : _name("Undefined component")
-{
-}
+using namespace ecs;
 
-AComponent::~AComponent()
-{
-}
+AComponent::AComponent() : _name("Undefined component") {}
 
-std::string AComponent::getName() const
-{
-  return _name;
-}
+AComponent::~AComponent() {}
 
-void AComponent::setName(std::string name)
-{
-  _name = name;
-}
+std::string AComponent::getName() const { return _name; }
+
+void AComponent::setName(std::string name) { _name = name; }

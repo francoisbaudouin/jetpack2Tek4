@@ -9,6 +9,8 @@
 #include "../components/Drawable.hpp"
 #include "../components/Position.hpp"
 
+using namespace ecs;
+
 Display::Display() : _data() {}
 
 Display::~Display() {}
