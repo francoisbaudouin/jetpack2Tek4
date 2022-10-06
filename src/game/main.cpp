@@ -5,11 +5,16 @@
 ** main
 */
 
-#include "client/Client.hpp"
+#include "ecs/entity/Entity.hpp"
+
+namespace ecs {
+  void test() {
+    Entity ent(0);
+  }
+}
 
 int main(void)
 {
-  Client client;
-  client.run();
+  ecs::test();
   return (0);
 }
