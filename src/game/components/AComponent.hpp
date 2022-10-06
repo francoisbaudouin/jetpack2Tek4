@@ -1,11 +1,13 @@
 /*
 ** EPITECH PROJECT, 2022
-** boostrapR-type
+** jetpack2Tek4
 ** File description:
 ** AComponent
 */
 
-#pragma once
+#ifndef ACOMPONENT_HPP_
+#define ACOMPONENT_HPP_
+
 #include "IComponent.hpp"
 
 class AComponent : public IComponent {
@@ -13,10 +15,10 @@ class AComponent : public IComponent {
     AComponent();
     ~AComponent();
 
-    //interface function
+    // interface function
     std::string getName() const;
 
-    //setters
+    // setters
     void setName(std::string);
     bool _isEnabled;
     std::string _name;
@@ -24,3 +26,5 @@ class AComponent : public IComponent {
   protected:
   private:
 };
+
+#endif /* !ACOMPONENT_HPP_ */

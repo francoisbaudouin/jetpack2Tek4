@@ -1,11 +1,13 @@
 /*
 ** EPITECH PROJECT, 2022
-** boostrapR-type
+** jetpack2Tek4
 ** File description:
 ** Controllable
 */
 
-#pragma once
+#ifndef CONTROLLABLE_HPP_
+#define CONTROLLABLE_HPP_
+
 #include "AComponent.hpp"
 
 class Controllable : public AComponent{
@@ -16,3 +18,5 @@ class Controllable : public AComponent{
   protected:  
   private:
 };
+
+#endif /* !CONTROLLABLE_HPP_ */

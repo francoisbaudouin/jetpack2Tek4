@@ -5,6 +5,7 @@
 ** AComponent
 */
 
+
 #include "AComponent.hpp"
 
 AComponent::AComponent() : _name("Undefined component")

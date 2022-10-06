@@ -5,7 +5,9 @@
 ** data
 */
 
-#pragma once
+#ifndef DATA_HPP_
+#define DATA_HPP_
+
 #include <array>
 #include <string>
 
@@ -15,3 +17,5 @@ struct data {
   std::array<float, 2> size;
   std::string type;
 };
+
+#endif /* !DATA_HPP_ */

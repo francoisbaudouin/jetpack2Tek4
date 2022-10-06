@@ -1,11 +1,13 @@
 /*
 ** EPITECH PROJECT, 2022
-** boostrapR-type
+** jetpack2Tek4
 ** File description:
 ** Drawable
 */
 
-#pragma once
+#ifndef DRAWABLE_HPP_
+#define DRAWABLE_HPP_
+
 #include "AComponent.hpp"
 
 class Drawable : public AComponent {
@@ -14,3 +16,5 @@ class Drawable : public AComponent {
     ~Drawable();
     bool _isDrawable;
 };
+
+#endif /* !DRAWABLE_HPP_ */

@@ -5,7 +5,9 @@
 ** Client
 */
 
-#pragma once
+#ifndef CLIENT_HPP_
+#define CLIENT_HPP_
+
 #include <SFML/Graphics.hpp>
 #include "SpritesMap.hpp"
 
@@ -22,3 +24,5 @@ class Client {
     sf::RenderWindow _window;
     SpritesMap _spritesMap;
 };
+
+#endif /* !CLIENT_HPP_ */

@@ -1,11 +1,13 @@
 /*
 ** EPITECH PROJECT, 2022
-** boostrap
+** jetpack2Tek4
 ** File description:
-** PositionComp
+** Position
 */
 
-#pragma once
+#ifndef POSITION_HPP_
+#define POSITION_HPP_
+
 #include "AComponent.hpp"
 
 class Position : public AComponent {
@@ -27,3 +29,5 @@ class Position : public AComponent {
     float _x;
     float _y;
 };
+
+#endif /* !POSITION_HPP_ */

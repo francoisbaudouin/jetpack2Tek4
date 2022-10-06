@@ -1,11 +1,13 @@
 /*
 ** EPITECH PROJECT, 2022
-** boostrapR-type
+** jetpack2Tek4
 ** File description:
 ** Velocity
 */
 
-#pragma once
+#ifndef VELOCITY_HPP_
+#define VELOCITY_HPP_
+
 #include "AComponent.hpp"
 
 class Velocity : public AComponent {
@@ -17,3 +19,4 @@ class Velocity : public AComponent {
     float _velocity;
 };
 
+#endif /* !VELOCITY_HPP_ */
