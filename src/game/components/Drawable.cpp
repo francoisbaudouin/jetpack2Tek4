@@ -7,11 +7,8 @@
 
 #include "Drawable.hpp"
 
-Drawable::Drawable() : _isDrawable(true)
-{
-  _name = "Drawable";
-}
+using namespace ecs;
 
-Drawable::~Drawable()
-{
-}
+Drawable::Drawable() : _isDrawable(true) { _name = "Drawable"; }
+
+Drawable::~Drawable() {}

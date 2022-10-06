@@ -10,24 +10,27 @@
 
 #include "AComponent.hpp"
 
-class Position : public AComponent {
-  public:
-    Position();
-    Position(float x, float y);
-    ~Position();
+namespace ecs
+{
+    class Position : public AComponent {
+      public:
+        Position();
+        Position(float x, float y);
+        ~Position();
 
-  //getters 
-  float getX() const;
-  float getY() const;
+        // getters
+        float getX() const;
+        float getY() const;
 
-  //setters
-  void setX(float x);
-  void setY(float y);
-  //member function
+        // setters
+        void setX(float x);
+        void setY(float y);
+        // member function
 
-  private:
-    float _x;
-    float _y;
-};
+      private:
+        float _x;
+        float _y;
+    };
+} // namespace ecs
 
 #endif /* !POSITION_HPP_ */

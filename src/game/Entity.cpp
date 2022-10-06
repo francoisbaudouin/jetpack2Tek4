@@ -12,6 +12,8 @@
 #include "components/Position.hpp"
 #include "components/Velocity.hpp"
 
+using namespace ecs;
+
 Entity::Entity(const size_t id) { _id = id; }
 
 Entity::~Entity() {}
@@ -51,10 +53,7 @@ template <class Component> void Entity::removeComponent()
     _comps.erase(std::type_index(typeid(Component)));
 }
 
-size_t Entity::getId()
-{
-  return (_id);
-}
+size_t Entity::getId() { return (_id); }
 
 template AComponent &Entity::addComponent<AComponent>();
 template Controllable &Entity::addComponent<Controllable>();

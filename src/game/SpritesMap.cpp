@@ -25,7 +25,7 @@ SpritesMap::~SpritesMap()
 
 //member function
 
-void SpritesMap::update(data datas)
+void SpritesMap::update(t_data datas)
 {
   if (_spritesMap.contains(datas.id)) {
     _spritesMap[datas.id].setPosition(sf::Vector2f(datas.pos[0], datas.pos[1]));
@@ -37,7 +37,7 @@ void SpritesMap::update(data datas)
   }
 }
 
-void SpritesMap::update(std::vector<data> datasVec)
+void SpritesMap::update(std::vector<t_data> datasVec)
 {
   if (datasVec.size() == 0)
     return;

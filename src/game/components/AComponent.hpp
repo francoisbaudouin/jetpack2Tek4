@@ -10,21 +10,24 @@
 
 #include "IComponent.hpp"
 
-class AComponent : public IComponent {
-  public:
-    AComponent();
-    ~AComponent();
+namespace ecs
+{
+    class AComponent : public IComponent {
+      public:
+        AComponent();
+        ~AComponent();
 
-    // interface function
-    std::string getName() const;
+        // interface function
+        std::string getName() const;
 
-    // setters
-    void setName(std::string);
-    bool _isEnabled;
-    std::string _name;
+        // setters
+        void setName(std::string);
+        bool _isEnabled;
+        std::string _name;
 
-  protected:
-  private:
-};
+      protected:
+      private:
+    };
+} // namespace ecs
 
 #endif /* !ACOMPONENT_HPP_ */

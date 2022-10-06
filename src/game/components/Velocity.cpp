@@ -7,16 +7,10 @@
 
 #include "Velocity.hpp"
 
-Velocity::Velocity() : _velocity(0)
-{
-  _name = "Velocity";
-}
+using namespace ecs;
 
-Velocity::Velocity(float velocity) : _velocity(velocity)
-{
-  _name = "Velocity";
-}
+Velocity::Velocity() : _velocity(0) { _name = "Velocity"; }
 
-Velocity::~Velocity()
-{
-}
+Velocity::Velocity(float velocity) : _velocity(velocity) { _name = "Velocity"; }
+
+Velocity::~Velocity() {}

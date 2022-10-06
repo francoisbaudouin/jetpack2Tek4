@@ -7,11 +7,8 @@
 
 #include "Controllable.hpp"
 
-Controllable::Controllable() : _isControllable(true)
-{
-  _name = "Controllable";
-}
+using namespace ecs;
 
-Controllable::~Controllable()
-{
-}
+Controllable::Controllable() : _isControllable(true) { _name = "Controllable"; }
+
+Controllable::~Controllable() {}

@@ -7,42 +7,24 @@
 
 #include "Position.hpp"
 
-Position::Position() :_x(0), _y(0)
-{
-  _name = "Position";
-}
+using namespace ecs;
 
-Position::Position(float x, float y) :_x(x), _y(y)
-{
-  _name = "Position";
-}
+Position::Position() : _x(0), _y(0) { _name = "Position"; }
 
-//getters
+Position::Position(float x, float y) : _x(x), _y(y) { _name = "Position"; }
 
-float Position::getX() const
-{
-  return _x;
-}
+// getters
 
-float Position::getY() const
-{
-  return _y;
-}
+float Position::getX() const { return _x; }
 
-//setters
+float Position::getY() const { return _y; }
 
-void Position::setX(float x)
-{
-  _x  = x;
-}
+// setters
 
-void Position::setY(float y)
-{
-  _y = y;
-}
+void Position::setX(float x) { _x = x; }
 
-//member function
+void Position::setY(float y) { _y = y; }
 
-Position::~Position()
-{
-}
+// member function
+
+Position::~Position() {}

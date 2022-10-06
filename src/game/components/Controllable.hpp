@@ -10,13 +10,17 @@
 
 #include "AComponent.hpp"
 
-class Controllable : public AComponent{
-  public:
-    Controllable();
-    ~Controllable();
-    bool _isControllable;
-  protected:  
-  private:
-};
+namespace ecs
+{
+    class Controllable : public AComponent {
+      public:
+        Controllable();
+        ~Controllable();
+        bool _isControllable;
+
+      protected:
+      private:
+    };
+} // namespace ecs
 
 #endif /* !CONTROLLABLE_HPP_ */

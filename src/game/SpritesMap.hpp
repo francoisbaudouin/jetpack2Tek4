@@ -19,8 +19,8 @@ class SpritesMap {
     ~SpritesMap();
 
     //member function
-    void update(data);
-    void update(std::vector<data>);
+    void update(t_data);
+    void update(std::vector<t_data>);
     void displaySprites(sf::RenderWindow &);
   protected:
   private:

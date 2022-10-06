@@ -10,11 +10,14 @@
 
 #include "AComponent.hpp"
 
-class Drawable : public AComponent {
-  public:
-    Drawable();
-    ~Drawable();
-    bool _isDrawable;
-};
+namespace ecs
+{
+    class Drawable : public AComponent {
+      public:
+        Drawable();
+        ~Drawable();
+        bool _isDrawable;
+    };
+} // namespace ecs
 
 #endif /* !DRAWABLE_HPP_ */
