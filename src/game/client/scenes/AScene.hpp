@@ -8,7 +8,9 @@
 #ifndef ASCENE_HPP_
 #define ASCENE_HPP_
 
-class AScene {
+#include "IScene.hpp"
+
+class AScene : public IScene {
     public:
         AScene();
         ~AScene();
