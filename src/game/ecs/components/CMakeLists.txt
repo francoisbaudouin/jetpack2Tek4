@@ -5,14 +5,6 @@ set(SRC
     ${SRC}
     ${SRCROOT}/AComponent.cpp
     ${INCROOT}/AComponent.hpp
-    ${SRCROOT}/Controllable.cpp
-    ${INCROOT}/Controllable.hpp
-    ${SRCROOT}/Position.cpp
-    ${INCROOT}/Position.hpp
-    ${SRCROOT}/Drawable.cpp
-    ${INCROOT}/Drawable.hpp
-    ${SRCROOT}/Velocity.cpp
-    ${INCROOT}/Velocity.hpp
     ${INCROOT}/IComponent.hpp
     PARENT_SCOPE
 )

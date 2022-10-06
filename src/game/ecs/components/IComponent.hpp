@@ -15,7 +15,9 @@ namespace ecs
     class IComponent {
       public:
         virtual ~IComponent() = default;
-        virtual std::string getName() const = 0;
+
+        virtual size_t getEntId() const = 0;
+        virtual void setEntId(const size_t entId) = 0;
 
       private:
     };
