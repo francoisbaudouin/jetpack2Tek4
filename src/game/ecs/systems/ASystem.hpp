@@ -7,9 +7,9 @@
 
 #ifndef ASYSTEM_HPP_
 #define ASYSTEM_HPP_
-#include <unordered_map>
-#include "../entity/Entity.hpp"
 #include <memory>
+#include "../entity/Entity.hpp"
+#include <unordered_map>
 
 namespace ecs
 {
@@ -20,6 +20,7 @@ namespace ecs
 
       protected:
         std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> _entityMap;
+
       private:
     };
 } // namespace ecs

@@ -8,10 +8,6 @@
 #include "ASystem.hpp"
 using namespace ecs;
 
-ASystem::ASystem()
-{
-}
+ASystem::ASystem() {}
 
-ASystem::~ASystem()
-{
-}
+ASystem::~ASystem() {}
