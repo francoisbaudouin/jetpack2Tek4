@@ -9,13 +9,14 @@
 #define ISYSTEM_HPP_
 #include "../entity/Entity.hpp"
 #include <unordered_map>
+#include <memory>
 
 namespace ecs
 {
     class ISystem {
       public:
         virtual ~ISystem() = default;
-        virtual void update(std::unordered_map<size_t, ecs::Entity> &entityVector) = 0;
+        virtual void run() = 0;
     };
 
 } // namespace ecs

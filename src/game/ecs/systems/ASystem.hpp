@@ -9,6 +9,7 @@
 #define ASYSTEM_HPP_
 #include <unordered_map>
 #include "../entity/Entity.hpp"
+#include <memory>
 
 namespace ecs
 {
@@ -18,7 +19,7 @@ namespace ecs
         ~ASystem();
 
       protected:
-        std::unordered_map<size_t, ecs::Entity> _entityMap;
+        std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> _entityMap;
       private:
     };
 } // namespace ecs
