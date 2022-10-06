@@ -7,7 +7,7 @@
 
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "SpritesMap.hpp"
+#include "EntityMap.hpp"
 
 class Client {
   public:
@@ -20,5 +20,5 @@ class Client {
   protected:
   private:
     sf::RenderWindow _window;
-    SpritesMap _spritesMap;
+    EntityMap _spritesMap;
 };
