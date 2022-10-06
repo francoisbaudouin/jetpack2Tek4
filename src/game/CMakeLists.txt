@@ -9,6 +9,8 @@ set(SRC
   ${SRC}
   ${SRCROOT}/Client.cpp
   ${SRCROOT}/Client.hpp
+  ${SRCROOT}/SpritesMap.cpp
+  ${SRCROOT}/SpritesMap.hpp
 )
 
 set(INCDIRS ${INCROOT})
@@ -21,6 +23,8 @@ include(CompilerFlags)
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp
 ${SRCROOT}/Client.cpp 
 ${SRCROOT}/Client.hpp
+${SRCROOT}/SpritesMap.cpp
+${SRCROOT}/SpritesMap.hpp
 )
 target_link_libraries(${TARGET_NAME} sfml-audio sfml-graphics sfml-network sfml-system)
 

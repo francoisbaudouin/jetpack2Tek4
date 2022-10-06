@@ -22,12 +22,13 @@ void Client::run()
 {
   while (_window.isOpen()) {
     sf::Event event;
-      while (_window.pollEvent(event)) {
-          if (event.type == sf::Event::Closed)
-              _window.close();
-      }
-    _window.clear();
+    while (_window.pollEvent(event)) {
+        if (event.type == sf::Event::Closed)
+            _window.close();
+    }
+    _spritesMap.displaySprites(_window);
     _window.display();
+    _window.clear();
   }
 }
 
