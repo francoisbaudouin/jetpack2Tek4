@@ -1,11 +1,13 @@
 /*
 ** EPITECH PROJECT, 2022
-** boostrap
+** jetpack2Tek4
 ** File description:
 ** IComponent
 */
 
-#pragma once
+#ifndef ICOMPONENT_HPP_
+#define ICOMPONENT_HPP_
+
 #include <string>
 
 namespace ecs
@@ -18,3 +20,5 @@ namespace ecs
       private:
     };
 } // namespace ecs
+
+#endif /* !ICOMPONENT_HPP_ */
