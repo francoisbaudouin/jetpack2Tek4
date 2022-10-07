@@ -1,42 +1,19 @@
+[generators]
+cmake
+
 [requires]
-    sfml/2.5.1@bincrafters/stable
-    asio/1.24.0@#605272c53e03567aa43d91bcc64a95da
-    flac/1.Y.Z
-    freetype/2.Y.Z
-    libudev/system
-    openal/1.Y.Z
-    opengl/system
-    stb/cci.20210910
-    vorbis/1.Y.Z
-    xorg/system
+    sfml/2.5.1
+    asio/1.24.0
+    gtest/1.10.0 
 
 [options]
-    audio=True
-    graphics=True
-    network=True
-    shared=True
-    window=True
-
-[full_settings]
-    arch=x86_64
-    build_type=Release
-    compiler=gcc
-    compiler.libcxx=libstdc++11
-    compiler.version=7
-    os=Linux
-
-[full_requires]
-    brotli/1.0.9:d50a0d523d98c15bb147b18fa7d203887c38be8b
-    bzip2/1.0.8:b27e2b40bcb70be2e7d6f0e0c6e43e35c530f8d3
-    flac/1.3.3:ef227c7ca8be49f078e2c7c4a6cebbac879b693a
-    freetype/2.11.1:718e788d18f87efa6b201b7718f1ffac72f4ad26
-    libalsa/1.2.5.1:bff9a7d5ab267a535181ec5b36392417340ff035
-    libpng/1.6.37:9378b660d2155d53cea1126fa13164a3bfa59f2c
-    libudev/system:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
-    ogg/1.3.5:d50a0d523d98c15bb147b18fa7d203887c38be8b
-    openal/1.21.1:1ee54d2403c0a9537bd88ca248c14250a77540ed
-    opengl/system:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
-    stb/cci.20210910:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
-    vorbis/1.3.7:8d8cebdeda6ff46ba515968aa8b099a24769ca16
-    xorg/system:5ab84d6acfe1f23c4fae0ab88f26e3a396351ac9
-    zlib/1.2.12:d50a0d523d98c15bb147b18fa7d203887c38be8b
+    sfml:audio=True
+    sfml:graphics=True
+    sfml:network=True
+    sfml:shared=True
+    sfml:window=True
+    gtest:build_gmock=True
+    gtest:fPIC=True
+    gtest:hide_symbols=False
+    gtest:no_main=False
+    gtest:shared=False
