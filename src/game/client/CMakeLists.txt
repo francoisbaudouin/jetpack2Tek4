@@ -13,6 +13,8 @@ set(SRC
     PARENT_SCOPE
 )
 
+add_subdirectory(scenes)
+
 set(INCDIRS
     ${INCDIRS}
     ${INCROOT}

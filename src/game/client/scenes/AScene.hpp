@@ -8,15 +8,18 @@
 #ifndef ASCENE_HPP_
 #define ASCENE_HPP_
 
+#include <SFML/Graphics.hpp>
 #include "IScene.hpp"
+#include "SceneSystem.hpp"
 
 class AScene : public IScene {
-    public:
-        AScene();
-        ~AScene();
+  public:
+    AScene();
+    ~AScene() = default;
 
-    protected:
-    private:
+  private:
+    sf::RenderWindow &_window;
+    SceneSystem &_sceneSystem;
 };
 
 #endif /* !ASCENE_HPP_ */

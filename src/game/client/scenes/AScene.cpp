@@ -7,10 +7,4 @@
 
 #include "AScene.hpp"
 
-AScene::AScene()
-{
-}
-
-AScene::~AScene()
-{
-}
+AScene::AScene(SceneSystem &sceneSystem, sf::RenderWindow &window) : _sceneSystem(sceneSystem), _window(window) {}
