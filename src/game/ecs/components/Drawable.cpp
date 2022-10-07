@@ -12,13 +12,12 @@ Drawable::Drawable() : AComponent(0)
 {
 }
 
-Drawable::Drawable(sf::Texture &texture) : AComponent(0)
+Drawable::Drawable(const size_t entityId, sf::Texture &texture) : AComponent(entityId)
 {
-  shipTexture.loadFromFile("src/game/assets/vesso.png");
-  _sprite.setTexture(shipTexture);
+  _sprite.setTexture(texture);
 }
 
-sf::Sprite Drawable::getSprite() const
+sf::Sprite &Drawable::getSprite()
 {
   return _sprite;
 }

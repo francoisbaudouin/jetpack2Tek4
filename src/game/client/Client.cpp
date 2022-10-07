@@ -14,7 +14,8 @@
 #include "data.hpp"
 
 Client::Client(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> entityMap)
-    : _window(sf::VideoMode(800, 600), "Client window"), _displaySystem(entityMap)
+    : _window(sf::VideoMode(800, 600), "Client window"), _displaySystem(entityMap),
+    _moveSystem(entityMap)
 {
 }
 
@@ -32,6 +33,7 @@ void Client::run()
         }
         _window.clear();
         _displaySystem.run(_window);
+        _moveSystem.run();
         _window.display();
     }
 }

@@ -7,21 +7,27 @@
 
 #include "ecs/components/Drawable.hpp"
 #include "client/Client.hpp"
+#include "ecs/components/Position.hpp"
+#include "ecs/components/Velocity.hpp"
 #include "ecs/entity/Entity.hpp"
+#include "ecs/systems/Move.hpp"
+#include "SFML/Graphics.hpp"
 
-namespace ecs
-{
-    void test() { Entity ent(0); }
-} // namespace ecs
+using namespace ecs;
 
 int main(void)
 {
-    ecs::Entity test(0);
-    //test.addComponent<ecs::Drawable>();
-    std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> _entityMap;
-    _entityMap[0] = std::make_shared<ecs::Entity>(test);
+    Entity ent(0);
+    sf::Texture playerTexture;
+    playerTexture.loadFromFile("src/game/assets/vesso.png");
+  
+    ent.addComponent<ecs::Drawable>(ent.getId(), playerTexture);
+    ent.addComponent<Position>(ent.getId(), 100, 100);
+    ent.addComponent<Velocity>(ent.getId(), 0.01, 0);
+    std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> entityMap;
+    entityMap[0] = std::make_shared<ecs::Entity>(ent);
 
-    Client client(_entityMap);
+    Client client(entityMap);
     client.run();
     return (0);
 }

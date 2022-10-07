@@ -7,10 +7,9 @@ set(SRC
     ${SRCROOT}/ASystem.hpp
     ${SRCROOT}/Display.cpp
     ${SRCROOT}/Display.hpp
+    ${SRCROOT}/Move.cpp
+    ${SRCROOT}/Move.hpp
     ${SRCROOT}/ISystem.hpp
-
-    # ${SRCROOT}/Move.cpp
-    # ${SRCROOT}/Move.hpp
     PARENT_SCOPE
 )
 

@@ -8,6 +8,10 @@ set(SRC
     ${SRCROOT}/Drawable.cpp
     ${SRCROOT}/Drawable.hpp
     ${SRCROOT}/IComponent.hpp
+    ${SRCROOT}/Position.cpp
+    ${SRCROOT}/Position.hpp
+    ${SRCROOT}/Velocity.cpp
+    ${SRCROOT}/Velocity.hpp
     PARENT_SCOPE
 )
 

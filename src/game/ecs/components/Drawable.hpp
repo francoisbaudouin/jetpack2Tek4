@@ -15,16 +15,15 @@ namespace ecs
     class Drawable : public AComponent {
       public:
         Drawable();
-        Drawable(sf::Texture &texture);
+        Drawable(const size_t entityId, sf::Texture &texture);
         ~Drawable();
 
-        sf::Sprite getSprite() const;
+        sf::Sprite &getSprite();
         void setSprite(sf::Sprite sprite);
 
       protected:
       private:
         sf::Sprite _sprite;
-        sf::Texture shipTexture;
     };
 } // namespace ecs
 
