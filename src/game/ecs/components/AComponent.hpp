@@ -14,14 +14,14 @@ namespace ecs
 {
     class AComponent : public IComponent {
       public:
-        AComponent(const size_t entId);
+        AComponent(const size_t entityId);
         ~AComponent();
 
-        size_t getEntId() const;
-        void setEntId(const size_t entId);
+        size_t getEntityId() const override;
+        void setEntityId(const size_t entityId) override;
 
       protected:
-        size_t _entId;
+        size_t _entityId;
         
     };
 } // namespace ecs

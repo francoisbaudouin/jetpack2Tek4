@@ -16,6 +16,9 @@ namespace ecs
       public:
         virtual ~IComponent() = default;
 
+        virtual size_t getEntityId() const = 0;
+        virtual void setEntityId(const size_t entityId) = 0;
+
       private:
     };
 } // namespace ecs
