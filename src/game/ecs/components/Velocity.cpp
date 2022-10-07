@@ -9,22 +9,22 @@
 
 using namespace ecs;
 
-Velocity::Velocity(const size_t entId, const float velX, const float velY) : AComponent(entId), _velX(velX), _velY(velY)
+Velocity::Velocity(const size_t entityId, const float velocityX, const float velocityY) : AComponent(entityId), _velocityX(velocityX), _velocityY(velocityY)
 {
 }
 
 Velocity::~Velocity() {}
 
-void Velocity::setVel(const float velX, const float velY)
+void Velocity::setVel(const float velocityX, const float velocityY)
 {
-    _velX = velX;
-    _velY = velY;
+    _velocityX = velocityX;
+    _velocityY = velocityY;
 }
 
-void Velocity::setX(const float velX) { _velX = velX; }
+void Velocity::setX(const float velocityX) { _velocityX = velocityX; }
 
-void Velocity::setY(const float velY) { _velY = velY; }
+void Velocity::setY(const float velocityY) { _velocityY = velocityY; }
 
-float Velocity::getX() const { return (_velX); }
+float Velocity::getX() const { return (_velocityX); }
 
-float Velocity::getY() const { return (_velY); }
+float Velocity::getY() const { return (_velocityY); }

@@ -9,10 +9,10 @@
 
 using namespace ecs;
 
-AComponent::AComponent(const size_t entId) : _entId(entId) {}
+AComponent::AComponent(const size_t entityId) : _entityId(entityId) {}
 
 AComponent::~AComponent() {}
 
-size_t AComponent::getEntId() const { return (_entId); }
+size_t AComponent::getEntityId() const { return (_entityId); }
 
-void AComponent::setEntId(const size_t entId) { _entId = entId; }
+void AComponent::setEntityId(const size_t entId) { _entityId = entId; }

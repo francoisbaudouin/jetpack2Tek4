@@ -4,12 +4,12 @@ set(SRCROOT ${SRCROOT}/components)
 set(SRC
     ${SRC}
     ${SRCROOT}/AComponent.cpp
-    ${INCROOT}/AComponent.hpp
-    ${INCROOT}/IComponent.hpp
+    ${SRCROOT}/AComponent.hpp
+    ${SRCROOT}/IComponent.hpp
     ${SRCROOT}/Position.cpp
-    ${INCROOT}/Position.hpp
+    ${SRCROOT}/Position.hpp
     ${SRCROOT}/Velocity.cpp
-    ${INCROOT}/Velocity.hpp
+    ${SRCROOT}/Velocity.hpp
     PARENT_SCOPE
 )
 

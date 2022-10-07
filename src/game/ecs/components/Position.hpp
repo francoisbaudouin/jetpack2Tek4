@@ -14,19 +14,19 @@ namespace ecs
 {
     class Position : public AComponent {
       public:
-        Position(const size_t entId, const float posX, const float posY);
+        Position(const size_t entityId, const float positionX, const float positionY);
         ~Position();
 
-        void setPos(const float posX, const float posY);
-        void setX(const float posX);
-        void setY(const float posY);
+        void setPosition(const float positionX, const float positionY);
+        void setX(const float positionX);
+        void setY(const float positionY);
 
         float getX() const;
         float getY() const;
 
       private:
-        float _posX;
-        float _posY;
+        float _positionX;
+        float _positionY;
     };
 } // namespace ecs
 

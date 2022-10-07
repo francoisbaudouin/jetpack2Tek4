@@ -26,11 +26,11 @@ void Move::applyVelocity(std::shared_ptr<ecs::Entity> &entity)
 
 void Move::run()
 {
-    auto it = _entityMap.begin();
+    auto iterator = _entityMap.begin();
 
-    while (it != _entityMap.end()) {
-        if (it->second->hasComponent<Velocity>() && it->second->hasComponent<Position>())
-            this->applyVelocity(it->second);
-        it++;
+    while (iterator != _entityMap.end()) {
+        if (iterator->second->hasComponent<Velocity>() && iterator->second->hasComponent<Position>())
+            this->applyVelocity(iterator->second);
+        iterator++;
     }
 }

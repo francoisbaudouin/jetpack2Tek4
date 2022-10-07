@@ -23,30 +23,30 @@ namespace ecs
         Entity(const size_t);
         ~Entity();
 
-        template <class Component, typename... CompArgs> Component &addComponent(CompArgs &&...args)
+        template <class Component, typename... CompArgs> Component &addComponent(CompArgs &&...arguments)
         {
-            Component *comp(new Component(std::forward<CompArgs>(args)...));
+            Component *component(new Component(std::forward<CompArgs>(arguments)...));
 
-            _comps.insert({std::type_index(typeid(Component)), comp});
-            return (*comp);
+            _components.insert({std::type_index(typeid(Component)), component});
+            return (*component);
         }
 
         template <class Component> bool hasComponent() const
         {
-            return (_comps.contains(std::type_index(typeid(Component))));
+            return (_components.contains(std::type_index(typeid(Component))));
         }
 
         template <class Component> Component &getComponent()
         {
-            auto *comp = std::any_cast<Component *>(_comps.at(std::type_index(typeid(Component))));
-            return (*comp);
+            auto *component = std::any_cast<Component *>(_components.at(std::type_index(typeid(Component))));
+            return (*component);
         }
 
-        template <class Component> Component &replaceComponent(const Component &comp)
+        template <class Component> Component &replaceComponent(const Component &component)
         {
-            // if (!_comps.contains(std::type_index(typeid(Component))))
+            // if (!_components.contains(std::type_index(typeid(Component))))
             //     return;
-            _comps.erase(std::type_index(typeid(Component)));
+            _components.erase(std::type_index(typeid(Component)));
         }
 
         template <class Component> void removeComponent();
@@ -54,7 +54,7 @@ namespace ecs
         size_t getId();
 
       private:
-        std::unordered_map<std::type_index, std::any> _comps;
+        std::unordered_map<std::type_index, std::any> _components;
         size_t _id;
     };
 } // namespace ecs

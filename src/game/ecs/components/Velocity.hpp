@@ -14,19 +14,19 @@ namespace ecs
 {
     class Velocity : public AComponent {
       public:
-        Velocity(const size_t entId, const float velX, const float velY);
+        Velocity(const size_t entityId, const float velocityX, const float velocityY);
         ~Velocity();
 
-        void setVel(const float velX, const float velY);
-        void setX(const float velX);
-        void setY(const float velY);
+        void setVel(const float velocityX, const float velocityY);
+        void setX(const float velocityX);
+        void setY(const float velocityY);
 
         float getX() const;
         float getY() const;
 
       private:
-        float _velX;
-        float _velY;
+        float _velocityX;
+        float _velocityY;
     };
 } // namespace ecs
 

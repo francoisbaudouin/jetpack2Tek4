@@ -28,7 +28,7 @@ namespace ecs
         auto &pos = ent.getComponent<Position>();
 
         move(ent);
-        std::cout << pos.getEntId() << " " << pos.getX() << " " << pos.getY() << std::endl;
+        std::cout << pos.getEntityId() << " " << pos.getX() << " " << pos.getY() << std::endl;
     }
 } // namespace ecs
 
