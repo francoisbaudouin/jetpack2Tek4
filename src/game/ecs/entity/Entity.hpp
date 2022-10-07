@@ -23,9 +23,9 @@ namespace ecs
         Entity(const size_t);
         ~Entity();
 
-        template <class Component, typename... CompArgs> Component &addComponent(CompArgs &&...arguments)
+        template <class Component, typename... ComponentArguments> Component &addComponent(ComponentArguments &&...arguments)
         {
-            Component *component(new Component(std::forward<CompArgs>(arguments)...));
+            Component *component(new Component(std::forward<ComponentArguments>(arguments)...));
 
             _components.insert({std::type_index(typeid(Component)), component});
             return (*component);
@@ -38,7 +38,7 @@ namespace ecs
 
         template <class Component> Component &getComponent()
         {
-            auto *component = std::any_cast<Component *>(_components.at(std::type_index(typeid(Component))));
+            Component *component = std::any_cast<Component *>(_components.at(std::type_index(typeid(Component))));
             return (*component);
         }
 

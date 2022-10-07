@@ -17,8 +17,8 @@ Move::~Move() {}
 
 void Move::applyVelocity(std::shared_ptr<ecs::Entity> &entity)
 {
-    auto &velocity = entity->getComponent<Velocity>();
-    auto &position = entity->getComponent<Position>();
+    Velocity &velocity = entity->getComponent<Velocity>();
+    Position &position = entity->getComponent<Position>();
 
     position.setX(position.getX() + velocity.getX());
     position.setY(position.getY() + velocity.getY());

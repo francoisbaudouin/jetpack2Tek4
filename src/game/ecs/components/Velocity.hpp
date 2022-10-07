@@ -17,7 +17,7 @@ namespace ecs
         Velocity(const size_t entityId, const float velocityX, const float velocityY);
         ~Velocity();
 
-        void setVel(const float velocityX, const float velocityY);
+        void setVelocity(const float velocityX, const float velocityY);
         void setX(const float velocityX);
         void setY(const float velocityY);
 

@@ -15,7 +15,7 @@ Velocity::Velocity(const size_t entityId, const float velocityX, const float vel
 
 Velocity::~Velocity() {}
 
-void Velocity::setVel(const float velocityX, const float velocityY)
+void Velocity::setVelocity(const float velocityX, const float velocityY)
 {
     _velocityX = velocityX;
     _velocityY = velocityY;
