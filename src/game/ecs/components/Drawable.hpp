@@ -14,7 +14,6 @@ namespace ecs
 {
     class Drawable : public AComponent {
       public:
-        Drawable();
         Drawable(const size_t entityId, sf::Texture &texture);
         ~Drawable();
 

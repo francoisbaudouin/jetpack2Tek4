@@ -8,10 +8,6 @@
 #include "Drawable.hpp"
 using namespace ecs;
 
-Drawable::Drawable() : AComponent(0)
-{
-}
-
 Drawable::Drawable(const size_t entityId, sf::Texture &texture) : AComponent(entityId)
 {
   _sprite.setTexture(texture);
