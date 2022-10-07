@@ -14,7 +14,7 @@ namespace ecs
 {
     class Move : public ASystem {
       public:
-        Move(const std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
+        Move(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
         ~Move();
 
         void applyVelocity(std::shared_ptr<ecs::Entity> &entity);

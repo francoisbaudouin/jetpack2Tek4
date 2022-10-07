@@ -5,6 +5,8 @@ set(SRC
     ${SRC}
     ${SRCROOT}/AComponent.cpp
     ${SRCROOT}/AComponent.hpp
+    ${SRCROOT}/Drawable.cpp
+    ${SRCROOT}/Drawable.hpp
     ${SRCROOT}/IComponent.hpp
     ${SRCROOT}/Position.cpp
     ${SRCROOT}/Position.hpp

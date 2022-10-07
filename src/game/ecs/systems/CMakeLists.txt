@@ -3,12 +3,12 @@ set(SRCROOT ${SRCROOT}/systems)
 
 set(SRC
     ${SRC}
+    ${SRCROOT}/ASystem.cpp
+    ${SRCROOT}/ASystem.hpp
     ${SRCROOT}/Display.cpp
     ${SRCROOT}/Display.hpp
     ${SRCROOT}/Move.cpp
     ${SRCROOT}/Move.hpp
-    ${SRCROOT}/ASystem.cpp
-    ${SRCROOT}/ASystem.hpp
     ${SRCROOT}/ISystem.hpp
     PARENT_SCOPE
 )

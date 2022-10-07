@@ -16,8 +16,10 @@ namespace ecs
 {
     class ASystem : public ISystem {
       public:
-        ASystem();
+        ASystem(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
         ~ASystem();
+
+        void run() override;
 
       protected:
         std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> _entityMap;

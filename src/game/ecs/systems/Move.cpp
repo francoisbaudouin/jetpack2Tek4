@@ -11,7 +11,7 @@
 
 using namespace ecs;
 
-Move::Move(const std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap) { _entityMap = entityMap; }
+Move::Move(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap) : ASystem(entityMap) { }
 
 Move::~Move() {}
 
