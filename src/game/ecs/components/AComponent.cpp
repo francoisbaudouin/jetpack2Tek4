@@ -9,7 +9,7 @@
 
 using namespace ecs;
 
-AComponent::AComponent(const size_t entId) { _entId = entId; }
+AComponent::AComponent(const size_t entId) : _entId(entId) {}
 
 AComponent::~AComponent() {}
 

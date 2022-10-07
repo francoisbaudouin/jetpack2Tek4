@@ -17,8 +17,8 @@ namespace ecs
         AComponent(const size_t entId);
         ~AComponent();
 
-        size_t getEntId() const;
-        void setEntId(const size_t entId);
+        size_t getEntId() const override;
+        void setEntId(const size_t entId) override;
 
       protected:
         size_t _entId;

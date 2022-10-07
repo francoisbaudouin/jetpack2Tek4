@@ -6,6 +6,10 @@ set(SRC
     ${SRCROOT}/AComponent.cpp
     ${INCROOT}/AComponent.hpp
     ${INCROOT}/IComponent.hpp
+    ${SRCROOT}/Position.cpp
+    ${INCROOT}/Position.hpp
+    ${SRCROOT}/Velocity.cpp
+    ${INCROOT}/Velocity.hpp
     PARENT_SCOPE
 )
 

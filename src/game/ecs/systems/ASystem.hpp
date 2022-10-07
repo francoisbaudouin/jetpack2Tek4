@@ -9,11 +9,12 @@
 #define ASYSTEM_HPP_
 #include <memory>
 #include "../entity/Entity.hpp"
+#include "ISystem.hpp"
 #include <unordered_map>
 
 namespace ecs
 {
-    class ASystem {
+    class ASystem : public ISystem {
       public:
         ASystem();
         ~ASystem();

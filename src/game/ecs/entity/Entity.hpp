@@ -23,13 +23,31 @@ namespace ecs
         Entity(const size_t);
         ~Entity();
 
-        template <class Component, typename... CompArgs> Component &addComponent(CompArgs &&...);
+        template <class Component, typename... CompArgs> Component &addComponent(CompArgs &&...args)
+        {
+            Component *comp(new Component(std::forward<CompArgs>(args)...));
 
-        template <class Component> bool hasComponent() const;
+            _comps.insert({std::type_index(typeid(Component)), comp});
+            return (*comp);
+        }
 
-        template <class Component> Component &getComponent();
+        template <class Component> bool hasComponent() const
+        {
+            return (_comps.contains(std::type_index(typeid(Component))));
+        }
 
-        template <class Component> Component &replaceComponent(const Component &comp);
+        template <class Component> Component &getComponent()
+        {
+            auto *comp = std::any_cast<Component *>(_comps.at(std::type_index(typeid(Component))));
+            return (*comp);
+        }
+
+        template <class Component> Component &replaceComponent(const Component &comp)
+        {
+            // if (!_comps.contains(std::type_index(typeid(Component))))
+            //     return;
+            _comps.erase(std::type_index(typeid(Component)));
+        }
 
         template <class Component> void removeComponent();
 
