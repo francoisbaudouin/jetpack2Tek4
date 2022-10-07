@@ -10,10 +10,10 @@
 
 #include <any>
 #include <array>
-#include <iostream>
 #include <memory>
 #include <typeindex>
 #include <typeinfo>
+#include "../exceptions/Exception.hpp"
 #include <unordered_map>
 
 namespace ecs
@@ -23,8 +23,12 @@ namespace ecs
         Entity(const size_t);
         ~Entity();
 
-        template <class Component, typename... ComponentArguments> Component &addComponent(ComponentArguments &&...arguments)
+        template <class Component, typename... ComponentArguments>
+        Component &addComponent(ComponentArguments &&...arguments)
         {
+            if (this->hasComponent<Component>())
+                return (this->getComponent<Component>());
+
             Component *component(new Component(std::forward<ComponentArguments>(arguments)...));
 
             _components.insert({std::type_index(typeid(Component)), component});
@@ -38,18 +42,26 @@ namespace ecs
 
         template <class Component> Component &getComponent()
         {
+            if (!this->hasComponent<Component>())
+                throw ecs::NoComponent(typeid(Component).name(), this->getId());
             Component *component = std::any_cast<Component *>(_components.at(std::type_index(typeid(Component))));
             return (*component);
         }
 
-        template <class Component> Component &replaceComponent(const Component &component)
+        template <class Component> Component &replaceComponent(Component &component)
         {
-            // if (!_components.contains(std::type_index(typeid(Component))))
-            //     return;
-            _components.erase(std::type_index(typeid(Component)));
+            if (this->hasComponent<Component>())
+                this->removeComponent<Component>();
+            _components.insert({std::type_index(typeid(Component)), &component});
+            return (component);
         }
 
-        template <class Component> void removeComponent();
+        template <class Component> void removeComponent()
+        {
+            if (!this->hasComponent<Component>())
+                throw ecs::NoComponent(typeid(Component).name(), this->getId());
+            _components.erase(std::type_index(typeid(Component)));
+        }
 
         size_t getId();
 
