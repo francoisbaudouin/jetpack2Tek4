@@ -9,14 +9,17 @@
 #define ASYSTEM_HPP_
 #include <memory>
 #include "../entity/Entity.hpp"
+#include "ISystem.hpp"
 #include <unordered_map>
 
 namespace ecs
 {
-    class ASystem {
+    class ASystem : public ISystem {
       public:
-        ASystem();
+        ASystem(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
         ~ASystem();
+
+        void run() override;
 
       protected:
         std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> _entityMap;

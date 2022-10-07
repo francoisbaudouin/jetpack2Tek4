@@ -8,14 +8,17 @@
 #ifndef DISPLAY_HPP_
 #define DISPLAY_HPP_
 
+#include "ASystem.hpp"
+#include <SFML/Graphics.hpp>
 
 namespace ecs
 {
-    class Display {
+    class Display : public ASystem {
       public:
-        Display();
+        Display(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
         ~Display();
-      private:
+
+        void run(sf::RenderWindow &window);
     };
 } // namespace ecs
 

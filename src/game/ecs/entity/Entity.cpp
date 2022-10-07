@@ -6,6 +6,11 @@
 */
 
 #include "Entity.hpp"
+//#include "../components/AComponent.hpp"
+//#include "../components/Controllable.hpp"
+#include "../components/Drawable.hpp"
+//#include "../components/Position.hpp"
+//#include "../components/Velocity.hpp"
 
 using namespace ecs;
 
@@ -40,3 +45,33 @@ template <class Component> void Entity::removeComponent()
 }
 
 size_t Entity::getId() { return (_id); }
+
+//template AComponent &Entity::addComponent<AComponent>();
+//template Controllable &Entity::addComponent<Controllable>();
+template Drawable &Entity::addComponent<Drawable>();
+//template Position &Entity::addComponent<Position>();
+//template Velocity &Entity::addComponent<Velocity>();
+
+//template bool Entity::hasComponent<AComponent>() const;
+//template bool Entity::hasComponent<Controllable>() const;
+template bool Entity::hasComponent<Drawable>() const;
+//template bool Entity::hasComponent<Position>() const;
+//template bool Entity::hasComponent<Velocity>() const;
+
+//template AComponent &Entity::getComponent<AComponent>();
+//template Controllable &Entity::getComponent<Controllable>();
+template Drawable &Entity::getComponent<Drawable>();
+//template Position &Entity::getComponent<Position>();
+//template Velocity &Entity::getComponent<Velocity>();
+
+// template AComponent &Entity::replaceComponent<AComponent>(const AComponent &);
+// template Controllable &Entity::replaceComponent<Controllable>(const Controllable &);
+// template Drawable &Entity::replaceComponent<Drawable>(const Drawable &);
+// template Position &Entity::replaceComponent<Position>(const Position &);
+// template Velocity &Entity::replaceComponent<Velocity>(const Velocity &);
+
+//template void Entity::removeComponent<AComponent>();
+//template void Entity::removeComponent<Controllable>();
+template void Entity::removeComponent<Drawable>();
+//template void Entity::removeComponent<Position>();
+//template void Entity::removeComponent<Velocity>();

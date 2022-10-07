@@ -4,8 +4,10 @@ set(SRCROOT ${SRCROOT}/components)
 set(SRC
     ${SRC}
     ${SRCROOT}/AComponent.cpp
-    ${INCROOT}/AComponent.hpp
-    ${INCROOT}/IComponent.hpp
+    ${SRCROOT}/AComponent.hpp
+    ${SRCROOT}/Drawable.cpp
+    ${SRCROOT}/Drawable.hpp
+    ${SRCROOT}/IComponent.hpp
     PARENT_SCOPE
 )
 
