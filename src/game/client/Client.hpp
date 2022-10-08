@@ -11,7 +11,7 @@
 #include <SFML/Graphics.hpp>
 #include "../ecs/systems/Display.hpp"
 #include "../ecs/systems/Move.hpp"
-
+#include "../ecs/systems/Input.hpp"
 #include "SpritesMap.hpp"
 
 class Client {
@@ -30,6 +30,7 @@ class Client {
     SpritesMap _spritesMap;
     ecs::Display _displaySystem;
     ecs::Move _moveSystem;
+    ecs::Input _inputSystem;
 };
 
 #endif /* !CLIENT_HPP_ */

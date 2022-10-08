@@ -12,6 +12,8 @@
 #include "ecs/entity/Entity.hpp"
 #include "ecs/systems/Move.hpp"
 #include "SFML/Graphics.hpp"
+#include "ecs/enums/Event.hpp"
+#include <iostream>
 
 using namespace ecs;
 

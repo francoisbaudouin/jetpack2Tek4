@@ -4,6 +4,8 @@ set(SRCROOT ${SRCROOT}/ecs)
 add_subdirectory(components)
 add_subdirectory(entity)
 add_subdirectory(systems)
+add_subdirectory(enums)
+
 add_subdirectory(exceptions)
 
 set(SRC
