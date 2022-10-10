@@ -11,7 +11,8 @@ set(SRC
     ${SRCROOT}/Move.hpp
     ${SRCROOT}/Input.cpp
     ${SRCROOT}/Input.hpp
-
+    ${SRCROOT}/Controll.cpp
+    ${SRCROOT}/Controll.hpp
     ${SRCROOT}/ISystem.hpp
     PARENT_SCOPE
 )

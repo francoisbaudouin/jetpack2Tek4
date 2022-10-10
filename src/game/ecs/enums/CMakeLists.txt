@@ -3,7 +3,9 @@ set(SRCROOT ${SRCROOT}/enums)
 
 set(SRC
     ${SRC}
-    ${SRCROOT}/Event.hpp
+    ${SRCROOT}/event.hpp
+    ${SRCROOT}/controlls.hpp
+
     PARENT_SCOPE
 )
 

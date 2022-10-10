@@ -8,7 +8,7 @@
 #ifndef INPUT_HPP_
 #define INPUT_HPP_
 
-#include "../enums/Event.hpp"
+#include "../enums/event.hpp"
 #include "ASystem.hpp"
 #include "SFML/Graphics.hpp"
 
@@ -19,7 +19,11 @@ namespace ecs
         Input(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
         ~Input();
 
-        RTypeEvent getInput(sf::RenderWindow &window);
+        RTypeEvent getInput(sf::Event &event);
+        void bindEventType(sf::Event &event);
+        void bindMouseKey(sf::Event &event);
+        void bindKeyboardKey(sf::Event &event);
+
 
       protected:
       private:
