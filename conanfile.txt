@@ -1,10 +1,10 @@
 [generators]
-cmake
+    cmake
 
 [requires]
     sfml/2.5.1
     asio/1.16.0
-    gtest/1.10.0 
+    gtest/cci.20210126
 
 [options]
     sfml:audio=True

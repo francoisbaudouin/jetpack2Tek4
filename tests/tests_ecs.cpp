@@ -7,7 +7,7 @@
 
 #include <gtest/gtest.h>
 
-TEST(networks, readFile)
+TEST(ecs, creat_entity)
 {
 
 }

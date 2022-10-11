@@ -35,7 +35,7 @@ function(jetpack2tek4_test)
     source_group(${TARGET_NAME} FILES ${SRC})
     set_target_properties(${TARGET_NAME} PROPERTIES FOLDER "tests")
 
-    target_link_libraries(${TARGET_NAME} PRIVATE libbomberman gmock_main raylib)
+    # target_link_libraries(${TARGET_NAME} PRIVATE libbomberman gmock_main raylib)
 
     # Register the test
     add_test(NAME "${DISPLAY_NAME}" COMMAND ${TARGET_NAME} WORKING_DIRECTORY ${WORKING_DIRECTORY})
@@ -44,6 +44,4 @@ endfunction()
 set(INCROOT "${PROJECT_SOURCE_DIR}/tests")
 set(SRCROOT "${PROJECT_SOURCE_DIR}/tests")
 
-add_subdirectory(ecs)
-add_subdirectory(util)
-add_subdirectory(raylib)
+add_subdirectory(network)
