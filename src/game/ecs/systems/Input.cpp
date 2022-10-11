@@ -10,12 +10,7 @@
 
 using namespace ecs;
 
-Input::Input(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap) : ASystem(entityMap)
-{
-    _event.eventType = UNKNOWN_TYPE;
-    _event.keyboardKey = Device::KeyBoardKey::UNKNOWN_KEYBOARD_KEY;
-    _event.mouseKey = Device::MouseKey::UNKNOWN_MOUSE_KEY;
-}
+Input::Input(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap) : ASystem(entityMap), _events() {}
 
 Input::~Input() {}
 
@@ -40,9 +35,6 @@ void Input::bindKeyboardKey(sf::Event &event)
         case sf::Keyboard::Space: _event.keyboardKey = Device::KeyBoardKey::Space; break;
         default: _event.keyboardKey = Device::KeyBoardKey::UNKNOWN_KEYBOARD_KEY;
     }
-
-
-
 }
 
 void Input::bindMouseKey(sf::Event &event)
@@ -54,7 +46,20 @@ void Input::bindMouseKey(sf::Event &event)
     }
 }
 
-RTypeEvent Input::getInput(sf::Event &event)
+void Input::updateEvents()
+{
+    for (auto iterator = _events.begin(); iterator < _events.end(); iterator++) {
+        if (_event.keyboardKey == iterator->keyboardKey && _event.eventType == EventType::PRESSED)
+            return;
+        if (_event.keyboardKey == iterator->keyboardKey && _event.eventType == EventType::REALEASED) {
+            _events.erase(iterator);
+            return;
+        }
+    }
+    if (_event.eventType != EventType::UNKNOWN_TYPE && _event.eventType != EventType::REALEASED)
+        _events.push_back(_event);
+}
+std::vector<RTypeEvent> Input::getInput(sf::Event &event)
 {
     _event.keyboardKey = Device::KeyBoardKey::UNKNOWN_KEYBOARD_KEY;
     _event.mouseKey = Device::MouseKey::UNKNOWN_MOUSE_KEY;
@@ -62,5 +67,6 @@ RTypeEvent Input::getInput(sf::Event &event)
     bindEventType(event);
     bindKeyboardKey(event);
     bindMouseKey(event);
-    return (_event);
+    updateEvents();
+    return (_events);
 }

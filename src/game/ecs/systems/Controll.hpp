@@ -12,6 +12,7 @@
 #include "../components/Position.hpp"
 #include "../components/Velocity.hpp"
 #include "../enums/controlls.hpp"
+#include <vector>
 
 
 namespace ecs
@@ -21,7 +22,7 @@ namespace ecs
         Controll(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
         ~Controll();
 
-      void run(RTypeEvent controll);
+      void run(std::vector<RTypeEvent> controll);
 
       protected:
       private:

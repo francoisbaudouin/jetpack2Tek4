@@ -19,14 +19,15 @@ namespace ecs
         Input(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
         ~Input();
 
-        RTypeEvent getInput(sf::Event &event);
-        void bindEventType(sf::Event &event);
-        void bindMouseKey(sf::Event &event);
-        void bindKeyboardKey(sf::Event &event);
-
+        std::vector<RTypeEvent> getInput(sf::Event &event);
 
       protected:
       private:
+        void bindEventType(sf::Event &event);
+        void bindMouseKey(sf::Event &event);
+        void bindKeyboardKey(sf::Event &event);
+        void updateEvents();
+        std::vector<RTypeEvent> _events;
         RTypeEvent _event;
     };
 } // namespace ecs

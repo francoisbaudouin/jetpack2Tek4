@@ -13,29 +13,42 @@ Controll::Controll(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &ent
 
 Controll::~Controll() {}
 
-void Controll::run(RTypeEvent rTypeEvent)
+void changeVelocity(Velocity &velocity, Controllable &controllable, std::vector<RTypeEvent> rTypeEvents)
+{
+    float velocityValueX = 0;
+    float velocityValueY = 0;
+    float velocityValue = 0.075;
+    float none = 0;
+    for (auto iterator = rTypeEvents.begin(); iterator < rTypeEvents.end(); iterator++) {
+        switch (controllable.getAssociatedControll(iterator->keyboardKey)) {
+            case Controlls::UP:
+                velocityValueY -= velocityValue;
+                continue;
+            case Controlls::RIGHT:
+                velocityValueX += velocityValue;
+                continue;
+            case Controlls::LEFT:
+                velocityValueX -= velocityValue;
+                continue;
+            case Controlls::DOWN:
+                velocityValueY += velocityValue;
+                continue;
+            default: velocity.setVelocity(none, none); continue;
+        }
+    }
+    velocity.setVelocity(velocityValueX, velocityValueY);
+}
+
+void Controll::run(std::vector<RTypeEvent> rTypeEvents)
 {
     if (_entityMap.size() == 0) {
         return;
     }
     for (auto entity : _entityMap) {
         if (entity.second->hasComponent<Controllable>() && entity.second->hasComponent<Velocity>()) {
-            float velocityValue = 0.05;
-            float none = 0;
             Velocity &velocity = entity.second->getComponent<Velocity>();
             Controllable &controllable = entity.second->getComponent<Controllable>();
-            if (rTypeEvent.eventType == EventType::PRESSED) {
-                switch (controllable.getAssociatedControll(rTypeEvent.keyboardKey)) {
-                    case Controlls::UP: velocity.setVelocity(none, -velocityValue); break;
-                    case Controlls::RIGHT: velocity.setVelocity(velocityValue, none); break;
-                    case Controlls::LEFT: velocity.setVelocity(-velocityValue, none); break;
-                    case Controlls::DOWN: velocity.setVelocity(none, velocityValue); break;
-                    default: velocity.setVelocity(none, none); break;
-                }
-            } else {
-                if (rTypeEvent.eventType == EventType::REALEASED)
-                    velocity.setVelocity(none, none);
-            }
+            changeVelocity(velocity, controllable, rTypeEvents);
         }
     }
 }
