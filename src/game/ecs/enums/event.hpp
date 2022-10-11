@@ -138,24 +138,7 @@ namespace ecs
     struct RTypeEvent {
         Device::KeyBoardKey keyboardKey;
         Device::MouseKey mouseKey;
-
         EventType eventType;
-        // struct MouseEvent {
-        //     struct MousePressed {
-        //         Mouse::Key code;
-        //     };
-        //     struct MouseRealeased {
-        //         Mouse::Key code;
-        //     };
-        // };
-        // struct KeyboardEvent {
-        //     struct KeyboardPressed {
-        //         Keyboard::Key code;
-        //     };
-        //     struct KeyboardRealeased {
-        //         Keyboard::Key code;
-        //     };
-        // };
     };
 } // namespace ecs
 

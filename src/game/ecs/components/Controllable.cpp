@@ -6,7 +6,6 @@
 */
 
 #include "Controllable.hpp"
-#include <iostream>
 
 using namespace ecs;
 
