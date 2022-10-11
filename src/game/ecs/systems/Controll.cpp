@@ -19,6 +19,7 @@ void changeVelocity(Velocity &velocity, Controllable &controllable, std::vector<
     float velocityValueY = 0;
     float velocityValue = 0.075;
     float none = 0;
+
     for (auto iterator = rTypeEvents.begin(); iterator < rTypeEvents.end(); iterator++) {
         switch (controllable.getAssociatedControll(iterator->keyboardKey)) {
             case Controlls::UP:
@@ -41,9 +42,8 @@ void changeVelocity(Velocity &velocity, Controllable &controllable, std::vector<
 
 void Controll::run(std::vector<RTypeEvent> rTypeEvents)
 {
-    if (_entityMap.size() == 0) {
+    if (_entityMap.size() == 0)
         return;
-    }
     for (auto entity : _entityMap) {
         if (entity.second->hasComponent<Controllable>() && entity.second->hasComponent<Velocity>()) {
             Velocity &velocity = entity.second->getComponent<Velocity>();

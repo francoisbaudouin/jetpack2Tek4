@@ -6,7 +6,6 @@
 */
 
 #include "Input.hpp"
-#include <iostream>
 
 using namespace ecs;
 
