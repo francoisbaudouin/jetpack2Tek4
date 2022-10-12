@@ -8,8 +8,8 @@
 #ifndef DISPLAY_HPP_
 #define DISPLAY_HPP_
 
-#include "ASystem.hpp"
 #include <SFML/Graphics.hpp>
+#include "ASystem.hpp"
 
 namespace ecs
 {

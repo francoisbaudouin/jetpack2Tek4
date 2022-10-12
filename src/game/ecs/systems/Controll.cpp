@@ -22,18 +22,10 @@ void changeVelocity(Velocity &velocity, Controllable &controllable, std::vector<
 
     for (auto iterator = rTypeEvents.begin(); iterator < rTypeEvents.end(); iterator++) {
         switch (controllable.getAssociatedControll(iterator->keyboardKey)) {
-            case Controlls::UP:
-                velocityValueY -= velocityValue;
-                continue;
-            case Controlls::RIGHT:
-                velocityValueX += velocityValue;
-                continue;
-            case Controlls::LEFT:
-                velocityValueX -= velocityValue;
-                continue;
-            case Controlls::DOWN:
-                velocityValueY += velocityValue;
-                continue;
+            case Controlls::UP: velocityValueY -= velocityValue; continue;
+            case Controlls::RIGHT: velocityValueX += velocityValue; continue;
+            case Controlls::LEFT: velocityValueX -= velocityValue; continue;
+            case Controlls::DOWN: velocityValueY += velocityValue; continue;
             default: velocity.setVelocity(none, none); continue;
         }
     }

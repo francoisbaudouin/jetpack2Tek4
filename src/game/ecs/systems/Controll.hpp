@@ -7,13 +7,13 @@
 
 #ifndef CONTROLL_HPP_
 #define CONTROLL_HPP_
-#include "ASystem.hpp"
+
+#include <vector>
 #include "../components/Controllable.hpp"
 #include "../components/Position.hpp"
 #include "../components/Velocity.hpp"
 #include "../enums/controlls.hpp"
-#include <vector>
-
+#include "ASystem.hpp"
 
 namespace ecs
 {
@@ -22,7 +22,7 @@ namespace ecs
         Controll(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
         ~Controll();
 
-      void run(std::vector<RTypeEvent> controll);
+        void run(std::vector<RTypeEvent> controll);
 
       protected:
       private:

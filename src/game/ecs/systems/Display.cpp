@@ -9,8 +9,6 @@
 #include "../components/Drawable.hpp"
 #include "../components/Position.hpp"
 
-#include <iostream>
-
 using namespace ecs;
 
 Display::Display(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap) : ASystem(entityMap) {}

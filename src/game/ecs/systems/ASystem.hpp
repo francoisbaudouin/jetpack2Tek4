@@ -7,6 +7,7 @@
 
 #ifndef ASYSTEM_HPP_
 #define ASYSTEM_HPP_
+
 #include <memory>
 #include "../entity/Entity.hpp"
 #include "ISystem.hpp"

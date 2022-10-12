@@ -9,16 +9,15 @@
 #include <iostream>
 #include "../ecs/components/Drawable.hpp"
 #include "../ecs/entity/Entity.hpp"
+#include "../ecs/enums/event.hpp"
 #include "../ecs/systems/ASystem.hpp"
 #include "../ecs/systems/Display.hpp"
-#include "../ecs/enums/event.hpp"
-#include "data.hpp"
 
 using namespace ecs;
 
 Client::Client(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> entityMap)
-    : _window(sf::VideoMode(800, 600), "Client window"), _displaySystem(entityMap),
-    _moveSystem(entityMap), _inputSystem(entityMap), _controllSystem(entityMap)
+    : _window(sf::VideoMode(800, 600), "Client window"), _displaySystem(entityMap), _moveSystem(entityMap),
+      _inputSystem(entityMap), _controllSystem(entityMap)
 {
 }
 

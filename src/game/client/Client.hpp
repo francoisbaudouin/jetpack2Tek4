@@ -9,12 +9,10 @@
 #define CLIENT_HPP_
 
 #include <SFML/Graphics.hpp>
-#include "../ecs/systems/Display.hpp"
-#include "../ecs/systems/Move.hpp"
-#include "../ecs/systems/Input.hpp"
 #include "../ecs/systems/Controll.hpp"
-
-#include "SpritesMap.hpp"
+#include "../ecs/systems/Display.hpp"
+#include "../ecs/systems/Input.hpp"
+#include "../ecs/systems/Move.hpp"
 
 class Client {
   public:
