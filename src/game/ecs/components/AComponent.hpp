@@ -22,7 +22,6 @@ namespace ecs
 
       protected:
         size_t _entityId;
-        
     };
 } // namespace ecs
 

@@ -7,8 +7,9 @@
 
 #ifndef CONTROLLABLE_HPP_
 #define CONTROLLABLE_HPP_
-#include "../enums/event.hpp"
+
 #include "../enums/controlls.hpp"
+#include "../enums/event.hpp"
 #include "AComponent.hpp"
 #include <unordered_map>
 
