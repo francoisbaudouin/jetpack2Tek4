@@ -9,6 +9,10 @@ set(SRC
     ${SRCROOT}/Display.hpp
     ${SRCROOT}/Move.cpp
     ${SRCROOT}/Move.hpp
+    ${SRCROOT}/Input.cpp
+    ${SRCROOT}/Input.hpp
+    ${SRCROOT}/Controll.cpp
+    ${SRCROOT}/Controll.hpp
     ${SRCROOT}/ISystem.hpp
     PARENT_SCOPE
 )
