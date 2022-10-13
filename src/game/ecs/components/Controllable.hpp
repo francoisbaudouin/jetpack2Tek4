@@ -26,16 +26,16 @@ namespace ecs
          * @param leftControll pair of Device::KeyBoardKey and Controlls that correspond to the LEFT controll
          * @param downControll pair of Device::KeyBoardKey and Controlls that correspond to the DOWN controll
          */
-        Controllable(const size_t entityId, std::pair<Device::KeyBoardKey, Controlls> upControll,
-            std::pair<Device::KeyBoardKey, Controlls> rightControll,
-            std::pair<Device::KeyBoardKey, Controlls> leftControll,
-            std::pair<Device::KeyBoardKey, Controlls> downControll);
+        Controllable(const size_t entityId, const std::pair<Device::KeyBoardKey, Controlls> &upControll,
+            const std::pair<Device::KeyBoardKey, Controlls> &rightControll,
+            const std::pair<Device::KeyBoardKey, Controlls> &leftControll,
+            const std::pair<Device::KeyBoardKey, Controlls> &downControll);
         ~Controllable();
 
         /**
          * @brief Get the controll associated to the given key
          *
-         * @param key
+         * @param key : check the control on that key
          * @return Controlls associated to the key given in parameter
          */
         Controlls getAssociatedControll(Device::KeyBoardKey key);

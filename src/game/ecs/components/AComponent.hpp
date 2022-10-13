@@ -20,10 +20,7 @@ namespace ecs
          * @param entityId : ID of the entity using this component
          */
         AComponent(const size_t entityId);
-        /**
-         * @brief Destroy the AComponent object
-         *
-         */
+
         ~AComponent();
 
         /**
@@ -32,6 +29,7 @@ namespace ecs
          * @return size_t : ID of the entity
          */
         size_t getEntityId() const override;
+
         /**
          * @brief Set ID of the entity using this component
          *

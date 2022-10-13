@@ -6,6 +6,8 @@
 */
 
 #include "Entity.hpp"
+#include <iostream>
+#include "../components/IComponent.hpp"
 
 using namespace ecs;
 

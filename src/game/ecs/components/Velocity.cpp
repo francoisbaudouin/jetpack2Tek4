@@ -9,7 +9,8 @@
 
 using namespace ecs;
 
-Velocity::Velocity(const size_t entityId, const float velocityX, const float velocityY) : AComponent(entityId), _velocityX(velocityX), _velocityY(velocityY)
+Velocity::Velocity(const size_t entityId, const float velocityX, const float velocityY)
+    : AComponent(entityId), _velocityX(velocityX), _velocityY(velocityY)
 {
 }
 

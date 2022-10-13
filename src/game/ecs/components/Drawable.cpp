@@ -9,10 +9,13 @@
 
 using namespace ecs;
 
-Drawable::Drawable(const size_t entityId, sf::Texture &texture) : AComponent(entityId) { _sprite.setTexture(texture); }
+Drawable::Drawable(const size_t entityId, const sf::Texture &texture) : AComponent(entityId)
+{
+    _sprite.setTexture(texture);
+}
 
 sf::Sprite &Drawable::getSprite() { return _sprite; }
 
-void Drawable::setSprite(sf::Sprite sprite) { _sprite = sprite; }
+void Drawable::setSprite(const sf::Sprite &sprite) { _sprite = sprite; }
 
 Drawable::~Drawable() {}

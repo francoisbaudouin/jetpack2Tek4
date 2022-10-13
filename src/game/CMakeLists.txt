@@ -5,9 +5,7 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/game)
 # Exemple: add_subdirectory(connexion)
 set(TARGET_NAME r-type_client)
 
-set(SRC
-  ${SRC}
-)
+set(SRC ${SRC})
 
 set(INCDIRS ${INCROOT})
 

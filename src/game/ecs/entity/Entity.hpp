@@ -102,6 +102,7 @@ namespace ecs
         {
             if (!this->hasComponent<Component>())
                 throw ecs::NoComponent(typeid(Component).name(), this->getId());
+            delete std::any_cast<Component *>(_components.at(std::type_index(typeid(Component))));
             _components.erase(std::type_index(typeid(Component)));
         }
 

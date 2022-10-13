@@ -5,15 +5,10 @@
 ** TextureDatabase
 */
 
-
 /* THIS IS FOR THE FUTURE */
 
 #include "TextureDatabase.hpp"
 
-TextureDatabase::TextureDatabase()
-{
-}
+TextureDatabase::TextureDatabase() {}
 
-TextureDatabase::~TextureDatabase()
-{
-}
+TextureDatabase::~TextureDatabase() {}

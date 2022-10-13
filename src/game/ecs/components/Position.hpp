@@ -51,13 +51,13 @@ namespace ecs
         /**
          * @brief Get the position on the X axis
          *
-         * @return float
+         * @return float : position on concerned axis
          */
         float getX() const;
         /**
          * @brief Get the position on the Y axis
          *
-         * @return float
+         * @return float : position on concerned axis
          */
         float getY() const;
 

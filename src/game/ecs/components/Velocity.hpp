@@ -51,13 +51,13 @@ namespace ecs
         /**
          * @brief Get the velocity on the X axis
          *
-         * @return float
+         * @return float : velocity on concerned axis
          */
         float getX() const;
         /**
          * @brief Get the velocity on the Y axis
          *
-         * @return float
+         * @return float : velocity on concerned axis
          */
         float getY() const;
 
