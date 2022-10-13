@@ -14,10 +14,29 @@ namespace ecs
 {
     class AComponent : public IComponent {
       public:
+        /**
+         * @brief Construct a new AComponent object
+         *
+         * @param entityId : ID of the entity using this component
+         */
         AComponent(const size_t entityId);
+        /**
+         * @brief Destroy the AComponent object
+         *
+         */
         ~AComponent();
 
+        /**
+         * @brief Get ID of the entity using this component
+         *
+         * @return size_t
+         */
         size_t getEntityId() const override;
+        /**
+         * @brief Set ID of the entity using this component
+         *
+         * @param entityId
+         */
         void setEntityId(const size_t entityId) override;
 
       protected:

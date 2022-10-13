@@ -14,14 +14,51 @@ namespace ecs
 {
     class Position : public AComponent {
       public:
+        /**
+         * @brief Construct a new Position object
+         *
+         * @param entityId : ID of the entity using this component
+         * @param positionX : position on the X axis
+         * @param positionY : position on the Y axis
+         */
         Position(const size_t entityId, const float positionX, const float positionY);
+        /**
+         * @brief Destroy the Position object
+         *
+         */
         ~Position();
 
+        /**
+         * @brief Set the Position object
+         *
+         * @param positionX : position on the X axis
+         * @param positionY : position on the Y axis
+         */
         void setPosition(const float positionX, const float positionY);
+        /**
+         * @brief Set the position on the X axis
+         *
+         * @param positionX : position on the X axis
+         */
         void setX(const float positionX);
+        /**
+         * @brief Set the position on the Y axis
+         *
+         * @param positionY : position on the Y axis
+         */
         void setY(const float positionY);
 
+        /**
+         * @brief Get the position on the X axis
+         *
+         * @return float
+         */
         float getX() const;
+        /**
+         * @brief Get the position on the Y axis
+         *
+         * @return float
+         */
         float getY() const;
 
       private:
