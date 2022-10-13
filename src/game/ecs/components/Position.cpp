@@ -9,7 +9,8 @@
 
 using namespace ecs;
 
-Position::Position(const size_t entityId, const float positionX, const float positionY) : AComponent(entityId), _positionX(positionX), _positionY(positionY)
+Position::Position(const size_t entityId, const float positionX, const float positionY)
+    : AComponent(entityId), _positionX(positionX), _positionY(positionY)
 {
 }
 
