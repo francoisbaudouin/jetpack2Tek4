@@ -24,7 +24,7 @@ namespace ecs
         ASystem(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
         ~ASystem();
         /**
-         * run the system
+         * @brief run the system
          **/
         void run() override;
 
