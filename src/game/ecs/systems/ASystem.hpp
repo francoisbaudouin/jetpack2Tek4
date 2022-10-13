@@ -17,9 +17,15 @@ namespace ecs
 {
     class ASystem : public ISystem {
       public:
+        /**
+         * @brief Abstract class for systems
+         * @param entityMap reference to the game's entity map
+         **/
         ASystem(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
         ~ASystem();
-
+        /**
+         * run the system
+         **/
         void run() override;
 
       protected:

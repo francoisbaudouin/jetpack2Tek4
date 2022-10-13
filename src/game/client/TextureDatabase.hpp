@@ -12,6 +12,10 @@
 
 class TextureDatabase {
   public:
+    /**
+     * @brief Construct a new Texture Database object
+     *
+     */
     TextureDatabase();
     ~TextureDatabase();
 
