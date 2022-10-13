@@ -30,7 +30,7 @@ namespace ecs
          * @param event SFML window's Event
          * @return RType's events vector
          */
-        std::vector<RTypeEvent> getInput(sf::Event &event);
+        std::vector<RTypeEvent> getInput(const sf::Event &event);
 
       protected:
       private:
@@ -39,19 +39,19 @@ namespace ecs
          *
          * @param event SFML window's Event
          */
-        void bindEventType(sf::Event &event);
+        void bindEventType(const sf::Event &event);
         /**
          * @brief bind event MouseKey to RTypeEvent MouseKey
          *
          * @param event SFML window's Event
          */
-        void bindMouseKey(sf::Event &event);
+        void bindMouseKey(const sf::Event &event);
         /**
          * @brief bind event KeyboardKey to RTypeEvent KeyboardKey
          *
          * @param event SFML window's Event
          */
-        void bindKeyboardKey(sf::Event &event);
+        void bindKeyboardKey(const sf::Event &event);
         /**
          * @brief update the returned events vector
          *

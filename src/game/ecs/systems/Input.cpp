@@ -13,7 +13,7 @@ Input::Input(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap
 
 Input::~Input() {}
 
-void Input::bindEventType(sf::Event &event)
+void Input::bindEventType(const sf::Event &event)
 {
     switch (event.type) {
         case sf::Event::KeyPressed: _event.eventType = EventType::PRESSED; break;
@@ -24,7 +24,7 @@ void Input::bindEventType(sf::Event &event)
     }
 }
 
-void Input::bindKeyboardKey(sf::Event &event)
+void Input::bindKeyboardKey(const sf::Event &event)
 {
     switch (event.key.code) {
         case sf::Keyboard::Z: _event.keyboardKey = Device::KeyBoardKey::Z; break;
@@ -36,7 +36,7 @@ void Input::bindKeyboardKey(sf::Event &event)
     }
 }
 
-void Input::bindMouseKey(sf::Event &event)
+void Input::bindMouseKey(const sf::Event &event)
 {
     switch (event.key.code) {
         case sf::Mouse::Button::Left: _event.mouseKey = Device::MouseKey::LEFT; break;
@@ -58,7 +58,8 @@ void Input::updateEvents()
     if (_event.eventType != EventType::UNKNOWN_TYPE && _event.eventType != EventType::REALEASED)
         _events.push_back(_event);
 }
-std::vector<RTypeEvent> Input::getInput(sf::Event &event)
+
+std::vector<RTypeEvent> Input::getInput(const sf::Event &event)
 {
     _event.keyboardKey = Device::KeyBoardKey::UNKNOWN_KEYBOARD_KEY;
     _event.mouseKey = Device::MouseKey::UNKNOWN_MOUSE_KEY;

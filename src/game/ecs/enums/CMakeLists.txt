@@ -5,7 +5,6 @@ set(SRC
     ${SRC}
     ${SRCROOT}/event.hpp
     ${SRCROOT}/controlls.hpp
-
     PARENT_SCOPE
 )
 
