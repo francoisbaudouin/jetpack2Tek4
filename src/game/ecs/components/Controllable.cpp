@@ -14,15 +14,15 @@ Controllable::Controllable(const size_t entityId, std::pair<Device::KeyBoardKey,
     std::pair<Device::KeyBoardKey, Controlls> downControll)
     : AComponent(entityId)
 {
-  _controllMap = {upControll, rightControll, leftControll, downControll};
+    _controllMap = {upControll, rightControll, leftControll, downControll};
 }
 
 Controllable::~Controllable() {}
 
 Controlls Controllable::getAssociatedControll(Device::KeyBoardKey key)
 {
-  if (key == Device::KeyBoardKey::UNKNOWN_KEYBOARD_KEY) {
-    return Controlls::UNDEFINED;
-  }
-  return _controllMap[key];
+    if (key == Device::KeyBoardKey::UNKNOWN_KEYBOARD_KEY) {
+        return Controlls::UNDEFINED;
+    }
+    return _controllMap[key];
 }

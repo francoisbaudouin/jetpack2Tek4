@@ -6,9 +6,6 @@
 */
 
 #include "Entity.hpp"
-#include "../components/Drawable.hpp"
-#include "../components/Position.hpp"
-#include "../components/Velocity.hpp"
 
 using namespace ecs;
 

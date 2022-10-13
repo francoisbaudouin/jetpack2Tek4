@@ -6,10 +6,6 @@
 */
 
 #include "Display.hpp"
-#include "../components/Drawable.hpp"
-#include "../components/Position.hpp"
-
-#include <iostream>
 
 using namespace ecs;
 

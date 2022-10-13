@@ -14,10 +14,25 @@ namespace ecs
 {
     class Drawable : public AComponent {
       public:
+        /**
+         * @brief Construct a new Drawable component
+         *
+         * @param entityId related entity id
+         * @param texture wanted texture for the drawable entity
+         */
         Drawable(const size_t entityId, sf::Texture &texture);
         ~Drawable();
-
+        /**
+         * @brief Get the entity Sprite
+         *
+         * @return reference to the sf::Sprite of the entity
+         */
         sf::Sprite &getSprite();
+        /**
+         * @brief Set the entity Sprite
+         *
+         * @param sprite sprite to set
+         */
         void setSprite(sf::Sprite sprite);
 
       protected:

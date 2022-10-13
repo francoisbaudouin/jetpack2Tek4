@@ -15,22 +15,43 @@ namespace ecs
 {
     class Exception : public std::exception {
       public:
-        Exception(std::string const &msg) throw();
+        /**
+         * @brief Construct a new Exception object
+         *
+         * @param message : message to throw
+         */
+        Exception(std::string const &message) throw();
+        /**
+         * @brief return the message
+         *
+         * @return const char* : message
+         */
         const char *what() const throw() override;
 
       protected:
       private:
-        std::string _str;
+        std::string _string;
     };
 
     class Test : public Exception {
       public:
-        Test(std::string const &msg);
+        /**
+         * @brief exception threw during test
+         *
+         * @param message : message to throw
+         */
+        Test(std::string const &message);
     };
 
     class NoComponent : public Exception {
       public:
-        NoComponent(std::string const &msg, const size_t entityId);
+        /**
+         * @brief exception threw if an entity doesn't have the component needed
+         *
+         * @param message : message to throw
+         * @param entityId : id of the entity
+         */
+        NoComponent(std::string const &message, const size_t entityId);
     };
 } // namespace ecs
 
