@@ -9,5 +9,6 @@
 
 TEST(simple_test, return_zero)
 {
-    
+    int i = 0;
+    EXPECT_EQ(i, 0);
 }
