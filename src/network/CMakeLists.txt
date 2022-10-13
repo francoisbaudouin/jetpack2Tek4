@@ -3,7 +3,7 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/network)
 
 # adding subb diirectory
 add_subdirectory(initialization)
-
+add_subdirectory(exception)
 set(TARGET_NAME r-type_server)
 
 include(CompilerFlags)

@@ -4,6 +4,7 @@
 ** File description:
 ** main
 */
+
 #define RUNNING 1
 
 #include <iostream>

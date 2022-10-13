@@ -7,6 +7,8 @@
 
 #include <fstream>
 #include "Loadconfig.hpp"
+#include <string>
+
 namespace initialization
 {
     Loadconfig::Loadconfig() {}
@@ -17,7 +19,12 @@ namespace initialization
     {
         std::ofstream configFile;
 
-        configFile.open("../config.ini");
+        if (configFile.is_open()) {
+
+        } else {
+            
+        }
+        configFile.close();
         return (true);
     }
 } // namespace initialization
