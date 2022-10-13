@@ -10,7 +10,6 @@
 
 #include <vector>
 #include "../components/Controllable.hpp"
-#include "../components/Position.hpp"
 #include "../components/Velocity.hpp"
 #include "../enums/controlls.hpp"
 #include "ASystem.hpp"
