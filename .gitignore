@@ -31,8 +31,11 @@
 *.out
 *.app
 
-#folder buidl
+# Folder build
 build
 .vscode
 r-type_server
 r-type_client
+
+# Conan File genereted
+conanbuildinfo.cmake
