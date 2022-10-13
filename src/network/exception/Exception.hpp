@@ -11,7 +11,7 @@
 #include <exception>
 #include <iostream>
 
-namespace jetpack2tek4
+namespace rtype
 {
     class Exception : public std::exception {
       public:
@@ -38,6 +38,6 @@ namespace jetpack2tek4
         InvalideUnknownFile(std::string const &msg);
     };
 
-} // namespace jetpack2tek4
+} // namespace rtype
 
 #endif /* !EXCEPTION_HPP_ */
