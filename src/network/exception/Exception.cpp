@@ -7,13 +7,13 @@
 
 #include "Exception.hpp"
 
-rtype::Exception::Exception(const std::string &str) throw() : _str(str) {}
+rtype::Exception::Exception(const std::string &string) throw() : _string(string) {}
 
-const char *rtype::Exception::what() const throw() { return (_str.c_str()); }
+const char *rtype::Exception::what() const throw() { return (_string.c_str()); }
 
-rtype::Test::Test(std::string const &msg) : Exception(msg) {}
+rtype::Test::Test(std::string const &message) : Exception(message) {}
 
-rtype::InvalideUnknownFile::InvalideUnknownFile(std::string const &msg)
-    : Exception("error: " + msg + " config.ini is unreachable")
+rtype::InvalideUnknownFile::InvalideUnknownFile(std::string const &message)
+    : Exception("error: " + message + " config.ini is unreachable")
 {
 }

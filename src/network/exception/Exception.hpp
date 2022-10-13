@@ -15,17 +15,17 @@ namespace rtype
 {
     class Exception : public std::exception {
       public:
-        Exception(std::string const &msg) throw();
+        Exception(std::string const &message) throw();
         const char *what() const throw();
 
       protected:
       private:
-        std::string _str;
+        std::string _string;
     };
 
     class Test : public Exception {
       public:
-        Test(std::string const &msg);
+        Test(std::string const &message);
     };
 
     /*
@@ -35,7 +35,7 @@ namespace rtype
     */
     class InvalideUnknownFile : public Exception {
       public:
-        InvalideUnknownFile(std::string const &msg);
+        InvalideUnknownFile(std::string const &message);
     };
 
 } // namespace rtype
