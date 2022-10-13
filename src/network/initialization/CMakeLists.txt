@@ -3,6 +3,13 @@ set(SRCROOT ${SRCROOT}/initialization)
 
 set(SRC
     ${SRC}
-    ${SRCROOT}/initialization.cpp
+    ${SRCROOT}/Loadconfig.cpp
+    ${SRCROOT}/Loadconfig.hpp
+    ${SRCROOT}/configuration.cpp
     PARENT_SCOPE
 )
+
+set(INCDIRS
+    ${INCDIRS}
+    ${INCROOT}
+    PARENT_SCOPE)

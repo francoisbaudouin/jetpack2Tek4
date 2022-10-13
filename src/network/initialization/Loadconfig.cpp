@@ -6,8 +6,9 @@
 */
 
 #include <fstream>
-#include "Loadconfig.hpp"
 #include <string>
+#include "../exception/Exception.hpp"
+#include "Loadconfig.hpp"
 
 namespace initialization
 {
@@ -17,12 +18,11 @@ namespace initialization
 
     bool Loadconfig::load_file()
     {
-        std::ofstream configFile;
+        std::ofstream configFile("../config.atom");
 
         if (configFile.is_open()) {
-
         } else {
-            
+            throw rtype::InvalideUnknownFile("Can't open config file:");
         }
         configFile.close();
         return (true);

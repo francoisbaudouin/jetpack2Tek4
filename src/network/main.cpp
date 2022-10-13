@@ -7,40 +7,45 @@
 
 #define RUNNING 1
 
-#include <iostream>
-#include <boost/asio.hpp>
 #include <boost/array.hpp>
+#include <boost/asio.hpp>
 #include <ctime>
+#include <iostream>
 #include <string>
+#include "initialization/Loadconfig.hpp"
 
 std::string make_daytime_string()
 {
-	std::time_t now = std::time(0);
+    std::time_t now = std::time(0);
 
-	return std::ctime(&now);
+    return std::ctime(&now);
 }
 
 int main()
 {
-	try {
-		boost::array<char, 1> receiveBuffer;
-		boost::asio::io_context ioContext;
-		boost::asio::ip::udp::endpoint remoteEndpoint;
-		boost::asio::ip::udp::socket socket(ioContext, boost::asio::ip::udp::endpoint(boost::asio::ip::udp::v4(), 8080));
-		boost::system::error_code ignoredError;
-		std::string message;
+    // initialization::Loadconfig congfig;
 
-		while (RUNNING) {
-			socket.receive_from(boost::asio::buffer(receiveBuffer), remoteEndpoint);
-			message = make_daytime_string();
-			socket.send_to(boost::asio::buffer(message), remoteEndpoint, 0, ignoredError);
-		}
-	} catch (std::exception &e) {
-		std::cerr << e.what() << std::endl;
-		return 84;
-	}
+    initialization::Loadconfig test;
+    try {
+        boost::array<char, 1> receiveBuffer;
+        boost::asio::io_context ioContext;
+        boost::asio::ip::udp::endpoint remoteEndpoint;
+        boost::asio::ip::udp::socket socket(
+            ioContext, boost::asio::ip::udp::endpoint(boost::asio::ip::udp::v4(), 8080));
+        boost::system::error_code ignoredError;
+        std::string message;
 
-	return 0;
+        while (RUNNING) {
+            socket.receive_from(boost::asio::buffer(receiveBuffer), remoteEndpoint);
+            message = make_daytime_string();
+            socket.send_to(boost::asio::buffer(message), remoteEndpoint, 0, ignoredError);
+        }
+    } catch (std::exception &e) {
+        std::cerr << e.what() << std::endl;
+        return 84;
+    }
+
+    return 0;
 }
 
 /* std::string read_(boost::asio::ip::tcp::socket & socket) {
