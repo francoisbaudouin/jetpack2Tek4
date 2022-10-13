@@ -14,6 +14,7 @@
 #include <typeindex>
 #include <typeinfo>
 #include "../exceptions/Exception.hpp"
+#include "../components/IComponent.hpp"
 #include <unordered_map>
 
 namespace ecs
@@ -23,9 +24,8 @@ namespace ecs
         /**
          * @brief Construct a new Entity object
          *
-         * @param entityId : Id of the entity
          */
-        Entity(const size_t entityId);
+        Entity();
         /**
          * @brief Destroy the Entity object
          *
@@ -46,7 +46,7 @@ namespace ecs
             if (this->hasComponent<Component>())
                 return (this->getComponent<Component>());
 
-            Component *component(new Component(std::forward<ComponentArguments>(arguments)...));
+            Component *component(new Component(this->getId(), std::forward<ComponentArguments>(arguments)...));
 
             _components.insert({std::type_index(typeid(Component)), component});
             return (*component);
@@ -74,7 +74,7 @@ namespace ecs
         {
             if (!this->hasComponent<Component>())
                 throw ecs::NoComponent(typeid(Component).name(), this->getId());
-            Component *component = std::any_cast<Component *>(_components.at(std::type_index(typeid(Component))));
+            Component *component = static_cast<Component *>(_components.at(std::type_index(typeid(Component))));
             return (*component);
         }
 
@@ -102,7 +102,7 @@ namespace ecs
         {
             if (!this->hasComponent<Component>())
                 throw ecs::NoComponent(typeid(Component).name(), this->getId());
-            delete std::any_cast<Component *>(_components.at(std::type_index(typeid(Component))));
+            delete static_cast<Component *>(_components.at(std::type_index(typeid(Component))));
             _components.erase(std::type_index(typeid(Component)));
         }
 
@@ -111,10 +111,10 @@ namespace ecs
          *
          * @return size_t : id of the entity
          */
-        size_t getId();
+        size_t getId() const;
 
       private:
-        std::unordered_map<std::type_index, std::any> _components;
+        std::unordered_map<std::type_index, IComponent *> _components;
         size_t _id;
     };
 } // namespace ecs

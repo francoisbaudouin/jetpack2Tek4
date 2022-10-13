@@ -19,3 +19,13 @@ NoComponent::NoComponent(std::string const &message, size_t entityId)
     : Exception("error: Entity " + std::to_string(entityId) + " doesn't have " + message + " component")
 {
 }
+
+EntityAlreadyExisting::EntityAlreadyExisting(size_t entityId)
+    : Exception("error: Entity " + std::to_string(entityId) + " exist already")
+{
+}
+
+EntityNotExisting::EntityNotExisting(size_t entityId)
+    : Exception("error: Entity " + std::to_string(entityId) + " doesn't already")
+{
+}

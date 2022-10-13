@@ -53,6 +53,26 @@ namespace ecs
          */
         NoComponent(std::string const &message, const size_t entityId);
     };
+
+    class EntityAlreadyExisting : public Exception {
+      public:
+        /**
+         * @brief exception threw if an entity already exist in the Ecs with the same id
+         *
+         * @param entityId : id of the entity
+         */
+        EntityAlreadyExisting(const size_t entityId);
+    };
+
+    class EntityNotExisting : public Exception {
+      public:
+        /**
+         * @brief exception threw if an entity doesn't exist in the Ecs with the same id
+         *
+         * @param entityId : id of the entity
+         */
+        EntityNotExisting(const size_t entityId);
+    };
 } // namespace ecs
 
 #endif /* !EXCEPTION_HPP_ */
