@@ -29,13 +29,13 @@ namespace ecs
         /**
          * @brief Get ID of the entity using this component
          *
-         * @return size_t
+         * @return size_t : ID of the entity
          */
         size_t getEntityId() const override;
         /**
          * @brief Set ID of the entity using this component
          *
-         * @param entityId
+         * @param entityId : new ID for the entity
          */
         void setEntityId(const size_t entityId) override;
 
