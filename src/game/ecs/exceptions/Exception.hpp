@@ -18,9 +18,9 @@ namespace ecs
         /**
          * @brief Construct a new Exception object
          *
-         * @param msg : message to throw
+         * @param message : message to throw
          */
-        Exception(std::string const &msg) throw();
+        Exception(std::string const &message) throw();
         /**
          * @brief return the message
          *
@@ -30,7 +30,7 @@ namespace ecs
 
       protected:
       private:
-        std::string _str;
+        std::string _string;
     };
 
     class Test : public Exception {
@@ -38,9 +38,9 @@ namespace ecs
         /**
          * @brief exception threw during test
          *
-         * @param msg : message to throw
+         * @param message : message to throw
          */
-        Test(std::string const &msg);
+        Test(std::string const &message);
     };
 
     class NoComponent : public Exception {
@@ -48,10 +48,10 @@ namespace ecs
         /**
          * @brief exception threw if an entity doesn't have the component needed
          *
-         * @param msg : message to throw
+         * @param message : message to throw
          * @param entityId : id of the entity
          */
-        NoComponent(std::string const &msg, const size_t entityId);
+        NoComponent(std::string const &message, const size_t entityId);
     };
 } // namespace ecs
 

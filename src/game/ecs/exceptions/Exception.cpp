@@ -9,11 +9,13 @@
 
 using namespace ecs;
 
-Exception::Exception(const std::string &str) throw() : _str(str) {}
+Exception::Exception(const std::string &message) throw() : _string(message) {}
 
-const char *Exception::what() const throw() { return (_str.c_str()); }
+const char *Exception::what() const throw() { return (_string.c_str()); }
 
-Test::Test(std::string const &msg) : Exception(msg) {}
+Test::Test(std::string const &message) : Exception(message) {}
 
-NoComponent::NoComponent(std::string const &msg, size_t entityId)
-: Exception("error: Entity " + std::to_string(entityId) + " doesn't have " + msg + " component") {}
+NoComponent::NoComponent(std::string const &message, size_t entityId)
+    : Exception("error: Entity " + std::to_string(entityId) + " doesn't have " + message + " component")
+{
+}
