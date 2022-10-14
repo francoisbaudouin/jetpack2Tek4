@@ -30,7 +30,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install Conan
-      run: pip install conan pytest && conan --version
+      run: pip install conan pytest && conan --version && conan user
 
     - name: Configure Conan
       run : mkdir build && cd build && conan install ../. -c tools.system.package_manager:mode=install
