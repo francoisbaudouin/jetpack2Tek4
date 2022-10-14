@@ -8,28 +8,17 @@
 #ifndef __ENTITY__
 #define __ENTITY__
 
-#include <any>
-#include <array>
-#include <memory>
 #include <typeindex>
 #include <typeinfo>
-#include "../exceptions/Exception.hpp"
 #include "../components/IComponent.hpp"
+#include "../exceptions/Exception.hpp"
 #include <unordered_map>
 
 namespace ecs
 {
     class Entity {
       public:
-        /**
-         * @brief Construct a new Entity object
-         *
-         */
         Entity();
-        /**
-         * @brief Destroy the Entity object
-         *
-         */
         ~Entity();
 
         /**

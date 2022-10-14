@@ -73,6 +73,24 @@ namespace ecs
          */
         EntityNotExisting(const size_t entityId);
     };
+
+    class SystemAlreadyExisting : public Exception {
+      public:
+        /**
+         * @brief exception threw if a system already exist in the Ecs
+         *
+         */
+        SystemAlreadyExisting();
+    };
+
+    class SystemNotExisting : public Exception {
+      public:
+        /**
+         * @brief exception threw if a system doesn't exist in the Ecs
+         *
+         */
+        SystemNotExisting();
+    };
 } // namespace ecs
 
 #endif /* !EXCEPTION_HPP_ */

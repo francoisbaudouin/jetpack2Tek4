@@ -10,7 +10,7 @@
 
 using namespace ecs;
 
-Ecs::Ecs() : _entities() {}
+Ecs::Ecs() : _entities(), _systems() {}
 
 Ecs::~Ecs() { _entities.clear(); }
 
@@ -38,10 +38,7 @@ Entity &Ecs::getEntity(const size_t id)
     return (*_entities.at(id).get());
 }
 
-std::unordered_map<size_t, std::shared_ptr<Entity>> &Ecs::getEntities()
-{
-  return (_entities);
-}
+std::unordered_map<size_t, std::shared_ptr<Entity>> &Ecs::getEntities() { return (_entities); }
 
 void Ecs::removeEntity(const size_t id)
 {
@@ -50,7 +47,12 @@ void Ecs::removeEntity(const size_t id)
     _entities.erase(id);
 }
 
-size_t Ecs::getNumberEntities() const
+size_t Ecs::getNumberEntities() const { return (_entities.size()); }
+
+void Ecs::clearSystems()
 {
-  return (_entities.size());
+    while (_systems.size() > 0) {
+        delete _systems.begin()->second;
+        _systems.erase(_systems.begin()->first);
+    }
 }
