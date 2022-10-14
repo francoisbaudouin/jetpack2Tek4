@@ -1,5 +1,5 @@
-set(INCROOT ${INCROOT}/network/exception)
-set(SRCROOT ${SRCROOT}/network/exception)
+set(INCROOT ${INCROOT}/exception)
+set(SRCROOT ${SRCROOT}/exception)
 
 set(SRC
     ${SRC}

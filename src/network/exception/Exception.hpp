@@ -16,7 +16,7 @@ namespace rtype
     class Exception : public std::exception {
       public:
         Exception(std::string const &message) throw();
-        const char *what() const throw();
+        const char *what() const throw() override;
 
       protected:
       private:

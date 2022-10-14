@@ -12,7 +12,7 @@
 #include <ctime>
 #include <iostream>
 #include <string>
-#include "initialization/Loadconfig.hpp"
+#include "config/Loadconfig.hpp"
 
 std::string make_daytime_string()
 {
@@ -24,8 +24,7 @@ std::string make_daytime_string()
 int main()
 {
     // initialization::Loadconfig congfig;
-
-    initialization::Loadconfig test;
+    Loadconfig test;
     try {
         boost::array<char, 1> receiveBuffer;
         boost::asio::io_context ioContext;

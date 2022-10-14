@@ -1,5 +1,5 @@
-set(INCROOT ${INCROOT}/initialization)
-set(SRCROOT ${SRCROOT}/initialization)
+set(SRCROOT ${SRCROOT}/config)
+set(INCROOT ${INCROOT}/config)
 
 set(SRC
     ${SRC}
@@ -12,4 +12,5 @@ set(SRC
 set(INCDIRS
     ${INCDIRS}
     ${INCROOT}
-    PARENT_SCOPE)
+    PARENT_SCOPE
+)
