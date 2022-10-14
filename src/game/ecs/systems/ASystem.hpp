@@ -19,9 +19,9 @@ namespace ecs
       public:
         /**
          * @brief Abstract class for systems
-         * @param entityMap reference to the game's entity map
+         * @param manager reference to the game's entity map
          **/
-        ASystem(std::shared_ptr<Ecs> &entityMap);
+        ASystem(std::shared_ptr<Ecs> &manager);
         ~ASystem();
         /**
          * @brief run the system
@@ -29,7 +29,7 @@ namespace ecs
         void run() override;
 
       protected:
-        std::shared_ptr<Ecs> _entityMap;
+        std::shared_ptr<Ecs> _manager;
 
       private:
     };

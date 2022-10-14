@@ -9,16 +9,15 @@
 
 using namespace ecs;
 
-Display::Display(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap) : ASystem(entityMap) {}
+Display::Display(std::shared_ptr<Ecs> &manager) : ASystem(manager) {}
 
 Display::~Display() {}
 
 void Display::run(sf::RenderWindow &window)
 {
-    if (_entityMap.size() == 0) {
+    if (_manager->getNumberEntities() == 0)
         return;
-    }
-    for (auto entity : _entityMap) {
+    for (auto &entity : _manager->getEntities()) {
         if (entity.second->hasComponent<Drawable>() && entity.second->hasComponent<Position>()) {
             Drawable &drawable = entity.second->getComponent<Drawable>();
             Position &position = entity.second->getComponent<Position>();

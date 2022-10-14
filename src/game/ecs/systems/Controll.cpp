@@ -9,11 +9,11 @@
 
 using namespace ecs;
 
-Controll::Controll(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap) : ASystem(entityMap) {}
+Controll::Controll(std::shared_ptr<Ecs> &manager) : ASystem(manager) {}
 
 Controll::~Controll() {}
 
-void changeVelocity(Velocity &velocity, Controllable &controllable, std::vector<RTypeEvent> rTypeEvents)
+void changeVelocity(Velocity &velocity, Controllable &controllable, const std::vector<RTypeEvent> &rTypeEvents)
 {
     float velocityValueX = 0;
     float velocityValueY = 0;
@@ -32,11 +32,11 @@ void changeVelocity(Velocity &velocity, Controllable &controllable, std::vector<
     velocity.setVelocity(velocityValueX, velocityValueY);
 }
 
-void Controll::run(std::vector<RTypeEvent> rTypeEvents)
+void Controll::run(const std::vector<RTypeEvent> &rTypeEvents)
 {
-    if (_entityMap.size() == 0)
+    if (_manager->getNumberEntities() == 0)
         return;
-    for (auto entity : _entityMap) {
+    for (auto &entity : _manager->getEntities()) {
         if (entity.second->hasComponent<Controllable>() && entity.second->hasComponent<Velocity>()) {
             Velocity &velocity = entity.second->getComponent<Velocity>();
             Controllable &controllable = entity.second->getComponent<Controllable>();

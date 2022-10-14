@@ -17,9 +17,9 @@ namespace ecs
         /**
          * @brief Construct a new Move system
          *
-         * @param entityMap : list of all the entity
+         * @param manager : list of all the entity
          */
-        Move(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
+        Move(std::shared_ptr<Ecs> &manager);
         /**
          * @brief Destroy the Move object
          *
@@ -31,7 +31,7 @@ namespace ecs
          *
          * @param entity : entity to move
          */
-        void applyVelocity(std::shared_ptr<ecs::Entity> &entity);
+        void applyVelocity(Entity &entity);
 
         /**
          * @brief check all entity if they can move then call 'move()' on the ones that can

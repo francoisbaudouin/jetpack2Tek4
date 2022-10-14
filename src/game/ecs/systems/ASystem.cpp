@@ -9,7 +9,7 @@
 
 using namespace ecs;
 
-ASystem::ASystem(std::shared_ptr<Ecs> &entityMap) : _entityMap(entityMap) {}
+ASystem::ASystem(std::shared_ptr<Ecs> &manager) : _manager(manager) {}
 
 ASystem::~ASystem() {}
 

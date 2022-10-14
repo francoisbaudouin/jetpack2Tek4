@@ -22,8 +22,9 @@ namespace ecs
          *
          * @param entityMap reference to the game's entity map
          */
-        Display(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
+        Display(std::shared_ptr<Ecs> &manager);
         ~Display();
+
         /**
          * @brief run the display system
          *
