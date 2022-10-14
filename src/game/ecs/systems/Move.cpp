@@ -26,7 +26,6 @@ void Move::applyVelocity(Entity &entity)
 
 void Move::run()
 {
-    std::cout << _manager->getNumberEntities() << std::endl;
     for (auto &entity : _manager->getEntities()) {
         if (entity.second->hasComponent<Position>() && entity.second->hasComponent<Velocity>())
             this->applyVelocity(_manager->getEntity(entity.first));
