@@ -15,8 +15,18 @@ int main(void)
 {
     Ecs ecs;
     Entity entity;
-    ecs.createEntity();
+    auto &ent = ecs.createEntity();
+    std::cout << "test" << std::endl;
     ecs.addEntity(entity);
-    std::cout << ecs.getNumberEntities() << std::endl;
+    std::cout << "test" << std::endl;
+
+    ent.addComponent<Position>(0, 0);
+    std::cout << "test" << std::endl;
+
+    auto &ent2 = ecs.getEntity(ent.getId());
+    std::cout << "test" << std::endl;
+
+    std::cout << ent2.hasComponent<Position>() << std::endl;
+    std::cout << "test" << std::endl;
     return (0);
 }

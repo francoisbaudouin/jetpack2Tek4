@@ -9,9 +9,9 @@
 #define ASYSTEM_HPP_
 
 #include <memory>
-#include "../entity/Entity.hpp"
-#include "ISystem.hpp"
 #include <unordered_map>
+#include "../Ecs.hpp"
+#include "ISystem.hpp"
 
 namespace ecs
 {
@@ -21,7 +21,7 @@ namespace ecs
          * @brief Abstract class for systems
          * @param entityMap reference to the game's entity map
          **/
-        ASystem(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
+        ASystem(std::shared_ptr<Ecs> &entityMap);
         ~ASystem();
         /**
          * @brief run the system
@@ -29,7 +29,7 @@ namespace ecs
         void run() override;
 
       protected:
-        std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> _entityMap;
+        std::shared_ptr<Ecs> _entityMap;
 
       private:
     };

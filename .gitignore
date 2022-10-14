@@ -26,6 +26,9 @@
 *.a
 *.lib
 
+# crash files
+vgcore.*
+
 # Executables
 *.exe
 *.out

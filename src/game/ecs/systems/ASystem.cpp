@@ -9,7 +9,7 @@
 
 using namespace ecs;
 
-ASystem::ASystem(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap) : _entityMap(entityMap) {}
+ASystem::ASystem(std::shared_ptr<Ecs> &entityMap) : _entityMap(entityMap) {}
 
 ASystem::~ASystem() {}
 
