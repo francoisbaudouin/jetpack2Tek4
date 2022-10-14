@@ -16,25 +16,31 @@ Ecs::~Ecs() { _entities.clear(); }
 
 Entity &Ecs::createEntity()
 {
-    Entity entity;
+    Entity *entity = new Entity();
+    std::shared_ptr<Entity> shEntity(entity);
 
-    _entities.insert({entity.getId(), entity});
-    return (_entities.at(entity.getId()));
+    _entities.insert_or_assign(shEntity->getId(), std::move(shEntity));
+    return (*entity);
 }
 
 Entity &Ecs::addEntity(const Entity &entity)
 {
     if (_entities.contains(entity.getId()))
         throw EntityAlreadyExisting(entity.getId());
-    _entities.insert({entity.getId(), entity});
-    return (_entities.at(entity.getId()));
+    _entities.insert_or_assign(entity.getId(), std::move(std::make_unique<Entity>(entity)));
+    return (*_entities.at(entity.getId()).get());
 }
 
 Entity &Ecs::getEntity(const size_t id)
 {
     if (!_entities.contains(id))
         throw EntityAlreadyExisting(id);
-    return (_entities.at(id));
+    return (*_entities.at(id).get());
+}
+
+std::unordered_map<size_t, std::shared_ptr<Entity>> &Ecs::getEntities()
+{
+  return (_entities);
 }
 
 void Ecs::removeEntity(const size_t id)

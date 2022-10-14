@@ -25,13 +25,16 @@ namespace ecs
 
         Entity &getEntity(const size_t id);
 
+        std::unordered_map<size_t, std::shared_ptr<Entity>> &getEntities();
+
         void removeEntity(const size_t id);
 
         size_t getNumberEntities() const;
 
       private:
-        std::unordered_map<size_t, Entity> _entities;
+        std::unordered_map<size_t, std::shared_ptr<Entity>> _entities;
     };
 } // namespace ecs
 
 #endif /* !ECS_HPP_ */
+;
