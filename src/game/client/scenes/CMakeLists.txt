@@ -8,6 +8,10 @@ set(SRC
     ${INCROOT}/IScene.hpp
     ${INCROOT}/SceneSystem.cpp
     ${INCROOT}/SceneSystem.hpp
+    ${INCROOT}/GameScene.cpp
+    ${INCROOT}/GameScene.hpp
+    ${INCROOT}/MainMenu.cpp
+    ${INCROOT}/MainMenu.hpp
     PARENT_SCOPE
 )
 
