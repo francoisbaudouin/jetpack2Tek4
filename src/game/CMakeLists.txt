@@ -5,6 +5,8 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/game)
 # Exemple: add_subdirectory(connexion)
 set(TARGET_NAME r-type_client)
 
+include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
+
 include(CompilerFlags)
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
