@@ -22,10 +22,6 @@ namespace ecs
          * @param sizeY : size on the Y axis
          */
         HitBox(const size_t entityId, const float sizeX, const float sizeY);
-        /**
-         * @brief Destroy the HitBox object
-         *
-         */
         ~HitBox();
 
         /**
