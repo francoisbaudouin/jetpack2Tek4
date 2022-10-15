@@ -5,23 +5,21 @@
 ** main
 */
 
-#include <iostream>
-#include "ecs/Ecs.hpp"
-#include "ecs/components/Position.hpp"
-#include "ecs/components/Velocity.hpp"
-#include "ecs/systems/Move.hpp"
+#include "client/Client.hpp"
 
 using namespace ecs;
 
 int main(void)
 {
-    Ecs ecs;
-    auto &ent = ecs.createEntity();
-    auto uEcs = std::make_shared<Ecs>(ecs);
-    Move move(uEcs);
+    Client client;
+    client.run();
+    // Ecs ecs;
+    // auto &ent = ecs.createEntity();
+    // auto uEcs = std::make_shared<Ecs>(ecs);
+    // //Move move(uEcs);
 
-    ent.addComponent<Position>(0, 0);
-    ent.addComponent<Velocity>(0, 0);
-    move.run();
+    // ent.addComponent<Position>(0, 0);
+    // ent.addComponent<Velocity>(0, 0);
+    // //move.run();
     return (0);
 }

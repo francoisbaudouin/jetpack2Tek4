@@ -14,6 +14,7 @@
 
 namespace ecs
 {
+    class Ecs;
     class Input : public ASystem {
       public:
         /**

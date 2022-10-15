@@ -29,7 +29,8 @@ namespace ecs
         Controllable(const size_t entityId, const std::pair<Device::KeyBoardKey, Controlls> &upControll,
             const std::pair<Device::KeyBoardKey, Controlls> &rightControll,
             const std::pair<Device::KeyBoardKey, Controlls> &leftControll,
-            const std::pair<Device::KeyBoardKey, Controlls> &downControll);
+            const std::pair<Device::KeyBoardKey, Controlls> &downControll,
+            const std::pair<Device::KeyBoardKey, Controlls> &fireControll);
         ~Controllable();
 
         /**

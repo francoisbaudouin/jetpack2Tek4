@@ -34,13 +34,12 @@ namespace ecs
         size_t getNumberEntities() const;
 
         //              SYSTEM MANAGEMENT
-        template <class System> void addSystem()
+        template <class System> void addSystem(std::shared_ptr<Ecs> &manager)
         {
             if (_systems.contains(std::type_index(typeid(System))))
                 throw SystemAlreadyExisting();
 
-            auto uEcs = std::make_shared<Ecs>(*this);
-            _systems.insert({std::type_index(typeid(System)), new System(uEcs)});
+            _systems.insert({std::type_index(typeid(System)), new System(manager)});
         }
 
         template <class System> System &getSystem()

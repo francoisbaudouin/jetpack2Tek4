@@ -12,6 +12,8 @@
 
 namespace ecs
 {
+  class Ecs;
+
     class Move : public ASystem {
       public:
         /**
@@ -24,6 +26,7 @@ namespace ecs
          * @brief Destroy the Move object
          *
          */
+
         ~Move();
 
         /**

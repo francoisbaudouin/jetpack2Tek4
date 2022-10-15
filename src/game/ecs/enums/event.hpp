@@ -76,7 +76,7 @@ namespace ecs
             Tilde,
             Equal,
             Hyphen,
-            Space,
+            SPACE,
             Enter,
             Backspace,
             Tab,

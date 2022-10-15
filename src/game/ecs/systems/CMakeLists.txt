@@ -13,6 +13,8 @@ set(SRC
     ${SRCROOT}/Input.hpp
     ${SRCROOT}/Controll.cpp
     ${SRCROOT}/Controll.hpp
+    ${SRCROOT}/Fire.cpp
+    ${SRCROOT}/Fire.hpp
     ${SRCROOT}/ISystem.hpp
     PARENT_SCOPE
 )

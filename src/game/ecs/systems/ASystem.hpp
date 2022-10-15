@@ -9,12 +9,13 @@
 #define ASYSTEM_HPP_
 
 #include <memory>
-#include <unordered_map>
 #include "../Ecs.hpp"
 #include "ISystem.hpp"
+#include <unordered_map>
 
 namespace ecs
 {
+    class Ecs;
     class ASystem : public ISystem {
       public:
         /**
@@ -22,6 +23,7 @@ namespace ecs
          * @param manager reference to the game's entity map
          **/
         ASystem(std::shared_ptr<Ecs> &manager);
+        // ecs::Ecs;
         ~ASystem();
         /**
          * @brief run the system
