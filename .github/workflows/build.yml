@@ -35,6 +35,7 @@ jobs:
         export CONAN_USER_HOME="/tmp/conan"
         export CONAN_SYSREQUIRES_MODE="enabled"
         export CONAN_SYSREQUIRES_SUDO="1"
+        conan remove --system-reqs "*"
 
     - name: Configure Conan
       run : |
