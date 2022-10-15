@@ -19,3 +19,7 @@ cmake_paths
     gtest:hide_symbols=False
     gtest:no_main=False
     gtest:shared=False
+
+[conf]
+    tools.system.package_manager:mode=install
+    tools.system.package_manager:sudo=True
