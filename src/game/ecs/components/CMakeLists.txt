@@ -16,6 +16,8 @@ set(SRC
     ${SRCROOT}/Controllable.hpp
     ${SRCROOT}/Weapon.cpp
     ${SRCROOT}/Weapon.hpp
+    ${SRCROOT}/Type.cpp
+    ${SRCROOT}/Type.hpp
     PARENT_SCOPE
 )
 

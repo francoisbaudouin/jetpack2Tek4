@@ -42,4 +42,4 @@ r-type_client
 
 # tests files
 assets
-src/game/client/*
+src/game/client
