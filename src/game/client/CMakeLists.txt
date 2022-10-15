@@ -3,8 +3,6 @@ set(SRCROOT ${SRCROOT}/client)
 
 set(SRC
     ${SRC}
-    ${SRCROOT}/TextureDatabase.cpp
-    ${SRCROOT}/TextureDatabase.hpp
     PARENT_SCOPE
 )
 
