@@ -60,7 +60,7 @@ namespace ecs
 
         /**
          * @brief Get the number of entities stocked in the ecs
-         * 
+         *
          * @return size_t : number of entities
          */
         size_t getNumberEntities() const;
@@ -68,7 +68,7 @@ namespace ecs
         //              SYSTEM MANAGEMENT
         /**
          * @brief add a system to the ecs from the type specified, exception is thrown if the system already exist
-         * 
+         *
          * @tparam System : type of the system
          * @param manager : shared_ptr to the ecs
          */
@@ -82,7 +82,7 @@ namespace ecs
 
         /**
          * @brief Get a system from the type specified, exception is thrown if the system doesn't exist
-         * 
+         *
          * @tparam System : type of the system
          * @return System& : system to return
          */
@@ -95,7 +95,7 @@ namespace ecs
 
         /**
          * @brief clear the system stocke in the ecs
-         * 
+         *
          */
         void clearSystems();
 
