@@ -12,7 +12,11 @@ using namespace ecs;
 
 Ecs::Ecs() : _entities(), _systems() {}
 
-Ecs::~Ecs() { _entities.clear(); }
+Ecs::~Ecs()
+{
+    _entities.clear();
+    this->clearSystems();
+}
 
 Entity &Ecs::createEntity()
 {
