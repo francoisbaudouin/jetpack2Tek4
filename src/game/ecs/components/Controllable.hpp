@@ -30,6 +30,7 @@ namespace ecs
             const std::pair<Device::KeyBoardKey, Controlls> &rightControll,
             const std::pair<Device::KeyBoardKey, Controlls> &leftControll,
             const std::pair<Device::KeyBoardKey, Controlls> &downControll);
+
         ~Controllable();
 
         /**

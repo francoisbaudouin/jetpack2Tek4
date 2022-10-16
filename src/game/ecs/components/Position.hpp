@@ -22,10 +22,7 @@ namespace ecs
          * @param positionY : position on the Y axis
          */
         Position(const size_t entityId, const float positionX, const float positionY);
-        /**
-         * @brief Destroy the Position object
-         *
-         */
+
         ~Position();
 
         /**

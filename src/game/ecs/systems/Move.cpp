@@ -11,14 +11,14 @@
 
 using namespace ecs;
 
-Move::Move(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap) : ASystem(entityMap) {}
+Move::Move(std::shared_ptr<Ecs> &manager) : ASystem(manager) {}
 
 Move::~Move() {}
 
-void Move::applyVelocity(std::shared_ptr<ecs::Entity> &entity)
+void Move::applyVelocity(Entity &entity)
 {
-    Velocity &velocity = entity->getComponent<Velocity>();
-    Position &position = entity->getComponent<Position>();
+    Velocity &velocity = entity.getComponent<Velocity>();
+    Position &position = entity.getComponent<Position>();
 
     position.setX(position.getX() + velocity.getX());
     position.setY(position.getY() + velocity.getY());
@@ -26,11 +26,8 @@ void Move::applyVelocity(std::shared_ptr<ecs::Entity> &entity)
 
 void Move::run()
 {
-    auto iterator = _entityMap.begin();
-
-    while (iterator != _entityMap.end()) {
-        if (iterator->second->hasComponent<Velocity>() && iterator->second->hasComponent<Position>())
-            this->applyVelocity(iterator->second);
-        iterator++;
+    for (auto &entity : _manager->getEntities()) {
+        if (entity.second->hasComponent<Position>() && entity.second->hasComponent<Velocity>())
+            this->applyVelocity(_manager->getEntity(entity.first));
     }
 }

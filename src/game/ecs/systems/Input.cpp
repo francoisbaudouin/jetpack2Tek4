@@ -9,7 +9,7 @@
 
 using namespace ecs;
 
-Input::Input(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap) : ASystem(entityMap), _events() {}
+Input::Input(std::shared_ptr<Ecs> &manager) : ASystem(manager), _events() {}
 
 Input::~Input() {}
 
