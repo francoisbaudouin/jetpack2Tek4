@@ -22,8 +22,6 @@ namespace ecs
         ColliderReaction(std::shared_ptr<Ecs> manager);
         ~ColliderReaction();
 
-
-
         void run(const size_t entityId1, const size_t entityId2);
 
       protected:

@@ -40,7 +40,6 @@ void Collider::checkEntities(const std::unordered_map<size_t, std::shared_ptr<En
         iteratorId = iterator->first;
         if (iterator->second->hasComponent<Position>() && iterator->second->hasComponent<HitBox>())
             this->compareEntities(entity->second->getId(), iterator->second->getId());
-        std::cout << "collide/check:" << _manager->getNumberEntities() << std::endl;
         if (!_manager->getEntities().contains(entityId) || !_manager->getEntities().contains(iteratorId))
             break;
         iterator++;
@@ -55,8 +54,8 @@ void Collider::run()
         entityId = entity->first;
         if (entity->second->hasComponent<Position>() && entity->second->hasComponent<HitBox>())
             this->checkEntities(entity);
-        std::cout << "collide:" << _manager->getNumberEntities() << std::endl;
         if (!_manager->getEntities().contains(entityId)) {
+            return;
             while (!_manager->getEntities().contains(entityId)) {
                 if (entityId == 0)
                     return;

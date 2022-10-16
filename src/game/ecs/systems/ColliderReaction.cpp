@@ -17,8 +17,6 @@ static void projectileHitEnnemy(std::shared_ptr<Ecs> &manager, Entity &entity1, 
 
 void enemyCollidePlayer(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {
-    std::cout << "ENEMY hitted at x = " << entity1.getComponent<Position>().getX();
-    std::cout << " from PLAYER at x = " << entity2.getComponent<Position>().getX() << std::endl;
 }
 
 void undefinedReaction(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
@@ -50,7 +48,6 @@ void ColliderReaction::run(const size_t entityId1, const size_t entityId2)
             _reactionMap.at(reversedPairType)(_manager, entity2, entity1);
         }
     }
-  std::cout << "collide/reaction:" << _manager->getNumberEntities() << std::endl;
 }
 
 ColliderReaction::~ColliderReaction() {}

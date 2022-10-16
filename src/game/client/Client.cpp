@@ -83,7 +83,6 @@ void Client::run()
         }
         _manager->getSystem<Move>().run();
         _manager->getSystem<Collider>().run();
-        std::cout << "client:" << _manager->getNumberEntities() << std::endl;
         _manager->getSystem<Display>().run(_window);
         _window.display();
     }
