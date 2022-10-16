@@ -27,10 +27,8 @@ namespace ecs
          * @param downControll pair of Device::KeyBoardKey and Controlls that correspond to the DOWN controll
          */
         Controllable(const size_t entityId, const Device::KeyBoardKey &upControll,
-            const Device::KeyBoardKey &rightControll,
-            const Device::KeyBoardKey &leftControll,
-            const Device::KeyBoardKey &downControll,
-            const Device::KeyBoardKey &fireControll);
+            const Device::KeyBoardKey &rightControll, const Device::KeyBoardKey &leftControll,
+            const Device::KeyBoardKey &downControll, const Device::KeyBoardKey &fireControll);
         ~Controllable();
 
         /**
