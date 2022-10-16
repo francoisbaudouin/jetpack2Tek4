@@ -10,9 +10,9 @@
 
 namespace ecs
 {
-  enum WeaponType {
-    UNDEFINED_WEAPON_TYPE = -1,
-    CANON = 0,
-  };
+    enum WeaponType {
+        UNDEFINED_WEAPON_TYPE = -1,
+        CANON = 0,
+    };
 }
 #endif /* !WEAPONS_HPP_ */

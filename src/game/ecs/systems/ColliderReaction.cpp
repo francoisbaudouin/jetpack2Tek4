@@ -11,26 +11,14 @@ using namespace ecs;
 
 static void projectileHitEnnemy(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {
-  manager->removeEntity(entity1.getId());
-  manager->removeEntity(entity2.getId());
-}
-
-void enemyCollidePlayer(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
-{
-}
-
-void undefinedReaction(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
-{
-    std::cout << "undefined reaction" << std::endl;
+    manager->removeEntity(entity1.getId());
+    manager->removeEntity(entity2.getId());
 }
 
 ColliderReaction::ColliderReaction(std::shared_ptr<Ecs> manager) : ASystem(manager), _reactionMap()
 {
-    _reactionMap[std::make_pair<entityType, entityType>(
-        entityType::UNDEFINED_ENTITY_TYPE, entityType::UNDEFINED_ENTITY_TYPE)] = &undefinedReaction;
     _reactionMap[std::make_pair<entityType, entityType>(entityType::ENEMY, entityType::PROJECTILE)] =
         &projectileHitEnnemy;
-    _reactionMap[std::make_pair<entityType, entityType>(entityType::ENEMY, entityType::PLAYER)] = &enemyCollidePlayer;
 }
 
 void ColliderReaction::run(const size_t entityId1, const size_t entityId2)
