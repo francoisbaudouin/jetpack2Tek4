@@ -13,6 +13,10 @@ set(SRC
     ${SRCROOT}/Display.hpp
     ${SRCROOT}/Input.cpp
     ${SRCROOT}/Input.hpp
+    ${SRCROOT}/Controll.cpp
+    ${SRCROOT}/Controll.hpp
+    ${SRCROOT}/Fire.cpp
+    ${SRCROOT}/Fire.hpp
     ${SRCROOT}/ISystem.hpp
     ${SRCROOT}/Move.cpp
     ${SRCROOT}/Move.hpp

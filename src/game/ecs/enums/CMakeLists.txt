@@ -5,6 +5,7 @@ set(SRC
     ${SRC}
     ${SRCROOT}/event.hpp
     ${SRCROOT}/controlls.hpp
+    ${SRCROOT}/weapons.hpp
     PARENT_SCOPE
 )
 
