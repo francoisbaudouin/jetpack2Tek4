@@ -20,16 +20,16 @@ namespace ecs
       public:
         /**
          * @brief Contruct a Controll system interpret Rtype's events and link it to controllable entity
-         * @param entityMap reference to the game's entity map
+         * @param manager reference to the game's entity map
          **/
-        Controll(std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> &entityMap);
+        Controll(std::shared_ptr<Ecs> &manager);
         ~Controll();
 
         /**
          * @brief run the system
          * @param controll RType events vector
          **/
-        void run(std::vector<RTypeEvent> controll);
+        void run(const std::vector<RTypeEvent> &controll);
 
       protected:
       private:

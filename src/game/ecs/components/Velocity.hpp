@@ -22,10 +22,7 @@ namespace ecs
          * @param velocityY : velocity on the Y axis
          */
         Velocity(const size_t entityId, const float velocityX, const float velocityY);
-        /**
-         * @brief Destroy the Velocity object
-         *
-         */
+
         ~Velocity();
 
         /**

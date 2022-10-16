@@ -21,6 +21,7 @@ namespace ecs
          * @param message : message to throw
          */
         Exception(std::string const &message) throw();
+
         /**
          * @brief return the message
          *
@@ -52,6 +53,44 @@ namespace ecs
          * @param entityId : id of the entity
          */
         NoComponent(std::string const &message, const size_t entityId);
+    };
+
+    class EntityAlreadyExisting : public Exception {
+      public:
+        /**
+         * @brief exception threw if an entity already exist in the Ecs with the same id
+         *
+         * @param entityId : id of the entity
+         */
+        EntityAlreadyExisting(const size_t entityId);
+    };
+
+    class EntityNotExisting : public Exception {
+      public:
+        /**
+         * @brief exception threw if an entity doesn't exist in the Ecs with the same id
+         *
+         * @param entityId : id of the entity
+         */
+        EntityNotExisting(const size_t entityId);
+    };
+
+    class SystemAlreadyExisting : public Exception {
+      public:
+        /**
+         * @brief exception threw if a system already exist in the Ecs
+         *
+         */
+        SystemAlreadyExisting();
+    };
+
+    class SystemNotExisting : public Exception {
+      public:
+        /**
+         * @brief exception threw if a system doesn't exist in the Ecs
+         *
+         */
+        SystemNotExisting();
     };
 } // namespace ecs
 

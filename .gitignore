@@ -26,6 +26,9 @@
 *.a
 *.lib
 
+# debug files
+vgcore.*
+
 # Executables
 *.exe
 *.out

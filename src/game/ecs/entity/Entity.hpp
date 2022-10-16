@@ -8,11 +8,9 @@
 #ifndef __ENTITY__
 #define __ENTITY__
 
-#include <any>
-#include <array>
-#include <memory>
 #include <typeindex>
 #include <typeinfo>
+#include "../components/IComponent.hpp"
 #include "../exceptions/Exception.hpp"
 #include <unordered_map>
 
@@ -21,15 +19,10 @@ namespace ecs
     class Entity {
       public:
         /**
-         * @brief Construct a new Entity object
-         *
-         * @param entityId : Id of the entity
-         */
-        Entity(const size_t entityId);
-        /**
-         * @brief Destroy the Entity object
+         * @brief Construct a new Entity object and call the 'getNewEntityId' that generate a new id for the entity
          *
          */
+        Entity();
         ~Entity();
 
         /**
@@ -46,7 +39,7 @@ namespace ecs
             if (this->hasComponent<Component>())
                 return (this->getComponent<Component>());
 
-            Component *component(new Component(std::forward<ComponentArguments>(arguments)...));
+            Component *component(new Component(this->getId(), std::forward<ComponentArguments>(arguments)...));
 
             _components.insert({std::type_index(typeid(Component)), component});
             return (*component);
@@ -74,7 +67,7 @@ namespace ecs
         {
             if (!this->hasComponent<Component>())
                 throw ecs::NoComponent(typeid(Component).name(), this->getId());
-            Component *component = std::any_cast<Component *>(_components.at(std::type_index(typeid(Component))));
+            Component *component = static_cast<Component *>(_components.at(std::type_index(typeid(Component))));
             return (*component);
         }
 
@@ -102,7 +95,7 @@ namespace ecs
         {
             if (!this->hasComponent<Component>())
                 throw ecs::NoComponent(typeid(Component).name(), this->getId());
-            delete std::any_cast<Component *>(_components.at(std::type_index(typeid(Component))));
+            delete static_cast<Component *>(_components.at(std::type_index(typeid(Component))));
             _components.erase(std::type_index(typeid(Component)));
         }
 
@@ -111,10 +104,10 @@ namespace ecs
          *
          * @return size_t : id of the entity
          */
-        size_t getId();
+        size_t getId() const;
 
       private:
-        std::unordered_map<std::type_index, std::any> _components;
+        std::unordered_map<std::type_index, IComponent *> _components;
         size_t _id;
     };
 } // namespace ecs
