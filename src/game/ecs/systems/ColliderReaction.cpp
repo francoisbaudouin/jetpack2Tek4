@@ -15,10 +15,34 @@ static void projectileHitEnnemy(std::shared_ptr<Ecs> &manager, Entity &entity1, 
     manager->removeEntity(entity2.getId());
 }
 
+static void projectileHitWall(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
+{
+    manager->removeEntity(entity1.getId());
+}
+
+static void playerHitWall(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
+{
+    auto &playerPosition = manager->getEntity(entity1.getId()).getComponent<Position>();
+    auto &playerVelocity = manager->getEntity(entity1.getId()).getComponent<Velocity>();
+
+    if (playerVelocity.getY() > 0)
+        playerPosition.setY(playerPosition.getY() - 1);
+    if (playerVelocity.getY() < 0)
+        playerPosition.setY(playerPosition.getY() + 1);
+    if (playerVelocity.getX() > 0)
+        playerPosition.setX(playerPosition.getX() - 1);
+    if (playerVelocity.getX() < 0)
+        playerPosition.setX(playerPosition.getX() + 1);
+}
+
 ColliderReaction::ColliderReaction(std::shared_ptr<Ecs> manager) : ASystem(manager), _reactionMap()
 {
     _reactionMap[std::make_pair<entityType, entityType>(entityType::ENEMY, entityType::PROJECTILE)] =
         &projectileHitEnnemy;
+    _reactionMap[std::make_pair<entityType, entityType>(entityType::PLAYER, entityType::WALL)] =
+        &playerHitWall;
+    _reactionMap[std::make_pair<entityType, entityType>(entityType::PROJECTILE, entityType::WALL)] =
+        &projectileHitWall;
 }
 
 void ColliderReaction::run(const size_t entityId1, const size_t entityId2)

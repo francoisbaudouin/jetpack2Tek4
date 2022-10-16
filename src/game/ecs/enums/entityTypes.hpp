@@ -15,6 +15,7 @@ namespace ecs
         PLAYER = 0,
         ENEMY,
         PROJECTILE,
+        WALL
     };
 } // namespace ecs
 
