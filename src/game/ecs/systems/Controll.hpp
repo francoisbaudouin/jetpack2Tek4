@@ -25,14 +25,12 @@ namespace ecs
          **/
         Controll(std::shared_ptr<Ecs> &manager);
         ~Controll();
-
         /**
          * @brief run the system
          * @param controll RType events vector
          **/
         void run(const std::vector<RTypeEvent> &controll);
 
-      protected:
       private:
         /**
          * @brief private function that react to the rTypeEvents vector

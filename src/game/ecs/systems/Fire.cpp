@@ -24,6 +24,8 @@ void Fire::createProjectile(const size_t entityId)
     projectile.addComponent<Position>(position.getX(), position.getY());
     projectile.addComponent<Drawable>(_tempTexture);
     projectile.addComponent<Velocity>(0.3, 0.0);
+    projectile.addComponent<HitBox>(32, 10);
+    projectile.addComponent<Type>(entityType::PROJECTILE);
     _lastTimeTriggered = _triggeredTime;
 }
 

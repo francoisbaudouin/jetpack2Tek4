@@ -16,10 +16,12 @@ set(SRC
     ${SRCROOT}/Position.hpp
     ${SRCROOT}/Velocity.cpp
     ${SRCROOT}/Velocity.hpp
-    ${SRCROOT}/Controllable.cpp
-    ${SRCROOT}/Controllable.hpp
     ${SRCROOT}/Weapon.cpp
     ${SRCROOT}/Weapon.hpp
+    ${SRCROOT}/Type.cpp
+    ${SRCROOT}/Type.hpp
+    ${SRCROOT}/Controllable.cpp
+    ${SRCROOT}/Controllable.hpp
     PARENT_SCOPE
 )
 
