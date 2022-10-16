@@ -59,7 +59,7 @@ var structecs_1_1_device =
       [ "Tilde", "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da8cce9a691a1daaca66d37107fce905cf", null ],
       [ "Equal", "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da206f1429dbc7f636f036cbf23176b0ed", null ],
       [ "Hyphen", "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da539fe918e737209c81f66f39e45aabae", null ],
-      [ "Space", "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92dae9b08214a70a835046f41e7f27b91428", null ],
+      [ "SPACE", "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da43c88d9fa96befee615448c74257885c", null ],
       [ "Enter", "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92dad0b0c58fc0fd8296240b5ebad66b713f", null ],
       [ "Backspace", "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da021ca88e88e30beec7d4f358e7450e3a", null ],
       [ "Tab", "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da7ef6b9312cec23da43a13b319fd3fd8d", null ],

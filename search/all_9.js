@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['position_40',['Position',['../classecs_1_1_position.html',1,'ecs::Position'],['../classecs_1_1_position.html#a00e16ec43fa8647f6c1408777fe1afe3',1,'ecs::Position::Position()']]]
+  ['nocomponent_44',['NoComponent',['../classecs_1_1_no_component.html',1,'ecs::NoComponent'],['../classecs_1_1_no_component.html#ab3151b013c9afb6c1c6e6a95a99bce71',1,'ecs::NoComponent::NoComponent()']]]
 ];

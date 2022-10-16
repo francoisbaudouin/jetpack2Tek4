@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['nocomponent_39',['NoComponent',['../classecs_1_1_no_component.html',1,'ecs::NoComponent'],['../classecs_1_1_no_component.html#ab3151b013c9afb6c1c6e6a95a99bce71',1,'ecs::NoComponent::NoComponent()']]]
+  ['move_43',['Move',['../classecs_1_1_move.html',1,'ecs::Move'],['../classecs_1_1_move.html#a6cd7a3797b0ec185ab3b22db7389295f',1,'ecs::Move::Move()']]]
 ];

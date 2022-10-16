@@ -14,6 +14,7 @@ var annotated_dup =
       [ "EntityAlreadyExisting", "classecs_1_1_entity_already_existing.html", "classecs_1_1_entity_already_existing" ],
       [ "EntityNotExisting", "classecs_1_1_entity_not_existing.html", "classecs_1_1_entity_not_existing" ],
       [ "Exception", "classecs_1_1_exception.html", "classecs_1_1_exception" ],
+      [ "Fire", "classecs_1_1_fire.html", "classecs_1_1_fire" ],
       [ "HitBox", "classecs_1_1_hit_box.html", "classecs_1_1_hit_box" ],
       [ "IComponent", "classecs_1_1_i_component.html", "classecs_1_1_i_component" ],
       [ "Input", "classecs_1_1_input.html", "classecs_1_1_input" ],
@@ -25,6 +26,7 @@ var annotated_dup =
       [ "SystemAlreadyExisting", "classecs_1_1_system_already_existing.html", "classecs_1_1_system_already_existing" ],
       [ "SystemNotExisting", "classecs_1_1_system_not_existing.html", "classecs_1_1_system_not_existing" ],
       [ "Test", "classecs_1_1_test.html", "classecs_1_1_test" ],
-      [ "Velocity", "classecs_1_1_velocity.html", "classecs_1_1_velocity" ]
+      [ "Velocity", "classecs_1_1_velocity.html", "classecs_1_1_velocity" ],
+      [ "Weapon", "classecs_1_1_weapon.html", "classecs_1_1_weapon" ]
     ] ]
 ];

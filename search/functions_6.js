@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['input_117',['Input',['../classecs_1_1_input.html#ab5dcf1e8ccccdd61a2864ea42da5c248',1,'ecs::Input']]]
+  ['hascomponent_128',['hasComponent',['../classecs_1_1_entity.html#abe29fe0f88a96e7ff57eed9ce0b4bc3a',1,'ecs::Entity']]],
+  ['hitbox_129',['HitBox',['../classecs_1_1_hit_box.html#a4ebf6699a13394506b8c014673ef963e',1,'ecs::HitBox']]]
 ];
