@@ -6,21 +6,21 @@
 */
 
 #include "Client.hpp"
-#include "../ecs/systems/Controll.hpp"
-#include "../ecs/systems/Display.hpp"
-#include "../ecs/systems/Input.hpp"
-#include "../ecs/systems/Move.hpp"
-#include "../ecs/systems/Fire.hpp"
 #include "../ecs/systems/Collider.hpp"
 #include "../ecs/systems/ColliderReaction.hpp"
+#include "../ecs/systems/Controll.hpp"
+#include "../ecs/systems/Display.hpp"
+#include "../ecs/systems/Fire.hpp"
+#include "../ecs/systems/Input.hpp"
+#include "../ecs/systems/Move.hpp"
 
 #include "../ecs/components/Controllable.hpp"
 #include "../ecs/components/Drawable.hpp"
+#include "../ecs/components/HitBox.hpp"
 #include "../ecs/components/Position.hpp"
+#include "../ecs/components/Type.hpp"
 #include "../ecs/components/Velocity.hpp"
 #include "../ecs/components/Weapon.hpp"
-#include "../ecs/components/Type.hpp"
-#include "../ecs/components/HitBox.hpp"
 #include "../ecs/enums/weapons.hpp"
 
 using namespace ecs;
@@ -39,7 +39,7 @@ Client::Client() : _manager(), _window(sf::VideoMode(800, 600), "Client window")
     _manager->addSystem<Collider>(_manager);
     _manager->addSystem<ColliderReaction>(_manager);
 
-//      PLAYER
+    //      PLAYER
     auto &player = _manager->createEntity();
 
     player.addComponent<Drawable>(_tmpTexture);
@@ -49,15 +49,10 @@ Client::Client() : _manager(), _window(sf::VideoMode(800, 600), "Client window")
     player.addComponent<Type>(entityType::PLAYER);
     player.addComponent<HitBox>(32, 32);
 
+    player.addComponent<Controllable>(Device::KeyBoardKey::Z, Device::KeyBoardKey::D, Device::KeyBoardKey::Q,
+        Device::KeyBoardKey::S, Device::KeyBoardKey::F);
 
-    player.addComponent<Controllable>(
-        std::make_pair<Device::KeyBoardKey, Controlls>(Device::KeyBoardKey::Z, Controlls::UP),
-        std::make_pair<Device::KeyBoardKey, Controlls>(Device::KeyBoardKey::D, Controlls::RIGHT),
-        std::make_pair<Device::KeyBoardKey, Controlls>(Device::KeyBoardKey::Q, Controlls::LEFT),
-        std::make_pair<Device::KeyBoardKey, Controlls>(Device::KeyBoardKey::S, Controlls::DOWN),
-        std::make_pair<Device::KeyBoardKey, Controlls>(Device::KeyBoardKey::SPACE, Controlls::FIRE));
-
-//      ENNEMY
+    //      ENNEMY
     auto &enemy = _manager->createEntity();
 
     enemy.addComponent<Drawable>(_tmpTexture2);

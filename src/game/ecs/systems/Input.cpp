@@ -31,6 +31,7 @@ void Input::bindKeyboardKey(const sf::Event &event)
         case sf::Keyboard::Q: _event.keyboardKey = Device::KeyBoardKey::Q; break;
         case sf::Keyboard::S: _event.keyboardKey = Device::KeyBoardKey::S; break;
         case sf::Keyboard::D: _event.keyboardKey = Device::KeyBoardKey::D; break;
+        case sf::Keyboard::F: _event.keyboardKey = Device::KeyBoardKey::F; break;
         case sf::Keyboard::Space: _event.keyboardKey = Device::KeyBoardKey::SPACE; break;
         default: _event.keyboardKey = Device::KeyBoardKey::UNKNOWN_KEYBOARD_KEY;
     }
