@@ -10,16 +10,17 @@
 
 #define RUNNING 1
 
-#include <string>
-#include <boost/asio.hpp>
+#include <SFML/Graphics.hpp>
 #include <boost/array.hpp>
+#include <boost/asio.hpp>
 #include <iostream>
 #include <memory>
-#include <SFML/Graphics.hpp>
+#include <string>
 
 #include "ecs/Ecs.hpp"
 
-namespace rtype {
+namespace rtype
+{
 	class Client {
 		public:
 			Client(const std::string &ipAdress = "127.0.0.1", const size_t &port = 42069);
