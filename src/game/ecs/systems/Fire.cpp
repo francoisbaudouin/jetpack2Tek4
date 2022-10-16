@@ -17,6 +17,16 @@ Fire::Fire(std::shared_ptr<Ecs> &manager) : ASystem(manager)
 
 Fire::~Fire() {}
 
+void Fire::createProjectile(const size_t entityId)
+{
+    Position &position = _manager->getEntity(entityId).getComponent<Position>();
+    auto &projectile = _manager->createEntity();
+    projectile.addComponent<Position>(position.getX(), position.getY());
+    projectile.addComponent<Drawable>(_tempTexture);
+    projectile.addComponent<Velocity>(0.3, 0.0);
+    _lastTimeTriggered = _triggeredTime;
+}
+
 void Fire::run(const size_t entityId)
 {
     _triggeredTime = std::chrono::system_clock::now();
@@ -24,13 +34,7 @@ void Fire::run(const size_t entityId)
     if (_manager->getEntity(entityId).hasComponent<Weapon>()
         && _manager->getEntity(entityId).hasComponent<Position>()) {
         Weapon &weapon = _manager->getEntity(entityId).getComponent<Weapon>();
-        if (_elapsedTime.count() >= weapon.getFireRate()) {
-            Position &position = _manager->getEntity(entityId).getComponent<Position>();
-            auto &projectile = _manager->createEntity();
-            projectile.addComponent<Position>(position.getX(), position.getY());
-            projectile.addComponent<Drawable>(_tempTexture);
-            projectile.addComponent<Velocity>(0.3, 0.0);
-            _lastTimeTriggered = _triggeredTime;
-        }
+        if (_elapsedTime.count() >= weapon.getFireRate())
+            createProjectile(entityId);
     }
 }

@@ -32,6 +32,12 @@ namespace ecs
         Fire(std::shared_ptr<Ecs> &manager);
         ~Fire();
         /**
+         * @brief Create a projectile at the position of the player
+         *
+         * @param entityId : id of the player in the entities
+         */
+        void createProjectile(const size_t entityId);
+        /**
          * @brief fire a projectile one time respecting the fireRate weapon's property
          *
          * @param entityId Id of the entity that triggered the fire system
