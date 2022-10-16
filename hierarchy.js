@@ -17,12 +17,14 @@ var hierarchy =
       [ "ecs::AComponent", "classecs_1_1_a_component.html", [
         [ "ecs::Controllable", "classecs_1_1_controllable.html", null ],
         [ "ecs::Drawable", "classecs_1_1_drawable.html", null ],
+        [ "ecs::HitBox", "classecs_1_1_hit_box.html", null ],
         [ "ecs::Position", "classecs_1_1_position.html", null ],
         [ "ecs::Velocity", "classecs_1_1_velocity.html", null ]
       ] ]
     ] ],
     [ "ecs::ISystem", "classecs_1_1_i_system.html", [
       [ "ecs::ASystem", "classecs_1_1_a_system.html", [
+        [ "ecs::Collider", "classecs_1_1_collider.html", null ],
         [ "ecs::Controll", "classecs_1_1_controll.html", null ],
         [ "ecs::Display", "classecs_1_1_display.html", null ],
         [ "ecs::Input", "classecs_1_1_input.html", null ],

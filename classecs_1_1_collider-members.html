@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>R-Type: ecs::ISystem Class Reference</title>
+<title>R-Type: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,7 +65,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classecs_1_1_i_system.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classecs_1_1_collider.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -84,43 +84,27 @@ $(document).ready(function(){initNavTree('classecs_1_1_i_system.html',''); initR
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classecs_1_1_i_system-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ecs::ISystem Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">ecs::Collider Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for ecs::ISystem:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classecs_1_1_i_system.png" usemap="#ecs::ISystem_map" alt=""/>
-  <map id="ecs::ISystem_map" name="ecs::ISystem_map">
-<area href="classecs_1_1_a_system.html" alt="ecs::ASystem" shape="rect" coords="194,56,281,80"/>
-<area href="classecs_1_1_collider.html" alt="ecs::Collider" shape="rect" coords="0,112,87,136"/>
-<area href="classecs_1_1_controll.html" alt="ecs::Controll" shape="rect" coords="97,112,184,136"/>
-<area href="classecs_1_1_display.html" alt="ecs::Display" shape="rect" coords="194,112,281,136"/>
-<area href="classecs_1_1_input.html" alt="ecs::Input" shape="rect" coords="291,112,378,136"/>
-<area href="classecs_1_1_move.html" alt="ecs::Move" shape="rect" coords="388,112,475,136"/>
-  </map>
-</div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:ac58cffd514f43c5c3d17f5dd2c6908ce"><td class="memItemLeft" align="right" valign="top"><a id="ac58cffd514f43c5c3d17f5dd2c6908ce"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()=0</td></tr>
-<tr class="separator:ac58cffd514f43c5c3d17f5dd2c6908ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/game/ecs/systems/<a class="el" href="_i_system_8hpp_source.html">ISystem.hpp</a></li>
-</ul>
-</div><!-- contents -->
+
+<p>This is the complete list of members for <a class="el" href="classecs_1_1_collider.html">ecs::Collider</a>, including all inherited members.</p>
+<table class="directory">
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>_manager</b> (defined in <a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a>)</td><td class="entry"><a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">ASystem</a>(std::shared_ptr&lt; Ecs &gt; &amp;manager)</td><td class="entry"><a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classecs_1_1_collider.html#ac23822e06f82170e0d2c94c213ef8863">checkEntities</a>(const std::unordered_map&lt; size_t, std::shared_ptr&lt; Entity &gt;&gt;::iterator &amp;entity)</td><td class="entry"><a class="el" href="classecs_1_1_collider.html">ecs::Collider</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classecs_1_1_collider.html#a46c1badaffd99dc44594545f3eab4630">Collider</a>(std::shared_ptr&lt; Ecs &gt; &amp;manager)</td><td class="entry"><a class="el" href="classecs_1_1_collider.html">ecs::Collider</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classecs_1_1_collider.html#a9aec1fe8a0d9424d2601a2d74455e05a">compareEntities</a>(const size_t entity1, const size_t entity2)</td><td class="entry"><a class="el" href="classecs_1_1_collider.html">ecs::Collider</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classecs_1_1_collider.html#a2b55a5c465769dff84ee61a5cd88a0b0">run</a>() override</td><td class="entry"><a class="el" href="classecs_1_1_collider.html">ecs::Collider</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~ASystem</b>() (defined in <a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a>)</td><td class="entry"><a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>~Collider</b>() (defined in <a class="el" href="classecs_1_1_collider.html">ecs::Collider</a>)</td><td class="entry"><a class="el" href="classecs_1_1_collider.html">ecs::Collider</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~ISystem</b>()=default (defined in <a class="el" href="classecs_1_1_i_system.html">ecs::ISystem</a>)</td><td class="entry"><a class="el" href="classecs_1_1_i_system.html">ecs::ISystem</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+</table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>ecs</b></li><li class="navelem"><a class="el" href="classecs_1_1_i_system.html">ISystem</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
