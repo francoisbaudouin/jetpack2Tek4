@@ -30,7 +30,6 @@ void Controll::keyReaction(Velocity &velocity, Controllable &controllable, const
             default: velocity.setVelocity(none, none); continue;
         }
     }
-    std::cout << "size: " << rTypeEvents.size() << std::endl;
     velocity.setVelocity(velocityValueX, velocityValueY);
 }
 

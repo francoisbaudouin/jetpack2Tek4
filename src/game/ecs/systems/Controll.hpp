@@ -34,15 +34,14 @@ namespace ecs
 
       protected:
       private:
-      /**
-       * @brief private function that react to the rTypeEvents vector
-       * 
-       * @param velocity actual velocity of the entity
-       * @param controllable controllabe component that contains key --> event biding
-       * @param rTypeEvents events vector
-       */
+        /**
+         * @brief private function that react to the rTypeEvents vector
+         *
+         * @param velocity actual velocity of the entity
+         * @param controllable controllabe component that contains key --> event biding
+         * @param rTypeEvents events vector
+         */
         void keyReaction(Velocity &velocity, Controllable &controllable, const std::vector<RTypeEvent> &rTypeEvents);
-
     };
 } // namespace ecs
 

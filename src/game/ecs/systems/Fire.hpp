@@ -8,6 +8,8 @@
 #ifndef FIRE_HPP_
 #define FIRE_HPP_
 
+#include <chrono>
+#include <ctime>
 #include <utility>
 #include "../components/Drawable.hpp"
 #include "../components/Position.hpp"
@@ -15,12 +17,10 @@
 #include "../components/Weapon.hpp"
 #include "ASystem.hpp"
 #include "SFML/Graphics.hpp"
-#include <chrono>
-#include <ctime>
 
 namespace ecs
 {
-  class Ecs;
+    class Ecs;
 
     class Fire : public ASystem {
       public:
@@ -33,7 +33,7 @@ namespace ecs
         ~Fire();
         /**
          * @brief fire a projectile one time respecting the fireRate weapon's property
-         * 
+         *
          * @param entityId Id of the entity that triggered the fire system
          */
         void run(const size_t entityId);
