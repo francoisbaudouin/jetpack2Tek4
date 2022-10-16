@@ -13,6 +13,9 @@
 #include "../components/Position.hpp"
 #include "../components/Velocity.hpp"
 #include "../components/Weapon.hpp"
+#include "../components/HitBox.hpp"
+
+#include "ColliderReaction.hpp"
 #include "ASystem.hpp"
 #include "SFML/Graphics.hpp"
 #include <chrono>

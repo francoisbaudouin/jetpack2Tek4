@@ -9,17 +9,18 @@
 #define TYPE_HPP_
 
 #include "../enums/entityTypes.hpp"
+#include "AComponent.hpp"
 
 namespace ecs
 {
-    class Type {
+    class Type : public AComponent {
       public:
         /**
          * @brief contruct a type component, that identify the type of an entity
          *
          * @param type entityType to set
          */
-        Type(entityType type);
+        Type(const size_t entityId, entityType type);
         ~Type();
         /**
          * @brief Get the Entity Type property

@@ -22,11 +22,6 @@ namespace ecs
          * @param manager : list of all the entity
          */
         Move(std::shared_ptr<Ecs> &manager);
-        /**
-         * @brief Destroy the Move object
-         *
-         */
-
         ~Move();
 
         /**
@@ -38,7 +33,6 @@ namespace ecs
 
         /**
          * @brief check all entity if they can move then call 'move()' on the ones that can
-         *
          */
         void run() override;
 

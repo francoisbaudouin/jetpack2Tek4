@@ -30,12 +30,6 @@ EntityNotExisting::EntityNotExisting(size_t entityId)
 {
 }
 
-SystemAlreadyExisting::SystemAlreadyExisting()
-    : Exception("error: System already exist")
-{
-}
+SystemAlreadyExisting::SystemAlreadyExisting() : Exception("error: System already exist") {}
 
-SystemNotExisting::SystemNotExisting()
-    : Exception("error: System doesn't exist")
-{
-}
+SystemNotExisting::SystemNotExisting() : Exception("error: System doesn't exist") {}
