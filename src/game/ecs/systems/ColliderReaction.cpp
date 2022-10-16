@@ -39,10 +39,8 @@ ColliderReaction::ColliderReaction(std::shared_ptr<Ecs> manager) : ASystem(manag
 {
     _reactionMap[std::make_pair<entityType, entityType>(entityType::ENEMY, entityType::PROJECTILE)] =
         &projectileHitEnnemy;
-    _reactionMap[std::make_pair<entityType, entityType>(entityType::PLAYER, entityType::WALL)] =
-        &playerHitWall;
-    _reactionMap[std::make_pair<entityType, entityType>(entityType::PROJECTILE, entityType::WALL)] =
-        &projectileHitWall;
+    _reactionMap[std::make_pair<entityType, entityType>(entityType::PLAYER, entityType::WALL)] = &playerHitWall;
+    _reactionMap[std::make_pair<entityType, entityType>(entityType::PROJECTILE, entityType::WALL)] = &projectileHitWall;
 }
 
 void ColliderReaction::run(const size_t entityId1, const size_t entityId2)
