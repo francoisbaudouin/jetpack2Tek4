@@ -24,13 +24,13 @@ void Fire::run(const size_t entityId)
     if (_manager->getEntity(entityId).hasComponent<Weapon>() && _manager->getEntity(entityId).hasComponent<Position>()) {
         Weapon &weapon = _manager->getEntity(entityId).getComponent<Weapon>();
         if (_elapsedTime.count() >= weapon.getFireRate()) {
-            _manager->getSystem<ColliderReaction>().run(1,_manager->getNumberEntities() - 1);
             Position &position = _manager->getEntity(entityId).getComponent<Position>();
             auto &projectile = _manager->createEntity();
             projectile.addComponent<Position>(position.getX(), position.getY());
             projectile.addComponent<Drawable>(_tempTexture);
             projectile.addComponent<Velocity>(0.3, 0.0);
             projectile.addComponent<HitBox>(32, 10);
+            projectile.addComponent<Type>(entityType::PROJECTILE);
             _lastTimeTriggered = _triggeredTime;
         }
     }

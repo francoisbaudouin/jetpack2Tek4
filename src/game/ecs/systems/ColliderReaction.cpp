@@ -50,6 +50,7 @@ void ColliderReaction::run(const size_t entityId1, const size_t entityId2)
             _reactionMap.at(reversedPairType)(_manager, entity2, entity1);
         }
     }
+  std::cout << "collide/reaction:" << _manager->getNumberEntities() << std::endl;
 }
 
 ColliderReaction::~ColliderReaction() {}
