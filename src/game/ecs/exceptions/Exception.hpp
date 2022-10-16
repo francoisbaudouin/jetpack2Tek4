@@ -21,6 +21,7 @@ namespace ecs
          * @param message : message to throw
          */
         Exception(std::string const &message) throw();
+
         /**
          * @brief return the message
          *

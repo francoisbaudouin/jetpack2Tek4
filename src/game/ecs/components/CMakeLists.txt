@@ -5,6 +5,10 @@ set(SRC
     ${SRC}
     ${SRCROOT}/AComponent.cpp
     ${SRCROOT}/AComponent.hpp
+    ${SRCROOT}/Controllable.cpp
+    ${SRCROOT}/Controllable.hpp
+    ${SRCROOT}/HitBox.cpp
+    ${SRCROOT}/HitBox.hpp
     ${SRCROOT}/Drawable.cpp
     ${SRCROOT}/Drawable.hpp
     ${SRCROOT}/IComponent.hpp

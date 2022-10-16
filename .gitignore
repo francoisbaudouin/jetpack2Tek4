@@ -26,7 +26,7 @@
 *.a
 *.lib
 
-# crash files
+# debug files
 vgcore.*
 
 # Executables

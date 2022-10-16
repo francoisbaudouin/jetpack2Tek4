@@ -25,6 +25,7 @@ namespace ecs
         ASystem(std::shared_ptr<Ecs> &manager);
         // ecs::Ecs;
         ~ASystem();
+
         /**
          * @brief run the system
          **/
