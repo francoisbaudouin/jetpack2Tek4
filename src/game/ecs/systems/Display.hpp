@@ -15,7 +15,7 @@
 
 namespace ecs
 {
-  class Ecs;
+    class Ecs;
 
     class Display : public ASystem {
       public:

@@ -12,7 +12,7 @@
 
 namespace ecs
 {
-  class Ecs;
+    class Ecs;
 
     class Move : public ASystem {
       public:
