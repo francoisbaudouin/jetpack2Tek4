@@ -1,5 +1,5 @@
-set(INCROOT ${PROJECT_SOURCE_DIR}/src/network)
-set(SRCROOT ${PROJECT_SOURCE_DIR}/src/network)
+set(INCROOT ${PROJECT_SOURCE_DIR}/src/server)
+set(SRCROOT ${PROJECT_SOURCE_DIR}/src/server)
 
 # adding subb diirectory
 add_subdirectory(initialization)
