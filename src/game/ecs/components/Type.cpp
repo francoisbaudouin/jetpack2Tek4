@@ -9,7 +9,7 @@
 
 using namespace ecs;
 
-Type::Type(const size_t entityId, entityType type) : AComponent(entityId),  _type(type) {}
+Type::Type(const size_t entityId, entityType type) : AComponent(entityId), _type(type) {}
 
 Type::~Type() {}
 

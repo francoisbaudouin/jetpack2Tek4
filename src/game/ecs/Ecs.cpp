@@ -8,7 +8,6 @@
 #include "Ecs.hpp"
 #include "exceptions/Exception.hpp"
 
-
 using namespace ecs;
 
 Ecs::Ecs() : _entities(), _systems() {}

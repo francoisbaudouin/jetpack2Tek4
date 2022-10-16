@@ -8,22 +8,22 @@
 #ifndef FIRE_HPP_
 #define FIRE_HPP_
 
+#include <chrono>
+#include <ctime>
 #include <utility>
 #include "../components/Drawable.hpp"
+#include "../components/HitBox.hpp"
 #include "../components/Position.hpp"
 #include "../components/Velocity.hpp"
 #include "../components/Weapon.hpp"
-#include "../components/HitBox.hpp"
 
-#include "ColliderReaction.hpp"
 #include "ASystem.hpp"
+#include "ColliderReaction.hpp"
 #include "SFML/Graphics.hpp"
-#include <chrono>
-#include <ctime>
 
 namespace ecs
 {
-  class Ecs;
+    class Ecs;
 
     class Fire : public ASystem {
       public:
@@ -35,8 +35,14 @@ namespace ecs
         Fire(std::shared_ptr<Ecs> &manager);
         ~Fire();
         /**
+         * @brief Create a projectile at the position of the player
+         *
+         * @param entityId : id of the player in the entities
+         */
+        void createProjectile(const size_t entityId);
+        /**
          * @brief fire a projectile one time respecting the fireRate weapon's property
-         * 
+         *
          * @param entityId Id of the entity that triggered the fire system
          */
         void run(const size_t entityId);
