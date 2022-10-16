@@ -11,6 +11,7 @@
 #include <map>
 #include "../components/Position.hpp"
 #include "../components/Type.hpp"
+#include "../components/Velocity.hpp"
 #include "../enums/entityTypes.hpp"
 #include "ASystem.hpp"
 
