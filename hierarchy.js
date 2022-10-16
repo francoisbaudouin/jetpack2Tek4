@@ -1,10 +1,15 @@
 var hierarchy =
 [
     [ "ecs::Device", "structecs_1_1_device.html", null ],
+    [ "ecs::Ecs", "classecs_1_1_ecs.html", null ],
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
     [ "exception", null, [
       [ "ecs::Exception", "classecs_1_1_exception.html", [
+        [ "ecs::EntityAlreadyExisting", "classecs_1_1_entity_already_existing.html", null ],
+        [ "ecs::EntityNotExisting", "classecs_1_1_entity_not_existing.html", null ],
         [ "ecs::NoComponent", "classecs_1_1_no_component.html", null ],
+        [ "ecs::SystemAlreadyExisting", "classecs_1_1_system_already_existing.html", null ],
+        [ "ecs::SystemNotExisting", "classecs_1_1_system_not_existing.html", null ],
         [ "ecs::Test", "classecs_1_1_test.html", null ]
       ] ]
     ] ],

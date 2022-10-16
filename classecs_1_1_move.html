@@ -104,33 +104,31 @@ Inheritance diagram for ecs::Move:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7562c9b145206dd9e69e070fe76bcb2a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_move.html#a7562c9b145206dd9e69e070fe76bcb2a">Move</a> (std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> &gt;&gt; &amp;entityMap)</td></tr>
-<tr class="memdesc:a7562c9b145206dd9e69e070fe76bcb2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecs_1_1_move.html">Move</a> system.  <a href="classecs_1_1_move.html#a7562c9b145206dd9e69e070fe76bcb2a">More...</a><br /></td></tr>
-<tr class="separator:a7562c9b145206dd9e69e070fe76bcb2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadd37321983fc477287bf7c6d1c0bacf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_move.html#aadd37321983fc477287bf7c6d1c0bacf">~Move</a> ()</td></tr>
-<tr class="memdesc:aadd37321983fc477287bf7c6d1c0bacf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classecs_1_1_move.html">Move</a> object.  <a href="classecs_1_1_move.html#aadd37321983fc477287bf7c6d1c0bacf">More...</a><br /></td></tr>
-<tr class="separator:aadd37321983fc477287bf7c6d1c0bacf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4952f7bdac39c8e93bd69ee8099a0c1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_move.html#a4952f7bdac39c8e93bd69ee8099a0c1a">applyVelocity</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> &gt; &amp;entity)</td></tr>
-<tr class="memdesc:a4952f7bdac39c8e93bd69ee8099a0c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">move one entity from it's position and velocity  <a href="classecs_1_1_move.html#a4952f7bdac39c8e93bd69ee8099a0c1a">More...</a><br /></td></tr>
-<tr class="separator:a4952f7bdac39c8e93bd69ee8099a0c1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54b7f4154d5f753e9c433feb4f8d9e17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_move.html#a54b7f4154d5f753e9c433feb4f8d9e17">run</a> () override</td></tr>
-<tr class="memdesc:a54b7f4154d5f753e9c433feb4f8d9e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">check all entity if they can move then call 'move()' on the ones that can  <a href="classecs_1_1_move.html#a54b7f4154d5f753e9c433feb4f8d9e17">More...</a><br /></td></tr>
+<tr class="memitem:a6cd7a3797b0ec185ab3b22db7389295f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_move.html#a6cd7a3797b0ec185ab3b22db7389295f">Move</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
+<tr class="memdesc:a6cd7a3797b0ec185ab3b22db7389295f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecs_1_1_move.html">Move</a> system.  <a href="classecs_1_1_move.html#a6cd7a3797b0ec185ab3b22db7389295f">More...</a><br /></td></tr>
+<tr class="separator:a6cd7a3797b0ec185ab3b22db7389295f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af43cd1b1b9d643828fafbd63c4390743"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_move.html#af43cd1b1b9d643828fafbd63c4390743">applyVelocity</a> (<a class="el" href="classecs_1_1_entity.html">Entity</a> &amp;entity)</td></tr>
+<tr class="memdesc:af43cd1b1b9d643828fafbd63c4390743"><td class="mdescLeft">&#160;</td><td class="mdescRight">move one entity from it's position and velocity  <a href="classecs_1_1_move.html#af43cd1b1b9d643828fafbd63c4390743">More...</a><br /></td></tr>
+<tr class="separator:af43cd1b1b9d643828fafbd63c4390743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54b7f4154d5f753e9c433feb4f8d9e17"><td class="memItemLeft" align="right" valign="top"><a id="a54b7f4154d5f753e9c433feb4f8d9e17"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_move.html#a54b7f4154d5f753e9c433feb4f8d9e17">run</a> () override</td></tr>
+<tr class="memdesc:a54b7f4154d5f753e9c433feb4f8d9e17"><td class="mdescLeft">&#160;</td><td class="mdescRight">check all entity if they can move then call 'move()' on the ones that can <br /></td></tr>
 <tr class="separator:a54b7f4154d5f753e9c433feb4f8d9e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classecs_1_1_a_system"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecs_1_1_a_system')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td></tr>
-<tr class="memitem:a2c0e3f5ac72db7a8bdf2e92f86fc3394 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#a2c0e3f5ac72db7a8bdf2e92f86fc3394">ASystem</a> (std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> &gt;&gt; &amp;entityMap)</td></tr>
-<tr class="memdesc:a2c0e3f5ac72db7a8bdf2e92f86fc3394 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for systems.  <a href="classecs_1_1_a_system.html#a2c0e3f5ac72db7a8bdf2e92f86fc3394">More...</a><br /></td></tr>
-<tr class="separator:a2c0e3f5ac72db7a8bdf2e92f86fc3394 inherit pub_methods_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3495f5e03dfd716257ae1ac92deabe0 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">ASystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
+<tr class="memdesc:ab3495f5e03dfd716257ae1ac92deabe0 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for systems.  <a href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">More...</a><br /></td></tr>
+<tr class="separator:ab3495f5e03dfd716257ae1ac92deabe0 inherit pub_methods_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classecs_1_1_a_system"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classecs_1_1_a_system')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td></tr>
-<tr class="memitem:a5ee36e786f6b475441ba5b70b2e0fe2d inherit pro_attribs_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top"><a id="a5ee36e786f6b475441ba5b70b2e0fe2d"></a>
-std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_entityMap</b></td></tr>
-<tr class="separator:a5ee36e786f6b475441ba5b70b2e0fe2d inherit pro_attribs_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782e261e3d4ef817556d55fc3c6e9001 inherit pro_attribs_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top"><a id="a782e261e3d4ef817556d55fc3c6e9001"></a>
+std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_manager</b></td></tr>
+<tr class="separator:a782e261e3d4ef817556d55fc3c6e9001 inherit pro_attribs_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7562c9b145206dd9e69e070fe76bcb2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7562c9b145206dd9e69e070fe76bcb2a">&#9670;&nbsp;</a></span>Move()</h2>
+<a id="a6cd7a3797b0ec185ab3b22db7389295f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd7a3797b0ec185ab3b22db7389295f">&#9670;&nbsp;</a></span>Move()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,8 +136,8 @@ std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_
         <tr>
           <td class="memname">Move::Move </td>
           <td>(</td>
-          <td class="paramtype">std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>entityMap</em></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>manager</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -148,35 +146,16 @@ std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_
 <p>Construct a new <a class="el" href="classecs_1_1_move.html">Move</a> system. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">entityMap</td><td>: list of all the entity </td></tr>
+    <tr><td class="paramname">manager</td><td>: list of all the entity </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aadd37321983fc477287bf7c6d1c0bacf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadd37321983fc477287bf7c6d1c0bacf">&#9670;&nbsp;</a></span>~Move()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Move::~Move </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Destroy the <a class="el" href="classecs_1_1_move.html">Move</a> object. </p>
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4952f7bdac39c8e93bd69ee8099a0c1a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4952f7bdac39c8e93bd69ee8099a0c1a">&#9670;&nbsp;</a></span>applyVelocity()</h2>
+<a id="af43cd1b1b9d643828fafbd63c4390743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af43cd1b1b9d643828fafbd63c4390743">&#9670;&nbsp;</a></span>applyVelocity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,7 +163,7 @@ std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_
         <tr>
           <td class="memname">void Move::applyVelocity </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_entity.html">Entity</a> &amp;&#160;</td>
           <td class="paramname"><em>entity</em></td><td>)</td>
           <td></td>
         </tr>
@@ -198,35 +177,6 @@ std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a54b7f4154d5f753e9c433feb4f8d9e17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54b7f4154d5f753e9c433feb4f8d9e17">&#9670;&nbsp;</a></span>run()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Move::run </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>check all entity if they can move then call 'move()' on the ones that can </p>
-
-<p>Reimplemented from <a class="el" href="classecs_1_1_a_system.html#a64c328fda8e9e0218f906265710aaf8a">ecs::ASystem</a>.</p>
 
 </div>
 </div>

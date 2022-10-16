@@ -108,9 +108,9 @@ Inheritance diagram for ecs::ASystem:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2c0e3f5ac72db7a8bdf2e92f86fc3394"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#a2c0e3f5ac72db7a8bdf2e92f86fc3394">ASystem</a> (std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> &gt;&gt; &amp;entityMap)</td></tr>
-<tr class="memdesc:a2c0e3f5ac72db7a8bdf2e92f86fc3394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for systems.  <a href="classecs_1_1_a_system.html#a2c0e3f5ac72db7a8bdf2e92f86fc3394">More...</a><br /></td></tr>
-<tr class="separator:a2c0e3f5ac72db7a8bdf2e92f86fc3394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3495f5e03dfd716257ae1ac92deabe0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">ASystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
+<tr class="memdesc:ab3495f5e03dfd716257ae1ac92deabe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for systems.  <a href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">More...</a><br /></td></tr>
+<tr class="separator:ab3495f5e03dfd716257ae1ac92deabe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64c328fda8e9e0218f906265710aaf8a"><td class="memItemLeft" align="right" valign="top"><a id="a64c328fda8e9e0218f906265710aaf8a"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#a64c328fda8e9e0218f906265710aaf8a">run</a> () override</td></tr>
 <tr class="memdesc:a64c328fda8e9e0218f906265710aaf8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the system <br /></td></tr>
@@ -118,13 +118,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a5ee36e786f6b475441ba5b70b2e0fe2d"><td class="memItemLeft" align="right" valign="top"><a id="a5ee36e786f6b475441ba5b70b2e0fe2d"></a>
-std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_entityMap</b></td></tr>
-<tr class="separator:a5ee36e786f6b475441ba5b70b2e0fe2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782e261e3d4ef817556d55fc3c6e9001"><td class="memItemLeft" align="right" valign="top"><a id="a782e261e3d4ef817556d55fc3c6e9001"></a>
+std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_manager</b></td></tr>
+<tr class="separator:a782e261e3d4ef817556d55fc3c6e9001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2c0e3f5ac72db7a8bdf2e92f86fc3394"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c0e3f5ac72db7a8bdf2e92f86fc3394">&#9670;&nbsp;</a></span>ASystem()</h2>
+<a id="ab3495f5e03dfd716257ae1ac92deabe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3495f5e03dfd716257ae1ac92deabe0">&#9670;&nbsp;</a></span>ASystem()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -132,8 +132,8 @@ std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_
         <tr>
           <td class="memname">ASystem::ASystem </td>
           <td>(</td>
-          <td class="paramtype">std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>entityMap</em></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>manager</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -142,7 +142,7 @@ std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_
 <p>Abstract class for systems. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">entityMap</td><td>reference to the game's entity map </td></tr>
+    <tr><td class="paramname">manager</td><td>reference to the game's entity map </td></tr>
   </table>
   </dd>
 </dl>
