@@ -38,7 +38,7 @@ Entity &Ecs::addEntity(const Entity &entity)
 Entity &Ecs::getEntity(const size_t id)
 {
     if (!_entities.contains(id))
-        throw EntityAlreadyExisting(id);
+        throw EntityNotExisting(id);
     return (*_entities.at(id).get());
 }
 
@@ -47,7 +47,7 @@ std::unordered_map<size_t, std::shared_ptr<Entity>> &Ecs::getEntities() { return
 void Ecs::removeEntity(const size_t id)
 {
     if (!_entities.contains(id))
-        throw EntityAlreadyExisting(id);
+        throw EntityNotExisting(id);
     _entities.erase(id);
 }
 
