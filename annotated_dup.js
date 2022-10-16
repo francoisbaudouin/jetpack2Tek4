@@ -4,6 +4,7 @@ var annotated_dup =
       [ "AComponent", "classecs_1_1_a_component.html", "classecs_1_1_a_component" ],
       [ "ASystem", "classecs_1_1_a_system.html", "classecs_1_1_a_system" ],
       [ "Collider", "classecs_1_1_collider.html", "classecs_1_1_collider" ],
+      [ "ColliderReaction", "classecs_1_1_collider_reaction.html", "classecs_1_1_collider_reaction" ],
       [ "Controll", "classecs_1_1_controll.html", "classecs_1_1_controll" ],
       [ "Controllable", "classecs_1_1_controllable.html", "classecs_1_1_controllable" ],
       [ "Device", "structecs_1_1_device.html", "structecs_1_1_device" ],
@@ -26,6 +27,7 @@ var annotated_dup =
       [ "SystemAlreadyExisting", "classecs_1_1_system_already_existing.html", "classecs_1_1_system_already_existing" ],
       [ "SystemNotExisting", "classecs_1_1_system_not_existing.html", "classecs_1_1_system_not_existing" ],
       [ "Test", "classecs_1_1_test.html", "classecs_1_1_test" ],
+      [ "Type", "classecs_1_1_type.html", "classecs_1_1_type" ],
       [ "Velocity", "classecs_1_1_velocity.html", "classecs_1_1_velocity" ],
       [ "Weapon", "classecs_1_1_weapon.html", "classecs_1_1_weapon" ]
     ] ]

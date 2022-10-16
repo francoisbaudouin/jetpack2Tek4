@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>R-Type: ecs::IComponent Class Reference</title>
+<title>R-Type: src/game/ecs/enums/entityTypes.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -65,7 +65,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('classecs_1_1_i_component.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('entity_types_8hpp_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -84,48 +84,37 @@ $(document).ready(function(){initNavTree('classecs_1_1_i_component.html',''); in
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classecs_1_1_i_component-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">ecs::IComponent Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
+<div class="title">entityTypes.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for ecs::IComponent:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="classecs_1_1_i_component.png" usemap="#ecs::IComponent_map" alt=""/>
-  <map id="ecs::IComponent_map" name="ecs::IComponent_map">
-<area href="classecs_1_1_a_component.html" alt="ecs::AComponent" shape="rect" coords="360,56,470,80"/>
-<area href="classecs_1_1_controllable.html" alt="ecs::Controllable" shape="rect" coords="0,112,110,136"/>
-<area href="classecs_1_1_drawable.html" alt="ecs::Drawable" shape="rect" coords="120,112,230,136"/>
-<area href="classecs_1_1_hit_box.html" alt="ecs::HitBox" shape="rect" coords="240,112,350,136"/>
-<area href="classecs_1_1_position.html" alt="ecs::Position" shape="rect" coords="360,112,470,136"/>
-<area href="classecs_1_1_type.html" alt="ecs::Type" shape="rect" coords="480,112,590,136"/>
-<area href="classecs_1_1_velocity.html" alt="ecs::Velocity" shape="rect" coords="600,112,710,136"/>
-<area href="classecs_1_1_weapon.html" alt="ecs::Weapon" shape="rect" coords="720,112,830,136"/>
-  </map>
-</div></div>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a42eca69e45ec6741aaba4cc63947b935"><td class="memItemLeft" align="right" valign="top"><a id="a42eca69e45ec6741aaba4cc63947b935"></a>
-virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getEntityId</b> () const =0</td></tr>
-<tr class="separator:a42eca69e45ec6741aaba4cc63947b935"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1d934f9e128ffb4f4f7ba9996cc9a8f"><td class="memItemLeft" align="right" valign="top"><a id="ae1d934f9e128ffb4f4f7ba9996cc9a8f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setEntityId</b> (const size_t entityId)=0</td></tr>
-<tr class="separator:ae1d934f9e128ffb4f4f7ba9996cc9a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/game/ecs/components/<a class="el" href="_i_component_8hpp_source.html">IComponent.hpp</a></li>
-</ul>
-</div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">** EPITECH PROJECT, 2022</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">** jetpack2Tek4</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">** File description:</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">** types</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef TYPES_HPP_</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define TYPES_HPP_</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>ecs</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">enum</span> entityType {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        UNDEFINED_ENTITY_TYPE = -1,</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        PLAYER = 0,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        ENEMY,</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        PROJECTILE,</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    };</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;} <span class="comment">// namespace ecs</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !TYPES_HPP_ */</span><span class="preprocessor"></span></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>ecs</b></li><li class="navelem"><a class="el" href="classecs_1_1_i_component.html">IComponent</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1699be727a800b1d059c6f7f2b91d2ee.html">game</a></li><li class="navelem"><a class="el" href="dir_6cafebd46cfdd95aa72e943b18ee7334.html">ecs</a></li><li class="navelem"><a class="el" href="dir_e489e3176a04b33537d33f44bab30571.html">enums</a></li><li class="navelem"><b>entityTypes.hpp</b></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

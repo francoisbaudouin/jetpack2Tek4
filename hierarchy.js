@@ -19,6 +19,7 @@ var hierarchy =
         [ "ecs::Drawable", "classecs_1_1_drawable.html", null ],
         [ "ecs::HitBox", "classecs_1_1_hit_box.html", null ],
         [ "ecs::Position", "classecs_1_1_position.html", null ],
+        [ "ecs::Type", "classecs_1_1_type.html", null ],
         [ "ecs::Velocity", "classecs_1_1_velocity.html", null ],
         [ "ecs::Weapon", "classecs_1_1_weapon.html", null ]
       ] ]
@@ -26,6 +27,7 @@ var hierarchy =
     [ "ecs::ISystem", "classecs_1_1_i_system.html", [
       [ "ecs::ASystem", "classecs_1_1_a_system.html", [
         [ "ecs::Collider", "classecs_1_1_collider.html", null ],
+        [ "ecs::ColliderReaction", "classecs_1_1_collider_reaction.html", null ],
         [ "ecs::Controll", "classecs_1_1_controll.html", null ],
         [ "ecs::Display", "classecs_1_1_display.html", null ],
         [ "ecs::Fire", "classecs_1_1_fire.html", null ],

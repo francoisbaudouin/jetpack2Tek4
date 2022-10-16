@@ -102,40 +102,43 @@ $(document).ready(function(){initNavTree('_fire_8hpp_source.html',''); initResiz
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../components/Drawable.hpp&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../components/Position.hpp&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../components/Velocity.hpp&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../components/Weapon.hpp&quot;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;ASystem.hpp&quot;</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;SFML/Graphics.hpp&quot;</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">namespace </span>ecs</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">class </span>Ecs;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classecs_1_1_fire.html">   25</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classecs_1_1_fire.html">Fire</a> : <span class="keyword">public</span> <a class="code" href="classecs_1_1_a_system.html">ASystem</a> {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classecs_1_1_fire.html#a657abe2132039a43c6c366bd77539e08">Fire</a>(std::shared_ptr&lt;Ecs&gt; &amp;manager);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        ~<a class="code" href="classecs_1_1_fire.html">Fire</a>();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_fire.html#aea041dc604a2c7c5ca04bf1448eaf561">createProjectile</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> entityId);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_a_system.html#a64c328fda8e9e0218f906265710aaf8a">run</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> entityId);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        std::chrono::time_point&lt;std::chrono::system_clock&gt; _lastTimeTriggered;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        std::chrono::time_point&lt;std::chrono::system_clock&gt; _triggeredTime;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        std::chrono::duration&lt;double&gt; _elapsedTime;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        sf::Texture _tempTexture;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    };</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;} <span class="comment">// namespace ecs</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !FIRE_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../components/HitBox.hpp&quot;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../components/Position.hpp&quot;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;../components/Velocity.hpp&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;../components/Weapon.hpp&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;ASystem.hpp&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;ColliderReaction.hpp&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;SFML/Graphics.hpp&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">namespace </span>ecs</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">class </span>Ecs;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classecs_1_1_fire.html">   28</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classecs_1_1_fire.html">Fire</a> : <span class="keyword">public</span> <a class="code" href="classecs_1_1_a_system.html">ASystem</a> {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classecs_1_1_fire.html#a657abe2132039a43c6c366bd77539e08">Fire</a>(std::shared_ptr&lt;Ecs&gt; &amp;manager);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        ~<a class="code" href="classecs_1_1_fire.html">Fire</a>();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_fire.html#aea041dc604a2c7c5ca04bf1448eaf561">createProjectile</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> entityId);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_a_system.html#a64c328fda8e9e0218f906265710aaf8a">run</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> entityId);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        std::chrono::time_point&lt;std::chrono::system_clock&gt; _lastTimeTriggered;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        std::chrono::time_point&lt;std::chrono::system_clock&gt; _triggeredTime;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::chrono::duration&lt;double&gt; _elapsedTime;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        sf::Texture _tempTexture;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    };</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;} <span class="comment">// namespace ecs</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !FIRE_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassecs_1_1_a_system_html"><div class="ttname"><a href="classecs_1_1_a_system.html">ecs::ASystem</a></div><div class="ttdef"><b>Definition:</b> ASystem.hpp:19</div></div>
 <div class="ttc" id="aclassecs_1_1_a_system_html_a64c328fda8e9e0218f906265710aaf8a"><div class="ttname"><a href="classecs_1_1_a_system.html#a64c328fda8e9e0218f906265710aaf8a">ecs::ASystem::run</a></div><div class="ttdeci">void run() override</div><div class="ttdoc">run the system</div><div class="ttdef"><b>Definition:</b> ASystem.cpp:16</div></div>
 <div class="ttc" id="aclassecs_1_1_fire_html_a657abe2132039a43c6c366bd77539e08"><div class="ttname"><a href="classecs_1_1_fire.html#a657abe2132039a43c6c366bd77539e08">ecs::Fire::Fire</a></div><div class="ttdeci">Fire(std::shared_ptr&lt; Ecs &gt; &amp;manager)</div><div class="ttdoc">Construct a new Fire system that fire a projectile belong to weapon component.</div><div class="ttdef"><b>Definition:</b> Fire.cpp:12</div></div>
 <div class="ttc" id="aclassecs_1_1_fire_html_aea041dc604a2c7c5ca04bf1448eaf561"><div class="ttname"><a href="classecs_1_1_fire.html#aea041dc604a2c7c5ca04bf1448eaf561">ecs::Fire::createProjectile</a></div><div class="ttdeci">void createProjectile(const size_t entityId)</div><div class="ttdoc">Create a projectile at the position of the player.</div><div class="ttdef"><b>Definition:</b> Fire.cpp:20</div></div>
-<div class="ttc" id="aclassecs_1_1_fire_html"><div class="ttname"><a href="classecs_1_1_fire.html">ecs::Fire</a></div><div class="ttdef"><b>Definition:</b> Fire.hpp:25</div></div>
+<div class="ttc" id="aclassecs_1_1_fire_html"><div class="ttname"><a href="classecs_1_1_fire.html">ecs::Fire</a></div><div class="ttdef"><b>Definition:</b> Fire.hpp:28</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
