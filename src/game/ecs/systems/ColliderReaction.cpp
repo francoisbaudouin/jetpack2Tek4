@@ -11,13 +11,11 @@ using namespace ecs;
 
 static void projectileHitEnnemy(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {
-  manager->removeEntity(entity1.getId());
-  manager->removeEntity(entity2.getId());
+    manager->removeEntity(entity1.getId());
+    manager->removeEntity(entity2.getId());
 }
 
-void enemyCollidePlayer(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
-{
-}
+void enemyCollidePlayer(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2) {}
 
 void undefinedReaction(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {

@@ -44,11 +44,10 @@ Client::Client() : _manager(), _window(sf::VideoMode(800, 600), "Client window")
 
     player.addComponent<Drawable>(_tmpTexture);
     player.addComponent<Position>(100, 100);
-    player.addComponent<Velocity>(0.5, 0);
     player.addComponent<Weapon>(0.3, 0, WeaponType::CANON);
+    player.addComponent<Velocity>(0, 0);
     player.addComponent<Type>(entityType::PLAYER);
     player.addComponent<HitBox>(32, 32);
-
     player.addComponent<Controllable>(Device::KeyBoardKey::Z, Device::KeyBoardKey::D, Device::KeyBoardKey::Q,
         Device::KeyBoardKey::S, Device::KeyBoardKey::F);
 
@@ -58,8 +57,12 @@ Client::Client() : _manager(), _window(sf::VideoMode(800, 600), "Client window")
     enemy.addComponent<Drawable>(_tmpTexture2);
     enemy.addComponent<Position>(300, 100);
     enemy.addComponent<Velocity>(0, 0);
-    enemy.addComponent<Type>(entityType::ENEMY);
+    enemy.addComponent<Type>(entityType::PLAYER);
     enemy.addComponent<HitBox>(32, 32);
+    enemy.addComponent<Weapon>(0.3, 0, WeaponType::CANON);
+    enemy.addComponent<Controllable>(Device::KeyBoardKey::Z, Device::KeyBoardKey::D, Device::KeyBoardKey::Q,
+        Device::KeyBoardKey::S, Device::KeyBoardKey::F);
+    
 }
 
 Client::~Client() {}
@@ -74,7 +77,7 @@ void Client::run()
         while (_window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 _window.close();
-            _manager->getSystem<Controll>().run(_manager->getSystem<Input>().getInput(event));
+            _manager->getSystem<Controll>().run(_manager->getSystem<Input>().getInput(event), 1);
         }
         _manager->getSystem<Move>().run();
         _manager->getSystem<Collider>().run();
