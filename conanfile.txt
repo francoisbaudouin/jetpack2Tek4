@@ -1,8 +1,3 @@
-[generators]
-cmake
-cmake_find_package
-cmake_paths
-
 [requires]
     sfml/2.5.1
     asio/1.16.0
@@ -19,3 +14,8 @@ cmake_paths
     gtest:hide_symbols=False
     gtest:no_main=False
     gtest:shared=False
+
+[generators]
+    cmake
+    cmake_find_package
+    cmake_paths
