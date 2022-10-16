@@ -18,6 +18,10 @@ namespace ecs
 {
     class Entity {
       public:
+        /**
+         * @brief Construct a new Entity object and call the 'getNewEntityId' that generate a new id for the entity
+         *
+         */
         Entity();
         ~Entity();
 
