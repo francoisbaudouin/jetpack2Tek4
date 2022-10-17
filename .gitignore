@@ -26,6 +26,9 @@
 *.a
 *.lib
 
+# debug files
+vgcore.*
+
 # Executables
 *.exe
 *.out
@@ -36,3 +39,6 @@ build
 .vscode
 r-type_server
 r-type_client
+
+# tests files
+assets

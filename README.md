@@ -9,14 +9,16 @@ You have the posibilty to play in mutiplayer or solo game
 ## INSTALLATION
 
 ##### Prerequisite
- - [CMake 3.16 (minimum)]((https://cgold.readthedocs.io/en/latest/first-step/installation.html))
- - SFML
- - ASIO
+ - [CMake 3.16 (minimum)](https://cgold.readthedocs.io/en/latest/first-step/installation.html)
+- [Conan](https://conan.io/downloads.html)
 
-Install Cmake : [her](https://cgold.readthedocs.io/en/latest/first-step/installation.html)
-Install custom for Aditionals packages:
+Linux :
 ```sh
-Conan packet manangment is coming
+# Create and move to build directory
+mkdir build && cd build
+
+# Command to lunch dependencies installation
+sudo conan install ../. -c tools.system.package_manager:mode=install
 ```
 
 ## BUILD
@@ -47,7 +49,7 @@ Run Client:
 ```
 ## DOCUMENTATION
 
-The documentation is avaiable [her](https://francoisbaudouin.github.io/jetpack2Tek4/)
+The documentation is avaiable [here](https://francoisbaudouin.github.io/jetpack2Tek4/)
 
 ## DEVELOPERS PART
 You are allowed to create your own mods! Be creative

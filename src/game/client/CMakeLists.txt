@@ -7,3 +7,9 @@ set(SRC
     ${SRCROOT}/Client.hpp
     PARENT_SCOPE
 )
+
+set(INCDIRS
+    ${INCDIRS}
+    ${INCROOT}
+    PARENT_SCOPE
+)
