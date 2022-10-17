@@ -21,24 +21,24 @@
 
 namespace rtype
 {
-	class Client {
-		public:
-			Client(const std::string &ipAdress = "127.0.0.1", const size_t &port = 42069);
-			void connectToServer();
-			void run(boost::asio::ip::udp::socket &socket);
-			~Client() = default;
+    class Client {
+      public:
+        Client(const std::string &ipAdress = "127.0.0.1", const size_t &port = 42069);
+        void connectToServer();
+        void run(boost::asio::ip::udp::socket &socket);
+        ~Client() = default;
 
-		protected:
-		private:
-			boost::array<char, 128> _sendBuffer;
-			boost::array<char, 128> _receiveBuffer;
-			boost::asio::io_context _ioContext;
-			boost::asio::ip::udp::endpoint _receiverEndpoint;
-			boost::asio::ip::udp::endpoint _senderEndpoint;
-			size_t _messageLength;
-			std::shared_ptr<ecs::Ecs> _sharedEcs;
-			sf::RenderWindow _window;
-	};
-}
+      protected:
+      private:
+        boost::array<char, 128> _sendBuffer;
+        boost::array<char, 128> _receiveBuffer;
+        boost::asio::io_context _ioContext;
+        boost::asio::ip::udp::endpoint _receiverEndpoint;
+        boost::asio::ip::udp::endpoint _senderEndpoint;
+        size_t _messageLength;
+        std::shared_ptr<ecs::Ecs> _sharedEcs;
+        sf::RenderWindow _window;
+    };
+} // namespace rtype
 
 #endif /* !CLIENT_HPP_ */
