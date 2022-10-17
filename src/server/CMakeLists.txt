@@ -4,7 +4,7 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/server)
 set(SRC ${SRC})
 
 # adding subb diirectory
-add_subdirectory(initialization)
+# add_subdirectory(initialization)
 
 set(TARGET_NAME r-type_server)
 
