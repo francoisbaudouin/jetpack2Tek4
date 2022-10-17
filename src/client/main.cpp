@@ -8,9 +8,9 @@
 
 int main(void)
 {
-    rtype::Client client;
+	rtype::Client client;
 
-    client.connectToServer();
+	client.connectToServer();
 
-    return 0;
+	return 0;
 }
