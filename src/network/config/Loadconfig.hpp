@@ -9,7 +9,7 @@
 #define LOADCONFIG_HPP_
 
 #include <string>
-#include <vector>
+#include <map>
 
 namespace configuration
 {
@@ -31,6 +31,8 @@ namespace configuration
         size_t _gravity;
         std::string _custom_map;
         size_t maxConnection;
+        std::map<std::string, std::string> _configurationServer{{"name",""}, {"port",""}, {"ip",""}, {"debugger",""}, {"EULA",""}, {"max_player_connection",""}};
+        std::map<std::string, std::string> _configurationGame{{"gravity",""}, {"velocity",""}, {"custom_map",""}};
     };
 } // namespace configuration
 

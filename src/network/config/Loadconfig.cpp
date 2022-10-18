@@ -38,6 +38,7 @@ namespace configuration
         std::string line;
 
         while (std::getline(configFile, line)) {
-            }
+            
+        }
     }
 } // namespace configuration

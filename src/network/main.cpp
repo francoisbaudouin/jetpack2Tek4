@@ -26,8 +26,7 @@ int main()
     // initialization::Loadconfig congfig;
 
     try {
-        Loadconfig test;
-        test.load_file();
+        configuration::Loadconfig test;
         boost::array<char, 1> receiveBuffer;
         boost::asio::io_context ioContext;
         boost::asio::ip::udp::endpoint remoteEndpoint;
