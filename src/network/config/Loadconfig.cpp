@@ -10,18 +10,34 @@
 #include "../exception/Exception.hpp"
 #include "Loadconfig.hpp"
 
-Loadconfig::Loadconfig() {}
+#define CONFIG_PATH "src/network/config.ini"
 
-Loadconfig::~Loadconfig() {}
-
-bool Loadconfig::load_file()
+namespace configuration
 {
-    std::ofstream configFile("../config.atom");
+    Loadconfig::Loadconfig() {}
 
-    if (configFile.is_open()) {
-    } else {
-        throw rtype::InvalideUnknownFile("Can't open config file:");
+    Loadconfig::~Loadconfig() {}
+
+    bool Loadconfig::load_file()
+    {
+        std::ifstream configFile;
+        configFile.open(CONFIG_PATH, std::fstream::in);
+        if (configFile.is_open() == true) {
+            
+        } else {
+            configFile.close();
+            throw rtype::InvalideUnknownFile("Can't open config file:");
+            return (false);
+        }
+        configFile.close();
+        return (true);
     }
-    configFile.close();
-    return (true);
-}
+
+    void Loadconfig::load_data(std::fstream configFile) 
+    {
+        std::string line;
+
+        while (std::getline(configFile, line)) {
+            }
+    }
+} // namespace configuration

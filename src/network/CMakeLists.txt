@@ -9,8 +9,8 @@ include(CompilerFlags)
 find_package(Threads REQUIRED)
 
 # adding sub directory
-add_subdirectory(exception/)
-add_subdirectory(config/)
+add_subdirectory(exception)
+add_subdirectory(config)
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 

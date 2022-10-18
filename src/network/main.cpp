@@ -24,8 +24,10 @@ std::string make_daytime_string()
 int main()
 {
     // initialization::Loadconfig congfig;
-    Loadconfig test;
+
     try {
+        Loadconfig test;
+        test.load_file();
         boost::array<char, 1> receiveBuffer;
         boost::asio::io_context ioContext;
         boost::asio::ip::udp::endpoint remoteEndpoint;
