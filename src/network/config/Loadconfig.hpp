@@ -21,6 +21,7 @@ namespace configuration
 
       protected:
       private:
+        bool setServerData(std::map<std::string, std::string>::iterator it);
         bool load_file();
         void load_data(std::fstream configFile);
         std::string _ip;
