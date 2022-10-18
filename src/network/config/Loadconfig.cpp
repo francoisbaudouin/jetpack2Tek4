@@ -38,7 +38,8 @@ namespace configuration
         std::string line;
 
         while (std::getline(configFile, line)) {
-            
+            for (std::map<std::string, std::string>::iterator it = _configurationServer.begin(); it != _configurationServer.end(); it++) {
+            }
         }
     }
 } // namespace configuration
