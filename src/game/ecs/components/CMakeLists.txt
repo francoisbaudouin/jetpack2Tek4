@@ -5,6 +5,10 @@ set(SRC
     ${SRC}
     ${SRCROOT}/AComponent.cpp
     ${SRCROOT}/AComponent.hpp
+    ${SRCROOT}/Controllable.cpp
+    ${SRCROOT}/Controllable.hpp
+    ${SRCROOT}/HitBox.cpp
+    ${SRCROOT}/HitBox.hpp
     ${SRCROOT}/Drawable.cpp
     ${SRCROOT}/Drawable.hpp
     ${SRCROOT}/IComponent.hpp
@@ -12,6 +16,10 @@ set(SRC
     ${SRCROOT}/Position.hpp
     ${SRCROOT}/Velocity.cpp
     ${SRCROOT}/Velocity.hpp
+    ${SRCROOT}/Weapon.cpp
+    ${SRCROOT}/Weapon.hpp
+    ${SRCROOT}/Type.cpp
+    ${SRCROOT}/Type.hpp
     ${SRCROOT}/Controllable.cpp
     ${SRCROOT}/Controllable.hpp
     PARENT_SCOPE

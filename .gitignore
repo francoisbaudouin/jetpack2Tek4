@@ -39,3 +39,6 @@ build
 .vscode
 r-type_server
 r-type_client
+
+# tests files
+assets

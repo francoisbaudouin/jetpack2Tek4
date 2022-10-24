@@ -13,7 +13,8 @@ Controll::Controll(std::shared_ptr<Ecs> &manager) : ASystem(manager) {}
 
 Controll::~Controll() {}
 
-void changeVelocity(Velocity &velocity, Controllable &controllable, const std::vector<RTypeEvent> &rTypeEvents)
+void Controll::keyReaction(
+    Velocity &velocity, Controllable &controllable, const std::vector<RTypeEvent> &rTypeEvents, const size_t entityId)
 {
     float velocityValueX = 0;
     float velocityValueY = 0;
@@ -26,21 +27,21 @@ void changeVelocity(Velocity &velocity, Controllable &controllable, const std::v
             case Controlls::RIGHT: velocityValueX += velocityValue; continue;
             case Controlls::LEFT: velocityValueX -= velocityValue; continue;
             case Controlls::DOWN: velocityValueY += velocityValue; continue;
+            case Controlls::FIRE: _manager->getSystem<Fire>().run(entityId); continue;
             default: velocity.setVelocity(none, none); continue;
         }
     }
     velocity.setVelocity(velocityValueX, velocityValueY);
 }
 
-void Controll::run(const std::vector<RTypeEvent> &rTypeEvents)
+void Controll::run(const std::vector<RTypeEvent> &rTypeEvents, const size_t entityId)
 {
     if (_manager->getNumberEntities() == 0)
         return;
-    for (auto &entity : _manager->getEntities()) {
-        if (entity.second->hasComponent<Controllable>() && entity.second->hasComponent<Velocity>()) {
-            Velocity &velocity = entity.second->getComponent<Velocity>();
-            Controllable &controllable = entity.second->getComponent<Controllable>();
-            changeVelocity(velocity, controllable, rTypeEvents);
-        }
+    if (_manager->getEntity(entityId).hasComponent<Controllable>()
+        && _manager->getEntity(entityId).hasComponent<Velocity>()) {
+        Velocity &velocity = _manager->getEntity(entityId).getComponent<Velocity>();
+        Controllable &controllable = _manager->getEntity(entityId).getComponent<Controllable>();
+        keyReaction(velocity, controllable, rTypeEvents, entityId);
     }
 }
