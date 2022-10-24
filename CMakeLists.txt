@@ -10,7 +10,7 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR}/build)
 include(DetectCompiler)
 
-find_package(SFML REQUIRED system window graphics network audio)
+# find_package(SFML REQUIRED system window graphics network audio)
 
 add_subdirectory(src/game)
 add_subdirectory(src/network)

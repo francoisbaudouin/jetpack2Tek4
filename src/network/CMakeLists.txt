@@ -3,7 +3,7 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/network)
 
 # adding subb diirectory
 add_subdirectory(initialization)
-include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
+
 set(TARGET_NAME r-type_server)
 
 include(CompilerFlags)

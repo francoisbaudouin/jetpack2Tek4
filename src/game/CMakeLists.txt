@@ -5,7 +5,6 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/game)
 # Exemple: add_subdirectory(connexion)
 set(TARGET_NAME r-type_client)
 
-include(${CMAKE_BINARY_DIR}/conan_paths.cmake)
 set(SRC ${SRC})
 
 set(INCDIRS ${INCROOT})
