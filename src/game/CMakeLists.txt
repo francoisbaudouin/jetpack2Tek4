@@ -13,6 +13,8 @@ add_subdirectory(client)
 add_subdirectory(ecs)
 
 include(CompilerFlags)
+include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 
