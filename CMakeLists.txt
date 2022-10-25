@@ -14,3 +14,6 @@ include(DetectCompiler)
 
 add_subdirectory(src/game)
 add_subdirectory(src/network)
+
+include(build/conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
