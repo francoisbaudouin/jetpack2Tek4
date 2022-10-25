@@ -16,7 +16,6 @@ include(CompilerFlags)
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 
-find_package(SFML REQUIRED system window graphics network audio)
 target_link_libraries(${TARGET_NAME} sfml-audio sfml-graphics sfml-network sfml-system)
 
 add_custom_command(TARGET ${TARGET_NAME}
