@@ -10,11 +10,11 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR}/build)
 include(DetectCompiler)
 
-# find_package(SFML REQUIRED system window graphics network audio)
 
-include(build/conanbuildinfo.cmake)
 
 add_subdirectory(src/game)
 add_subdirectory(src/network)
 
+include(build/conanbuildinfo.cmake)
+find_package(SFML REQUIRED system window graphics network audio)
 conan_basic_setup(TARGET)
