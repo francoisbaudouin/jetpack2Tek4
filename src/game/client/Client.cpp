@@ -25,7 +25,9 @@
 
 using namespace ecs;
 
-Client::Client() : _manager(), _windowSize(std::make_pair<int, int>(640, 360)) ,_window(sf::VideoMode(_windowSize.first, _windowSize.second), "Client window")
+Client::Client()
+    : _manager(), _windowSize(std::make_pair<int, int>(640, 360)),
+      _window(sf::VideoMode(_windowSize.first, _windowSize.second), "Client window")
 {
     Ecs tmpEcs;
     _manager = std::make_shared<Ecs>(tmpEcs);
@@ -89,7 +91,6 @@ Client::Client() : _manager(), _windowSize(std::make_pair<int, int>(640, 360)) ,
     wall4.addComponent<Position>(_windowSize.first, 0);
     wall4.addComponent<HitBox>(1, _windowSize.second);
     wall4.addComponent<Type>(WALL);
-
 }
 
 Client::~Client() {}
