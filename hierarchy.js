@@ -1,5 +1,6 @@
 var hierarchy =
 [
+    [ "ecs::Client", "classecs_1_1_client.html", null ],
     [ "ecs::Device", "structecs_1_1_device.html", null ],
     [ "ecs::Ecs", "classecs_1_1_ecs.html", null ],
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
