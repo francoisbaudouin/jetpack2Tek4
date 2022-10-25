@@ -13,7 +13,8 @@ include(DetectCompiler)
 # find_package(SFML REQUIRED system window graphics network audio)
 
 include(build/conanbuildinfo.cmake)
-conan_basic_setup(TARGET)
 
 add_subdirectory(src/game)
 add_subdirectory(src/network)
+
+conan_basic_setup(TARGET)
