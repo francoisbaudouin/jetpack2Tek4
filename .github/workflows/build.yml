@@ -60,11 +60,11 @@ jobs:
   build-windows:
     runs-on: windows-latest
 
+    steps:
     - name: Install Conan
       id: conan
       uses: turtlebrowser/get-conan@main
 
-    steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
