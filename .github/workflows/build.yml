@@ -33,15 +33,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-
-#    - name: Install Conan
-#      run: |
-#        pip install conan pytest && conan --version
-#        export CONAN_USER_HOME="/tmp/conan"
-#        export CONAN_SYSREQUIRES_MODE="enabled"
-#        export CONAN_SYSREQUIRES_SUDO="1"
-#        conan remove --system-reqs "*"
-
     - name: Configure Conan
       run : |
         mkdir build
@@ -68,6 +59,10 @@ jobs:
 #
   build-windows:
     runs-on: windows-latest
+
+    - name: Install Conan
+      id: conan
+      uses: turtlebrowser/get-conan@main
 
     steps:
     - name: Checkout repository
