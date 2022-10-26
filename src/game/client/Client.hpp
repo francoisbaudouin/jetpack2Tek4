@@ -28,8 +28,8 @@ namespace ecs
         sf::Texture _tmpTexture2;
         sf::Texture _tmpTexture3;
 
-        std::pair<int, int> _windowSize;
         std::shared_ptr<Ecs> _manager;
+        std::pair<int, int> _windowSize;
         sf::RenderWindow _window;
     };
 } // namespace ecs
