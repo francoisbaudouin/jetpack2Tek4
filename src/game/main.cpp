@@ -8,7 +8,7 @@
 
 int main(void)
 {
-    ecs::Client client;
-    client.run();
+    /* ecs::Client client;
+    client.run(); */
     return (0);
 }
