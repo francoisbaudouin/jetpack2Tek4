@@ -8,6 +8,8 @@ set(TARGET_NAME r-type_server)
 
 include(CompilerFlags)
 
+set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
+
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
 
 add_custom_command(TARGET ${TARGET_NAME}
