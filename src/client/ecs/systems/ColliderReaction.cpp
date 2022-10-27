@@ -17,11 +17,13 @@ static void projectileHitEnnemy(std::shared_ptr<Ecs> &manager, Entity &entity1, 
 
 static void projectileHitWall(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {
+    (void)entity2;
     manager->removeEntity(entity1.getId());
 }
 
 static void playerHitWall(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {
+    (void)entity2;
     auto &playerPosition = manager->getEntity(entity1.getId()).getComponent<Position>();
     auto &playerVelocity = manager->getEntity(entity1.getId()).getComponent<Velocity>();
 
