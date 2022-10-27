@@ -12,8 +12,8 @@ include(DetectCompiler)
 
 set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
 
-add_subdirectory(src/game)
-add_subdirectory(src/network)
+add_subdirectory(src/client)
+add_subdirectory(src/server)
 
 include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
