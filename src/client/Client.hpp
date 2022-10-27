@@ -30,14 +30,13 @@ namespace rtype
 
       protected:
       private:
-        boost::array<char, 128> _sendBuffer;
-        boost::array<char, 128> _receiveBuffer;
-        boost::asio::io_context _ioContext;
+        sf::RenderWindow _window;
+        std::shared_ptr<ecs::Ecs> _sharedEcs;
         boost::asio::ip::udp::endpoint _receiverEndpoint;
         boost::asio::ip::udp::endpoint _senderEndpoint;
-        size_t _messageLength;
-        std::shared_ptr<ecs::Ecs> _sharedEcs;
-        sf::RenderWindow _window;
+        boost::asio::io_context _ioContext;
+        boost::array<char, 128> _sendBuffer;
+        boost::array<char, 128> _receiveBuffer;
     };
 } // namespace rtype
 
