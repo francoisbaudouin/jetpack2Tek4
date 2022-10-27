@@ -68,6 +68,9 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Get msvc compiler
+      uses: ilammy/msvc-dev-cmd@v1
+
     - name: Configure Conan
       run : |
         mkdir build
