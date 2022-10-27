@@ -10,9 +10,10 @@
 
 #include <typeindex>
 #include <typeinfo>
+#include <unordered_map>
+
 #include "../components/IComponent.hpp"
 #include "../exceptions/Exception.hpp"
-#include <unordered_map>
 
 namespace ecs
 {
@@ -37,11 +38,16 @@ namespace ecs
         Component &addComponent(ComponentArguments &&...arguments)
         {
             if (this->hasComponent<Component>())
-                return (this->getComponent<Component>());
+                throw ComponentAlreadyExisting(typeid(Component).name(), _id);
 
             Component *component(new Component(this->getId(), std::forward<ComponentArguments>(arguments)...));
 
-            _components.insert({std::type_index(typeid(Component)), component});
+            if (IComponent *iComponent = dynamic_cast<IComponent *>(component))
+                _components.insert({std::type_index(typeid(Component)), component});
+            else {
+                delete component;
+                throw ComponentNotCompatible(typeid(Component).name());
+            }
             return (*component);
         }
 
@@ -66,7 +72,7 @@ namespace ecs
         template <class Component> Component &getComponent()
         {
             if (!this->hasComponent<Component>())
-                throw ecs::NoComponent(typeid(Component).name(), this->getId());
+                throw ecs::ComponentNotExisting(typeid(Component).name(), this->getId());
             Component *component = static_cast<Component *>(_components.at(std::type_index(typeid(Component))));
             return (*component);
         }
@@ -94,7 +100,7 @@ namespace ecs
         template <class Component> void removeComponent()
         {
             if (!this->hasComponent<Component>())
-                throw ecs::NoComponent(typeid(Component).name(), this->getId());
+                throw ecs::ComponentNotExisting(typeid(Component).name(), this->getId());
             delete static_cast<Component *>(_components.at(std::type_index(typeid(Component))));
             _components.erase(std::type_index(typeid(Component)));
         }

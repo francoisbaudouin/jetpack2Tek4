@@ -75,9 +75,15 @@ namespace ecs
         template <class System> void addSystem(std::shared_ptr<Ecs> &manager)
         {
             if (_systems.contains(std::type_index(typeid(System))))
-                throw SystemAlreadyExisting();
+                throw SystemAlreadyExisting(typeid(System).name());
 
-            _systems.insert({std::type_index(typeid(System)), new System(manager)});
+            System *system(new System(manager));
+            if (ISystem *iSystem = dynamic_cast<ISystem *>(system))
+                _systems.insert({std::type_index(typeid(System)), system});
+            else {
+              delete system;
+              throw SystemNotCompatible(typeid(System).name());
+            }
         }
 
         /**
@@ -89,7 +95,7 @@ namespace ecs
         template <class System> System &getSystem()
         {
             if (!_systems.contains(std::type_index(typeid(System))))
-                throw SystemNotExisting();
+                throw SystemNotExisting(typeid(System).name());
             return (*static_cast<System *>(_systems.at(std::type_index(typeid(System)))));
         }
 
