@@ -4,12 +4,11 @@
 ** File description:
 ** main
 */
-
 #include "client/Client.hpp"
 
 int main(void)
 {
-  Client client;
-  client.run();
-  return (0);
+    ecs::Client client;
+    client.run();
+    return (0);
 }

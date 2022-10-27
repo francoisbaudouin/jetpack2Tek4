@@ -7,19 +7,32 @@
 
 #ifndef ASYSTEM_HPP_
 #define ASYSTEM_HPP_
+
 #include <memory>
-#include "../entity/Entity.hpp"
+#include "../Ecs.hpp"
+#include "ISystem.hpp"
 #include <unordered_map>
 
 namespace ecs
 {
-    class ASystem {
+    class Ecs;
+    class ASystem : public ISystem {
       public:
-        ASystem();
+        /**
+         * @brief Abstract class for systems
+         * @param manager reference to the game's entity map
+         **/
+        ASystem(std::shared_ptr<Ecs> &manager);
+        // ecs::Ecs;
         ~ASystem();
 
+        /**
+         * @brief run the system
+         **/
+        void run() override;
+
       protected:
-        std::unordered_map<size_t, std::shared_ptr<ecs::Entity>> _entityMap;
+        std::shared_ptr<Ecs> _manager;
 
       private:
     };

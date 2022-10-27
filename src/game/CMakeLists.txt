@@ -11,10 +11,9 @@ set(SRC
 
 set(INCDIRS ${INCROOT})
 
-add_subdirectory(ecs)
 add_subdirectory(client)
+add_subdirectory(ecs)
 
-include(CompilerFlags)
 include(CompilerFlags)
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})

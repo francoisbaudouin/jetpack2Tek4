@@ -9,20 +9,29 @@
 #define CLIENT_HPP_
 
 #include <SFML/Graphics.hpp>
-#include "SpritesMap.hpp"
+#include "../ecs/Ecs.hpp"
 
-class Client {
-  public:
-    Client();
-    ~Client();
+namespace ecs
+{
+    class Client {
+      public:
+        Client();
 
-    //member function
-    void run();
+        ~Client();
 
-  protected:
-  private:
-    sf::RenderWindow _window;
-    SpritesMap _spritesMap;
-};
+        // member function
+        void run();
+
+      protected:
+      private:
+        sf::Texture _tmpTexture;
+        sf::Texture _tmpTexture2;
+        sf::Texture _tmpTexture3;
+
+        std::pair<int, int> _windowSize;
+        std::shared_ptr<Ecs> _manager;
+        sf::RenderWindow _window;
+    };
+} // namespace ecs
 
 #endif /* !CLIENT_HPP_ */

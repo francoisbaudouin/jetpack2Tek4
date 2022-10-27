@@ -8,14 +8,31 @@
 #ifndef DISPLAY_HPP_
 #define DISPLAY_HPP_
 
+#include <SFML/Graphics.hpp>
+#include "../components/Drawable.hpp"
+#include "../components/Position.hpp"
+#include "ASystem.hpp"
 
 namespace ecs
 {
-    class Display {
+    class Ecs;
+
+    class Display : public ASystem {
       public:
-        Display();
+        /**
+         * @brief Construct a display system that display SFML entities on Window
+         *
+         * @param entityMap reference to the game's entity map
+         */
+        Display(std::shared_ptr<Ecs> &manager);
         ~Display();
-      private:
+
+        /**
+         * @brief run the display system
+         *
+         * @param window reference to the SFML game's window
+         */
+        void run(sf::RenderWindow &window);
     };
 } // namespace ecs
 
