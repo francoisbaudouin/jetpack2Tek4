@@ -3,7 +3,6 @@ var annotated_dup =
     [ "ecs", null, [
       [ "AComponent", "classecs_1_1_a_component.html", "classecs_1_1_a_component" ],
       [ "ASystem", "classecs_1_1_a_system.html", "classecs_1_1_a_system" ],
-      [ "Client", "classecs_1_1_client.html", "classecs_1_1_client" ],
       [ "Collider", "classecs_1_1_collider.html", "classecs_1_1_collider" ],
       [ "ColliderReaction", "classecs_1_1_collider_reaction.html", "classecs_1_1_collider_reaction" ],
       [ "Controll", "classecs_1_1_controll.html", "classecs_1_1_controll" ],
@@ -31,5 +30,8 @@ var annotated_dup =
       [ "Type", "classecs_1_1_type.html", "classecs_1_1_type" ],
       [ "Velocity", "classecs_1_1_velocity.html", "classecs_1_1_velocity" ],
       [ "Weapon", "classecs_1_1_weapon.html", "classecs_1_1_weapon" ]
+    ] ],
+    [ "rtype", null, [
+      [ "Client", "classrtype_1_1_client.html", "classrtype_1_1_client" ]
     ] ]
 ];

@@ -2,7 +2,7 @@ var searchData=
 [
   ['checkentities_6',['checkEntities',['../classecs_1_1_collider.html#ac23822e06f82170e0d2c94c213ef8863',1,'ecs::Collider']]],
   ['clearsystems_7',['clearSystems',['../classecs_1_1_ecs.html#a805ecb917b33b865545c6ad0e51bf582',1,'ecs::Ecs']]],
-  ['client_8',['Client',['../classecs_1_1_client.html',1,'ecs']]],
+  ['client_8',['Client',['../classrtype_1_1_client.html',1,'rtype']]],
   ['collider_9',['Collider',['../classecs_1_1_collider.html',1,'ecs::Collider'],['../classecs_1_1_collider.html#a46c1badaffd99dc44594545f3eab4630',1,'ecs::Collider::Collider()']]],
   ['colliderreaction_10',['ColliderReaction',['../classecs_1_1_collider_reaction.html',1,'ecs::ColliderReaction'],['../classecs_1_1_collider_reaction.html#a7e798c17006c84505010832dfe391a21',1,'ecs::ColliderReaction::ColliderReaction()']]],
   ['compareentities_11',['compareEntities',['../classecs_1_1_collider.html#a9aec1fe8a0d9424d2601a2d74455e05a',1,'ecs::Collider']]],
