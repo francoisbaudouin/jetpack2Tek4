@@ -29,14 +29,6 @@ namespace ecs
         Entity &createEntity();
 
         /**
-         * @brief add existing entity, exception is thrown if the entity exist already
-         *
-         * @param entity : entity to add
-         * @return Entity& : entity that was added in the ecs
-         */
-        Entity &addEntity(const Entity &entity);
-
-        /**
          * @brief Get an entity from it's id, exception is thrown if the entity doesn't exist
          *
          * @param id : id of the entity to get
@@ -74,15 +66,17 @@ namespace ecs
          */
         template <class System> void addSystem(std::shared_ptr<Ecs> &manager)
         {
+            System *system;
+
             if (_systems.contains(std::type_index(typeid(System))))
                 throw SystemAlreadyExisting(typeid(System).name());
 
-            System *system(new System(manager));
-            if (ISystem *iSystem = dynamic_cast<ISystem *>(system))
+            system = new System(manager);
+            if (dynamic_cast<ISystem *>(system))
                 _systems.insert({std::type_index(typeid(System)), system});
             else {
-              delete system;
-              throw SystemNotCompatible(typeid(System).name());
+                delete system;
+                throw SystemNotCompatible(typeid(System).name());
             }
         }
 

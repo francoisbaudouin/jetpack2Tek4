@@ -26,17 +26,16 @@ EntityNotExisting::EntityNotExisting(size_t entityId)
 }
 
 SystemAlreadyExisting::SystemAlreadyExisting(std::string const &type)
-    : Exception("error 030: System " + type +" already existing")
+    : Exception("error 030: System " + type + " already existing")
 {
 }
 
-SystemNotExisting::SystemNotExisting(std::string const &type)
-    : Exception("error 031: System " + type +" not existing")
+SystemNotExisting::SystemNotExisting(std::string const &type) : Exception("error 031: System " + type + " not existing")
 {
 }
 
 SystemNotCompatible::SystemNotCompatible(std::string const &type)
-    : Exception("error 032: System " + type +" must inherit from ISystem")
+    : Exception("error 032: System " + type + " must inherit from ISystem")
 {
 }
 
