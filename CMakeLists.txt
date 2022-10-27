@@ -12,5 +12,5 @@ include(DetectCompiler)
 
 find_package(SFML REQUIRED system window graphics network audio)
 
-add_subdirectory(src/game)
-add_subdirectory(src/network)
+add_subdirectory(src/client)
+add_subdirectory(src/server)
