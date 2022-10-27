@@ -1,14 +1,15 @@
 set(INCROOT ${PROJECT_SOURCE_DIR}/src/network)
 set(SRCROOT ${PROJECT_SOURCE_DIR}/src/network)
 
+set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
+set(TARGET_NAME r-type_server)
+
 # adding subb diirectory
 add_subdirectory(initialization)
 
-set(TARGET_NAME r-type_server)
 
 include(CompilerFlags)
 
-set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp)
 

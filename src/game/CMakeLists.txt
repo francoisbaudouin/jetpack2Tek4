@@ -8,6 +8,7 @@ set(TARGET_NAME r-type_client)
 set(SRC ${SRC})
 
 set(INCDIRS ${INCROOT})
+set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
 
 add_subdirectory(client)
 add_subdirectory(ecs)
@@ -20,7 +21,6 @@ conan_basic_setup(TARGETS)
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 
 target_link_libraries(${TARGET_NAME} CONAN_PKG::sfml)
-set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
 
 
 add_custom_command(TARGET ${TARGET_NAME}
