@@ -8,7 +8,7 @@ set(TARGET_NAME r-type_client)
 set(SRC ${SRC})
 
 set(INCDIRS ${INCROOT})
-set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
 
 add_subdirectory(client)
 add_subdirectory(ecs)
