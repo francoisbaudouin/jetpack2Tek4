@@ -6,6 +6,5 @@ var classecs_1_1_entity =
     [ "getComponent", "classecs_1_1_entity.html#ad79d1785a3d1bb41183c0d514ff1d122", null ],
     [ "getId", "classecs_1_1_entity.html#ada5a5c0f0ae1aef82289a1f145e027a3", null ],
     [ "hasComponent", "classecs_1_1_entity.html#abe29fe0f88a96e7ff57eed9ce0b4bc3a", null ],
-    [ "removeComponent", "classecs_1_1_entity.html#a30056c776dc8e57264e3fc83658e3198", null ],
-    [ "replaceComponent", "classecs_1_1_entity.html#a8ff0e7efb6714e52f193a40be414f4ac", null ]
+    [ "removeComponent", "classecs_1_1_entity.html#a30056c776dc8e57264e3fc83658e3198", null ]
 ];

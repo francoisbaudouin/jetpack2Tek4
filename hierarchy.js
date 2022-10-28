@@ -6,10 +6,13 @@ var hierarchy =
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
     [ "exception", null, [
       [ "ecs::Exception", "classecs_1_1_exception.html", [
+        [ "ecs::ComponentAlreadyExisting", "classecs_1_1_component_already_existing.html", null ],
+        [ "ecs::ComponentNotCompatible", "classecs_1_1_component_not_compatible.html", null ],
+        [ "ecs::ComponentNotExisting", "classecs_1_1_component_not_existing.html", null ],
         [ "ecs::EntityAlreadyExisting", "classecs_1_1_entity_already_existing.html", null ],
         [ "ecs::EntityNotExisting", "classecs_1_1_entity_not_existing.html", null ],
-        [ "ecs::NoComponent", "classecs_1_1_no_component.html", null ],
         [ "ecs::SystemAlreadyExisting", "classecs_1_1_system_already_existing.html", null ],
+        [ "ecs::SystemNotCompatible", "classecs_1_1_system_not_compatible.html", null ],
         [ "ecs::SystemNotExisting", "classecs_1_1_system_not_existing.html", null ],
         [ "ecs::Test", "classecs_1_1_test.html", null ]
       ] ]

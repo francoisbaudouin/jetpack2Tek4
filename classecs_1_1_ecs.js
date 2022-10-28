@@ -2,7 +2,6 @@ var classecs_1_1_ecs =
 [
     [ "Ecs", "classecs_1_1_ecs.html#a3147faa2836c2d7303648054df804b5e", null ],
     [ "~Ecs", "classecs_1_1_ecs.html#ade244b0d71153520164eebe990d4c341", null ],
-    [ "addEntity", "classecs_1_1_ecs.html#a69780a4049ad9ff9e6499bfd1d94072a", null ],
     [ "addSystem", "classecs_1_1_ecs.html#a32092d3741c186c9fab3438aa9d91c9f", null ],
     [ "clearSystems", "classecs_1_1_ecs.html#a805ecb917b33b865545c6ad0e51bf582", null ],
     [ "createEntity", "classecs_1_1_ecs.html#a9c7b23fb560bcb354344bd152ae72d7c", null ],
