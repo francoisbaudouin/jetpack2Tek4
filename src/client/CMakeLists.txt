@@ -25,6 +25,7 @@ conan_basic_setup(TARGETS)
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 
 target_link_libraries(${TARGET_NAME} CONAN_PKG::sfml)
+target_link_libraries(${TARGET_NAME} CONAN_PKG::asio)
 
 #target_link_libraries(${TARGET_NAME} sfml-audio sfml-graphics sfml-network sfml-system)
 target_link_libraries(${TARGET_NAME} Threads::Threads)
