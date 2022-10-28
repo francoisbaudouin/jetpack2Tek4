@@ -5,12 +5,22 @@
 ** main
 */
 #include "Client.hpp"
+#include "TextureDatabase.hpp"
+#include <iostream>
 
 int main(void)
 {
-    rtype::Client client;
+    rtype::TextureDatabase txtDb;
 
-    client.connectToServer();
+    txtDb.onCall(0);
+
+    std::cout << std::endl;
+
+    txtDb.onCall(1);
+
+    //rtype::Client client;
+
+    //client.connectToServer();
 
     return 0;
 }

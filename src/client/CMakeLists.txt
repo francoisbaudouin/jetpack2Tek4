@@ -10,6 +10,8 @@ set(SRC
   ${SRC}
   ${SRCROOT}/Client.cpp
   ${INCROOT}/Client.hpp
+  ${SRCROOT}/TextureDatabase.cpp
+  ${INCROOT}/TextureDatabase.hpp
 )
 
 set(INCDIRS ${INCROOT})
