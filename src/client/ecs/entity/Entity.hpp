@@ -100,7 +100,7 @@ namespace ecs
         size_t getId() const;
         /**
          * @brief Set the Id of the entity
-         * 
+         *
          * @param id : id of the entity
          */
         void setId(const size_t id);

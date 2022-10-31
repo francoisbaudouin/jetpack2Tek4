@@ -23,24 +23,24 @@ namespace ecs
         //              ENTITY MANAGEMENT
         /**
          * @brief Create a Entity Manager for the scene specified by it's Id
-         * 
+         *
          * @param sceneId : id of the scene using the manager
          * @return EntityManager& : reference to the newly created manager
          */
         EntityManager &createEntityManager(const size_t sceneId);
         /**
          * @brief Get the Entity Manager for the scene specified by it's Id
-         * 
+         *
          * @param sceneId : id of the scene using the manager
          * @return EntityManager& : reference to the manager needed
          */
         EntityManager &getEntityManager(const size_t sceneId);
         /**
          * @brief destroy all managers
-         * 
+         *
          */
         void clearEntityManagers();
-        
+
         //              SYSTEM MANAGEMENT
         /**
          * @brief add a system to the ecs from the type specified, exception is thrown if the system already exist
