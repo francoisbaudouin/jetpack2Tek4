@@ -27,14 +27,6 @@ Entity &Ecs::createEntity()
     return (*entity);
 }
 
-Entity &Ecs::addEntity(const Entity &entity)
-{
-    if (_entities.contains(entity.getId()))
-        throw EntityAlreadyExisting(entity.getId());
-    _entities.insert_or_assign(entity.getId(), std::move(std::make_shared<Entity>(entity)));
-    return (*_entities.at(entity.getId()).get());
-}
-
 Entity &Ecs::getEntity(const size_t id)
 {
     if (!_entities.contains(id))
