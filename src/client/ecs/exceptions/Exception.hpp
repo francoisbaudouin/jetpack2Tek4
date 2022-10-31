@@ -44,21 +44,10 @@ namespace ecs
         Test(std::string const &message);
     };
 
-    class NoComponent : public Exception {
-      public:
-        /**
-         * @brief exception threw if an entity doesn't have the component needed
-         *
-         * @param message : message to throw
-         * @param entityId : id of the entity
-         */
-        NoComponent(std::string const &message, const size_t entityId);
-    };
-
     class EntityAlreadyExisting : public Exception {
       public:
         /**
-         * @brief exception threw if an entity already exist in the Ecs with the same id
+         * @brief exception threw if an entity doesn't have the component needed
          *
          * @param entityId : id of the entity
          */
@@ -68,7 +57,7 @@ namespace ecs
     class EntityNotExisting : public Exception {
       public:
         /**
-         * @brief exception threw if an entity doesn't exist in the Ecs with the same id
+         * @brief exception threw if an entity doesn't have the component needed
          *
          * @param entityId : id of the entity
          */
@@ -80,17 +69,61 @@ namespace ecs
         /**
          * @brief exception threw if a system already exist in the Ecs
          *
+         * @param type : type of the system that causes the error
          */
-        SystemAlreadyExisting();
+        SystemAlreadyExisting(std::string const &type);
     };
 
     class SystemNotExisting : public Exception {
       public:
         /**
-         * @brief exception threw if a system doesn't exist in the Ecs
+         * @brief exception threw if a system already exist in the Ecs
          *
+         * @param type : type of the system that causes the error
          */
-        SystemNotExisting();
+        SystemNotExisting(std::string const &type);
+    };
+
+    class SystemNotCompatible : public Exception {
+      public:
+        /**
+         * @brief exception threw if a system already exist in the Ecs
+         *
+         * @param type : type of the system that causes the error
+         */
+        SystemNotCompatible(std::string const &type);
+    };
+
+    class ComponentAlreadyExisting : public Exception {
+      public:
+        /**
+         * @brief exception threw if an entity doesn't have the component needed
+         *
+         * @param type : type of the component that causes the error
+         * @param entityId : id of the entity
+         */
+        ComponentAlreadyExisting(std::string const &type, const size_t entityId);
+    };
+
+    class ComponentNotExisting : public Exception {
+      public:
+        /**
+         * @brief exception threw if an entity doesn't have the component needed
+         *
+         * @param type : type of the component that causes the error
+         * @param entityId : id of the entity
+         */
+        ComponentNotExisting(std::string const &type, const size_t entityId);
+    };
+
+    class ComponentNotCompatible : public Exception {
+      public:
+        /**
+         * @brief exception threw if an entity doesn't have the component needed
+         *
+         * @param type : type of the component that causes the error
+         */
+        ComponentNotCompatible(std::string const &type);
     };
 } // namespace ecs
 
