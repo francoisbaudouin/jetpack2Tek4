@@ -47,7 +47,8 @@ ColliderReaction::ColliderReaction(std::shared_ptr<Ecs> manager) : ASystem(manag
 
 void ColliderReaction::run(const size_t sceneId, const size_t entityId1, const size_t entityId2)
 {
-    if (_manager->getEntityManager(sceneId).getEntities().contains(entityId1) && _manager->getEntityManager(sceneId).getEntities().contains(entityId2)) {
+    if (_manager->getEntityManager(sceneId).getEntities().contains(entityId1)
+        && _manager->getEntityManager(sceneId).getEntities().contains(entityId2)) {
         auto &entity1 = _manager->getEntityManager(sceneId).getEntity(entityId1);
         auto &entity2 = _manager->getEntityManager(sceneId).getEntity(entityId2);
         std::pair pairType = std::make_pair<entityType, entityType>(

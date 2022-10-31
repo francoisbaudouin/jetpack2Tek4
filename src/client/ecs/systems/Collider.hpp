@@ -41,6 +41,7 @@ namespace ecs
         /**
          * @brief run the system to check if there are entities that collide
          *
+         * @param sceneId : id of the scene to select the entityManager related
          */
         void run(const size_t sceneId) override;
     };

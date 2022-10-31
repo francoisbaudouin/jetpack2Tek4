@@ -37,13 +37,14 @@ namespace ecs
         /**
          * @brief Create a projectile at the position of the player
          *
-         * @param entityId : id of the player in the entities
+         * @param sceneId : id of the scene to select the entityManager related
+         * @param entityId : id of the entity that triggered the fire system
          */
         void createProjectile(const size_t sceneId, const size_t entityId);
         /**
          * @brief fire a projectile one time respecting the fireRate weapon's property
          *
-         * @param entityId Id of the entity that triggered the fire system
+         * @param entityId : Id of the entity that triggered the fire system
          */
         void run(const size_t sceneId, const size_t entityId);
 
