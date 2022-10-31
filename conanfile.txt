@@ -4,6 +4,7 @@
     gtest/1.10.0 
 
 [options]
+    boost:shared=True
     sfml:audio=True
     sfml:graphics=True
     sfml:network=True
@@ -16,3 +17,5 @@
 
 [generators]
     cmake
+    cmake_paths
+    cmake_find_package
