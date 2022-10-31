@@ -29,7 +29,7 @@ namespace ecs
         /**
          * @brief run the system
          **/
-        void run() override;
+        void run(const size_t sceneId) override;
 
       protected:
         std::shared_ptr<Ecs> _manager;

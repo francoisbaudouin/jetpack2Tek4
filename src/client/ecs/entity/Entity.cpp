@@ -10,13 +10,7 @@
 
 using namespace ecs;
 
-size_t getNewEntityId()
-{
-    static size_t id = 0;
-    return (id++);
-}
-
-Entity::Entity() : _id(getNewEntityId()) {}
+Entity::Entity(const size_t id) : _id(id) {}
 
 Entity::~Entity()
 {
@@ -27,3 +21,5 @@ Entity::~Entity()
 }
 
 size_t Entity::getId() const { return (_id); }
+
+void Entity::setId(const size_t id) { _id = id; }

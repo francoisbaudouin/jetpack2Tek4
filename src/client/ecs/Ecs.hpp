@@ -9,7 +9,7 @@
 #define ECS_HPP_
 
 #include <memory>
-#include "entity/Entity.hpp"
+#include "entity/EntityManager.hpp"
 #include "systems/ISystem.hpp"
 
 namespace ecs
@@ -22,49 +22,25 @@ namespace ecs
 
         //              ENTITY MANAGEMENT
         /**
-         * @brief Create an Entity object
-         *
-         * @return Entity& : entity that was created
+         * @brief Create a Entity Manager for the scene specified by it's Id
+         * 
+         * @param sceneId : id of the scene using the manager
+         * @return EntityManager& : reference to the newly created manager
          */
-        Entity &createEntity();
-
+        EntityManager &createEntityManager(const size_t sceneId);
         /**
-         * @brief add existing entity, exception is thrown if the entity exist already
-         *
-         * @param entity : entity to add
-         * @return Entity& : entity that was added in the ecs
+         * @brief Get the Entity Manager for the scene specified by it's Id
+         * 
+         * @param sceneId : id of the scene using the manager
+         * @return EntityManager& : reference to the manager needed
          */
-        Entity &addEntity(const Entity &entity);
-
+        EntityManager &getEntityManager(const size_t sceneId);
         /**
-         * @brief Get an entity from it's id, exception is thrown if the entity doesn't exist
-         *
-         * @param id : id of the entity to get
-         * @return Entity& : entity in question
+         * @brief destroy all managers
+         * 
          */
-        Entity &getEntity(const size_t id);
-
-        /**
-         * @brief Get the map of the entities
-         *
-         * @return std::unordered_map<size_t, std::shared_ptr<Entity>>& : map of the entities
-         */
-        std::unordered_map<size_t, std::shared_ptr<Entity>> &getEntities();
-
-        /**
-         * @brief remove an entity from the map, exception is thrown if the entity doesn't exist
-         *
-         * @param id : id of the entity to remove
-         */
-        void removeEntity(const size_t id);
-
-        /**
-         * @brief Get the number of entities stocked in the ecs
-         *
-         * @return size_t : number of entities
-         */
-        size_t getNumberEntities() const;
-
+        void clearEntityManagers();
+        
         //              SYSTEM MANAGEMENT
         /**
          * @brief add a system to the ecs from the type specified, exception is thrown if the system already exist
@@ -72,7 +48,7 @@ namespace ecs
          * @tparam System : type of the system
          * @param manager : shared_ptr to the ecs
          */
-        template <class System> void addSystem(std::shared_ptr<Ecs> &manager)
+        template <class System> void createSystem(std::shared_ptr<Ecs> &manager)
         {
             if (_systems.contains(std::type_index(typeid(System))))
                 throw SystemAlreadyExisting();
@@ -100,8 +76,7 @@ namespace ecs
         void clearSystems();
 
       private:
-        std::unordered_map<size_t, std::shared_ptr<Entity>> _entities;
-
+        std::unordered_map<size_t, EntityManager *> _entityManagers;
         std::unordered_map<std::type_index, ISystem *> _systems;
     };
 } // namespace ecs

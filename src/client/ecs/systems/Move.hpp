@@ -34,7 +34,7 @@ namespace ecs
         /**
          * @brief check all entity if they can move then call 'move()' on the ones that can
          */
-        void run() override;
+        void run(const size_t sceneId) override;
 
       protected:
       private:

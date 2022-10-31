@@ -39,13 +39,13 @@ namespace ecs
          *
          * @param entityId : id of the player in the entities
          */
-        void createProjectile(const size_t entityId);
+        void createProjectile(const size_t sceneId, const size_t entityId);
         /**
          * @brief fire a projectile one time respecting the fireRate weapon's property
          *
          * @param entityId Id of the entity that triggered the fire system
          */
-        void run(const size_t entityId);
+        void run(const size_t sceneId, const size_t entityId);
 
       protected:
       private:

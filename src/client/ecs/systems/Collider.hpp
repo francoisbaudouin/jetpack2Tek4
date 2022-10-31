@@ -28,20 +28,21 @@ namespace ecs
          * @param entity1 : id of the first entity
          * @param entity2 : id of the second entity
          */
-        void compareEntities(const size_t entity1, const size_t entity2);
+        void compareEntities(const size_t sceneId, const size_t entity1, const size_t entity2);
 
         /**
          * @brief check all the entities after the one passed as parameter to see if they collide
          *
          * @param entity : entity to compare
          */
-        void checkEntities(const std::unordered_map<size_t, std::shared_ptr<Entity>>::iterator &entity);
+        void checkEntities(
+            const size_t sceneId, const std::unordered_map<size_t, std::shared_ptr<Entity>>::iterator &entity);
 
         /**
          * @brief run the system to check if there are entities that collide
          *
          */
-        void run() override;
+        void run(const size_t sceneId) override;
     };
 } // namespace ecs
 

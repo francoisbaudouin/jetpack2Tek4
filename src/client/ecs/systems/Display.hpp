@@ -32,7 +32,7 @@ namespace ecs
          *
          * @param window reference to the SFML game's window
          */
-        void run(sf::RenderWindow &window);
+        void run(const size_t sceneId, sf::RenderWindow &window);
     };
 } // namespace ecs
 
