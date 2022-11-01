@@ -5,6 +5,7 @@
     boost/1.80.0
 
 [options]
+    asio:shared=True
     boost:shared=True
     sfml:audio=True
     sfml:graphics=True
