@@ -7,6 +7,7 @@ include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
 conan_basic_setup(TARGETS)
 
 find_package(Threads REQUIRED)
+find_package(Boost REQUIRED)
 include(CompilerFlags)
 
 set(SRC
