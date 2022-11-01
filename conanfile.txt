@@ -2,6 +2,7 @@
     sfml/2.5.1
     asio/1.16.0
     gtest/1.10.0 
+    boost/1.80.0
 
 [options]
     boost:shared=True
