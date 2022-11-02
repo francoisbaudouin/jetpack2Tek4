@@ -34,9 +34,21 @@ void Client::run(boost::asio::ip::udp::socket &socket)
     sf::Event event;
     size_t messageLength = 0;
 
+    _textureDatabase.onCall(0);
+
+    _textureDatabase.onCall(1);
+
+    auto &testEntity = _sharedEcs->createEntity();
+    testEntity.addComponent<ecs::Drawable>(_textureDatabase.getTexture("Player"));
+    testEntity.addComponent<ecs::Position>(0,0);
+
+    auto &testother = _sharedEcs->createEntity();
+    testother.addComponent<ecs::Drawable>(_textureDatabase.getTexture("Butijton"));
+    testother.addComponent<ecs::Position>(100,0);
+
     while (_window.isOpen()) {
         // fonction pour envoyer des infos au serveur à mettre ici
-        messageLength = socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
+        //messageLength = socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
         // fonction qui désérialise les infos reçues par le server à mettre ici
         // update ecs côté client
         _window.clear();

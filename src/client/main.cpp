@@ -10,17 +10,16 @@
 
 int main(void)
 {
-    rtype::TextureDatabase txtDb;
+    // rtype::TextureDatabase txtDb;
 
-    txtDb.onCall(0);
+    // txtDb.onCall(0);
 
-    std::cout << std::endl;
+    // std::cout << std::endl;
 
-    txtDb.onCall(1);
+    // txtDb.onCall(1);
 
-    //rtype::Client client;
+    rtype::Client client;
 
-    //client.connectToServer();
-
+    client.connectToServer();
     return 0;
 }

@@ -11,6 +11,12 @@
 
 using namespace rtype;
 
+std::string fileTraduction(std::string &fileName)
+{
+  std::filesystem::path path(fileName);
+  return path.generic_string().c_str();
+}
+
 TextureDatabase::TextureDatabase()
 {
   _configFilePath.push_back("src/client/configs/game/TexturesConfigs/TextureConfiguration.json");
@@ -23,21 +29,20 @@ void TextureDatabase::onCall(const size_t sceneId)
   boost::property_tree::read_json(_configFilePath[sceneId], jsonFile);
 
   for (auto test : jsonFile) {
-    _textureMap[test.first] = test.second.data();
+    std::cout << test.first  << ":" ;
+    std::cout << fileTraduction(test.second.data()) << std::endl;
+    _textureMap[test.first].loadFromFile(fileTraduction(test.second.data()));
   }
 }
 
-void TextureDatabase::onCall(const size_t sceneId)
+sf::Texture &TextureDatabase::getTexture(const std::string type)
 {
-  boost::property_tree::ptree jsonFile;
-  boost::property_tree::read_json(_configFilePath[sceneId], jsonFile);
-
-  for (auto test : jsonFile) {
-    _textureMap[test.first] = test.second.data();
-  }
+  if (_textureMap.contains(type) == false)
+    throw ecs::TextureNotInDatabase(type);
+  return _textureMap[type];
 }
 
-void TextureDatabase::replaceTexturePath(const std::string type, const std::string newTexturePath)
+void TextureDatabase::replaceTexturePath(const std::string type, sf::Texture &newTexturePath)
 {
   _textureMap[type] = newTexturePath;
 }

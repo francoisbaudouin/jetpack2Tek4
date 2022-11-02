@@ -36,7 +36,7 @@ namespace ecs
         void run(const size_t entityId1, const size_t entityId2);
 
       private:
-        std::map<std::pair<entityType, entityType>,
+        std::map<std::pair<std::string, std::string>,
             void (*)(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)>
             _reactionMap;
     };

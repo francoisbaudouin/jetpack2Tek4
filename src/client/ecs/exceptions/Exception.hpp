@@ -125,6 +125,15 @@ namespace ecs
          */
         ComponentNotCompatible(std::string const &type);
     };
+    class TextureNotInDatabase : public Exception {
+      public:
+        /**
+         * @brief exception threw if drawable component does't find a texture at specified type
+         *
+         * @param type : type of the entity
+         */
+        TextureNotInDatabase(std::string const &type);
+    };
 } // namespace ecs
 
 #endif /* !EXCEPTION_HPP_ */

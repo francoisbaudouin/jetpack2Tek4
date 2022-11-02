@@ -53,3 +53,8 @@ ComponentNotCompatible::ComponentNotCompatible(std::string const &type)
     : Exception("error 122: Component " + type + " must inherit from IComponent")
 {
 }
+
+TextureNotInDatabase::TextureNotInDatabase(std::string const &type)
+    : Exception("error 550: Texture " + type + " not exist in database, please check the configuration file")
+{
+}

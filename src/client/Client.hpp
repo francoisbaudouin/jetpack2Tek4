@@ -16,7 +16,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
-
+#include "TextureDatabase.hpp"
 #include "ecs/Ecs.hpp"
 
 namespace rtype
@@ -32,6 +32,7 @@ namespace rtype
       private:
         sf::RenderWindow _window;
         std::shared_ptr<ecs::Ecs> _sharedEcs;
+        TextureDatabase _textureDatabase;
         boost::asio::ip::udp::endpoint _receiverEndpoint;
         boost::asio::ip::udp::endpoint _senderEndpoint;
         boost::asio::io_context _ioContext;
