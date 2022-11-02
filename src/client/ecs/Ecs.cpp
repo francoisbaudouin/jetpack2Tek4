@@ -39,7 +39,8 @@ EntityManager &Ecs::getEntityManager(const size_t sceneId)
 void Ecs::clearEntityManagers()
 {
     while (_entityManagers.size() > 0) {
-        delete _entityManagers.begin()->second;
+        if (_entityManagers.begin()->second)
+            delete _entityManagers.begin()->second;
         _entityManagers.erase(_entityManagers.begin()->first);
     }
 }
@@ -47,7 +48,8 @@ void Ecs::clearEntityManagers()
 void Ecs::clearSystems()
 {
     while (_systems.size() > 0) {
-        delete _systems.begin()->second;
+        if (_systems.begin()->second)
+            delete _systems.begin()->second;
         _systems.erase(_systems.begin()->first);
     }
 }

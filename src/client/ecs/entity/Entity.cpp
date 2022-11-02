@@ -15,7 +15,8 @@ Entity::Entity(const size_t id) : _id(id) {}
 Entity::~Entity()
 {
     while (_components.size() > 0) {
-        delete _components.begin()->second;
+        if (_components.begin()->second)
+            delete _components.begin()->second;
         _components.erase(_components.begin()->first);
     }
 }

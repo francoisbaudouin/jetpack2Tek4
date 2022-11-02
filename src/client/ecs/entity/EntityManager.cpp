@@ -34,7 +34,7 @@ Entity &EntityManager::createEntity()
 Entity &EntityManager::getEntity(const size_t id)
 {
     if (!_entities.contains(id))
-        throw EntityNotExisting(id);
+        throw EntityNotExisting(_id, id);
     return (*_entities.at(id).get());
 }
 
@@ -43,7 +43,7 @@ std::unordered_map<size_t, std::shared_ptr<Entity>> &EntityManager::getEntities(
 void EntityManager::removeEntity(const size_t id)
 {
     if (!_entities.contains(id))
-        throw EntityNotExisting(id);
+        throw EntityNotExisting(_id, id);
     _entities.erase(id);
 }
 
