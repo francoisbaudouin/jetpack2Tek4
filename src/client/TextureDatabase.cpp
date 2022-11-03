@@ -8,7 +8,6 @@
 #include "TextureDatabase.hpp"
 #include <filesystem>
 
-
 using namespace rtype;
 
 std::string fileTraduction(std::string &fileName)
