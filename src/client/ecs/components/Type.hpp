@@ -20,18 +20,18 @@ namespace ecs
          *
          * @param type entityType to set
          */
-        Type(const size_t entityId, entityType type);
+        Type(const size_t entityId, const std::string type);
         ~Type();
         /**
          * @brief Get the Entity Type property
          *
          * @return defined entity type
          */
-        entityType getEntityType() const;
+        std::string getEntityType() const;
 
       protected:
       private:
-        entityType _type;
+        std::string _type;
     };
 } // namespace ecs
 

@@ -39,10 +39,9 @@ static void playerHitWall(const size_t sceneId, std::shared_ptr<Ecs> &manager, E
 
 ColliderReaction::ColliderReaction(std::shared_ptr<Ecs> manager) : ASystem(manager), _reactionMap()
 {
-    _reactionMap[std::make_pair<entityType, entityType>(entityType::ENEMY, entityType::PROJECTILE)] =
-        &projectileHitEnnemy;
-    _reactionMap[std::make_pair<entityType, entityType>(entityType::PLAYER, entityType::WALL)] = &playerHitWall;
-    _reactionMap[std::make_pair<entityType, entityType>(entityType::PROJECTILE, entityType::WALL)] = &projectileHitWall;
+    _reactionMap[std::make_pair<std::string, std::string>("Enemy", "Projectile")] = &projectileHitEnnemy;
+    _reactionMap[std::make_pair<std::string, std::string>("Player", "Wall")] = &playerHitWall;
+    _reactionMap[std::make_pair<std::string, std::string>("Projectile", "Wall")] = &projectileHitWall;
 }
 
 void ColliderReaction::run(const size_t sceneId, const size_t entityId1, const size_t entityId2)
@@ -51,9 +50,9 @@ void ColliderReaction::run(const size_t sceneId, const size_t entityId1, const s
         && _manager->getEntityManager(sceneId).getEntities().contains(entityId2)) {
         auto &entity1 = _manager->getEntityManager(sceneId).getEntity(entityId1);
         auto &entity2 = _manager->getEntityManager(sceneId).getEntity(entityId2);
-        std::pair pairType = std::make_pair<entityType, entityType>(
+        std::pair pairType = std::make_pair<std::string, std::string>(
             entity1.getComponent<Type>().getEntityType(), entity2.getComponent<Type>().getEntityType());
-        std::pair reversedPairType = std::make_pair<entityType, entityType>(
+        std::pair reversedPairType = std::make_pair<std::string, std::string>(
             entity2.getComponent<Type>().getEntityType(), entity1.getComponent<Type>().getEntityType());
         if (_reactionMap.contains(pairType)) {
             _reactionMap.at(pairType)(sceneId, _manager, entity1, entity2);

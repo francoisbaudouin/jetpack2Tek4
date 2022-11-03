@@ -36,7 +36,7 @@ void Client::run(boost::asio::ip::udp::socket &socket)
 
     while (_window.isOpen()) {
         // fonction pour envoyer des infos au serveur à mettre ici
-        messageLength = socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
+        // messageLength = socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
         // fonction qui désérialise les infos reçues par le server à mettre ici
         // update ecs côté client
         _window.clear();
