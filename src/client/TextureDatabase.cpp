@@ -27,8 +27,6 @@ void TextureDatabase::onCall(const size_t sceneId)
     boost::property_tree::read_json(_configFilePath[sceneId], jsonFile);
 
     for (auto test : jsonFile) {
-        std::cout << test.first << ":";
-        std::cout << fileTraduction(test.second.data()) << std::endl;
         _textureMap[test.first].loadFromFile(fileTraduction(test.second.data()));
     }
 }
