@@ -39,8 +39,7 @@ static void playerHitWall(const size_t sceneId, std::shared_ptr<Ecs> &manager, E
 
 ColliderReaction::ColliderReaction(std::shared_ptr<Ecs> manager) : ASystem(manager), _reactionMap()
 {
-    _reactionMap[std::make_pair<std::string, std::string>("Enemy", "Projectile")] =
-        &projectileHitEnnemy;
+    _reactionMap[std::make_pair<std::string, std::string>("Enemy", "Projectile")] = &projectileHitEnnemy;
     _reactionMap[std::make_pair<std::string, std::string>("Player", "Wall")] = &playerHitWall;
     _reactionMap[std::make_pair<std::string, std::string>("Projectile", "Wall")] = &projectileHitWall;
 }
