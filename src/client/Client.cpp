@@ -15,8 +15,8 @@ Client::Client(const std::string &ipAdress, const size_t &port) : _window(sf::Vi
 {
     ecs::Ecs ecs;
     this->_sharedEcs = std::make_shared<ecs::Ecs>(ecs);
-    _sharedEcs->addSystem<ecs::Input>(_sharedEcs);
-    _sharedEcs->addSystem<ecs::Display>(_sharedEcs);
+    _sharedEcs->createSystem<ecs::Input>(_sharedEcs);
+    _sharedEcs->createSystem<ecs::Display>(_sharedEcs);
 
     this->_receiverEndpoint = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(ipAdress), port);
 }
@@ -34,28 +34,16 @@ void Client::run(boost::asio::ip::udp::socket &socket)
     sf::Event event;
     size_t messageLength = 0;
 
-    _textureDatabase.onCall(0);
-
-    _textureDatabase.onCall(1);
-
-    auto &testEntity = _sharedEcs->createEntity();
-    testEntity.addComponent<ecs::Drawable>(_textureDatabase.getTexture("Player"));
-    testEntity.addComponent<ecs::Position>(0,0);
-
-    auto &testother = _sharedEcs->createEntity();
-    testother.addComponent<ecs::Drawable>(_textureDatabase.getTexture("Butijton"));
-    testother.addComponent<ecs::Position>(100,0);
-
     while (_window.isOpen()) {
         // fonction pour envoyer des infos au serveur à mettre ici
-        //messageLength = socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
+        // messageLength = socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
         // fonction qui désérialise les infos reçues par le server à mettre ici
         // update ecs côté client
         _window.clear();
         while (_window.pollEvent(event))
             if (event.type == sf::Event::Closed)
                 _window.close();
-        _sharedEcs->getSystem<ecs::Display>().run(_window);
+        _sharedEcs->getSystem<ecs::Display>().run(0, _window);
         _window.display();
     }
 }

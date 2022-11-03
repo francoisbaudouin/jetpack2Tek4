@@ -8,13 +8,13 @@
 #ifndef TEXTUREDATABASE_HPP_
 #define TEXTUREDATABASE_HPP_
 
-#include <unordered_map>
-#include <string>
-#include <boost/property_tree/ptree.hpp>
-#include <boost/property_tree/json_parser.hpp>
 #include <SFML/Graphics.hpp>
 #include <filesystem>
+#include <string>
 #include "ecs/exceptions/Exception.hpp"
+#include <boost/property_tree/json_parser.hpp>
+#include <boost/property_tree/ptree.hpp>
+#include <unordered_map>
 
 namespace rtype
 {

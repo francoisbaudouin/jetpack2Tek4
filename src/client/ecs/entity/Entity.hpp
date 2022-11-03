@@ -20,10 +20,11 @@ namespace ecs
     class Entity {
       public:
         /**
-         * @brief Construct a new Entity object and call the 'getNewEntityId' that generate a new id for the entity
+         * @brief Construct a new Entity object and set it's id
          *
+         * @param id : id of the entity
          */
-        Entity();
+        Entity(const size_t id);
         ~Entity();
 
         /**
@@ -97,6 +98,12 @@ namespace ecs
          * @return size_t : id of the entity
          */
         size_t getId() const;
+        /**
+         * @brief Set the Id of the entity
+         *
+         * @param id : id of the entity
+         */
+        void setId(const size_t id);
 
       private:
         std::unordered_map<std::type_index, IComponent *> _components;
