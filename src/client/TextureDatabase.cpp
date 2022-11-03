@@ -6,6 +6,8 @@
 */
 
 #include "TextureDatabase.hpp"
+#include <filesystem>
+
 
 using namespace rtype;
 
@@ -26,8 +28,8 @@ void TextureDatabase::onCall(const size_t sceneId)
     boost::property_tree::ptree jsonFile;
     boost::property_tree::read_json(_configFilePath[sceneId], jsonFile);
 
-    for (auto test : jsonFile) {
-        _textureMap[test.first].loadFromFile(fileTraduction(test.second.data()));
+    for (auto line : jsonFile) {
+        _textureMap[line.first].loadFromFile(fileTraduction(line.second.data()));
     }
 }
 

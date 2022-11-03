@@ -9,7 +9,6 @@
 #define TEXTUREDATABASE_HPP_
 
 #include <SFML/Graphics.hpp>
-#include <filesystem>
 #include <string>
 #include "ecs/exceptions/Exception.hpp"
 #include <boost/property_tree/json_parser.hpp>
