@@ -22,7 +22,21 @@ namespace configuration
       protected:
       private:
         bool setServerData(std::map<std::string, std::string>::iterator it);
+
+        /**
+         * @brief Funct wich return true or false if configuration file
+         * is found annd can be read
+         * 
+         * @return true loading file sucess OK
+         * @return false loading file fail KO
+         */
         bool load_file();
+
+        /**
+         * @brief 
+         * 
+         * @param configFile 
+         */
         void load_data(std::fstream configFile);
         std::string _ip;
         std::string _name;

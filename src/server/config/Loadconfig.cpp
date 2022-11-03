@@ -5,6 +5,7 @@
 ** Loadconfig
 */
 
+#include <filesystem>
 #include <fstream>
 #include <string>
 #include "../exception/Exception.hpp"
@@ -20,6 +21,8 @@ namespace configuration
 
     bool Loadconfig::load_file()
     {
+        std::filesystem::path fileName = "src/network/config.ini";
+
         std::ifstream configFile;
         configFile.open(CONFIG_PATH, std::fstream::in);
         if (configFile.is_open() == true) {
@@ -37,10 +40,7 @@ namespace configuration
         std::map<std::string, std::string>::iterator tmp;
         while (it->first.compare("") != 0 && it != _configurationServer.end()) {
             tmp = it;
-            while(tmp != _configurationServer.end()) {
-                
-            }
-            
+            while (tmp != _configurationServer.end()) {}
         }
         return (true);
     }
@@ -52,9 +52,9 @@ namespace configuration
         while (std::getline(configFile, line)) {
             for (std::map<std::string, std::string>::iterator it = _configurationServer.begin();
                  it != _configurationServer.end(); it++) {
-                    if (line.compare("[server]"))
-                        setServerData(it);
-                 }
+                if (line.compare("[server]"))
+                    setServerData(it);
+            }
         }
     }
 } // namespace configuration
