@@ -40,6 +40,7 @@ namespace ecs
 
       protected:
       private:
+        
         sf::Sprite _sprite;
     };
 } // namespace ecs
