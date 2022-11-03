@@ -14,8 +14,19 @@ Drawable::Drawable(const size_t entityId, const sf::Texture &texture) : ACompone
     _sprite.setTexture(texture);
 }
 
+Drawable::Drawable(const size_t entityId, const sf::Texture &texture, const float scale)
+    : AComponent(entityId), _scale(scale)
+{
+    _sprite.setTexture(texture);
+    _sprite.setScale(1 * _scale, 1 * _scale);
+}
+
 sf::Sprite &Drawable::getSprite() { return _sprite; }
 
 void Drawable::setSprite(const sf::Sprite &sprite) { _sprite = sprite; }
+
+float Drawable::getScale() const { return _scale; }
+
+void Drawable::setScale(const float newScale) { _scale = newScale; }
 
 Drawable::~Drawable() {}

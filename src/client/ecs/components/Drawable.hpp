@@ -21,7 +21,14 @@ namespace ecs
          * @param texture : wanted texture for the drawable entity
          */
         Drawable(const size_t entityId, const sf::Texture &texture);
-
+        /**
+         * @brief Construct a new Drawable component
+         *
+         * @param entityId : related entity id
+         * @param texture : wanted texture for the drawable entity
+         * @param scale : scale of the sprite
+         */
+        Drawable(const size_t entityId, const sf::Texture &texture, const float scale);
         ~Drawable();
 
         /**
@@ -37,10 +44,20 @@ namespace ecs
          * @param sprite : sprite to set
          */
         void setSprite(const sf::Sprite &sprite);
-
-      protected:
+        /**
+         * @brief Get the scale of the sprite
+         * 
+         * @return float scale
+         */
+        float getScale() const;
+        /**
+         * @brief Set the scale of the sprite
+         * 
+         * @param scale new scale of the sprite 
+         */
+        void setScale(const float scale);
       private:
-        
+        float _scale;
         sf::Sprite _sprite;
     };
 } // namespace ecs
