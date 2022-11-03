@@ -65,11 +65,12 @@ jobs:
       id: conan
       uses: turtlebrowser/get-conan@main
 
+    - name: Get msvc compiler
+      uses: ilammy/msvc-dev-cmd@v1
+
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Get msvc compiler
-      uses: ilammy/msvc-dev-cmd@v1
 
     - name: Configure Conan
       run : |

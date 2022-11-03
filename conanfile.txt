@@ -15,6 +15,7 @@
     gtest:hide_symbols=False
     gtest:no_main=False
     gtest:shared=False
+    *:shared=False
 
 [generators]
     cmake
