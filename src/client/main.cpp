@@ -6,7 +6,6 @@
 */
 #include "Client.hpp"
 #include "TextureDatabase.hpp"
-#include <iostream>
 
 int main(void)
 {
