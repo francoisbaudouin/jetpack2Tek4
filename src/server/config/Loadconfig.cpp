@@ -40,7 +40,9 @@ namespace configuration
         std::map<std::string, std::string>::iterator tmp;
         while (it->first.compare("") != 0 && it != _configurationServer.end()) {
             tmp = it;
-            while (tmp != _configurationServer.end()) {}
+            while (tmp != _configurationServer.end()) {
+                
+            }
         }
         return (true);
     }
