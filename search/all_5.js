@@ -7,7 +7,7 @@ var searchData=
   ['getentity_36',['getEntity',['../classecs_1_1_entity_manager.html#a97084133e3f98a968641116490fc92b3',1,'ecs::EntityManager']]],
   ['getentityid_37',['getEntityId',['../classecs_1_1_a_component.html#a9480b029eb619cf113a63a97e28adc16',1,'ecs::AComponent']]],
   ['getentitymanager_38',['getEntityManager',['../classecs_1_1_ecs.html#aea0690dca4d17d87d35d35c1c14834b7',1,'ecs::Ecs']]],
-  ['getentitytype_39',['getEntityType',['../classecs_1_1_type.html#a0cfdc2e52805a490b56a4f87cc4dfdb8',1,'ecs::Type']]],
+  ['getentitytype_39',['getEntityType',['../classecs_1_1_type.html#aaec5e4a0f201ed9938838efc28efce8f',1,'ecs::Type']]],
   ['getfirerate_40',['getFireRate',['../classecs_1_1_weapon.html#a1fc1edb0e19918f1ab8584cdd29d7991',1,'ecs::Weapon']]],
   ['getid_41',['getId',['../classecs_1_1_entity.html#ada5a5c0f0ae1aef82289a1f145e027a3',1,'ecs::Entity']]],
   ['getinput_42',['getInput',['../classecs_1_1_input.html#a2bc24f616d8254787ca14f4b5cb26c59',1,'ecs::Input']]],

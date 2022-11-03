@@ -17,7 +17,8 @@ var hierarchy =
         [ "ecs::SystemAlreadyExisting", "classecs_1_1_system_already_existing.html", null ],
         [ "ecs::SystemNotCompatible", "classecs_1_1_system_not_compatible.html", null ],
         [ "ecs::SystemNotExisting", "classecs_1_1_system_not_existing.html", null ],
-        [ "ecs::Test", "classecs_1_1_test.html", null ]
+        [ "ecs::Test", "classecs_1_1_test.html", null ],
+        [ "ecs::TextureNotInDatabase", "classecs_1_1_texture_not_in_database.html", null ]
       ] ]
     ] ],
     [ "ecs::IComponent", "classecs_1_1_i_component.html", [
@@ -42,5 +43,6 @@ var hierarchy =
         [ "ecs::Move", "classecs_1_1_move.html", null ]
       ] ]
     ] ],
-    [ "ecs::RTypeEvent", "structecs_1_1_r_type_event.html", null ]
+    [ "ecs::RTypeEvent", "structecs_1_1_r_type_event.html", null ],
+    [ "rtype::TextureDatabase", "classrtype_1_1_texture_database.html", null ]
 ];

@@ -33,11 +33,13 @@ var annotated_dup =
       [ "SystemNotCompatible", "classecs_1_1_system_not_compatible.html", "classecs_1_1_system_not_compatible" ],
       [ "SystemNotExisting", "classecs_1_1_system_not_existing.html", "classecs_1_1_system_not_existing" ],
       [ "Test", "classecs_1_1_test.html", "classecs_1_1_test" ],
+      [ "TextureNotInDatabase", "classecs_1_1_texture_not_in_database.html", "classecs_1_1_texture_not_in_database" ],
       [ "Type", "classecs_1_1_type.html", "classecs_1_1_type" ],
       [ "Velocity", "classecs_1_1_velocity.html", "classecs_1_1_velocity" ],
       [ "Weapon", "classecs_1_1_weapon.html", "classecs_1_1_weapon" ]
     ] ],
     [ "rtype", null, [
-      [ "Client", "classrtype_1_1_client.html", "classrtype_1_1_client" ]
+      [ "Client", "classrtype_1_1_client.html", "classrtype_1_1_client" ],
+      [ "TextureDatabase", "classrtype_1_1_texture_database.html", "classrtype_1_1_texture_database" ]
     ] ]
 ];
