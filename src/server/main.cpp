@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2022
 ** jetpack2Tek4
 ** File description:
-** configuration
+** main
 */
 
-int config(void) { return (0); }
+int main(void) { return 0; }

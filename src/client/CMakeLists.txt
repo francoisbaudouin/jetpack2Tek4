@@ -1,9 +1,10 @@
-set(INCROOT ${PROJECT_SOURCE_DIR}/src/game)
-set(SRCROOT ${PROJECT_SOURCE_DIR}/src/game)
+set(INCROOT ${PROJECT_SOURCE_DIR}/src/client)
+set(SRCROOT ${PROJECT_SOURCE_DIR}/src/client)
 
 # adding subb diirectory
 # Exemple: add_subdirectory(connexion)
 set(TARGET_NAME r-type_client)
+find_package(Threads REQUIRED)
 
 set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 set(THREADS_PREFER_PTHREAD_FLAG TRUE)
@@ -11,12 +12,13 @@ find_package(Threads REQUIRED)
 
 
 set(SRC
-${SRC}
+  ${SRC}
+  ${SRCROOT}/Client.cpp
+  ${INCROOT}/Client.hpp
 )
 
 set(INCDIRS ${INCROOT})
 
-add_subdirectory(client)
 add_subdirectory(ecs)
 
 include(CompilerFlags)
