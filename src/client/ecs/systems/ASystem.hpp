@@ -20,16 +20,18 @@ namespace ecs
       public:
         /**
          * @brief Abstract class for systems
+         *
          * @param manager reference to the game's entity map
          **/
         ASystem(std::shared_ptr<Ecs> &manager);
         // ecs::Ecs;
         ~ASystem();
-
         /**
          * @brief run the system
-         **/
-        void run() override;
+         *
+         * @param sceneId : id of the scene to select the entityManager related
+         */
+        void run(const size_t sceneId) override;
 
       protected:
         std::shared_ptr<Ecs> _manager;

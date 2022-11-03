@@ -33,8 +33,10 @@ namespace ecs
 
         /**
          * @brief check all entity if they can move then call 'move()' on the ones that can
+         *
+         * @param sceneId : id of the scene to select the entityManager related
          */
-        void run() override;
+        void run(const size_t sceneId) override;
 
       protected:
       private:
