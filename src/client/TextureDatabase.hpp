@@ -10,9 +10,6 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
-#include "ecs/exceptions/Exception.hpp"
-#include <boost/property_tree/json_parser.hpp>
-#include <boost/property_tree/ptree.hpp>
 #include <unordered_map>
 
 namespace rtype

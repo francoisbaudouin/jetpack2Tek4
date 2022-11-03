@@ -7,6 +7,9 @@
 
 #include "TextureDatabase.hpp"
 #include <filesystem>
+#include "ecs/exceptions/Exception.hpp"
+#include <boost/property_tree/json_parser.hpp>
+#include <boost/property_tree/ptree.hpp>
 
 using namespace rtype;
 
