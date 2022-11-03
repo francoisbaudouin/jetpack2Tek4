@@ -93,9 +93,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 <li>addComponent()
 : <a class="el" href="classecs_1_1_entity.html#a8c4060c2f409a17e370e92680a3b79eb">ecs::Entity</a>
 </li>
-<li>addSystem()
-: <a class="el" href="classecs_1_1_ecs.html#a32092d3741c186c9fab3438aa9d91c9f">ecs::Ecs</a>
-</li>
 <li>applyVelocity()
 : <a class="el" href="classecs_1_1_move.html#af43cd1b1b9d643828fafbd63c4390743">ecs::Move</a>
 </li>
@@ -107,7 +104,10 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>checkEntities()
-: <a class="el" href="classecs_1_1_collider.html#ac23822e06f82170e0d2c94c213ef8863">ecs::Collider</a>
+: <a class="el" href="classecs_1_1_collider.html#adc2e42d2593951ca3379bf91682f6649">ecs::Collider</a>
+</li>
+<li>clearEntityManagers()
+: <a class="el" href="classecs_1_1_ecs.html#aa3c167f355bbaf6ae30a9ca1d223e706">ecs::Ecs</a>
 </li>
 <li>clearSystems()
 : <a class="el" href="classecs_1_1_ecs.html#a805ecb917b33b865545c6ad0e51bf582">ecs::Ecs</a>
@@ -119,16 +119,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="classecs_1_1_collider_reaction.html#a7e798c17006c84505010832dfe391a21">ecs::ColliderReaction</a>
 </li>
 <li>compareEntities()
-: <a class="el" href="classecs_1_1_collider.html#a9aec1fe8a0d9424d2601a2d74455e05a">ecs::Collider</a>
-</li>
-<li>ComponentAlreadyExisting()
-: <a class="el" href="classecs_1_1_component_already_existing.html#ac308268c7b9e6e8ce7cbfe6d6e5bd3df">ecs::ComponentAlreadyExisting</a>
-</li>
-<li>ComponentNotCompatible()
-: <a class="el" href="classecs_1_1_component_not_compatible.html#a45eeccc9e9163e9bc5b75494529bfe12">ecs::ComponentNotCompatible</a>
-</li>
-<li>ComponentNotExisting()
-: <a class="el" href="classecs_1_1_component_not_existing.html#a31a45580cd31c42471a929880f6ede5d">ecs::ComponentNotExisting</a>
+: <a class="el" href="classecs_1_1_collider.html#a74e96c5cbad41702b4429d59072878e9">ecs::Collider</a>
 </li>
 <li>Controll()
 : <a class="el" href="classecs_1_1_controll.html#a74ff3ca8a36fdf1e158f8d0806d2c83c">ecs::Controll</a>
@@ -137,10 +128,16 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="classecs_1_1_controllable.html#a4c5a4e329cf913482ad1a8331faba9b6">ecs::Controllable</a>
 </li>
 <li>createEntity()
-: <a class="el" href="classecs_1_1_ecs.html#a9c7b23fb560bcb354344bd152ae72d7c">ecs::Ecs</a>
+: <a class="el" href="classecs_1_1_entity_manager.html#ada33886e6853e0d6ab9e562996b2cdf2">ecs::EntityManager</a>
+</li>
+<li>createEntityManager()
+: <a class="el" href="classecs_1_1_ecs.html#a378d571bc25a1fdfcf8e1ff548942bb4">ecs::Ecs</a>
 </li>
 <li>createProjectile()
-: <a class="el" href="classecs_1_1_fire.html#aea041dc604a2c7c5ca04bf1448eaf561">ecs::Fire</a>
+: <a class="el" href="classecs_1_1_fire.html#ab99d50b723c81bc216d153f6778586c5">ecs::Fire</a>
+</li>
+<li>createSystem()
+: <a class="el" href="classecs_1_1_ecs.html#a2c8d81cf49248a56ac6a0429e6a0e976">ecs::Ecs</a>
 </li>
 </ul>
 
@@ -157,13 +154,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 
 <h3><a id="index_e"></a>- e -</h3><ul>
 <li>Entity()
-: <a class="el" href="classecs_1_1_entity.html#a980f368aa07ce358583982821533a54a">ecs::Entity</a>
-</li>
-<li>EntityAlreadyExisting()
-: <a class="el" href="classecs_1_1_entity_already_existing.html#a281a44704140b920d098121e85fa2713">ecs::EntityAlreadyExisting</a>
-</li>
-<li>EntityNotExisting()
-: <a class="el" href="classecs_1_1_entity_not_existing.html#a0f58a62c8b130b171af0f05c15ff0bee">ecs::EntityNotExisting</a>
+: <a class="el" href="classecs_1_1_entity.html#a7694004db3c4e1d5f8e4b9031066a0a7">ecs::Entity</a>
 </li>
 <li>Exception()
 : <a class="el" href="classecs_1_1_exception.html#a947220ff330f8430fd6015f9ae25ef79">ecs::Exception</a>
@@ -189,13 +180,16 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="classecs_1_1_weapon.html#a35dc33e086bd053d95b10d4a7c83494c">ecs::Weapon</a>
 </li>
 <li>getEntities()
-: <a class="el" href="classecs_1_1_ecs.html#a292c0eb42e4e907c6073e439313e5bbb">ecs::Ecs</a>
+: <a class="el" href="classecs_1_1_entity_manager.html#a00b98846900668958e01bb225b56d05d">ecs::EntityManager</a>
 </li>
 <li>getEntity()
-: <a class="el" href="classecs_1_1_ecs.html#ae0c7e6946ebde8f8921ecc4d6084b0fd">ecs::Ecs</a>
+: <a class="el" href="classecs_1_1_entity_manager.html#a97084133e3f98a968641116490fc92b3">ecs::EntityManager</a>
 </li>
 <li>getEntityId()
 : <a class="el" href="classecs_1_1_a_component.html#a9480b029eb619cf113a63a97e28adc16">ecs::AComponent</a>
+</li>
+<li>getEntityManager()
+: <a class="el" href="classecs_1_1_ecs.html#aea0690dca4d17d87d35d35c1c14834b7">ecs::Ecs</a>
 </li>
 <li>getEntityType()
 : <a class="el" href="classecs_1_1_type.html#a0cfdc2e52805a490b56a4f87cc4dfdb8">ecs::Type</a>
@@ -210,7 +204,7 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="classecs_1_1_input.html#a2bc24f616d8254787ca14f4b5cb26c59">ecs::Input</a>
 </li>
 <li>getNumberEntities()
-: <a class="el" href="classecs_1_1_ecs.html#a8ff7297016ee8a1cf037bf0b7021bd02">ecs::Ecs</a>
+: <a class="el" href="classecs_1_1_entity_manager.html#aef9ad12926a03c6a6f1842e634d526f7">ecs::EntityManager</a>
 </li>
 <li>getSprite()
 : <a class="el" href="classecs_1_1_drawable.html#a57b136be910901ccb5e24e9711390401">ecs::Drawable</a>
@@ -270,16 +264,16 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 : <a class="el" href="classecs_1_1_entity.html#a30056c776dc8e57264e3fc83658e3198">ecs::Entity</a>
 </li>
 <li>removeEntity()
-: <a class="el" href="classecs_1_1_ecs.html#a0671aa164dae30d1499e31df0bbbf0c3">ecs::Ecs</a>
+: <a class="el" href="classecs_1_1_entity_manager.html#a0bdba5f392af1b76fb9a539bbe6beb88">ecs::EntityManager</a>
 </li>
 <li>run()
-: <a class="el" href="classecs_1_1_a_system.html#a64c328fda8e9e0218f906265710aaf8a">ecs::ASystem</a>
-, <a class="el" href="classecs_1_1_collider.html#a2b55a5c465769dff84ee61a5cd88a0b0">ecs::Collider</a>
-, <a class="el" href="classecs_1_1_collider_reaction.html#afceda201b5e038f7db4805dfea4ed456">ecs::ColliderReaction</a>
-, <a class="el" href="classecs_1_1_controll.html#a20b0e0e6c2e12982f395fa0134474b60">ecs::Controll</a>
-, <a class="el" href="classecs_1_1_display.html#a6b2aaeba448647079960fab543e79b87">ecs::Display</a>
-, <a class="el" href="classecs_1_1_fire.html#a2f98e4c40b5c170f43545675d192477a">ecs::Fire</a>
-, <a class="el" href="classecs_1_1_move.html#a54b7f4154d5f753e9c433feb4f8d9e17">ecs::Move</a>
+: <a class="el" href="classecs_1_1_a_system.html#a9dd741ea7d58a757a84fca64ac1ad098">ecs::ASystem</a>
+, <a class="el" href="classecs_1_1_collider.html#afd80e8fc51fbcd073e4b1fc0b3b15264">ecs::Collider</a>
+, <a class="el" href="classecs_1_1_collider_reaction.html#a49105fa907e25f3599c7a4f54d2c440a">ecs::ColliderReaction</a>
+, <a class="el" href="classecs_1_1_controll.html#aedb7319cee6d7c790311f53da1bdd0f4">ecs::Controll</a>
+, <a class="el" href="classecs_1_1_display.html#a4778dd694a8228ea33c98c31516ccf3b">ecs::Display</a>
+, <a class="el" href="classecs_1_1_fire.html#aee1d920e45876c62126809a401dd6d5b">ecs::Fire</a>
+, <a class="el" href="classecs_1_1_move.html#a0a7e236429edd9ff20b405e679a1830e">ecs::Move</a>
 </li>
 </ul>
 
@@ -290,6 +284,9 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>setHitBox()
 : <a class="el" href="classecs_1_1_hit_box.html#abc7b7f0c89e8e414706066a92c733a2d">ecs::HitBox</a>
+</li>
+<li>setId()
+: <a class="el" href="classecs_1_1_entity.html#aefb37c28a300d57788b8b23896fc2dc0">ecs::Entity</a>
 </li>
 <li>setPosition()
 : <a class="el" href="classecs_1_1_position.html#a451c94ff3d60284d969dc9107bae51c4">ecs::Position</a>
@@ -310,15 +307,6 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 , <a class="el" href="classecs_1_1_position.html#a66ad45871140bad28eef323b177a8ff7">ecs::Position</a>
 , <a class="el" href="classecs_1_1_velocity.html#aec2705b01ff1be168b08518109593d7b">ecs::Velocity</a>
 </li>
-<li>SystemAlreadyExisting()
-: <a class="el" href="classecs_1_1_system_already_existing.html#a568a9de9d75bac74878c98bab8e21625">ecs::SystemAlreadyExisting</a>
-</li>
-<li>SystemNotCompatible()
-: <a class="el" href="classecs_1_1_system_not_compatible.html#a3b0fb237aebfe038cfd2f2446e3eac5d">ecs::SystemNotCompatible</a>
-</li>
-<li>SystemNotExisting()
-: <a class="el" href="classecs_1_1_system_not_existing.html#a619e3391bcc719663dc1ef54eba2565a">ecs::SystemNotExisting</a>
-</li>
 </ul>
 
 
@@ -328,6 +316,13 @@ $(document).ready(function(){initNavTree('functions.html',''); initResizable(); 
 </li>
 <li>Type()
 : <a class="el" href="classecs_1_1_type.html#a7a57ece4df9b723268f250c0cdb2f92c">ecs::Type</a>
+</li>
+</ul>
+
+
+<h3><a id="index_u"></a>- u -</h3><ul>
+<li>updateId()
+: <a class="el" href="classecs_1_1_entity_manager.html#aab9339eb1f67eb4000091c7543f1ddde">ecs::EntityManager</a>
 </li>
 </ul>
 

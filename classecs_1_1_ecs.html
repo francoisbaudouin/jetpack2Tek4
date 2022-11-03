@@ -94,25 +94,19 @@ $(document).ready(function(){initNavTree('classecs_1_1_ecs.html',''); initResiza
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9c7b23fb560bcb354344bd152ae72d7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a9c7b23fb560bcb354344bd152ae72d7c">createEntity</a> ()</td></tr>
-<tr class="memdesc:a9c7b23fb560bcb354344bd152ae72d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <a class="el" href="classecs_1_1_entity.html">Entity</a> object.  <a href="classecs_1_1_ecs.html#a9c7b23fb560bcb354344bd152ae72d7c">More...</a><br /></td></tr>
-<tr class="separator:a9c7b23fb560bcb354344bd152ae72d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae0c7e6946ebde8f8921ecc4d6084b0fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_entity.html">Entity</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#ae0c7e6946ebde8f8921ecc4d6084b0fd">getEntity</a> (const size_t id)</td></tr>
-<tr class="memdesc:ae0c7e6946ebde8f8921ecc4d6084b0fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an entity from it's id, exception is thrown if the entity doesn't exist.  <a href="classecs_1_1_ecs.html#ae0c7e6946ebde8f8921ecc4d6084b0fd">More...</a><br /></td></tr>
-<tr class="separator:ae0c7e6946ebde8f8921ecc4d6084b0fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a292c0eb42e4e907c6073e439313e5bbb"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">Entity</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a292c0eb42e4e907c6073e439313e5bbb">getEntities</a> ()</td></tr>
-<tr class="memdesc:a292c0eb42e4e907c6073e439313e5bbb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the map of the entities.  <a href="classecs_1_1_ecs.html#a292c0eb42e4e907c6073e439313e5bbb">More...</a><br /></td></tr>
-<tr class="separator:a292c0eb42e4e907c6073e439313e5bbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0671aa164dae30d1499e31df0bbbf0c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a0671aa164dae30d1499e31df0bbbf0c3">removeEntity</a> (const size_t id)</td></tr>
-<tr class="memdesc:a0671aa164dae30d1499e31df0bbbf0c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">remove an entity from the map, exception is thrown if the entity doesn't exist  <a href="classecs_1_1_ecs.html#a0671aa164dae30d1499e31df0bbbf0c3">More...</a><br /></td></tr>
-<tr class="separator:a0671aa164dae30d1499e31df0bbbf0c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ff7297016ee8a1cf037bf0b7021bd02"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a8ff7297016ee8a1cf037bf0b7021bd02">getNumberEntities</a> () const</td></tr>
-<tr class="memdesc:a8ff7297016ee8a1cf037bf0b7021bd02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of entities stocked in the ecs.  <a href="classecs_1_1_ecs.html#a8ff7297016ee8a1cf037bf0b7021bd02">More...</a><br /></td></tr>
-<tr class="separator:a8ff7297016ee8a1cf037bf0b7021bd02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32092d3741c186c9fab3438aa9d91c9f"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
-<tr class="memitem:a32092d3741c186c9fab3438aa9d91c9f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a32092d3741c186c9fab3438aa9d91c9f">addSystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
-<tr class="memdesc:a32092d3741c186c9fab3438aa9d91c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a system to the ecs from the type specified, exception is thrown if the system already exist  <a href="classecs_1_1_ecs.html#a32092d3741c186c9fab3438aa9d91c9f">More...</a><br /></td></tr>
-<tr class="separator:a32092d3741c186c9fab3438aa9d91c9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a378d571bc25a1fdfcf8e1ff548942bb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a378d571bc25a1fdfcf8e1ff548942bb4">createEntityManager</a> (const size_t sceneId)</td></tr>
+<tr class="memdesc:a378d571bc25a1fdfcf8e1ff548942bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classecs_1_1_entity.html">Entity</a> Manager for the scene specified by it's Id.  <a href="classecs_1_1_ecs.html#a378d571bc25a1fdfcf8e1ff548942bb4">More...</a><br /></td></tr>
+<tr class="separator:a378d571bc25a1fdfcf8e1ff548942bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0690dca4d17d87d35d35c1c14834b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#aea0690dca4d17d87d35d35c1c14834b7">getEntityManager</a> (const size_t sceneId)</td></tr>
+<tr class="memdesc:aea0690dca4d17d87d35d35c1c14834b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classecs_1_1_entity.html">Entity</a> Manager for the scene specified by it's Id.  <a href="classecs_1_1_ecs.html#aea0690dca4d17d87d35d35c1c14834b7">More...</a><br /></td></tr>
+<tr class="separator:aea0690dca4d17d87d35d35c1c14834b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3c167f355bbaf6ae30a9ca1d223e706"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#aa3c167f355bbaf6ae30a9ca1d223e706">clearEntityManagers</a> ()</td></tr>
+<tr class="memdesc:aa3c167f355bbaf6ae30a9ca1d223e706"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy all managers  <a href="classecs_1_1_ecs.html#aa3c167f355bbaf6ae30a9ca1d223e706">More...</a><br /></td></tr>
+<tr class="separator:aa3c167f355bbaf6ae30a9ca1d223e706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c8d81cf49248a56ac6a0429e6a0e976"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
+<tr class="memitem:a2c8d81cf49248a56ac6a0429e6a0e976"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a2c8d81cf49248a56ac6a0429e6a0e976">createSystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
+<tr class="memdesc:a2c8d81cf49248a56ac6a0429e6a0e976"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a system to the ecs from the type specified, exception is thrown if the system already exist  <a href="classecs_1_1_ecs.html#a2c8d81cf49248a56ac6a0429e6a0e976">More...</a><br /></td></tr>
+<tr class="separator:a2c8d81cf49248a56ac6a0429e6a0e976"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a232969d3037e321dd8331b02e3e23924"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
 <tr class="memitem:a232969d3037e321dd8331b02e3e23924"><td class="memTemplItemLeft" align="right" valign="top">System &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924">getSystem</a> ()</td></tr>
 <tr class="memdesc:a232969d3037e321dd8331b02e3e23924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a system from the type specified, exception is thrown if the system doesn't exist.  <a href="classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924">More...</a><br /></td></tr>
@@ -122,8 +116,73 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a805ecb917b33b865545c6ad0e51bf582"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a32092d3741c186c9fab3438aa9d91c9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32092d3741c186c9fab3438aa9d91c9f">&#9670;&nbsp;</a></span>addSystem()</h2>
+<a id="aa3c167f355bbaf6ae30a9ca1d223e706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c167f355bbaf6ae30a9ca1d223e706">&#9670;&nbsp;</a></span>clearEntityManagers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ecs::clearEntityManagers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>destroy all managers </p>
+
+</div>
+</div>
+<a id="a805ecb917b33b865545c6ad0e51bf582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a805ecb917b33b865545c6ad0e51bf582">&#9670;&nbsp;</a></span>clearSystems()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Ecs::clearSystems </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>clear the system stocke in the ecs </p>
+
+</div>
+</div>
+<a id="a378d571bc25a1fdfcf8e1ff548942bb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a378d571bc25a1fdfcf8e1ff548942bb4">&#9670;&nbsp;</a></span>createEntityManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a> &amp; Ecs::createEntityManager </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>sceneId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a <a class="el" href="classecs_1_1_entity.html">Entity</a> Manager for the scene specified by it's Id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneId</td><td>: id of the scene using the manager </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a>&amp; : reference to the newly created manager </dd></dl>
+
+</div>
+</div>
+<a id="a2c8d81cf49248a56ac6a0429e6a0e976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c8d81cf49248a56ac6a0429e6a0e976">&#9670;&nbsp;</a></span>createSystem()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,7 +193,7 @@ template&lt;class System &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void ecs::Ecs::addSystem </td>
+          <td class="memname">void ecs::Ecs::createSystem </td>
           <td>(</td>
           <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>manager</em></td><td>)</td>
@@ -164,109 +223,30 @@ template&lt;class System &gt; </div>
 
 </div>
 </div>
-<a id="a805ecb917b33b865545c6ad0e51bf582"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a805ecb917b33b865545c6ad0e51bf582">&#9670;&nbsp;</a></span>clearSystems()</h2>
+<a id="aea0690dca4d17d87d35d35c1c14834b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea0690dca4d17d87d35d35c1c14834b7">&#9670;&nbsp;</a></span>getEntityManager()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Ecs::clearSystems </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>clear the system stocke in the ecs </p>
-
-</div>
-</div>
-<a id="a9c7b23fb560bcb354344bd152ae72d7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c7b23fb560bcb354344bd152ae72d7c">&#9670;&nbsp;</a></span>createEntity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classecs_1_1_entity.html">Entity</a> &amp; Ecs::createEntity </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Create an <a class="el" href="classecs_1_1_entity.html">Entity</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecs_1_1_entity.html">Entity</a>&amp; : entity that was created </dd></dl>
-
-</div>
-</div>
-<a id="a292c0eb42e4e907c6073e439313e5bbb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a292c0eb42e4e907c6073e439313e5bbb">&#9670;&nbsp;</a></span>getEntities()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">Entity</a> &gt; &gt; &amp; Ecs::getEntities </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the map of the entities. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::unordered_map&lt;size_t, std::shared_ptr&lt;Entity&gt;&gt;&amp; : map of the entities </dd></dl>
-
-</div>
-</div>
-<a id="ae0c7e6946ebde8f8921ecc4d6084b0fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae0c7e6946ebde8f8921ecc4d6084b0fd">&#9670;&nbsp;</a></span>getEntity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classecs_1_1_entity.html">Entity</a> &amp; Ecs::getEntity </td>
+          <td class="memname"><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a> &amp; Ecs::getEntityManager </td>
           <td>(</td>
           <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
+          <td class="paramname"><em>sceneId</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get an entity from it's id, exception is thrown if the entity doesn't exist. </p>
+<p>Get the <a class="el" href="classecs_1_1_entity.html">Entity</a> Manager for the scene specified by it's Id. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>: id of the entity to get </td></tr>
+    <tr><td class="paramname">sceneId</td><td>: id of the scene using the manager </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecs_1_1_entity.html">Entity</a>&amp; : entity in question </dd></dl>
-
-</div>
-</div>
-<a id="a8ff7297016ee8a1cf037bf0b7021bd02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8ff7297016ee8a1cf037bf0b7021bd02">&#9670;&nbsp;</a></span>getNumberEntities()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t Ecs::getNumberEntities </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the number of entities stocked in the ecs. </p>
-<dl class="section return"><dt>Returns</dt><dd>size_t : number of entities </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a>&amp; : reference to the manager needed </dd></dl>
 
 </div>
 </div>
@@ -303,32 +283,6 @@ template&lt;class System &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>System&amp; : system to return </dd></dl>
-
-</div>
-</div>
-<a id="a0671aa164dae30d1499e31df0bbbf0c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0671aa164dae30d1499e31df0bbbf0c3">&#9670;&nbsp;</a></span>removeEntity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Ecs::removeEntity </td>
-          <td>(</td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>remove an entity from the map, exception is thrown if the entity doesn't exist </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">id</td><td>: id of the entity to remove </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

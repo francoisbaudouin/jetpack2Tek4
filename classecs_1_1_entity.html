@@ -94,9 +94,9 @@ $(document).ready(function(){initNavTree('classecs_1_1_entity.html',''); initRes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a980f368aa07ce358583982821533a54a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_entity.html#a980f368aa07ce358583982821533a54a">Entity</a> ()</td></tr>
-<tr class="memdesc:a980f368aa07ce358583982821533a54a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecs_1_1_entity.html">Entity</a> object and call the 'getNewEntityId' that generate a new id for the entity.  <a href="classecs_1_1_entity.html#a980f368aa07ce358583982821533a54a">More...</a><br /></td></tr>
-<tr class="separator:a980f368aa07ce358583982821533a54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7694004db3c4e1d5f8e4b9031066a0a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_entity.html#a7694004db3c4e1d5f8e4b9031066a0a7">Entity</a> (const size_t id)</td></tr>
+<tr class="memdesc:a7694004db3c4e1d5f8e4b9031066a0a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecs_1_1_entity.html">Entity</a> object and set it's id.  <a href="classecs_1_1_entity.html#a7694004db3c4e1d5f8e4b9031066a0a7">More...</a><br /></td></tr>
+<tr class="separator:a7694004db3c4e1d5f8e4b9031066a0a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c4060c2f409a17e370e92680a3b79eb"><td class="memTemplParams" colspan="2">template&lt;class Component , typename... ComponentArguments&gt; </td></tr>
 <tr class="memitem:a8c4060c2f409a17e370e92680a3b79eb"><td class="memTemplItemLeft" align="right" valign="top">Component &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1_entity.html#a8c4060c2f409a17e370e92680a3b79eb">addComponent</a> (ComponentArguments &amp;&amp;...arguments)</td></tr>
 <tr class="memdesc:a8c4060c2f409a17e370e92680a3b79eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a component from the type of the template  <a href="classecs_1_1_entity.html#a8c4060c2f409a17e370e92680a3b79eb">More...</a><br /></td></tr>
@@ -116,10 +116,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ada5a5c0f0ae1aef82289a1f145e027a3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_entity.html#ada5a5c0f0ae1aef82289a1f145e027a3">getId</a> () const</td></tr>
 <tr class="memdesc:ada5a5c0f0ae1aef82289a1f145e027a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Id of the entity.  <a href="classecs_1_1_entity.html#ada5a5c0f0ae1aef82289a1f145e027a3">More...</a><br /></td></tr>
 <tr class="separator:ada5a5c0f0ae1aef82289a1f145e027a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefb37c28a300d57788b8b23896fc2dc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_entity.html#aefb37c28a300d57788b8b23896fc2dc0">setId</a> (const size_t id)</td></tr>
+<tr class="memdesc:aefb37c28a300d57788b8b23896fc2dc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Id of the entity.  <a href="classecs_1_1_entity.html#aefb37c28a300d57788b8b23896fc2dc0">More...</a><br /></td></tr>
+<tr class="separator:aefb37c28a300d57788b8b23896fc2dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a980f368aa07ce358583982821533a54a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a980f368aa07ce358583982821533a54a">&#9670;&nbsp;</a></span>Entity()</h2>
+<a id="a7694004db3c4e1d5f8e4b9031066a0a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7694004db3c4e1d5f8e4b9031066a0a7">&#9670;&nbsp;</a></span>Entity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,13 +130,20 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">Entity::Entity </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Construct a new <a class="el" href="classecs_1_1_entity.html">Entity</a> object and call the 'getNewEntityId' that generate a new id for the entity. </p>
+<p>Construct a new <a class="el" href="classecs_1_1_entity.html">Entity</a> object and set it's id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>: id of the entity </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -305,6 +315,32 @@ template&lt;class Component &gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Component</td><td>: type of the component to remove </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aefb37c28a300d57788b8b23896fc2dc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefb37c28a300d57788b8b23896fc2dc0">&#9670;&nbsp;</a></span>setId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Entity::setId </td>
+          <td>(</td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the Id of the entity. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>: id of the entity </td></tr>
   </table>
   </dd>
 </dl>

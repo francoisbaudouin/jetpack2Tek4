@@ -4,12 +4,15 @@ var hierarchy =
     [ "ecs::Device", "structecs_1_1_device.html", null ],
     [ "ecs::Ecs", "classecs_1_1_ecs.html", null ],
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
+    [ "ecs::EntityManager", "classecs_1_1_entity_manager.html", null ],
     [ "exception", null, [
       [ "ecs::Exception", "classecs_1_1_exception.html", [
         [ "ecs::ComponentAlreadyExisting", "classecs_1_1_component_already_existing.html", null ],
         [ "ecs::ComponentNotCompatible", "classecs_1_1_component_not_compatible.html", null ],
         [ "ecs::ComponentNotExisting", "classecs_1_1_component_not_existing.html", null ],
         [ "ecs::EntityAlreadyExisting", "classecs_1_1_entity_already_existing.html", null ],
+        [ "ecs::EntityManagerAlreadyExisting", "classecs_1_1_entity_manager_already_existing.html", null ],
+        [ "ecs::EntityManagerNotExisting", "classecs_1_1_entity_manager_not_existing.html", null ],
         [ "ecs::EntityNotExisting", "classecs_1_1_entity_not_existing.html", null ],
         [ "ecs::SystemAlreadyExisting", "classecs_1_1_system_already_existing.html", null ],
         [ "ecs::SystemNotCompatible", "classecs_1_1_system_not_compatible.html", null ],

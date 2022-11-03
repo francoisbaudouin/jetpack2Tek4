@@ -99,7 +99,7 @@ $(document).ready(function(){initNavTree('_ecs_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define ECS_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;entity/Entity.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;entity/EntityManager.hpp&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;systems/ISystem.hpp&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span>ecs</div>
@@ -111,67 +111,59 @@ $(document).ready(function(){initNavTree('_ecs_8hpp_source.html',''); initResiza
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        ~<a class="code" href="classecs_1_1_ecs.html">Ecs</a>();</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">//              ENTITY MANAGEMENT</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"></span>        <a class="code" href="classecs_1_1_entity.html">Entity</a> &amp;<a class="code" href="classecs_1_1_ecs.html#a9c7b23fb560bcb354344bd152ae72d7c">createEntity</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classecs_1_1_entity.html">Entity</a> &amp;<a class="code" href="classecs_1_1_ecs.html#ae0c7e6946ebde8f8921ecc4d6084b0fd">getEntity</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        std::unordered_map&lt;size_t, std::shared_ptr&lt;Entity&gt;&gt; &amp;<a class="code" href="classecs_1_1_ecs.html#a292c0eb42e4e907c6073e439313e5bbb">getEntities</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_ecs.html#a0671aa164dae30d1499e31df0bbbf0c3">removeEntity</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="classecs_1_1_ecs.html#a8ff7297016ee8a1cf037bf0b7021bd02">getNumberEntities</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">//              SYSTEM MANAGEMENT</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classecs_1_1_ecs.html#a32092d3741c186c9fab3438aa9d91c9f">   67</a></span>&#160;<span class="comment"></span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> System&gt; <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_ecs.html#a32092d3741c186c9fab3438aa9d91c9f">addSystem</a>(std::shared_ptr&lt;Ecs&gt; &amp;manager)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            System *system;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <span class="keywordflow">if</span> (_systems.contains(std::type_index(<span class="keyword">typeid</span>(System))))</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classecs_1_1_system_already_existing.html">SystemAlreadyExisting</a>(<span class="keyword">typeid</span>(System).name());</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            system = <span class="keyword">new</span> System(manager);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span><a class="code" href="classecs_1_1_i_system.html">ISystem</a> *<span class="keyword">&gt;</span>(system))</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                _systems.insert({std::type_index(<span class="keyword">typeid</span>(System)), system});</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">delete</span> system;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classecs_1_1_system_not_compatible.html">SystemNotCompatible</a>(<span class="keyword">typeid</span>(System).name());</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924">   89</a></span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">class</span> System&gt; System &amp;<a class="code" href="classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924">getSystem</a>()</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">if</span> (!_systems.contains(std::type_index(<span class="keyword">typeid</span>(System))))</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classecs_1_1_system_not_existing.html">SystemNotExisting</a>(<span class="keyword">typeid</span>(System).name());</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">return</span> (*<span class="keyword">static_cast&lt;</span>System *<span class="keyword">&gt;</span>(_systems.at(std::type_index(<span class="keyword">typeid</span>(System)))));</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_ecs.html#a805ecb917b33b865545c6ad0e51bf582">clearSystems</a>();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        std::unordered_map&lt;size_t, std::shared_ptr&lt;Entity&gt;&gt; _entities;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        std::unordered_map&lt;std::type_index, ISystem *&gt; _systems;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    };</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;} <span class="comment">// namespace ecs</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ECS_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"></span>        <a class="code" href="classecs_1_1_entity_manager.html">EntityManager</a> &amp;<a class="code" href="classecs_1_1_ecs.html#a378d571bc25a1fdfcf8e1ff548942bb4">createEntityManager</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> sceneId);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classecs_1_1_entity_manager.html">EntityManager</a> &amp;<a class="code" href="classecs_1_1_ecs.html#aea0690dca4d17d87d35d35c1c14834b7">getEntityManager</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> sceneId);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_ecs.html#aa3c167f355bbaf6ae30a9ca1d223e706">clearEntityManagers</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">//              SYSTEM MANAGEMENT</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classecs_1_1_ecs.html#a2c8d81cf49248a56ac6a0429e6a0e976">   51</a></span>&#160;<span class="comment"></span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> System&gt; <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_ecs.html#a2c8d81cf49248a56ac6a0429e6a0e976">createSystem</a>(std::shared_ptr&lt;Ecs&gt; &amp;manager)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            System *system;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span> (_systems.contains(std::type_index(<span class="keyword">typeid</span>(System))))</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classecs_1_1_system_already_existing.html">SystemAlreadyExisting</a>(<span class="keyword">typeid</span>(System).name());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            system = <span class="keyword">new</span> System(manager);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">if</span> (<span class="keyword">dynamic_cast&lt;</span><a class="code" href="classecs_1_1_i_system.html">ISystem</a> *<span class="keyword">&gt;</span>(system))</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                _systems.insert({std::type_index(<span class="keyword">typeid</span>(System)), system});</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keyword">delete</span> system;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classecs_1_1_system_not_compatible.html">SystemNotCompatible</a>(<span class="keyword">typeid</span>(System).name());</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924">   73</a></span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">class</span> System&gt; System &amp;<a class="code" href="classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924">getSystem</a>()</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">if</span> (!_systems.contains(std::type_index(<span class="keyword">typeid</span>(System))))</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordflow">throw</span> <a class="code" href="classecs_1_1_system_not_existing.html">SystemNotExisting</a>(<span class="keyword">typeid</span>(System).name());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span> (*<span class="keyword">static_cast&lt;</span>System *<span class="keyword">&gt;</span>(_systems.at(std::type_index(<span class="keyword">typeid</span>(System)))));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_ecs.html#a805ecb917b33b865545c6ad0e51bf582">clearSystems</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;      <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        std::unordered_map&lt;size_t, EntityManager *&gt; _entityManagers;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        std::unordered_map&lt;std::type_index, ISystem *&gt; _systems;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    };</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;} <span class="comment">// namespace ecs</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ECS_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassecs_1_1_ecs_html_a8ff7297016ee8a1cf037bf0b7021bd02"><div class="ttname"><a href="classecs_1_1_ecs.html#a8ff7297016ee8a1cf037bf0b7021bd02">ecs::Ecs::getNumberEntities</a></div><div class="ttdeci">size_t getNumberEntities() const</div><div class="ttdoc">Get the number of entities stocked in the ecs.</div><div class="ttdef"><b>Definition:</b> Ecs.cpp:46</div></div>
-<div class="ttc" id="aclassecs_1_1_system_not_existing_html"><div class="ttname"><a href="classecs_1_1_system_not_existing.html">ecs::SystemNotExisting</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:77</div></div>
+<div class="ttc" id="aclassecs_1_1_system_not_existing_html"><div class="ttname"><a href="classecs_1_1_system_not_existing.html">ecs::SystemNotExisting</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:52</div></div>
+<div class="ttc" id="aclassecs_1_1_entity_manager_html"><div class="ttname"><a href="classecs_1_1_entity_manager.html">ecs::EntityManager</a></div><div class="ttdef"><b>Definition:</b> EntityManager.hpp:17</div></div>
 <div class="ttc" id="aclassecs_1_1_ecs_html"><div class="ttname"><a href="classecs_1_1_ecs.html">ecs::Ecs</a></div><div class="ttdef"><b>Definition:</b> Ecs.hpp:17</div></div>
-<div class="ttc" id="aclassecs_1_1_ecs_html_a9c7b23fb560bcb354344bd152ae72d7c"><div class="ttname"><a href="classecs_1_1_ecs.html#a9c7b23fb560bcb354344bd152ae72d7c">ecs::Ecs::createEntity</a></div><div class="ttdeci">Entity &amp; createEntity()</div><div class="ttdoc">Create an Entity object.</div><div class="ttdef"><b>Definition:</b> Ecs.cpp:21</div></div>
-<div class="ttc" id="aclassecs_1_1_system_already_existing_html"><div class="ttname"><a href="classecs_1_1_system_already_existing.html">ecs::SystemAlreadyExisting</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:67</div></div>
-<div class="ttc" id="aclassecs_1_1_ecs_html_a32092d3741c186c9fab3438aa9d91c9f"><div class="ttname"><a href="classecs_1_1_ecs.html#a32092d3741c186c9fab3438aa9d91c9f">ecs::Ecs::addSystem</a></div><div class="ttdeci">void addSystem(std::shared_ptr&lt; Ecs &gt; &amp;manager)</div><div class="ttdoc">add a system to the ecs from the type specified, exception is thrown if the system already exist</div><div class="ttdef"><b>Definition:</b> Ecs.hpp:67</div></div>
+<div class="ttc" id="aclassecs_1_1_ecs_html_aa3c167f355bbaf6ae30a9ca1d223e706"><div class="ttname"><a href="classecs_1_1_ecs.html#aa3c167f355bbaf6ae30a9ca1d223e706">ecs::Ecs::clearEntityManagers</a></div><div class="ttdeci">void clearEntityManagers()</div><div class="ttdoc">destroy all managers</div><div class="ttdef"><b>Definition:</b> Ecs.cpp:39</div></div>
+<div class="ttc" id="aclassecs_1_1_system_already_existing_html"><div class="ttname"><a href="classecs_1_1_system_already_existing.html">ecs::SystemAlreadyExisting</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:47</div></div>
+<div class="ttc" id="aclassecs_1_1_entity_manager_not_existing_html"><div class="ttname"><a href="classecs_1_1_entity_manager_not_existing.html">ecs::EntityManagerNotExisting</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:62</div></div>
 <div class="ttc" id="aclassecs_1_1_ecs_html_a805ecb917b33b865545c6ad0e51bf582"><div class="ttname"><a href="classecs_1_1_ecs.html#a805ecb917b33b865545c6ad0e51bf582">ecs::Ecs::clearSystems</a></div><div class="ttdeci">void clearSystems()</div><div class="ttdoc">clear the system stocke in the ecs</div><div class="ttdef"><b>Definition:</b> Ecs.cpp:48</div></div>
-<div class="ttc" id="aclassecs_1_1_ecs_html_a292c0eb42e4e907c6073e439313e5bbb"><div class="ttname"><a href="classecs_1_1_ecs.html#a292c0eb42e4e907c6073e439313e5bbb">ecs::Ecs::getEntities</a></div><div class="ttdeci">std::unordered_map&lt; size_t, std::shared_ptr&lt; Entity &gt; &gt; &amp; getEntities()</div><div class="ttdoc">Get the map of the entities.</div><div class="ttdef"><b>Definition:</b> Ecs.cpp:37</div></div>
-<div class="ttc" id="aclassecs_1_1_ecs_html_a232969d3037e321dd8331b02e3e23924"><div class="ttname"><a href="classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924">ecs::Ecs::getSystem</a></div><div class="ttdeci">System &amp; getSystem()</div><div class="ttdoc">Get a system from the type specified, exception is thrown if the system doesn't exist.</div><div class="ttdef"><b>Definition:</b> Ecs.hpp:89</div></div>
-<div class="ttc" id="aclassecs_1_1_entity_not_existing_html"><div class="ttname"><a href="classecs_1_1_entity_not_existing.html">ecs::EntityNotExisting</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:57</div></div>
-<div class="ttc" id="aclassecs_1_1_ecs_html_ae0c7e6946ebde8f8921ecc4d6084b0fd"><div class="ttname"><a href="classecs_1_1_ecs.html#ae0c7e6946ebde8f8921ecc4d6084b0fd">ecs::Ecs::getEntity</a></div><div class="ttdeci">Entity &amp; getEntity(const size_t id)</div><div class="ttdoc">Get an entity from it's id, exception is thrown if the entity doesn't exist.</div><div class="ttdef"><b>Definition:</b> Ecs.cpp:30</div></div>
-<div class="ttc" id="aclassecs_1_1_ecs_html_a0671aa164dae30d1499e31df0bbbf0c3"><div class="ttname"><a href="classecs_1_1_ecs.html#a0671aa164dae30d1499e31df0bbbf0c3">ecs::Ecs::removeEntity</a></div><div class="ttdeci">void removeEntity(const size_t id)</div><div class="ttdoc">remove an entity from the map, exception is thrown if the entity doesn't exist</div><div class="ttdef"><b>Definition:</b> Ecs.cpp:39</div></div>
-<div class="ttc" id="aclassecs_1_1_system_not_compatible_html"><div class="ttname"><a href="classecs_1_1_system_not_compatible.html">ecs::SystemNotCompatible</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:87</div></div>
-<div class="ttc" id="aclassecs_1_1_entity_html"><div class="ttname"><a href="classecs_1_1_entity.html">ecs::Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.hpp:20</div></div>
-<div class="ttc" id="aclassecs_1_1_i_system_html"><div class="ttname"><a href="classecs_1_1_i_system.html">ecs::ISystem</a></div><div class="ttdef"><b>Definition:</b> ISystem.hpp:13</div></div>
+<div class="ttc" id="aclassecs_1_1_ecs_html_a2c8d81cf49248a56ac6a0429e6a0e976"><div class="ttname"><a href="classecs_1_1_ecs.html#a2c8d81cf49248a56ac6a0429e6a0e976">ecs::Ecs::createSystem</a></div><div class="ttdeci">void createSystem(std::shared_ptr&lt; Ecs &gt; &amp;manager)</div><div class="ttdoc">add a system to the ecs from the type specified, exception is thrown if the system already exist</div><div class="ttdef"><b>Definition:</b> Ecs.hpp:51</div></div>
+<div class="ttc" id="aclassecs_1_1_ecs_html_a232969d3037e321dd8331b02e3e23924"><div class="ttname"><a href="classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924">ecs::Ecs::getSystem</a></div><div class="ttdeci">System &amp; getSystem()</div><div class="ttdoc">Get a system from the type specified, exception is thrown if the system doesn't exist.</div><div class="ttdef"><b>Definition:</b> Ecs.hpp:73</div></div>
+<div class="ttc" id="aclassecs_1_1_system_not_compatible_html"><div class="ttname"><a href="classecs_1_1_system_not_compatible.html">ecs::SystemNotCompatible</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:67</div></div>
+<div class="ttc" id="aclassecs_1_1_entity_manager_already_existing_html"><div class="ttname"><a href="classecs_1_1_entity_manager_already_existing.html">ecs::EntityManagerAlreadyExisting</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:57</div></div>
+<div class="ttc" id="aclassecs_1_1_i_system_html"><div class="ttname"><a href="classecs_1_1_i_system.html">ecs::ISystem</a></div><div class="ttdef"><b>Definition:</b> ISystem.hpp:15</div></div>
+<div class="ttc" id="aclassecs_1_1_ecs_html_a378d571bc25a1fdfcf8e1ff548942bb4"><div class="ttname"><a href="classecs_1_1_ecs.html#a378d571bc25a1fdfcf8e1ff548942bb4">ecs::Ecs::createEntityManager</a></div><div class="ttdeci">EntityManager &amp; createEntityManager(const size_t sceneId)</div><div class="ttdoc">Create a Entity Manager for the scene specified by it's Id.</div><div class="ttdef"><b>Definition:</b> Ecs.cpp:21</div></div>
+<div class="ttc" id="aclassecs_1_1_ecs_html_aea0690dca4d17d87d35d35c1c14834b7"><div class="ttname"><a href="classecs_1_1_ecs.html#aea0690dca4d17d87d35d35c1c14834b7">ecs::Ecs::getEntityManager</a></div><div class="ttdeci">EntityManager &amp; getEntityManager(const size_t sceneId)</div><div class="ttdoc">Get the Entity Manager for the scene specified by it's Id.</div><div class="ttdef"><b>Definition:</b> Ecs.cpp:32</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

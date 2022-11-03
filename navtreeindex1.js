@@ -1,5 +1,18 @@
 var NAVTREEINDEX1 =
 {
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da74a03f9d576fb769cd18baa3078ee7b7":[1,0,0,9,0,78],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da7a86e710748e00a966d80ab578790dcf":[1,0,0,9,0,106],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da7c0319df932aea3eeec7f2552299f580":[1,0,0,9,0,80],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da7d6d5f5d0b1f7d6db8f505053522a8a5":[1,0,0,9,0,67],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da7d864f01b00d091147f75e8f5b8e4f03":[1,0,0,9,0,40],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da7ef6b9312cec23da43a13b319fd3fd8d":[1,0,0,9,0,61],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da81c5462d901859323142397c815fab8d":[1,0,0,9,0,43],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da84dc43be52539d2324aae6c5b5bfeb26":[1,0,0,9,0,34],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da851ef775e1e72afac0cef8142a451a47":[1,0,0,9,0,104],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da86b162f3d5d12197ed3ca1988d19a20b":[1,0,0,9,0,1],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da87f85abebb1065d2ac26ca31c98a219e":[1,0,0,9,0,86],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da88d54964803f1e610eeb2acf25a8eb24":[1,0,0,9,0,19],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da89f543d34ff783a864ac98f807bff69a":[1,0,0,9,0,36],
 "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da8cce9a691a1daaca66d37107fce905cf":[1,0,0,9,0,55],
 "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da96c9a47ab2fe4333d31330039eeb58c6":[1,0,0,9,0,71],
 "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da97b4fe8be62b3ce05fc7fa6de7feebb1":[1,0,0,9,0,87],
@@ -54,9 +67,9 @@ var NAVTREEINDEX1 =
 "structecs_1_1_device.html#af80fd82dc75ae7a23f246d41263dbc63a55ce3322e444d27e940081afef5a6d34":[1,0,0,9,1,3],
 "structecs_1_1_device.html#af80fd82dc75ae7a23f246d41263dbc63a8983f79e4be0e79a670a03f013e317ab":[1,0,0,9,1,1],
 "structecs_1_1_device.html#af80fd82dc75ae7a23f246d41263dbc63aa626325364698c8cf0d782902c941660":[1,0,0,9,1,2],
-"structecs_1_1_r_type_event.html":[1,0,0,24],
-"structecs_1_1_r_type_event.html#aa37a66d617cdf54a32e3c6fa353b4141":[1,0,0,24,0],
-"structecs_1_1_r_type_event.html#ad39ec6ab3cae1983d5c409482060c014":[1,0,0,24,1],
-"structecs_1_1_r_type_event.html#afc7e105d4cb999a9c07745e9ec637358":[1,0,0,24,2],
+"structecs_1_1_r_type_event.html":[1,0,0,27],
+"structecs_1_1_r_type_event.html#aa37a66d617cdf54a32e3c6fa353b4141":[1,0,0,27,0],
+"structecs_1_1_r_type_event.html#ad39ec6ab3cae1983d5c409482060c014":[1,0,0,27,1],
+"structecs_1_1_r_type_event.html#afc7e105d4cb999a9c07745e9ec637358":[1,0,0,27,2],
 "weapons_8hpp_source.html":[2,0,0,0,0,2,3]
 };
