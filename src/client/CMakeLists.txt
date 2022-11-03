@@ -30,6 +30,7 @@ add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 
 target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::sfml)
 target_link_libraries(${TARGET_NAME} PUBLIC Threads::Threads)
+target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::asio)
 
 add_custom_command(TARGET ${TARGET_NAME}
   POST_BUILD
