@@ -23,7 +23,7 @@ EntityManager &Ecs::createEntityManager(const size_t sceneId)
     EntityManager *manager;
 
     if (_entityManagers.contains(sceneId))
-      throw EntityManagerAlreadyExisting(sceneId);
+        throw EntityManagerAlreadyExisting(sceneId);
     manager = new EntityManager();
     _entityManagers.insert({sceneId, manager});
     return (*manager);
@@ -32,7 +32,7 @@ EntityManager &Ecs::createEntityManager(const size_t sceneId)
 EntityManager &Ecs::getEntityManager(const size_t sceneId)
 {
     if (!_entityManagers.contains(sceneId))
-      throw EntityManagerNotExisting(sceneId);
+        throw EntityManagerNotExisting(sceneId);
     return (*_entityManagers.at(sceneId));
 }
 
