@@ -5,12 +5,12 @@
 ** TextureDatabase
 */
 
-#include "TextureDatabase.hpp"
+#include <boost/bind.hpp>
 #include <filesystem>
+#include "TextureDatabase.hpp"
 #include "ecs/exceptions/Exception.hpp"
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
-#include <boost/bind.hpp>
 #define BOOST_BIND_NO_PLACEHOLDERS
 
 using namespace rtype;
