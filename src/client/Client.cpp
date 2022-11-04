@@ -11,13 +11,37 @@
 
 using namespace rtype;
 
-Client::Client() { this->_value = 2; }
+Client::Client(const std::string &ipAdress, const size_t &port) : _ipAdress(ipAdress), _port(port) {}
 
-Client::Client(const Client &client) { this->_receiverEndpoint = client._receiverEndpoint; }
-
-void Client::connectToServer(const std::string &ipAdress, const size_t &port)
+Client::Client(const Client &client)
 {
-    this->_receiverEndpoint = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(ipAdress), port);
+    this->setIpAdress(client.getIpAdress());
+    this->setPort(client.getPort());
+}
+
+std::string Client::getIpAdress() const
+{
+    return this->_ipAdress;
+}
+
+size_t Client::getPort() const
+{
+    return this->_port;
+}
+
+void Client::setIpAdress(const std::string &ipAdress)
+{
+    this->_ipAdress = ipAdress;
+}
+
+void Client::setPort(const size_t &port)
+{
+    this->_port = port;
+}
+
+void Client::connectToServer()
+{
+    this->_receiverEndpoint = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(this->_ipAdress), this->_port);
     boost::asio::ip::udp::socket socket(this->_ioContext);
 
     socket.open(boost::asio::ip::udp::v4());
@@ -33,6 +57,5 @@ void Client::communicate(boost::asio::ip::udp::socket &socket)
         // fonction pour envoyer des infos au serveur à mettre ici
         // messageLength = socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
         // fonction qui désérialise les infos reçues par le server à mettre ici
-        // update ecs côté client
     }
 }
