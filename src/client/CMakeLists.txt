@@ -1,27 +1,38 @@
 set(INCROOT ${PROJECT_SOURCE_DIR}/src/client)
 set(SRCROOT ${PROJECT_SOURCE_DIR}/src/client)
 
-# adding subb diirectory
-# Exemple: add_subdirectory(connexion)
 set(TARGET_NAME r-type_client)
+
+include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
+
 find_package(Threads REQUIRED)
+find_package(Boost REQUIRED)
+include(CompilerFlags)
 
 set(SRC
   ${SRC}
   ${SRCROOT}/Client.cpp
   ${INCROOT}/Client.hpp
+  ${SRCROOT}/TextureDatabase.cpp
+  ${INCROOT}/TextureDatabase.hpp
 )
-
 set(INCDIRS ${INCROOT})
+
+#set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
+
+#set_target_properties(${TARGET}
+#    PROPERTIES
+#    RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/
+#)
 
 add_subdirectory(ecs)
 
-include(CompilerFlags)
-
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 
-target_link_libraries(${TARGET_NAME} sfml-audio sfml-graphics sfml-network sfml-system)
-target_link_libraries(${TARGET_NAME} Threads::Threads)
+target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::sfml)
+target_link_libraries(${TARGET_NAME} PUBLIC Threads::Threads)
+target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::asio)
 
 add_custom_command(TARGET ${TARGET_NAME}
   POST_BUILD

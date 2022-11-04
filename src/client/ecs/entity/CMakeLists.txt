@@ -5,6 +5,8 @@ set(SRC
     ${SRC}
     ${SRCROOT}/Entity.cpp
     ${SRCROOT}/Entity.hpp
+    ${SRCROOT}/EntityManager.cpp
+    ${SRCROOT}/EntityManager.hpp
     PARENT_SCOPE
 )
 

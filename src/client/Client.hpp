@@ -16,7 +16,7 @@
 #include <iostream>
 #include <memory>
 #include <string>
-
+#include "TextureDatabase.hpp"
 #include "ecs/Ecs.hpp"
 
 namespace rtype
