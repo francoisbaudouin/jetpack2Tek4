@@ -62,15 +62,34 @@ namespace configuration
             {"name", ""}, {"port", ""}, {"ip", ""}, {"debugger", ""}, {"EULA", ""}, {"max_player_connection", ""}};
         std::map<std::string, std::string> _configurationGame{{"gravity", ""}, {"velocity", ""}, {"custom_map", ""}};
         std::unordered_map<std::string, std::function<std::string>> _functPtr{
-            {"ip", [this](std::string ip) { _ip = ip; }},
-            {"name", [this](std::string name) { _name = name; }},
-            {"port", [this](std::string port) { std::stringstream sstream(port); sstream >> _port; }},
+            {"ip", [this](std::string ip) { _ip = ip; }}, {"name", [this](std::string name) { _name = name; }},
+            {"port",
+                [this](std::string port) {
+                    std::stringstream sstream(port);
+                    sstream >> _port;
+                }},
             {"debugger", [this](std::string debugger) { _debugger = debugger; }},
-            {"ip", [this](std::string eula) { if (eula.compare("true") == 0) _eula == true; }},
-            {"ip", [this](std::string playerMax) { std::stringstream sstream(playerMax); sstream >> _maxConnection; }},
-            {"ip", [this](std::string gravity) { std::stringstream sstream(gravity); sstream >> _gravity; }},
-            {"ip", [this](std::string velocity) { std::stringstream sstream(velocity); sstream >> _velocity; }},
-            {"name", [this](std::string customMap) { customMap = _custom_map; }}};
+            {"EULA",
+                [this](std::string eula) {
+                    if (eula.compare("true") == 0)
+                        _eula == true;
+                }},
+            {"max_player_connection",
+                [this](std::string playerMax) {
+                    std::stringstream sstream(playerMax);
+                    sstream >> _maxConnection;
+                }},
+            {"gravity",
+                [this](std::string gravity) {
+                    std::stringstream sstream(gravity);
+                    sstream >> _gravity;
+                }},
+            {"velocity",
+                [this](std::string velocity) {
+                    std::stringstream sstream(velocity);
+                    sstream >> _velocity;
+                }},
+            {"custom_map", [this](std::string customMap) { customMap = _custom_map; }}};
     };
 } // namespace configuration
 
