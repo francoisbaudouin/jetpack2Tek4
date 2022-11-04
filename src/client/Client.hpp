@@ -23,15 +23,16 @@ namespace rtype
 {
     class Client {
       public:
-        Client(const std::string &ipAdress = "127.0.0.1", const size_t &port = 42069);
-        void connectToServer();
-        void run(boost::asio::ip::udp::socket &socket);
+        Client();
+        Client(const Client &client);
+        void connectToServer(const std::string &ipAdress = "127.0.0.1", const size_t &port = 42069);
+        void communicate(boost::asio::ip::udp::socket &socket);
         ~Client() = default;
+        int _value;
 
       protected:
       private:
-        sf::RenderWindow _window;
-        std::shared_ptr<ecs::Ecs> _sharedEcs;
+        std::shared_ptr<std::unordered_map<size_t, std::shared_ptr<ecs::Entity>>> _entities;
         boost::asio::ip::udp::endpoint _receiverEndpoint;
         boost::asio::ip::udp::endpoint _senderEndpoint;
         boost::asio::io_context _ioContext;
