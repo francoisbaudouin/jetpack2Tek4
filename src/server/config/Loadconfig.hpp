@@ -51,18 +51,26 @@ namespace configuration
         void setServerIp(std::string);
         std::string _ip;
         std::string _name;
-        bool _debugger;
+        std::string _debugger;
         bool _eula = false;
         size_t _port;
         size_t _gravity;
+        size_t _velocity;
         std::string _custom_map;
-        size_t maxConnection;
+        size_t _maxConnection;
         std::map<std::string, std::string> _configurationServer{
             {"name", ""}, {"port", ""}, {"ip", ""}, {"debugger", ""}, {"EULA", ""}, {"max_player_connection", ""}};
         std::map<std::string, std::string> _configurationGame{{"gravity", ""}, {"velocity", ""}, {"custom_map", ""}};
         std::unordered_map<std::string, std::function<std::string>> _functPtr{
-            {"ip", [this](std::string s) { _ip = s; }},
-            {"name", [this](std::string name) { _name = name; }}};
+            {"ip", [this](std::string ip) { _ip = ip; }},
+            {"name", [this](std::string name) { _name = name; }},
+            {"port", [this](std::string port) { std::stringstream sstream(port); sstream >> _port; }},
+            {"debugger", [this](std::string debugger) { _debugger = debugger; }},
+            {"ip", [this](std::string eula) { if (eula.compare("true") == 0) _eula == true; }},
+            {"ip", [this](std::string playerMax) { std::stringstream sstream(playerMax); sstream >> _maxConnection; }},
+            {"ip", [this](std::string gravity) { std::stringstream sstream(gravity); sstream >> _gravity; }},
+            {"ip", [this](std::string velocity) { std::stringstream sstream(velocity); sstream >> _velocity; }},
+            {"name", [this](std::string customMap) { customMap = _custom_map; }}};
     };
 } // namespace configuration
 
