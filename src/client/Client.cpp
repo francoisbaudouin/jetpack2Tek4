@@ -16,8 +16,8 @@ Client::Client(const std::string &ipAdress, const size_t &port) : _window(sf::Vi
 {
     ecs::Ecs ecs;
     this->_sharedEcs = std::make_shared<ecs::Ecs>(ecs);
-    _sharedEcs->addSystem<ecs::Input>(_sharedEcs);
-    _sharedEcs->addSystem<ecs::Display>(_sharedEcs);
+    _sharedEcs->createSystem<ecs::Input>(_sharedEcs);
+    _sharedEcs->createSystem<ecs::Display>(_sharedEcs);
 
     this->_receiverEndpoint = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(ipAdress), port);
 }
@@ -45,7 +45,7 @@ void Client::run(boost::asio::ip::udp::socket &socket)
         while (_window.pollEvent(event))
             if (event.type == sf::Event::Closed)
                 _window.close();
-        _sharedEcs->getSystem<ecs::Display>().run(_window);
+        _sharedEcs->getSystem<ecs::Display>().run(0, _window);
         _window.display();
     }
 }

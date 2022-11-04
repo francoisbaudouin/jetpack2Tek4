@@ -5,12 +5,11 @@
 ** main
 */
 #include "Client.hpp"
+#include "TextureDatabase.hpp"
 
 int main(void)
 {
     rtype::Client client;
-
     client.connectToServer();
-
     return 0;
 }
