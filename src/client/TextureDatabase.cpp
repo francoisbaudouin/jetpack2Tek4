@@ -5,13 +5,18 @@
 ** TextureDatabase
 */
 
-#include "TextureDatabase.hpp"
+#define BOOST_BIND_NO_PLACEHOLDERS
+
+#include <boost/bind.hpp>
 #include <filesystem>
-#include "ecs/exceptions/Exception.hpp"
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
 
+#include "TextureDatabase.hpp"
+#include "ecs/exceptions/Exception.hpp"
+
 using namespace rtype;
+using namespace boost::placeholders;
 
 std::string fileTraduction(std::string &fileName)
 {
