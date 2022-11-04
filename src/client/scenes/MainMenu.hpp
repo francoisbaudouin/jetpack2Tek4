@@ -9,10 +9,12 @@
 #define MAINMENU_HPP_
 
 #include "AScene.hpp"
+#include "SFML/Graphics.hpp"
 
-class MainMenu : public AScene {
-    public:
-        MainMenu();
+namespace rtype {
+    class MainMenu : public AScene {
+      public:
+        MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window);
         ~MainMenu();
         void OnCreate();
         void OnDestroy();
@@ -21,7 +23,10 @@ class MainMenu : public AScene {
         void ProcessInput();
         void Update();
         void Draw();
-    private:
-};
+
+      private:
+        sf::Texture _tmpTexture;
+    };
+} // namespace ecs
 
 #endif /* !MAINMENU_HPP_ */

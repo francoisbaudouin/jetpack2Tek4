@@ -7,7 +7,9 @@
 
 #include "GameScene.hpp"
 
-GameScene::GameScene()
+using namespace rtype;
+
+GameScene::GameScene(SceneSystem &sceneSystem, sf::RenderWindow &window) : AScene(sceneSystem, window)
 {
 }
 
@@ -27,7 +29,7 @@ void GameScene::OnDestroy()
 
 void GameScene::OnActivate()
 {
-
+    Update();
 }
 
 void GameScene::OnDeactivate()
