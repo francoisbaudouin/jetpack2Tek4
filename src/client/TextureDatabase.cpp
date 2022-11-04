@@ -10,8 +10,11 @@
 #include "ecs/exceptions/Exception.hpp"
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
+#include <boost/bind.hpp>
+#define BOOST_BIND_NO_PLACEHOLDERS
 
 using namespace rtype;
+using namespace boost::placeholders;
 
 std::string fileTraduction(std::string &fileName)
 {
