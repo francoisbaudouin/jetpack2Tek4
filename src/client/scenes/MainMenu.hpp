@@ -11,22 +11,23 @@
 #include "AScene.hpp"
 #include "SFML/Graphics.hpp"
 
-namespace rtype {
+namespace rtype
+{
     class MainMenu : public AScene {
       public:
         MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window);
         ~MainMenu();
-        void OnCreate();
-        void OnDestroy();
-        void OnActivate();
-        void OnDeactivate();
-        void ProcessInput();
-        void Update();
-        void Draw();
+        void OnCreate() override;
+        void OnDestroy() override;
+        void OnActivate() override;
+        void OnDeactivate() override;
+        void ProcessInput() override;
+        void Update() override;
+        void Draw() override;
 
       private:
         sf::Texture _tmpTexture;
     };
-} // namespace ecs
+} // namespace rtype
 
 #endif /* !MAINMENU_HPP_ */

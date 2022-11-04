@@ -19,8 +19,8 @@ namespace rtype {
       ~AScene() = default;
 
     protected:
-      sf::RenderWindow &_window;
       rtype::SceneSystem &_sceneSystem;
+      sf::RenderWindow &_window;
     private:
   };
 }

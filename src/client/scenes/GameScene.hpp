@@ -10,20 +10,22 @@
 
 #include "AScene.hpp"
 
-namespace rtype {
+namespace rtype
+{
     class GameScene : public AScene {
-        public:
-            GameScene(SceneSystem &sceneSystem, sf::RenderWindow &window);
-            ~GameScene();
-            void OnCreate();
-            void OnDestroy();
-            void OnActivate();
-            void OnDeactivate();
-            void ProcessInput();
-            void Update();
-            void Draw();
-        private:
+      public:
+        GameScene(SceneSystem &sceneSystem, sf::RenderWindow &window);
+        ~GameScene();
+        void OnCreate() override;
+        void OnDestroy() override;
+        void OnActivate() override;
+        void OnDeactivate() override;
+        void ProcessInput() override;
+        void Update() override;
+        void Draw() override;
+
+      private:
     };
-}
+} // namespace rtype
 
 #endif /* !GAMESCENE_HPP_ */

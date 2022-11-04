@@ -9,45 +9,20 @@
 
 using namespace rtype;
 
-GameScene::GameScene(SceneSystem &sceneSystem, sf::RenderWindow &window) : AScene(sceneSystem, window)
-{
-}
+GameScene::GameScene(SceneSystem &sceneSystem, sf::RenderWindow &window) : AScene(sceneSystem, window) {}
 
-GameScene::~GameScene()
-{
-}
+GameScene::~GameScene() {}
 
-void GameScene::OnCreate()
-{
+void GameScene::OnCreate() {}
 
-}
+void GameScene::OnDestroy() {}
 
-void GameScene::OnDestroy()
-{
+void GameScene::OnActivate() { Update(); }
 
-}
+void GameScene::OnDeactivate() {}
 
-void GameScene::OnActivate()
-{
-    Update();
-}
+void GameScene::ProcessInput() {}
 
-void GameScene::OnDeactivate()
-{
+void GameScene::Update() {}
 
-}
-
-void GameScene::ProcessInput()
-{
-
-}
-
-void GameScene::Update()
-{
-
-}
-
-void GameScene::Draw()
-{
-
-}
+void GameScene::Draw() {}

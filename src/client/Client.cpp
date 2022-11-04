@@ -27,10 +27,11 @@ void Client::connectToServer()
 void Client::run(boost::asio::ip::udp::socket &socket)
 {
     sf::Event event;
-    size_t messageLength = 0;
+    (void)socket;
+    //size_t messageLength = 0;
     MainMenu tmpMainMenu(_sceneSystem, _window);
     std::shared_ptr<MainMenu> mainMenu = std::make_shared<MainMenu>(tmpMainMenu);
-    unsigned int mainMenuID = _sceneSystem.Add(mainMenu);
+    std::string mainMenuID = _sceneSystem.Add(mainMenu, "MainMenu");
     _sceneSystem.SwitchTo(mainMenuID);
 
     while (_window.isOpen()) {

@@ -11,23 +11,13 @@
 using namespace ecs;
 using namespace rtype;
 
-MainMenu::MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window) : AScene(sceneSystem, window)
-{
-}
+MainMenu::MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window) : AScene(sceneSystem, window) {}
 
-MainMenu::~MainMenu()
-{
-}
+MainMenu::~MainMenu() {}
 
-void MainMenu::OnCreate()
-{
+void MainMenu::OnCreate() {}
 
-}
-
-void MainMenu::OnDestroy()
-{
-
-}
+void MainMenu::OnDestroy() {}
 
 void MainMenu::OnActivate()
 {
@@ -38,15 +28,9 @@ void MainMenu::OnActivate()
     _sceneSystem.getEcs()->addSystem<Display>(_sceneSystem.getEcs());
 }
 
-void MainMenu::OnDeactivate()
-{
+void MainMenu::OnDeactivate() {}
 
-}
-
-void MainMenu::ProcessInput()
-{
-
-}
+void MainMenu::ProcessInput() {}
 
 void MainMenu::Update()
 {
@@ -55,7 +39,4 @@ void MainMenu::Update()
     _sceneSystem.getEcs()->getSystem<ecs::Display>().run(_window);
 }
 
-void MainMenu::Draw()
-{
-
-}
+void MainMenu::Draw() {}

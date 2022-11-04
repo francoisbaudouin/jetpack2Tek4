@@ -10,7 +10,7 @@
 using namespace rtype;
 using namespace ecs;
 
-SceneSystem::SceneSystem() : _scenes(0), _curScene(0), _insertedSceneID(0)
+SceneSystem::SceneSystem() : _scenes(0), _curScene(0), _insertedSceneName("Not Defined")
 {
     ecs::Ecs ecs;
     this->_manager = std::make_shared<ecs::Ecs>(ecs);
@@ -36,17 +36,17 @@ void SceneSystem::Draw()
         _curScene->Draw();
 }
 
-unsigned int SceneSystem::Add(std::shared_ptr<IScene> scene)
+std::string SceneSystem::Add(std::shared_ptr<IScene> scene, const std::string sceneName)
 {
-    auto inserted = _scenes.insert(std::make_pair(_insertedSceneID, scene));
-    _insertedSceneID++;
+    _insertedSceneName = sceneName;
+    auto inserted = _scenes.insert(std::make_pair(_insertedSceneName, scene));
     inserted.first->second->OnCreate();
-    return _insertedSceneID - 1;
+    return _insertedSceneName;
 }
 
-void SceneSystem::Remove(unsigned int id)
+void SceneSystem::Remove(const std::string sceneName)
 {
-    auto it = _scenes.find(id);
+    auto it = _scenes.find(sceneName);
     if (it != _scenes.end()) {
         if (_curScene == it->second)
             _curScene = nullptr;
@@ -55,10 +55,9 @@ void SceneSystem::Remove(unsigned int id)
     }
 }
 
-void SceneSystem::SwitchTo(unsigned int id)
+void SceneSystem::SwitchTo(const std::string sceneName)
 {
-    auto it = _scenes.find(id);
-    std::cout << id << std::endl;
+    auto it = _scenes.find(sceneName);
     if (it != _scenes.end()) {
         if (_curScene)
             _curScene->OnDeactivate();
@@ -67,7 +66,4 @@ void SceneSystem::SwitchTo(unsigned int id)
     }
 }
 
-std::shared_ptr<Ecs> &SceneSystem::getEcs()
-{
-    return (_manager);
-}
+std::shared_ptr<Ecs> &SceneSystem::getEcs() { return (_manager); }
