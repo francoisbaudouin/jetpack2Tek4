@@ -19,6 +19,3 @@ set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
 
 add_subdirectory(src/client)
 add_subdirectory(src/server)
-
-include(build/conanbuildinfo.cmake)
-conan_basic_setup(TARGETS)
