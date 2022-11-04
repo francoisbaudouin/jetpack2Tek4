@@ -19,29 +19,18 @@ Client::Client(const Client &client)
     this->setPort(client.getPort());
 }
 
-std::string Client::getIpAdress() const
-{
-    return this->_ipAdress;
-}
+std::string Client::getIpAdress() const { return this->_ipAdress; }
 
-size_t Client::getPort() const
-{
-    return this->_port;
-}
+size_t Client::getPort() const { return this->_port; }
 
-void Client::setIpAdress(const std::string &ipAdress)
-{
-    this->_ipAdress = ipAdress;
-}
+void Client::setIpAdress(const std::string &ipAdress) { this->_ipAdress = ipAdress; }
 
-void Client::setPort(const size_t &port)
-{
-    this->_port = port;
-}
+void Client::setPort(const size_t &port) { this->_port = port; }
 
 void Client::connectToServer()
 {
-    this->_receiverEndpoint = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(this->_ipAdress), this->_port);
+    this->_receiverEndpoint =
+        boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(this->_ipAdress), this->_port);
     boost::asio::ip::udp::socket socket(this->_ioContext);
 
     socket.open(boost::asio::ip::udp::v4());

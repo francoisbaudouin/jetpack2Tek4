@@ -4,8 +4,9 @@
 ** File description:
 ** main
 */
-#include "Client.hpp"
 #include <boost/thread/thread.hpp>
+
+#include "Client.hpp"
 
 void communicate(rtype::Client *client)
 {
