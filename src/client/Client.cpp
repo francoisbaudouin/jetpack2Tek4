@@ -11,15 +11,9 @@
 
 using namespace rtype;
 
-Client::Client()
-{
-    this->_value = 2;
-}
+Client::Client() { this->_value = 2; }
 
-Client::Client(const Client &client)
-{
-    this->_receiverEndpoint = client._receiverEndpoint;
-}
+Client::Client(const Client &client) { this->_receiverEndpoint = client._receiverEndpoint; }
 
 void Client::connectToServer(const std::string &ipAdress, const size_t &port)
 {
@@ -32,7 +26,8 @@ void Client::connectToServer(const std::string &ipAdress, const size_t &port)
 
 void Client::communicate(boost::asio::ip::udp::socket &socket)
 {
-    size_t messageLength = 0;
+    // size_t messageLength = 0;
+    (void)socket;
 
     while (RUNNING) {
         // fonction pour envoyer des infos au serveur à mettre ici
