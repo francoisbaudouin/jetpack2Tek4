@@ -32,8 +32,8 @@ void Client::connectToServer()
 void Client::run(boost::asio::ip::udp::socket &socket)
 {
     sf::Event event;
-    (void) socket;
-    //size_t messageLength = 0;
+    (void)socket;
+    // size_t messageLength = 0;
 
     while (_window.isOpen()) {
         // fonction pour envoyer des infos au serveur à mettre ici

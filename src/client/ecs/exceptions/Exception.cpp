@@ -65,3 +65,8 @@ EntityNotExisting::EntityNotExisting(const size_t sceneId, const size_t entityId
         "Error 411: in Manager " + std::to_string(sceneId) + " Entity " + std::to_string(entityId) + " not existing")
 {
 }
+
+TextureNotInDatabase::TextureNotInDatabase(std::string const &type)
+    : Exception("error 550: Texture " + type + " not exist in database, please check the configuration file")
+{
+}
