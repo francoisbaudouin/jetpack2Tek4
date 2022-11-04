@@ -1,8 +1,14 @@
+[generators]
+    cmake
+    cmake_paths
+    cmake_find_package
+
 [requires]
-    sfml/2.5.1
+    boost/1.79.0
+    zlib/1.2.12
     asio/1.16.0
+    sfml/2.5.1
     gtest/1.10.0 
-    boost/1.80.0
 
 [options]
     boost:shared=True
@@ -15,9 +21,3 @@
     gtest:hide_symbols=False
     gtest:no_main=False
     gtest:shared=False
-    *:shared=False
-
-[generators]
-    cmake
-    cmake_paths
-    cmake_find_package

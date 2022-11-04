@@ -3,9 +3,6 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/client)
 
 set(TARGET_NAME r-type_client)
 
-include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
-conan_basic_setup(TARGETS)
-
 find_package(Threads REQUIRED)
 find_package(Boost REQUIRED)
 include(CompilerFlags)
@@ -34,6 +31,15 @@ target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::sfml)
 target_link_libraries(${TARGET_NAME} PUBLIC Threads::Threads)
 target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::asio)
 
+target_include_directories(${TARGET_NAME} PUBLIC
+            ${CONAN_INCLUDE_DIRS_SFML}
+            ${CONAN_INCLUDE_DIRS_BOOST}
+            ${CONAN_INCLUDE_DIRS_ASIO}
+            )
+
 add_custom_command(TARGET ${TARGET_NAME}
   POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${TARGET_NAME}> ${PROJECT_SOURCE_DIR})
+
+  include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
+  conan_basic_setup(TARGETS)
