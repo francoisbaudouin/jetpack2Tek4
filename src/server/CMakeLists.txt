@@ -3,10 +3,12 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/server)
 
 set(SRC ${SRC})
 
+set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
+set(TARGET_NAME r-type_server)
+
 # adding subb diirectory
 # add_subdirectory(initialization)
 
-set(TARGET_NAME r-type_server)
 
 include(CompilerFlags)
 
