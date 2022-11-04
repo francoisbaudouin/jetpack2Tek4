@@ -18,7 +18,7 @@ Linux :
 mkdir build && cd build
 
 # Command to lunch dependencies installation
-conan install .. -g cmake -s build_type=Release -s compiler.libcxx=libstdc++11 --build=missing -c tools.system.package_manager:sudo=True -c tools.system.package_manager:mode=install && cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
+sudo conan install .. -g cmake -s build_type=Release -s compiler.libcxx=libstdc++11 --build=missing -c tools.system.package_manager:sudo=True -c tools.system.package_manager:mode=install && cmake .. -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release
 ```
 
 ## BUILD
