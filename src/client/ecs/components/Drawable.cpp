@@ -9,13 +9,15 @@
 
 using namespace ecs;
 
-Drawable::Drawable(const size_t entityId, const sf::Texture &texture) : AComponent(entityId)
+Drawable::Drawable(const size_t entityId) : AComponent(entityId), _textureType("Default") {}
+
+Drawable::Drawable(const size_t entityId, const std::string &textureType)
+    : AComponent(entityId), _textureType(textureType)
 {
-    _sprite.setTexture(texture);
 }
 
-sf::Sprite &Drawable::getSprite() { return _sprite; }
+std::string Drawable::getTextureType() const { return _textureType; }
 
-void Drawable::setSprite(const sf::Sprite &sprite) { _sprite = sprite; }
+void Drawable::setTextureType(const std::string &newTextureType) { _textureType = newTextureType; }
 
 Drawable::~Drawable() {}

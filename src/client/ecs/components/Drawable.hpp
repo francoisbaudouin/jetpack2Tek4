@@ -7,7 +7,6 @@
 
 #ifndef DRAWABLE_HPP_
 #define DRAWABLE_HPP_
-#include <SFML/Graphics.hpp>
 #include "AComponent.hpp"
 
 namespace ecs
@@ -18,29 +17,36 @@ namespace ecs
          * @brief Construct a new Drawable component
          *
          * @param entityId : related entity id
-         * @param texture : wanted texture for the drawable entity
          */
-        Drawable(const size_t entityId, const sf::Texture &texture);
+        Drawable(const size_t entityId);
+        /**
+         * @brief Construct a new Drawable component
+         *
+         * @param entityId : related entity id
+         * @param textureType : wanted type of the texture
+         *
+         */
+        Drawable(const size_t entityId, const std::string &textureType);
 
         ~Drawable();
 
         /**
-         * @brief Get the entity Sprite
+         * @brief Get the entity texture type
          *
-         * @return reference to the sf::Sprite of the entity
+         * @return type of the texture
          */
-        sf::Sprite &getSprite();
+        std::string getTextureType() const;
 
         /**
-         * @brief Set the entity Sprite
+         * @brief Set the entity texture type
          *
-         * @param sprite : sprite to set
+         * @param newTextureType : the new texture type to set
          */
-        void setSprite(const sf::Sprite &sprite);
+        void setTextureType(const std::string &newTextureType);
 
       protected:
       private:
-        sf::Sprite _sprite;
+        std::string _textureType;
     };
 } // namespace ecs
 
