@@ -44,53 +44,62 @@ namespace ecs
         Test(std::string const &message);
     };
 
-    class NoComponent : public Exception {
-      public:
-        /**
-         * @brief exception threw if an entity doesn't have the component needed
-         *
-         * @param message : message to throw
-         * @param entityId : id of the entity
-         */
-        NoComponent(std::string const &message, const size_t entityId);
-    };
-
-    class EntityAlreadyExisting : public Exception {
-      public:
-        /**
-         * @brief exception threw if an entity already exist in the Ecs with the same id
-         *
-         * @param entityId : id of the entity
-         */
-        EntityAlreadyExisting(const size_t entityId);
-    };
-
-    class EntityNotExisting : public Exception {
-      public:
-        /**
-         * @brief exception threw if an entity doesn't exist in the Ecs with the same id
-         *
-         * @param entityId : id of the entity
-         */
-        EntityNotExisting(const size_t entityId);
-    };
-
     class SystemAlreadyExisting : public Exception {
       public:
-        /**
-         * @brief exception threw if a system already exist in the Ecs
-         *
-         */
-        SystemAlreadyExisting();
+        SystemAlreadyExisting(std::string const &type);
     };
 
     class SystemNotExisting : public Exception {
       public:
+        SystemNotExisting(std::string const &type);
+    };
+
+    class EntityManagerAlreadyExisting : public Exception {
+      public:
+        EntityManagerAlreadyExisting(const std::string);
+    };
+
+    class EntityManagerNotExisting : public Exception {
+      public:
+        EntityManagerNotExisting(const std::string);
+    };
+
+    class SystemNotCompatible : public Exception {
+      public:
+        SystemNotCompatible(std::string const &type);
+    };
+
+    class ComponentAlreadyExisting : public Exception {
+      public:
+        ComponentAlreadyExisting(std::string const &type, const size_t entityId);
+    };
+
+    class ComponentNotExisting : public Exception {
+      public:
+        ComponentNotExisting(std::string const &type, const size_t entityId);
+    };
+
+    class ComponentNotCompatible : public Exception {
+      public:
+        ComponentNotCompatible(std::string const &type);
+    };
+    class TextureNotInDatabase : public Exception {
+      public:
         /**
-         * @brief exception threw if a system doesn't exist in the Ecs
+         * @brief exception threw if drawable component does't find a texture at specified type
          *
+         * @param type : type of the entity
          */
-        SystemNotExisting();
+        TextureNotInDatabase(std::string const &type);
+    };
+    class EntityAlreadyExisting : public Exception {
+      public:
+        EntityAlreadyExisting(const size_t sceneId, const size_t entityId);
+    };
+
+    class EntityNotExisting : public Exception {
+      public:
+        EntityNotExisting(const size_t sceneId, const size_t entityId);
     };
 } // namespace ecs
 

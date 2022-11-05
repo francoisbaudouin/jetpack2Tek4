@@ -30,9 +30,10 @@ namespace ecs
         /**
          * @brief run the display system
          *
+         * @param sceneName : Name of the scene to select the entityManager related
          * @param window reference to the SFML game's window
          */
-        void run(sf::RenderWindow &window);
+        void run(const std::string sceneName, sf::RenderWindow &window);
     };
 } // namespace ecs
 

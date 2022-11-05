@@ -24,10 +24,10 @@ void Move::applyVelocity(Entity &entity)
     position.setY(position.getY() + velocity.getY());
 }
 
-void Move::run()
+void Move::run(const std::string sceneName)
 {
-    for (auto &entity : _manager->getEntities()) {
+    for (auto &entity : _manager->getEntityManager(sceneName).getEntities()) {
         if (entity.second->hasComponent<Position>() && entity.second->hasComponent<Velocity>())
-            this->applyVelocity(_manager->getEntity(entity.first));
+            this->applyVelocity(_manager->getEntityManager(sceneName).getEntity(entity.first));
     }
 }

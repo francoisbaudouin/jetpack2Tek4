@@ -1,0 +1,27 @@
+/*
+** EPITECH PROJECT, 2022
+** jetpack2Tek4
+** File description:
+** SceneManager
+*/
+
+#ifndef SCENEMANAGER_HPP_
+#define SCENEMANAGER_HPP_
+
+#include "SceneSystem.hpp"
+#include "allScenes.hpp"
+
+namespace rtype
+{
+    class SceneManager {
+      public:
+        SceneManager();
+        ~SceneManager();
+        void run();
+      private:
+        sf::RenderWindow _window;
+        SceneSystem _sceneSystem;
+    };
+} // namespace rtype
+
+#endif /* !SCENEMANAGER_HPP_ */

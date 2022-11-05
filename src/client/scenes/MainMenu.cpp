@@ -22,10 +22,10 @@ void MainMenu::OnDestroy() {}
 void MainMenu::OnActivate()
 {
     _tmpTexture.loadFromFile("assets/Parallax.png");
-    auto &background = _sceneSystem.getEcs()->createEntity();
+    auto &background = _sceneSystem.getEcs()->getEntityManager("MainMenu").createEntity();
     background.addComponent<Drawable>(_tmpTexture);
     background.addComponent<Position>(0, 0);
-    _sceneSystem.getEcs()->addSystem<Display>(_sceneSystem.getEcs());
+    _sceneSystem.getEcs()->createSystem<Display>(_sceneSystem.getEcs());
 }
 
 void MainMenu::OnDeactivate() {}
@@ -34,9 +34,7 @@ void MainMenu::ProcessInput() {}
 
 void MainMenu::Update()
 {
-    std::cout << "YES" << std::endl;
-    _sceneSystem.getEcs()->getSystem<Display>();
-    _sceneSystem.getEcs()->getSystem<ecs::Display>().run(_window);
+    _sceneSystem.getEcs()->getSystem<ecs::Display>().run("MainMenu", _window);
 }
 
 void MainMenu::Draw() {}

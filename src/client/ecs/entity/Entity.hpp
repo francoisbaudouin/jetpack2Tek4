@@ -10,19 +10,21 @@
 
 #include <typeindex>
 #include <typeinfo>
+#include <unordered_map>
+
 #include "../components/IComponent.hpp"
 #include "../exceptions/Exception.hpp"
-#include <unordered_map>
 
 namespace ecs
 {
     class Entity {
       public:
         /**
-         * @brief Construct a new Entity object and call the 'getNewEntityId' that generate a new id for the entity
+         * @brief Construct a new Entity object and set it's id
          *
+         * @param id : id of the entity
          */
-        Entity();
+        Entity(const size_t id);
         ~Entity();
 
         /**
@@ -36,12 +38,18 @@ namespace ecs
         template <class Component, typename... ComponentArguments>
         Component &addComponent(ComponentArguments &&...arguments)
         {
+            Component *component;
+
             if (this->hasComponent<Component>())
-                return (this->getComponent<Component>());
+                throw ComponentAlreadyExisting(typeid(Component).name(), _id);
 
-            Component *component(new Component(this->getId(), std::forward<ComponentArguments>(arguments)...));
-
-            _components.insert({std::type_index(typeid(Component)), component});
+            component = new Component(this->getId(), std::forward<ComponentArguments>(arguments)...);
+            if (dynamic_cast<IComponent *>(component))
+                _components.insert({std::type_index(typeid(Component)), component});
+            else {
+                delete component;
+                throw ComponentNotCompatible(typeid(Component).name());
+            }
             return (*component);
         }
 
@@ -66,24 +74,9 @@ namespace ecs
         template <class Component> Component &getComponent()
         {
             if (!this->hasComponent<Component>())
-                throw ecs::NoComponent(typeid(Component).name(), this->getId());
-            Component *component = static_cast<Component *>(_components.at(std::type_index(typeid(Component))));
-            return (*component);
-        }
+                throw ecs::ComponentNotExisting(typeid(Component).name(), this->getId());
 
-        /**
-         * @brief replace the component by the one passed as parameter
-         *
-         * @tparam Component : type of the component to replace
-         * @param component : component that will replace the old one
-         * @return Component& : reference to the component that replaced the old one
-         */
-        template <class Component> Component &replaceComponent(Component &component)
-        {
-            if (this->hasComponent<Component>())
-                this->removeComponent<Component>();
-            _components.insert({std::type_index(typeid(Component)), &component});
-            return (component);
+            return (*static_cast<Component *>(_components.at(std::type_index(typeid(Component)))));
         }
 
         /**
@@ -94,7 +87,7 @@ namespace ecs
         template <class Component> void removeComponent()
         {
             if (!this->hasComponent<Component>())
-                throw ecs::NoComponent(typeid(Component).name(), this->getId());
+                throw ecs::ComponentNotExisting(typeid(Component).name(), this->getId());
             delete static_cast<Component *>(_components.at(std::type_index(typeid(Component))));
             _components.erase(std::type_index(typeid(Component)));
         }
@@ -105,6 +98,12 @@ namespace ecs
          * @return size_t : id of the entity
          */
         size_t getId() const;
+        /**
+         * @brief Set the Id of the entity
+         *
+         * @param id : id of the entity
+         */
+        void setId(const size_t id);
 
       private:
         std::unordered_map<std::type_index, IComponent *> _components;

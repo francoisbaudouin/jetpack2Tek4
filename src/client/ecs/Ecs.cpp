@@ -10,53 +10,46 @@
 
 using namespace ecs;
 
-Ecs::Ecs() : _entities(), _systems() {}
+Ecs::Ecs() : _entityManagers(), _systems() {}
 
 Ecs::~Ecs()
 {
-    _entities.clear();
+    this->clearEntityManagers();
     this->clearSystems();
 }
 
-Entity &Ecs::createEntity()
+EntityManager &Ecs::createEntityManager(const std::string sceneName)
 {
-    Entity *entity = new Entity();
-    std::shared_ptr<Entity> shEntity(entity);
+    EntityManager *manager;
 
-    _entities.insert_or_assign(shEntity->getId(), std::move(shEntity));
-    return (*entity);
+    if (_entityManagers.contains(sceneName))
+        throw EntityManagerAlreadyExisting(sceneName);
+    manager = new EntityManager();
+    _entityManagers.insert({sceneName, manager});
+    return (*manager);
 }
 
-Entity &Ecs::addEntity(const Entity &entity)
+EntityManager &Ecs::getEntityManager(const std::string sceneName)
 {
-    if (_entities.contains(entity.getId()))
-        throw EntityAlreadyExisting(entity.getId());
-    _entities.insert_or_assign(entity.getId(), std::move(std::make_shared<Entity>(entity)));
-    return (*_entities.at(entity.getId()).get());
+    if (!_entityManagers.contains(sceneName))
+        throw EntityManagerNotExisting(sceneName);
+    return (*_entityManagers.at(sceneName));
 }
 
-Entity &Ecs::getEntity(const size_t id)
+void Ecs::clearEntityManagers()
 {
-    if (!_entities.contains(id))
-        throw EntityNotExisting(id);
-    return (*_entities.at(id).get());
+    while (_entityManagers.size() > 0) {
+        if (_entityManagers.begin()->second)
+            delete _entityManagers.begin()->second;
+        _entityManagers.erase(_entityManagers.begin()->first);
+    }
 }
-
-std::unordered_map<size_t, std::shared_ptr<Entity>> &Ecs::getEntities() { return (_entities); }
-
-void Ecs::removeEntity(const size_t id)
-{
-    if (!_entities.contains(id))
-        throw EntityNotExisting(id);
-    _entities.erase(id);
-}
-
-size_t Ecs::getNumberEntities() const { return (_entities.size()); }
 
 void Ecs::clearSystems()
 {
     while (_systems.size() > 0) {
-        delete _systems.begin()->second;
+        if (_systems.begin()->second)
+            delete _systems.begin()->second;
         _systems.erase(_systems.begin()->first);
     }
 }

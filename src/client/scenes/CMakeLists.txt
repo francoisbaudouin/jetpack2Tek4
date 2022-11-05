@@ -8,6 +8,8 @@ set(SRC
     ${INCROOT}/IScene.hpp
     ${INCROOT}/SceneSystem.cpp
     ${INCROOT}/SceneSystem.hpp
+    ${INCROOT}/SceneManager.cpp
+    ${INCROOT}/SceneManager.hpp
     ${INCROOT}/GameScene.cpp
     ${INCROOT}/GameScene.hpp
     ${INCROOT}/MainMenu.cpp

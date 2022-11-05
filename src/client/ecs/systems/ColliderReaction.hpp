@@ -30,14 +30,15 @@ namespace ecs
          * @brief run the ControllerReaction system that will react depending on entityType of entities given in
          * parameters
          *
+         * @param sceneId : id of the scene to select the entityManager related
          * @param entityId1 id of the first entity
          * @param entityId2 id of the second entity
          */
-        void run(const size_t entityId1, const size_t entityId2);
+        void run(const std::string, const size_t entityId1, const size_t entityId2);
 
       private:
-        std::map<std::pair<entityType, entityType>,
-            void (*)(std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)>
+        std::map<std::pair<std::string, std::string>,
+            void (*)(const std::string, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)>
             _reactionMap;
     };
 } // namespace ecs

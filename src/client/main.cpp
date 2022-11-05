@@ -4,13 +4,12 @@
 ** File description:
 ** main
 */
-#include "Client.hpp"
+#include "scenes/SceneManager.hpp"
+#include "TextureDatabase.hpp"
 
 int main(void)
 {
-    rtype::Client client;
-
-    client.connectToServer();
-
+    rtype::SceneManager sceneManager;
+    sceneManager.run();
     return 0;
 }

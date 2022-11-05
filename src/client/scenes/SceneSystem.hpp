@@ -9,6 +9,7 @@
 #define SCENESYSTEM_HPP_
 
 #include <memory>
+#include "../TextureDatabase.hpp"
 #include "../ecs/Ecs.hpp"
 #include "../ecs/components/Drawable.hpp"
 #include "../ecs/components/Position.hpp"
@@ -36,6 +37,7 @@ namespace rtype
         std::unordered_map<std::string, std::shared_ptr<IScene>> _scenes;
         std::shared_ptr<IScene> _curScene;
         std::shared_ptr<ecs::Ecs> _manager;
+        std::shared_ptr<TextureDatabase> _textureDatabase; //-> to be replaced by assetsManager
         std::string _insertedSceneName;
     };
 } // namespace rtype
