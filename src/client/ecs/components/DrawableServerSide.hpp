@@ -2,33 +2,33 @@
 ** EPITECH PROJECT, 2022
 ** jetpack2Tek4
 ** File description:
-** Drawable
+** DrawableServerSide
 */
 
-#ifndef DRAWABLE_HPP_
-#define DRAWABLE_HPP_
+#ifndef DRAWABLE_SERVER_SIDE_HPP_
+#define DRAWABLE_SERVER_SIDE_HPP_
 #include "AComponent.hpp"
 
 namespace ecs
 {
-    class Drawable : public AComponent {
+    class DrawableServerSide : public AComponent {
       public:
         /**
-         * @brief Construct a new Drawable component
+         * @brief Construct a new DrawableServerSide component
          *
          * @param entityId : related entity id
          */
-        Drawable(const size_t entityId);
+        DrawableServerSide(const size_t entityId);
         /**
-         * @brief Construct a new Drawable component
+         * @brief Construct a new DrawableServerSide component
          *
          * @param entityId : related entity id
          * @param textureType : wanted type of the texture
          *
          */
-        Drawable(const size_t entityId, const std::string &textureType);
+        DrawableServerSide(const size_t entityId, const std::string &textureType);
 
-        ~Drawable();
+        ~DrawableServerSide();
 
         /**
          * @brief Get the entity texture type
@@ -50,4 +50,4 @@ namespace ecs
     };
 } // namespace ecs
 
-#endif /* !DRAWABLE_HPP_ */
+#endif /* !DRAWABLE_SERVER_SIDE_HPP_ */
