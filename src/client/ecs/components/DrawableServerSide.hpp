@@ -17,16 +17,10 @@ namespace ecs
          * @brief Construct a new DrawableServerSide component
          *
          * @param entityId : related entity id
-         */
-        DrawableServerSide(const size_t entityId);
-        /**
-         * @brief Construct a new DrawableServerSide component
-         *
-         * @param entityId : related entity id
          * @param textureType : wanted type of the texture
          *
          */
-        DrawableServerSide(const size_t entityId, const std::string &textureType);
+        DrawableServerSide(const size_t entityId, const std::string &textureType = "default");
 
         ~DrawableServerSide();
 

@@ -9,8 +9,6 @@
 
 using namespace ecs;
 
-DrawableServerSide::DrawableServerSide(const size_t entityId) : AComponent(entityId), _textureType("Default") {}
-
 DrawableServerSide::DrawableServerSide(const size_t entityId, const std::string &textureType)
     : AComponent(entityId), _textureType(textureType)
 {

@@ -9,6 +9,10 @@
 #include "ecs/systems/Display.hpp"
 #include "ecs/systems/Input.hpp"
 
+#include "ecs/components/DrawableClientSide.hpp"
+#include "ecs/components/DrawableServerSide.hpp"
+#include "ecs/components/Position.hpp"
+
 using namespace rtype;
 
 Client::Client(const std::string &ipAdress, const size_t &port) : _window(sf::VideoMode(800, 600), "Client window")
@@ -33,6 +37,7 @@ void Client::run(boost::asio::ip::udp::socket &socket)
 {
     sf::Event event;
     (void)socket;
+
     // size_t messageLength = 0;
 
     while (_window.isOpen()) {
