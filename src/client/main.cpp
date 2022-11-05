@@ -4,12 +4,23 @@
 ** File description:
 ** main
 */
+#include <boost/thread/thread.hpp>
+
 #include "Client.hpp"
-#include "TextureDatabase.hpp"
+
+void communicate(rtype::Client *client)
+{
+    client->connectToServer();
+
+    return;
+}
 
 int main(void)
 {
     rtype::Client client;
-    client.connectToServer();
+    boost::thread communicator(communicate, &client);
+
+    communicator.join();
+
     return 0;
 }
