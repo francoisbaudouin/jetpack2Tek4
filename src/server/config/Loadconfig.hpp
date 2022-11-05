@@ -30,7 +30,7 @@ namespace configuration
          * @return true
          * @return false
          */
-        bool setServerData(std::map<std::string, std::string>::iterator it);
+        bool setServerData();
 
         /**
          * @brief Funct wich return true or false if configuration file
@@ -48,7 +48,6 @@ namespace configuration
          */
         void load_data(std::fstream configFile);
 
-        void setServerIp(std::string);
         std::string _ip;
         std::string _name;
         std::string _debugger;
@@ -58,10 +57,7 @@ namespace configuration
         size_t _velocity;
         std::string _custom_map;
         size_t _maxConnection;
-        std::map<std::string, std::string> _configurationServer{
-            {"name", ""}, {"port", ""}, {"ip", ""}, {"debugger", ""}, {"EULA", ""}, {"max_player_connection", ""}};
-        std::map<std::string, std::string> _configurationGame{{"gravity", ""}, {"velocity", ""}, {"custom_map", ""}};
-        std::unordered_map<std::string, std::function<std::string>> _functPtr{
+        std::unordered_map<std::string, std::function<void(std::string)>> _functPtr{
             {"ip", [this](std::string ip) { _ip = ip; }}, {"name", [this](std::string name) { _name = name; }},
             {"port",
                 [this](std::string port) {
@@ -72,7 +68,7 @@ namespace configuration
             {"EULA",
                 [this](std::string eula) {
                     if (eula.compare("true") == 0)
-                        _eula == true;
+                        _eula = true;
                 }},
             {"max_player_connection",
                 [this](std::string playerMax) {

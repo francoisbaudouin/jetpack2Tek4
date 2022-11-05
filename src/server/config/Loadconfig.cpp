@@ -19,6 +19,22 @@ namespace configuration
 
     Loadconfig::~Loadconfig() {}
 
+    bool Loadconfig::setServerData()
+    {
+        
+        return (true);
+    }
+
+    void Loadconfig::load_data(std::fstream configFile)
+    {
+        std::string line;
+
+        while (std::getline(configFile, line)) {
+            if (line.compare("[server]"))
+                setServerData();
+        }
+    }
+
     bool Loadconfig::load_file()
     {
         std::filesystem::path fileName = "src/network/config.ini";
@@ -35,28 +51,5 @@ namespace configuration
         return (true);
     }
 
-    bool Loadconfig::setServerData(std::map<std::string, std::string>::iterator it)
-    {
-        std::map<std::string, std::string>::iterator tmp;
-        while (it->first.compare("") != 0 && it != _configurationServer.end()) {
-            tmp = it;
-            while (tmp != _configurationServer.end()) {
-                
-            }
-        }
-        return (true);
-    }
-
-    void Loadconfig::load_data(std::fstream configFile)
-    {
-        std::string line;
-
-        while (std::getline(configFile, line)) {
-            for (std::map<std::string, std::string>::iterator it = _configurationServer.begin();
-                 it != _configurationServer.end(); it++) {
-                if (line.compare("[server]"))
-                    setServerData(it);
-            }
-        }
-    }
+    void Loadconfig::run() { load_file(); }
 } // namespace configuration

@@ -5,7 +5,6 @@ set(SRC
     ${SRC}
     ${SRCROOT}/Loadconfig.cpp
     ${SRCROOT}/Loadconfig.hpp
-    ${SRCROOT}/configuration.cpp
     PARENT_SCOPE
 )
 

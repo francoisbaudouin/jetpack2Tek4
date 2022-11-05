@@ -7,7 +7,8 @@ set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
 set(TARGET_NAME r-type_server)
 
 # adding subb diirectory
-# add_subdirectory(initialization)
+add_subdirectory(config)
+add_subdirectory(exception)
 
 set(SRC ${SRC}) 
 
