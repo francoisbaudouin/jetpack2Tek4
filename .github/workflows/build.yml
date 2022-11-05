@@ -60,14 +60,13 @@ jobs:
   build-windows:
     runs-on: windows-latest
 
-#    steps:
+    steps:
 #    - name: Install Conan
 #      id: conan
 #      uses: turtlebrowser/get-conan@main
 
 #    - name: Get msvc compiler
 #      uses: ilammy/msvc-dev-cmd@v1
-
     - name: Checkout repository
       uses: actions/checkout@v3
 
