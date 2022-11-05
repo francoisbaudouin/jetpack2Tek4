@@ -9,7 +9,7 @@
 #define DISPLAY_HPP_
 
 #include <SFML/Graphics.hpp>
-#include "../components/Drawable.hpp"
+#include "../components/DrawableClientSide.hpp"
 #include "../components/Position.hpp"
 #include "ASystem.hpp"
 

@@ -14,7 +14,7 @@ namespace rtype
 {
     class GameScene : public AScene {
       public:
-        GameScene(SceneSystem &sceneSystem, sf::RenderWindow &window);
+        GameScene(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName = "Game");
         ~GameScene();
         void OnCreate() override;
         void OnDestroy() override;

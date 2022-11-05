@@ -30,7 +30,7 @@ namespace ecs
          * @brief run the ControllerReaction system that will react depending on entityType of entities given in
          * parameters
          *
-         * @param sceneId : id of the scene to select the entityManager related
+         * @param sceneName : id of the scene to select the entityManager related
          * @param entityId1 id of the first entity
          * @param entityId2 id of the second entity
          */

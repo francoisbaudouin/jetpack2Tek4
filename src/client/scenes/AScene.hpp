@@ -15,12 +15,15 @@
 namespace rtype {
   class AScene : public IScene {
     public:
-      AScene(SceneSystem &sceneSystem, sf::RenderWindow &window);
+      AScene(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName);
       ~AScene() = default;
+
+      std::string getName() const override;
 
     protected:
       rtype::SceneSystem &_sceneSystem;
       sf::RenderWindow &_window;
+      std::string _sceneName;
     private:
   };
 }

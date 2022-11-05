@@ -15,7 +15,7 @@ namespace rtype
 {
     class MainMenu : public AScene {
       public:
-        MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window);
+        MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName = "MainMenu");
         ~MainMenu();
         void OnCreate() override;
         void OnDestroy() override;
@@ -26,7 +26,6 @@ namespace rtype
         void Draw() override;
 
       private:
-        sf::Texture _tmpTexture;
     };
 } // namespace rtype
 

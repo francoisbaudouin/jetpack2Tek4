@@ -11,9 +11,6 @@
 #include <memory>
 #include "../TextureDatabase.hpp"
 #include "../ecs/Ecs.hpp"
-#include "../ecs/components/Drawable.hpp"
-#include "../ecs/components/Position.hpp"
-#include "../ecs/systems/Display.hpp"
 #include "IScene.hpp"
 #include <unordered_map>
 
@@ -27,11 +24,12 @@ namespace rtype
         void ProcessInput();
         void Update();
         void Draw();
-        std::string Add(std::shared_ptr<IScene> scene, const std::string sceneName);
-        void Remove(const std::string id);
-        void SwitchTo(const std::string id);
+        std::string Add(std::shared_ptr<IScene> scene);
+        void Remove(const std::string sceneName);
+        void SwitchTo(const std::string sceneName);
 
         std::shared_ptr<ecs::Ecs> &getEcs();
+        std::shared_ptr<rtype::TextureDatabase> &getTextureDatabase();
 
       private:
         std::unordered_map<std::string, std::shared_ptr<IScene>> _scenes;

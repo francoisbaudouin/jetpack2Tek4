@@ -39,9 +39,9 @@ void SceneSystem::Draw()
         _curScene->Draw();
 }
 
-std::string SceneSystem::Add(std::shared_ptr<IScene> scene, const std::string sceneName)
+std::string SceneSystem::Add(std::shared_ptr<IScene> scene)
 {
-    _insertedSceneName = sceneName;
+    _insertedSceneName = scene->getName();
     auto inserted = _scenes.insert(std::make_pair(_insertedSceneName, scene));
     inserted.first->second->OnCreate();
     return _insertedSceneName;
@@ -70,3 +70,5 @@ void SceneSystem::SwitchTo(const std::string sceneName)
 }
 
 std::shared_ptr<Ecs> &SceneSystem::getEcs() { return (_manager); }
+
+std::shared_ptr<TextureDatabase> &SceneSystem::getTextureDatabase() { return (_textureDatabase); }

@@ -9,40 +9,46 @@
 #include "ecs/systems/Display.hpp"
 #include "ecs/systems/Input.hpp"
 
+#include "ecs/components/DrawableClientSide.hpp"
+#include "ecs/components/DrawableServerSide.hpp"
+#include "ecs/components/Position.hpp"
+
 using namespace rtype;
 
-Client::Client(const std::string &ipAdress, const size_t &port) : _window(sf::VideoMode(640, 360), "Client window")
+Client::Client(const std::string &ipAdress, const size_t &port) : _ipAdress(ipAdress), _port(port) {}
+
+Client::Client(const Client &client)
 {
-    this->_receiverEndpoint = boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(ipAdress), port);
+    this->setIpAdress(client.getIpAdress());
+    this->setPort(client.getPort());
 }
+
+std::string Client::getIpAdress() const { return this->_ipAdress; }
+
+size_t Client::getPort() const { return this->_port; }
+
+void Client::setIpAdress(const std::string &ipAdress) { this->_ipAdress = ipAdress; }
+
+void Client::setPort(const size_t &port) { this->_port = port; }
 
 void Client::connectToServer()
 {
+    this->_receiverEndpoint =
+        boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(this->_ipAdress), this->_port);
     boost::asio::ip::udp::socket socket(this->_ioContext);
 
     socket.open(boost::asio::ip::udp::v4());
-    this->run(socket);
+    this->communicate(socket);
 }
 
-void Client::run(boost::asio::ip::udp::socket &socket)
+void Client::communicate(boost::asio::ip::udp::socket &socket)
 {
-    // sf::Event event;
-    // (void)socket;
-    // //size_t messageLength = 0;
-    // MainMenu tmpMainMenu(_sceneSystem, _window);
-    // std::shared_ptr<MainMenu> mainMenu = std::make_shared<MainMenu>(tmpMainMenu);
-    // std::string mainMenuID = _sceneSystem.Add(mainMenu, "MainMenu");
-    // _sceneSystem.SwitchTo(mainMenuID);
+    // size_t messageLength = 0;
+    (void)socket;
 
-    // while (_window.isOpen()) {
-    //     // fonction pour envoyer des infos au serveur à mettre ici
-    //     // fonction qui désérialise les infos reçues par le server à mettre ici
-    //     // update ecs côté client
-    //     _window.clear();
-    //     while (_window.pollEvent(event))
-    //         if (event.type == sf::Event::Closed)
-    //             _window.close();
-    //     _sceneSystem.Update();
-    //     _window.display();
-    // }
+    while (RUNNING) {
+        // fonction pour envoyer des infos au serveur à mettre ici
+        // messageLength = socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
+        // fonction qui désérialise les infos reçues par le server à mettre ici
+    }
 }

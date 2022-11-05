@@ -20,6 +20,7 @@ namespace rtype
         virtual void ProcessInput() = 0;
         virtual void Update() = 0;
         virtual void Draw() = 0;
+        virtual std::string getName() const = 0;
     };
 } // namespace rtype
 

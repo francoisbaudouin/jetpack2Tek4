@@ -29,7 +29,7 @@ namespace ecs
         /**
          * @brief run the system
          *
-         * @param sceneId : id of the scene to select the entityManager related
+         * @param sceneName : Name of the scene to select the entityManager related
          * @param controll RType events vector
          * @param entityId id of the controllable entity
          **/

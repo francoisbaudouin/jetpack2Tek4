@@ -5,7 +5,6 @@
 ** main
 */
 #include "scenes/SceneManager.hpp"
-#include "TextureDatabase.hpp"
 
 int main(void)
 {
