@@ -2,27 +2,27 @@
 ** EPITECH PROJECT, 2022
 ** jetpack2Tek4
 ** File description:
-** Drawable
+** DrawableClientSide
 */
 
-#ifndef DRAWABLE_HPP_
-#define DRAWABLE_HPP_
+#ifndef DRAWABLE_CLIENT_SIDE_HPP_
+#define DRAWABLE_CLIENT_SIDE_HPP_
 #include <SFML/Graphics.hpp>
 #include "AComponent.hpp"
 
 namespace ecs
 {
-    class Drawable : public AComponent {
+    class DrawableClientSide : public AComponent {
       public:
         /**
-         * @brief Construct a new Drawable component
+         * @brief Construct a new DrawableClientSide component
          *
          * @param entityId : related entity id
-         * @param texture : wanted texture for the drawable entity
+         * @param texture : wanted texture for the DrawableClientSide entity
          */
-        Drawable(const size_t entityId, const sf::Texture &texture);
+        DrawableClientSide(const size_t entityId, const sf::Texture &texture);
 
-        ~Drawable();
+        ~DrawableClientSide();
 
         /**
          * @brief Get the entity Sprite
@@ -44,4 +44,4 @@ namespace ecs
     };
 } // namespace ecs
 
-#endif /* !DRAWABLE_HPP_ */
+#endif /* !DRAWABLE_CLIENT_SIDE_HPP_ */

@@ -9,6 +9,10 @@
 #include "ecs/systems/Display.hpp"
 #include "ecs/systems/Input.hpp"
 
+#include "ecs/components/DrawableClientSide.hpp"
+#include "ecs/components/DrawableServerSide.hpp"
+#include "ecs/components/Position.hpp"
+
 using namespace rtype;
 
 Client::Client(const std::string &ipAdress, const size_t &port) : _ipAdress(ipAdress), _port(port) {}

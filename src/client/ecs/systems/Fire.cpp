@@ -22,7 +22,7 @@ void Fire::createProjectile(const size_t sceneId, const size_t entityId)
     Position &position = _manager->getEntityManager(sceneId).getEntity(entityId).getComponent<Position>();
     auto &projectile = _manager->getEntityManager(sceneId).createEntity();
     projectile.addComponent<Position>(position.getX(), position.getY());
-    projectile.addComponent<Drawable>(_tempTexture);
+    projectile.addComponent<DrawableServerSide>("projectile");
     projectile.addComponent<Velocity>(0.3, 0.0);
     projectile.addComponent<HitBox>(32, 10);
     projectile.addComponent<Type>("projectile");

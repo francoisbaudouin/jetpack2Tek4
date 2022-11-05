@@ -11,12 +11,11 @@
 #include <chrono>
 #include <ctime>
 #include <utility>
-#include "../components/Drawable.hpp"
+#include "../components/DrawableServerSide.hpp"
 #include "../components/HitBox.hpp"
 #include "../components/Position.hpp"
 #include "../components/Velocity.hpp"
 #include "../components/Weapon.hpp"
-
 #include "ASystem.hpp"
 #include "ColliderReaction.hpp"
 #include "SFML/Graphics.hpp"
