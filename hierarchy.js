@@ -24,7 +24,8 @@ var hierarchy =
     [ "ecs::IComponent", "classecs_1_1_i_component.html", [
       [ "ecs::AComponent", "classecs_1_1_a_component.html", [
         [ "ecs::Controllable", "classecs_1_1_controllable.html", null ],
-        [ "ecs::Drawable", "classecs_1_1_drawable.html", null ],
+        [ "ecs::DrawableClientSide", "classecs_1_1_drawable_client_side.html", null ],
+        [ "ecs::DrawableServerSide", "classecs_1_1_drawable_server_side.html", null ],
         [ "ecs::HitBox", "classecs_1_1_hit_box.html", null ],
         [ "ecs::Position", "classecs_1_1_position.html", null ],
         [ "ecs::Type", "classecs_1_1_type.html", null ],

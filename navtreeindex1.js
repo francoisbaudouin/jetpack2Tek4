@@ -1,5 +1,11 @@
 var NAVTREEINDEX1 =
 {
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da43c88d9fa96befee615448c74257885c":[1,0,0,9,0,58],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da48eff0b6dbae75ec230f9745c0a7a65a":[1,0,0,9,0,2],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da4aca0f2d41539d2c72b8edf80993c201":[1,0,0,9,0,88],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da4b52e3084f0baa4f0ab3001a3d74e59e":[1,0,0,9,0,32],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da4c401b818011a1229785e8d17feafd34":[1,0,0,9,0,107],
+"structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da525a61d78f8214336e44247b868aafb4":[1,0,0,9,0,7],
 "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da528f869609092a54be6f24d9f804c950":[1,0,0,9,0,42],
 "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da53138ad952a4e40685aebdbf86a2f136":[1,0,0,9,0,84],
 "structecs_1_1_device.html#a9f5e20034181950ad23b8921c01df92da539fe918e737209c81f66f39e45aabae":[1,0,0,9,0,57],
@@ -81,9 +87,9 @@ var NAVTREEINDEX1 =
 "structecs_1_1_device.html#af80fd82dc75ae7a23f246d41263dbc63a55ce3322e444d27e940081afef5a6d34":[1,0,0,9,1,3],
 "structecs_1_1_device.html#af80fd82dc75ae7a23f246d41263dbc63a8983f79e4be0e79a670a03f013e317ab":[1,0,0,9,1,1],
 "structecs_1_1_device.html#af80fd82dc75ae7a23f246d41263dbc63aa626325364698c8cf0d782902c941660":[1,0,0,9,1,2],
-"structecs_1_1_r_type_event.html":[1,0,0,27],
-"structecs_1_1_r_type_event.html#aa37a66d617cdf54a32e3c6fa353b4141":[1,0,0,27,0],
-"structecs_1_1_r_type_event.html#ad39ec6ab3cae1983d5c409482060c014":[1,0,0,27,1],
-"structecs_1_1_r_type_event.html#afc7e105d4cb999a9c07745e9ec637358":[1,0,0,27,2],
+"structecs_1_1_r_type_event.html":[1,0,0,28],
+"structecs_1_1_r_type_event.html#aa37a66d617cdf54a32e3c6fa353b4141":[1,0,0,28,0],
+"structecs_1_1_r_type_event.html#ad39ec6ab3cae1983d5c409482060c014":[1,0,0,28,1],
+"structecs_1_1_r_type_event.html#afc7e105d4cb999a9c07745e9ec637358":[1,0,0,28,2],
 "weapons_8hpp_source.html":[2,0,0,0,0,2,3]
 };
