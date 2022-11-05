@@ -4,7 +4,7 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/client)
 set(TARGET_NAME r-type_client)
 
 find_package(Threads REQUIRED)
-find_package(Boost REQUIRED)
+#find_package(Boost REQUIRED)
 include(CompilerFlags)
 
 set(SRC
