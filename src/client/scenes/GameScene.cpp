@@ -21,25 +21,16 @@ GameScene::GameScene(SceneSystem &sceneSystem, sf::RenderWindow &window, const s
 
 GameScene::~GameScene() {}
 
-void GameScene::OnCreate()
-{
-    _sceneSystem.getEcs()->createEntityManager(this->getName());
-}
+void GameScene::OnCreate() { _sceneSystem.getEcs()->createEntityManager(this->getName()); }
 
 void GameScene::OnDestroy() {}
 
-void GameScene::OnActivate()
-{
-    _sceneSystem.getTextureDatabase()->onCall(this->getName());
-    auto &background = _sceneSystem.getEcs()->getEntityManager(this->getName()).createEntity();
-    background.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("Background"));
-    background.addComponent<Position>(0, 0);
-}
+void GameScene::OnActivate() { _sceneSystem.getTextureDatabase()->onCall(this->getName()); }
 
 void GameScene::OnDeactivate() {}
 
 void GameScene::ProcessInput() {}
 
-void GameScene::Update() { _sceneSystem.getEcs()->getSystem<ecs::Display>().run(this->getName(), _window); }
+void GameScene::Update() {}
 
 void GameScene::Draw() {}

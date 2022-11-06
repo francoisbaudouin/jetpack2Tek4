@@ -17,7 +17,11 @@ namespace rtype {
     public:
       AScene(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName);
       ~AScene() = default;
-
+      /**
+       * @brief Get the Name of the scene
+       * 
+       * @return std::string name of the scene
+       */
       std::string getName() const override;
 
     protected:

@@ -17,14 +17,6 @@ void SceneManager::run()
 {
     sf::Event event;
     // size_t messageLength = 0;
-    MainMenu tmpMainMenu(_sceneSystem, _window);
-    std::shared_ptr<MainMenu> mainMenu = std::make_shared<MainMenu>(tmpMainMenu);
-    std::string mainMenuStr = _sceneSystem.Add(mainMenu);    
-    _sceneSystem.SwitchTo(mainMenuStr);
-
-    GameScene tmpGameScene(_sceneSystem, _window);
-    std::shared_ptr<GameScene> gameScene = std::make_shared<GameScene>(tmpGameScene);
-    std::string gameSceneName = _sceneSystem.Add(gameScene);
 
     while (_window.isOpen()) {
         // fonction pour envoyer des infos au serveur à mettre ici
@@ -34,9 +26,6 @@ void SceneManager::run()
         while (_window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 _window.close();
-            if (event.type == sf::Event::KeyReleased) {
-                _sceneSystem.SwitchTo(gameSceneName);
-            }
         }
         _sceneSystem.Update();
         _window.display();
