@@ -94,12 +94,12 @@ namespace ecs
     };
     class EntityAlreadyExisting : public Exception {
       public:
-        EntityAlreadyExisting(const std::string sceneName, const size_t entityId);
+        EntityAlreadyExisting(const size_t sceneId, const size_t entityId);
     };
 
     class EntityNotExisting : public Exception {
       public:
-        EntityNotExisting(const std::string sceneName, const size_t entityId);
+        EntityNotExisting(const size_t sceneId, const size_t entityId);
     };
 } // namespace ecs
 
