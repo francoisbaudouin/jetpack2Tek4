@@ -18,7 +18,6 @@
 #include "../components/Weapon.hpp"
 #include "ASystem.hpp"
 #include "ColliderReaction.hpp"
-#include "SFML/Graphics.hpp"
 
 namespace ecs
 {
@@ -36,23 +35,22 @@ namespace ecs
         /**
          * @brief Create a projectile at the position of the player
          *
-         * @param sceneId : id of the scene to select the entityManager related
+         * @param sceneName : Name of the scene to select the entityManager related
          * @param entityId : id of the entity that triggered the fire system
          */
-        void createProjectile(const size_t sceneId, const size_t entityId);
+        void createProjectile(const std::string &sceneName, const size_t entityId);
         /**
          * @brief fire a projectile one time respecting the fireRate weapon's property
          *
          * @param entityId : Id of the entity that triggered the fire system
          */
-        void run(const size_t sceneId, const size_t entityId);
+        void run(const std::string &sceneName, const size_t entityId);
 
       protected:
       private:
         std::chrono::time_point<std::chrono::system_clock> _lastTimeTriggered;
         std::chrono::time_point<std::chrono::system_clock> _triggeredTime;
         std::chrono::duration<double> _elapsedTime;
-        sf::Texture _tempTexture;
     };
 } // namespace ecs
 

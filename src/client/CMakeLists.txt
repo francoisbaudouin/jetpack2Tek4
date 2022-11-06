@@ -16,14 +16,13 @@ set(SRC
 )
 set(INCDIRS ${INCROOT})
 
-#set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
+add_subdirectory(ecs)
+add_subdirectory(scenes)
 
 #set_target_properties(${TARGET}
 #    PROPERTIES
 #    RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/
 #)
-
-add_subdirectory(ecs)
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 

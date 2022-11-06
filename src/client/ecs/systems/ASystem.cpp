@@ -13,4 +13,4 @@ ASystem::ASystem(std::shared_ptr<Ecs> &manager) : _manager(manager) {}
 
 ASystem::~ASystem() {}
 
-void ASystem::run(const size_t sceneId) { static_cast<void>(sceneId); }
+void ASystem::run(const std::string &sceneName) { static_cast<void>(sceneName); }

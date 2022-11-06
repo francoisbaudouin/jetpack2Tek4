@@ -29,9 +29,9 @@ namespace ecs
         /**
          * @brief run the system
          *
-         * @param sceneId : id of the scene to select the entityManager related
+         * @param sceneName : name of the scene to select the entityManager related
          */
-        void run(const size_t sceneId) override;
+        void run(const std::string &sceneName) override;
 
       protected:
         std::shared_ptr<Ecs> _manager;
