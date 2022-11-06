@@ -9,7 +9,6 @@
 #define SCENEMANAGER_HPP_
 
 #include "SceneSystem.hpp"
-#include "allScenes.hpp"
 
 namespace rtype
 {

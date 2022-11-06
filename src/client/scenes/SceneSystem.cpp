@@ -10,7 +10,7 @@
 using namespace rtype;
 using namespace ecs;
 
-SceneSystem::SceneSystem() : _scenes(0), _curScene(0), _insertedSceneName("Not Defined")
+SceneSystem::SceneSystem() :  _insertedSceneName("Not Defined")
 {
     ecs::Ecs ecs;
     TextureDatabase textureDatabase;
