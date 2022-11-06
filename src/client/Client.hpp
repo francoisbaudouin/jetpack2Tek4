@@ -16,10 +16,6 @@
 #include <iostream>
 #include <memory>
 #include <string>
-#include "scenes/allScenes.hpp"
-
-#include "TextureDatabase.hpp"
-#include "ecs/Ecs.hpp"
 
 namespace rtype
 {
