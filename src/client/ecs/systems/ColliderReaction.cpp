@@ -10,20 +10,20 @@
 using namespace ecs;
 
 static void projectileHitEnnemy(
-    const std::string sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
+    const std::string &sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {
     manager->getEntityManager(sceneName).removeEntity(entity1.getId());
     manager->getEntityManager(sceneName).removeEntity(entity2.getId());
 }
 
 static void projectileHitWall(
-    const std::string sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
+    const std::string &sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {
     (void)entity2;
     manager->getEntityManager(sceneName).removeEntity(entity1.getId());
 }
 
-static void playerHitWall(const std::string sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
+static void playerHitWall(const std::string &sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {
     (void)entity2;
     auto &playerPosition = manager->getEntityManager(sceneName).getEntity(entity1.getId()).getComponent<Position>();
@@ -46,7 +46,7 @@ ColliderReaction::ColliderReaction(std::shared_ptr<Ecs> manager) : ASystem(manag
     _reactionMap[std::make_pair<std::string, std::string>("Projectile", "Wall")] = &projectileHitWall;
 }
 
-void ColliderReaction::run(const std::string sceneName, const size_t entityId1, const size_t entityId2)
+void ColliderReaction::run(const std::string &sceneName, const size_t entityId1, const size_t entityId2)
 {
     if (_manager->getEntityManager(sceneName).getEntities().contains(entityId1)
         && _manager->getEntityManager(sceneName).getEntities().contains(entityId2)) {

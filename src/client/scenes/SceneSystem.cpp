@@ -47,7 +47,7 @@ std::string SceneSystem::Add(std::shared_ptr<IScene> scene)
     return _insertedSceneName;
 }
 
-void SceneSystem::Remove(const std::string sceneName)
+void SceneSystem::Remove(const std::string &sceneName)
 {
     auto it = _scenes.find(sceneName);
     if (it != _scenes.end()) {
@@ -58,7 +58,7 @@ void SceneSystem::Remove(const std::string sceneName)
     }
 }
 
-void SceneSystem::SwitchTo(const std::string sceneName)
+void SceneSystem::SwitchTo(const std::string &sceneName)
 {
     auto it = _scenes.find(sceneName);
     if (it != _scenes.end()) {

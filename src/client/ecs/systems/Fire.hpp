@@ -38,13 +38,13 @@ namespace ecs
          * @param sceneName : Name of the scene to select the entityManager related
          * @param entityId : id of the entity that triggered the fire system
          */
-        void createProjectile(const std::string sceneName, const size_t entityId);
+        void createProjectile(const std::string &sceneName, const size_t entityId);
         /**
          * @brief fire a projectile one time respecting the fireRate weapon's property
          *
          * @param entityId : Id of the entity that triggered the fire system
          */
-        void run(const std::string sceneName, const size_t entityId);
+        void run(const std::string &sceneName, const size_t entityId);
 
       protected:
       private:

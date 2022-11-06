@@ -17,7 +17,7 @@ Collider::Collider(std::shared_ptr<Ecs> &manager) : ASystem(manager) {}
 
 Collider::~Collider() {}
 
-void Collider::compareEntities(const std::string sceneName, const size_t entity1, const size_t entity2)
+void Collider::compareEntities(const std::string &sceneName, const size_t entity1, const size_t entity2)
 {
     Position &position1 = _manager->getEntityManager(sceneName).getEntity(entity1).getComponent<Position>();
     Position &position2 = _manager->getEntityManager(sceneName).getEntity(entity2).getComponent<Position>();
@@ -30,7 +30,7 @@ void Collider::compareEntities(const std::string sceneName, const size_t entity1
 }
 
 void Collider::checkEntities(
-    const std::string sceneName, const std::unordered_map<size_t, std::shared_ptr<Entity>>::iterator &entity)
+    const std::string &sceneName, const std::unordered_map<size_t, std::shared_ptr<Entity>>::iterator &entity)
 {
     auto iterator = entity;
     size_t entityId = entity->first;
@@ -48,7 +48,7 @@ void Collider::checkEntities(
     }
 }
 
-void Collider::run(const std::string sceneName)
+void Collider::run(const std::string &sceneName)
 {
     size_t entityId;
 

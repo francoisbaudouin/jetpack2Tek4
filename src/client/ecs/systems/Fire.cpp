@@ -13,7 +13,7 @@ Fire::Fire(std::shared_ptr<Ecs> &manager) : ASystem(manager) { _lastTimeTriggere
 
 Fire::~Fire() {}
 
-void Fire::createProjectile(const std::string sceneName, const size_t entityId)
+void Fire::createProjectile(const std::string &sceneName, const size_t entityId)
 {
     Position &position = _manager->getEntityManager(sceneName).getEntity(entityId).getComponent<Position>();
     auto &projectile = _manager->getEntityManager(sceneName).createEntity();
@@ -25,7 +25,7 @@ void Fire::createProjectile(const std::string sceneName, const size_t entityId)
     _lastTimeTriggered = _triggeredTime;
 }
 
-void Fire::run(const std::string sceneName, const size_t entityId)
+void Fire::run(const std::string &sceneName, const size_t entityId)
 {
     _triggeredTime = std::chrono::system_clock::now();
     _elapsedTime = _triggeredTime - _lastTimeTriggered;

@@ -22,7 +22,7 @@ std::string fileTraduction(std::string &fileName)
 
 TextureDatabase::TextureDatabase() {}
 
-void TextureDatabase::onCall(const std::string sceneName)
+void TextureDatabase::onCall(const std::string &sceneName)
 {
     boost::property_tree::ptree jsonFile;
     std::string scenePath = "src/client/configs/" + sceneName + "/TextureConfigs/TextureConfiguration.json";

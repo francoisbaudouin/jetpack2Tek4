@@ -15,7 +15,7 @@ namespace ecs
     class ISystem {
       public:
         virtual ~ISystem() = default;
-        virtual void run(const std::string) = 0;
+        virtual void run(const std::string &sceneName) = 0;
     };
 
 } // namespace ecs

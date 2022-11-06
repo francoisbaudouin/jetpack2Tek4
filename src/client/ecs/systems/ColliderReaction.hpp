@@ -34,11 +34,11 @@ namespace ecs
          * @param entityId1 id of the first entity
          * @param entityId2 id of the second entity
          */
-        void run(const std::string, const size_t entityId1, const size_t entityId2);
+        void run(const std::string &sceneName, const size_t entityId1, const size_t entityId2);
 
       private:
         std::map<std::pair<std::string, std::string>,
-            void (*)(const std::string, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)>
+            void (*)(const std::string &sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)>
             _reactionMap;
     };
 } // namespace ecs

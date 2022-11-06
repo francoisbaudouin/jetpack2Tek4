@@ -9,7 +9,6 @@
 #define ECS_HPP_
 
 #include <memory>
-#include "../TextureDatabase.hpp"
 #include "entity/EntityManager.hpp"
 #include "systems/ISystem.hpp"
 
@@ -28,14 +27,14 @@ namespace ecs
          * @param sceneName : Name of the scene using the manager
          * @return EntityManager& : reference to the newly created manager
          */
-        EntityManager &createEntityManager(const std::string sceneName);
+        EntityManager &createEntityManager(const std::string &sceneName);
         /**
          * @brief Get the Entity Manager for the scene specified by it's Id
          *
          * @param sceneName : Name of the scene using the manager
          * @return EntityManager& : reference to the manager needed
          */
-        EntityManager &getEntityManager(const std::string sceneName);
+        EntityManager &getEntityManager(const std::string &sceneName);
         /**
          * @brief destroy all managers
          *
@@ -85,7 +84,6 @@ namespace ecs
         void clearSystems();
 
       private:
-        std::shared_ptr<rtype::TextureDatabase> _textureDatabase;
         std::unordered_map<std::string, EntityManager *> _entityManagers;
         std::unordered_map<std::type_index, ISystem *> _systems;
     };

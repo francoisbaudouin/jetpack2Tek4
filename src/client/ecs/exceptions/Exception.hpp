@@ -56,12 +56,12 @@ namespace ecs
 
     class EntityManagerAlreadyExisting : public Exception {
       public:
-        EntityManagerAlreadyExisting(const std::string);
+        EntityManagerAlreadyExisting(const std::string &sceneName);
     };
 
     class EntityManagerNotExisting : public Exception {
       public:
-        EntityManagerNotExisting(const std::string);
+        EntityManagerNotExisting(const std::string &sceneName);
     };
 
     class SystemNotCompatible : public Exception {

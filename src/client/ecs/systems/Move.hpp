@@ -36,7 +36,7 @@ namespace ecs
          *
          * @param sceneId : id of the scene to select the entityManager related
          */
-        void run(const std::string sceneName) override;
+        void run(const std::string &sceneName) override;
 
       protected:
       private:

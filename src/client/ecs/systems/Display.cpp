@@ -13,7 +13,7 @@ Display::Display(std::shared_ptr<Ecs> &manager) : ASystem(manager) {}
 
 Display::~Display() {}
 
-void Display::run(const std::string sceneName, sf::RenderWindow &window)
+void Display::run(const std::string &sceneName, sf::RenderWindow &window)
 {
     if (_manager->getEntityManager(sceneName).getNumberEntities() == 0)
         return;

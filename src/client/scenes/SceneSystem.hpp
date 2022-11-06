@@ -44,13 +44,13 @@ namespace rtype
          *
          * @param sceneName name of the scene to be removed
          */
-        void Remove(const std::string sceneName);
+        void Remove(const std::string &sceneName);
         /**
          * @brief switch to the corresponding sceneName given in parameters
          *
          * @param sceneName name of the scene to SwitchTo
          */
-        void SwitchTo(const std::string sceneName);
+        void SwitchTo(const std::string &sceneName);
         /**
          * @brief Get the Ecs object
          *

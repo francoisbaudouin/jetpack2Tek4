@@ -19,7 +19,7 @@ namespace rtype
         TextureDatabase();
         ~TextureDatabase();
 
-        void onCall(const std::string sceneName);
+        void onCall(const std::string &sceneName);
         sf::Texture &getTexture(const std::string type);
         void replaceTexturePath(const std::string type, sf::Texture &newTexturePath);
 

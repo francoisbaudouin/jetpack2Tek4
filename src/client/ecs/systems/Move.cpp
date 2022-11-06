@@ -24,7 +24,7 @@ void Move::applyVelocity(Entity &entity)
     position.setY(position.getY() + velocity.getY());
 }
 
-void Move::run(const std::string sceneName)
+void Move::run(const std::string &sceneName)
 {
     for (auto &entity : _manager->getEntityManager(sceneName).getEntities()) {
         if (entity.second->hasComponent<Position>() && entity.second->hasComponent<Velocity>())

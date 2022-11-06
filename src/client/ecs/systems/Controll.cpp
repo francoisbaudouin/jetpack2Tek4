@@ -13,7 +13,7 @@ Controll::Controll(std::shared_ptr<Ecs> &manager) : ASystem(manager) {}
 
 Controll::~Controll() {}
 
-void Controll::run(const std::string sceneName, const std::vector<RTypeEvent> &rTypeEvents, const size_t entityId)
+void Controll::run(const std::string &sceneName, const std::vector<RTypeEvent> &rTypeEvents, const size_t entityId)
 {
     if (_manager->getEntityManager(sceneName).getNumberEntities() == 0)
         return;
@@ -26,7 +26,7 @@ void Controll::run(const std::string sceneName, const std::vector<RTypeEvent> &r
     }
 }
 
-void Controll::keyReaction(const std::string sceneName, Velocity &velocity, Controllable &controllable,
+void Controll::keyReaction(const std::string &sceneName, Velocity &velocity, Controllable &controllable,
     const std::vector<RTypeEvent> &rTypeEvents, const size_t entityId)
 {
     float velocityValueX = 0;

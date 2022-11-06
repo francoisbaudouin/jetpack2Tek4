@@ -31,7 +31,7 @@ namespace ecs
          *
          * @param sceneName : name of the scene to select the entityManager related
          */
-        void run(const std::string sceneName) override;
+        void run(const std::string &sceneName) override;
 
       protected:
         std::shared_ptr<Ecs> _manager;

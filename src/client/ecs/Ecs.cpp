@@ -18,7 +18,7 @@ Ecs::~Ecs()
     this->clearSystems();
 }
 
-EntityManager &Ecs::createEntityManager(const std::string sceneName)
+EntityManager &Ecs::createEntityManager(const std::string &sceneName)
 {
     EntityManager *manager;
 
@@ -29,7 +29,7 @@ EntityManager &Ecs::createEntityManager(const std::string sceneName)
     return (*manager);
 }
 
-EntityManager &Ecs::getEntityManager(const std::string sceneName)
+EntityManager &Ecs::getEntityManager(const std::string &sceneName)
 {
     if (!_entityManagers.contains(sceneName))
         throw EntityManagerNotExisting(sceneName);

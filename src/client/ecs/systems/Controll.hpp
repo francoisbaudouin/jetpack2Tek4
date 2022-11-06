@@ -33,7 +33,7 @@ namespace ecs
          * @param controll RType events vector
          * @param entityId id of the controllable entity
          **/
-        void run(const std::string sceneName, const std::vector<RTypeEvent> &controll, const size_t entityId);
+        void run(const std::string &sceneName, const std::vector<RTypeEvent> &controll, const size_t entityId);
 
       private:
         /**
@@ -45,7 +45,7 @@ namespace ecs
          * @param entityId the controllable entity id
          *
          */
-        void keyReaction(const std::string sceneName, Velocity &velocity, Controllable &controllable,
+        void keyReaction(const std::string &sceneName, Velocity &velocity, Controllable &controllable,
             const std::vector<RTypeEvent> &rTypeEvents, const size_t entityId);
     };
 } // namespace ecs

@@ -24,12 +24,12 @@ SystemNotExisting::SystemNotExisting(std::string const &type) : Exception("Error
 {
 }
 
-EntityManagerAlreadyExisting::EntityManagerAlreadyExisting(const std::string sceneName)
+EntityManagerAlreadyExisting::EntityManagerAlreadyExisting(const std::string &sceneName)
     : Exception("Error 040: EntityManager " + sceneName + " already existing")
 {
 }
 
-EntityManagerNotExisting::EntityManagerNotExisting(const std::string sceneName)
+EntityManagerNotExisting::EntityManagerNotExisting(const std::string &sceneName)
     : Exception("Error 041: EntityManager " + sceneName + " not existing")
 {
 }
