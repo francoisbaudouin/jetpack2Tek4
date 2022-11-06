@@ -37,9 +37,9 @@ namespace ecs
         /**
          * @brief Get the rendering scale
          *
-         * @return a float representing the rendering scale
+         * @return a vector of float representing the rendering scale in abscissa and in ordinate
          */
-        float getScale() const;
+        sf::Vector2f getScale() const;
         /**
          * @brief Set the rendering scale
          *
@@ -49,7 +49,7 @@ namespace ecs
         ~DrawableClientSide();
 
       private:
-        float _scale;
+        sf::Vector2f _scale;
         sf::Sprite _sprite;
     };
 } // namespace ecs
