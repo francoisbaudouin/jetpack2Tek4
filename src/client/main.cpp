@@ -4,13 +4,23 @@
 ** File description:
 ** main
 */
+#include <boost/thread/thread.hpp>
+
 #include "Client.hpp"
+
+void communicate(rtype::Client *client)
+{
+    client->connectToServer();
+
+    return;
+}
 
 int main(void)
 {
     rtype::Client client;
+    boost::thread communicator(communicate, &client);
 
-    client.connectToServer();
+    communicator.join();
 
     return 0;
 }

@@ -13,13 +13,13 @@ Display::Display(std::shared_ptr<Ecs> &manager) : ASystem(manager) {}
 
 Display::~Display() {}
 
-void Display::run(sf::RenderWindow &window)
+void Display::run(const size_t sceneId, sf::RenderWindow &window)
 {
-    if (_manager->getNumberEntities() == 0)
+    if (_manager->getEntityManager(sceneId).getNumberEntities() == 0)
         return;
-    for (auto &entity : _manager->getEntities()) {
-        if (entity.second->hasComponent<Drawable>() && entity.second->hasComponent<Position>()) {
-            Drawable &drawable = entity.second->getComponent<Drawable>();
+    for (auto &entity : _manager->getEntityManager(sceneId).getEntities()) {
+        if (entity.second->hasComponent<DrawableClientSide>() && entity.second->hasComponent<Position>()) {
+            DrawableClientSide &drawable = entity.second->getComponent<DrawableClientSide>();
             Position &position = entity.second->getComponent<Position>();
             drawable.getSprite().setPosition(position.getX(), position.getY());
             window.draw(drawable.getSprite());

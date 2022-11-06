@@ -9,8 +9,8 @@
 
 using namespace ecs;
 
-Type::Type(const size_t entityId, entityType type) : AComponent(entityId), _type(type) {}
+Type::Type(const size_t entityId, const std::string type) : AComponent(entityId), _type(type) {}
 
 Type::~Type() {}
 
-entityType Type::getEntityType() const { return _type; }
+std::string Type::getEntityType() const { return _type; }
