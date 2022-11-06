@@ -9,13 +9,15 @@
 
 using namespace ecs;
 
-static void projectileHitEnnemy(const std::string sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
+static void projectileHitEnnemy(
+    const std::string sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {
     manager->getEntityManager(sceneName).removeEntity(entity1.getId());
     manager->getEntityManager(sceneName).removeEntity(entity2.getId());
 }
 
-static void projectileHitWall(const std::string sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
+static void projectileHitWall(
+    const std::string sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {
     (void)entity2;
     manager->getEntityManager(sceneName).removeEntity(entity1.getId());

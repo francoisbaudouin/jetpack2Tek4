@@ -9,10 +9,7 @@
 
 using namespace ecs;
 
-Fire::Fire(std::shared_ptr<Ecs> &manager) : ASystem(manager)
-{
-    _lastTimeTriggered = std::chrono::system_clock::now();
-}
+Fire::Fire(std::shared_ptr<Ecs> &manager) : ASystem(manager) { _lastTimeTriggered = std::chrono::system_clock::now(); }
 
 Fire::~Fire() {}
 
