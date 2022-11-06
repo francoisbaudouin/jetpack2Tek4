@@ -40,7 +40,13 @@ var annotated_dup =
       [ "Weapon", "classecs_1_1_weapon.html", "classecs_1_1_weapon" ]
     ] ],
     [ "rtype", null, [
+      [ "AScene", "classrtype_1_1_a_scene.html", "classrtype_1_1_a_scene" ],
       [ "Client", "classrtype_1_1_client.html", "classrtype_1_1_client" ],
+      [ "GameScene", "classrtype_1_1_game_scene.html", "classrtype_1_1_game_scene" ],
+      [ "IScene", "classrtype_1_1_i_scene.html", "classrtype_1_1_i_scene" ],
+      [ "MainMenu", "classrtype_1_1_main_menu.html", "classrtype_1_1_main_menu" ],
+      [ "SceneManager", "classrtype_1_1_scene_manager.html", "classrtype_1_1_scene_manager" ],
+      [ "SceneSystem", "classrtype_1_1_scene_system.html", "classrtype_1_1_scene_system" ],
       [ "TextureDatabase", "classrtype_1_1_texture_database.html", "classrtype_1_1_texture_database" ]
     ] ]
 ];

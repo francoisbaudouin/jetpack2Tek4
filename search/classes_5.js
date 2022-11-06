@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hitbox_113',['HitBox',['../classecs_1_1_hit_box.html',1,'ecs']]]
+  ['gamescene_131',['GameScene',['../classrtype_1_1_game_scene.html',1,'rtype']]]
 ];

@@ -1,18 +1,9 @@
 var searchData=
 [
-  ['setentityid_67',['setEntityId',['../classecs_1_1_a_component.html#a2b6694f92b7b7108e7780cc3303799f0',1,'ecs::AComponent']]],
-  ['sethitbox_68',['setHitBox',['../classecs_1_1_hit_box.html#abc7b7f0c89e8e414706066a92c733a2d',1,'ecs::HitBox']]],
-  ['setid_69',['setId',['../classecs_1_1_entity.html#aefb37c28a300d57788b8b23896fc2dc0',1,'ecs::Entity']]],
-  ['setipadress_70',['setIpAdress',['../classrtype_1_1_client.html#a8e64ac5327e4766315bc87491c0b723d',1,'rtype::Client']]],
-  ['setport_71',['setPort',['../classrtype_1_1_client.html#a38b129502f7e4e0549da2db04f8704b6',1,'rtype::Client']]],
-  ['setposition_72',['setPosition',['../classecs_1_1_position.html#a451c94ff3d60284d969dc9107bae51c4',1,'ecs::Position']]],
-  ['setscale_73',['setScale',['../classecs_1_1_drawable_client_side.html#a70bbf5418e7d2372f495d65e54292fef',1,'ecs::DrawableClientSide']]],
-  ['setsprite_74',['setSprite',['../classecs_1_1_drawable_client_side.html#a83af349b9c76704daf5a0a9d644b1dcc',1,'ecs::DrawableClientSide']]],
-  ['settexturetype_75',['setTextureType',['../classecs_1_1_drawable_server_side.html#aab99ecafe16d5960982115afc9425e51',1,'ecs::DrawableServerSide']]],
-  ['setvelocity_76',['setVelocity',['../classecs_1_1_velocity.html#a7b2fe9c8a44da5b1ce8a7d873daee60e',1,'ecs::Velocity']]],
-  ['setx_77',['setX',['../classecs_1_1_hit_box.html#a4e061a66688b4a57f0fac7b10979afe4',1,'ecs::HitBox::setX()'],['../classecs_1_1_position.html#ad9d234da0393905159fea36944b13cfd',1,'ecs::Position::setX()'],['../classecs_1_1_velocity.html#a52c6b1277ad9767360fb5c13999c4c8b',1,'ecs::Velocity::setX()']]],
-  ['sety_78',['setY',['../classecs_1_1_hit_box.html#ac951409e2575d224fe11bc1e265a2ae6',1,'ecs::HitBox::setY()'],['../classecs_1_1_position.html#a66ad45871140bad28eef323b177a8ff7',1,'ecs::Position::setY()'],['../classecs_1_1_velocity.html#aec2705b01ff1be168b08518109593d7b',1,'ecs::Velocity::setY()']]],
-  ['systemalreadyexisting_79',['SystemAlreadyExisting',['../classecs_1_1_system_already_existing.html',1,'ecs']]],
-  ['systemnotcompatible_80',['SystemNotCompatible',['../classecs_1_1_system_not_compatible.html',1,'ecs']]],
-  ['systemnotexisting_81',['SystemNotExisting',['../classecs_1_1_system_not_existing.html',1,'ecs']]]
+  ['r_2dtype_20aka_20jetpack2tek4_74',['R-TYPE aka JETPACK2TEK4',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['remove_75',['Remove',['../classrtype_1_1_scene_system.html#aeb88da816ff3fe0c1cc4821d7acecce7',1,'rtype::SceneSystem']]],
+  ['removecomponent_76',['removeComponent',['../classecs_1_1_entity.html#a30056c776dc8e57264e3fc83658e3198',1,'ecs::Entity']]],
+  ['removeentity_77',['removeEntity',['../classecs_1_1_entity_manager.html#a0bdba5f392af1b76fb9a539bbe6beb88',1,'ecs::EntityManager']]],
+  ['rtypeevent_78',['RTypeEvent',['../structecs_1_1_r_type_event.html',1,'ecs']]],
+  ['run_79',['run',['../classecs_1_1_a_system.html#aea8faa2947125d308f99e29dbb8a0db5',1,'ecs::ASystem::run()'],['../classecs_1_1_collider.html#aba284ee74f40252892ebd51673726a71',1,'ecs::Collider::run()'],['../classecs_1_1_collider_reaction.html#ac88b27db22e1c8eb3dcdc32f4e357ca1',1,'ecs::ColliderReaction::run()'],['../classecs_1_1_controll.html#abe7a14b0c0bec522bf311c79738116eb',1,'ecs::Controll::run()'],['../classecs_1_1_display.html#a462237eee54f317b4c36647cbb6d614b',1,'ecs::Display::run()'],['../classecs_1_1_fire.html#a01fc32184c05d7c39ffd2072ac6e5db7',1,'ecs::Fire::run()'],['../classecs_1_1_move.html#aed336445f47969b1f96de2433a85150d',1,'ecs::Move::run()'],['../classrtype_1_1_scene_manager.html#ae56f30b761a4e60a7014229c02900acb',1,'rtype::SceneManager::run()']]]
 ];

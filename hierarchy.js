@@ -33,6 +33,12 @@ var hierarchy =
         [ "ecs::Weapon", "classecs_1_1_weapon.html", null ]
       ] ]
     ] ],
+    [ "rtype::IScene", "classrtype_1_1_i_scene.html", [
+      [ "rtype::AScene", "classrtype_1_1_a_scene.html", [
+        [ "rtype::GameScene", "classrtype_1_1_game_scene.html", null ],
+        [ "rtype::MainMenu", "classrtype_1_1_main_menu.html", null ]
+      ] ]
+    ] ],
     [ "ecs::ISystem", "classecs_1_1_i_system.html", [
       [ "ecs::ASystem", "classecs_1_1_a_system.html", [
         [ "ecs::Collider", "classecs_1_1_collider.html", null ],
@@ -45,5 +51,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "ecs::RTypeEvent", "structecs_1_1_r_type_event.html", null ],
+    [ "rtype::SceneManager", "classrtype_1_1_scene_manager.html", null ],
+    [ "rtype::SceneSystem", "classrtype_1_1_scene_system.html", null ],
     [ "rtype::TextureDatabase", "classrtype_1_1_texture_database.html", null ]
 ];

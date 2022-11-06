@@ -107,15 +107,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a46c1badaffd99dc44594545f3eab4630"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_collider.html#a46c1badaffd99dc44594545f3eab4630">Collider</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
 <tr class="memdesc:a46c1badaffd99dc44594545f3eab4630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecs_1_1_collider.html">Collider</a> object.  <a href="classecs_1_1_collider.html#a46c1badaffd99dc44594545f3eab4630">More...</a><br /></td></tr>
 <tr class="separator:a46c1badaffd99dc44594545f3eab4630"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74e96c5cbad41702b4429d59072878e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_collider.html#a74e96c5cbad41702b4429d59072878e9">compareEntities</a> (const size_t sceneId, const size_t entity1, const size_t entity2)</td></tr>
-<tr class="memdesc:a74e96c5cbad41702b4429d59072878e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare 2 entities and check if they're colliding  <a href="classecs_1_1_collider.html#a74e96c5cbad41702b4429d59072878e9">More...</a><br /></td></tr>
-<tr class="separator:a74e96c5cbad41702b4429d59072878e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc2e42d2593951ca3379bf91682f6649"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_collider.html#adc2e42d2593951ca3379bf91682f6649">checkEntities</a> (const size_t sceneId, const std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">Entity</a> &gt;&gt;::iterator &amp;entity)</td></tr>
-<tr class="memdesc:adc2e42d2593951ca3379bf91682f6649"><td class="mdescLeft">&#160;</td><td class="mdescRight">check all the entities after the one passed as parameter to see if they collide  <a href="classecs_1_1_collider.html#adc2e42d2593951ca3379bf91682f6649">More...</a><br /></td></tr>
-<tr class="separator:adc2e42d2593951ca3379bf91682f6649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd80e8fc51fbcd073e4b1fc0b3b15264"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_collider.html#afd80e8fc51fbcd073e4b1fc0b3b15264">run</a> (const size_t sceneId) override</td></tr>
-<tr class="memdesc:afd80e8fc51fbcd073e4b1fc0b3b15264"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the system to check if there are entities that collide  <a href="classecs_1_1_collider.html#afd80e8fc51fbcd073e4b1fc0b3b15264">More...</a><br /></td></tr>
-<tr class="separator:afd80e8fc51fbcd073e4b1fc0b3b15264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a178e960b6d4e5069c3d270e239019502"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_collider.html#a178e960b6d4e5069c3d270e239019502">compareEntities</a> (const std::string &amp;sceneName, const size_t entity1, const size_t entity2)</td></tr>
+<tr class="memdesc:a178e960b6d4e5069c3d270e239019502"><td class="mdescLeft">&#160;</td><td class="mdescRight">compare 2 entities and check if they're colliding  <a href="classecs_1_1_collider.html#a178e960b6d4e5069c3d270e239019502">More...</a><br /></td></tr>
+<tr class="separator:a178e960b6d4e5069c3d270e239019502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af843c9ea4c5783e15c1e674d7421c51d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_collider.html#af843c9ea4c5783e15c1e674d7421c51d">checkEntities</a> (const std::string &amp;sceneName, const std::unordered_map&lt; size_t, std::shared_ptr&lt; <a class="el" href="classecs_1_1_entity.html">Entity</a> &gt;&gt;::iterator &amp;entity)</td></tr>
+<tr class="memdesc:af843c9ea4c5783e15c1e674d7421c51d"><td class="mdescLeft">&#160;</td><td class="mdescRight">check all the entities after the one passed as parameter to see if they collide  <a href="classecs_1_1_collider.html#af843c9ea4c5783e15c1e674d7421c51d">More...</a><br /></td></tr>
+<tr class="separator:af843c9ea4c5783e15c1e674d7421c51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba284ee74f40252892ebd51673726a71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_collider.html#aba284ee74f40252892ebd51673726a71">run</a> (const std::string &amp;sceneName) override</td></tr>
+<tr class="memdesc:aba284ee74f40252892ebd51673726a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the system to check if there are entities that collide  <a href="classecs_1_1_collider.html#aba284ee74f40252892ebd51673726a71">More...</a><br /></td></tr>
+<tr class="separator:aba284ee74f40252892ebd51673726a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classecs_1_1_a_system"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecs_1_1_a_system')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td></tr>
 <tr class="memitem:ab3495f5e03dfd716257ae1ac92deabe0 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">ASystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
 <tr class="memdesc:ab3495f5e03dfd716257ae1ac92deabe0 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for systems.  <a href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">More...</a><br /></td></tr>
@@ -156,8 +156,8 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="adc2e42d2593951ca3379bf91682f6649"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc2e42d2593951ca3379bf91682f6649">&#9670;&nbsp;</a></span>checkEntities()</h2>
+<a id="af843c9ea4c5783e15c1e674d7421c51d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af843c9ea4c5783e15c1e674d7421c51d">&#9670;&nbsp;</a></span>checkEntities()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -165,8 +165,8 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
         <tr>
           <td class="memname">void Collider::checkEntities </td>
           <td>(</td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>sceneId</em>, </td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sceneName</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -192,8 +192,8 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 
 </div>
 </div>
-<a id="a74e96c5cbad41702b4429d59072878e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74e96c5cbad41702b4429d59072878e9">&#9670;&nbsp;</a></span>compareEntities()</h2>
+<a id="a178e960b6d4e5069c3d270e239019502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a178e960b6d4e5069c3d270e239019502">&#9670;&nbsp;</a></span>compareEntities()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -201,8 +201,8 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
         <tr>
           <td class="memname">void Collider::compareEntities </td>
           <td>(</td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>sceneId</em>, </td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sceneName</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -235,8 +235,8 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 
 </div>
 </div>
-<a id="afd80e8fc51fbcd073e4b1fc0b3b15264"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd80e8fc51fbcd073e4b1fc0b3b15264">&#9670;&nbsp;</a></span>run()</h2>
+<a id="aba284ee74f40252892ebd51673726a71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba284ee74f40252892ebd51673726a71">&#9670;&nbsp;</a></span>run()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -247,8 +247,8 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
         <tr>
           <td class="memname">void Collider::run </td>
           <td>(</td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>sceneId</em></td><td>)</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sceneName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -262,12 +262,12 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 <p>run the system to check if there are entities that collide </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sceneId</td><td>: id of the scene to select the entityManager related </td></tr>
+    <tr><td class="paramname">sceneName</td><td>: Name of the scene to select the entityManager related </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classecs_1_1_a_system.html#a9dd741ea7d58a757a84fca64ac1ad098">ecs::ASystem</a>.</p>
+<p>Reimplemented from <a class="el" href="classecs_1_1_a_system.html#aea8faa2947125d308f99e29dbb8a0db5">ecs::ASystem</a>.</p>
 
 </div>
 </div>

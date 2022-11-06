@@ -1,7 +1,21 @@
 var searchData=
 [
-  ['test_82',['Test',['../classecs_1_1_test.html',1,'ecs::Test'],['../classecs_1_1_test.html#a648369cfa97f249fb756521632396dfe',1,'ecs::Test::Test()']]],
-  ['texturedatabase_83',['TextureDatabase',['../classrtype_1_1_texture_database.html',1,'rtype']]],
-  ['texturenotindatabase_84',['TextureNotInDatabase',['../classecs_1_1_texture_not_in_database.html',1,'ecs::TextureNotInDatabase'],['../classecs_1_1_texture_not_in_database.html#a7eed39f7af4a71b9b148b1ebb05318b8',1,'ecs::TextureNotInDatabase::TextureNotInDatabase()']]],
-  ['type_85',['Type',['../classecs_1_1_type.html',1,'ecs::Type'],['../classecs_1_1_type.html#a28dc02510262c94eee1714934a976d63',1,'ecs::Type::Type()']]]
+  ['scenemanager_80',['SceneManager',['../classrtype_1_1_scene_manager.html',1,'rtype']]],
+  ['scenesystem_81',['SceneSystem',['../classrtype_1_1_scene_system.html',1,'rtype::SceneSystem'],['../classrtype_1_1_scene_system.html#a0a76f41606c87e3f62cbbe247844883a',1,'rtype::SceneSystem::SceneSystem()']]],
+  ['setentityid_82',['setEntityId',['../classecs_1_1_a_component.html#a2b6694f92b7b7108e7780cc3303799f0',1,'ecs::AComponent']]],
+  ['sethitbox_83',['setHitBox',['../classecs_1_1_hit_box.html#abc7b7f0c89e8e414706066a92c733a2d',1,'ecs::HitBox']]],
+  ['setid_84',['setId',['../classecs_1_1_entity.html#aefb37c28a300d57788b8b23896fc2dc0',1,'ecs::Entity']]],
+  ['setipadress_85',['setIpAdress',['../classrtype_1_1_client.html#a8e64ac5327e4766315bc87491c0b723d',1,'rtype::Client']]],
+  ['setport_86',['setPort',['../classrtype_1_1_client.html#a38b129502f7e4e0549da2db04f8704b6',1,'rtype::Client']]],
+  ['setposition_87',['setPosition',['../classecs_1_1_position.html#a451c94ff3d60284d969dc9107bae51c4',1,'ecs::Position']]],
+  ['setscale_88',['setScale',['../classecs_1_1_drawable_client_side.html#a70bbf5418e7d2372f495d65e54292fef',1,'ecs::DrawableClientSide']]],
+  ['setsprite_89',['setSprite',['../classecs_1_1_drawable_client_side.html#a83af349b9c76704daf5a0a9d644b1dcc',1,'ecs::DrawableClientSide']]],
+  ['settexturetype_90',['setTextureType',['../classecs_1_1_drawable_server_side.html#aab99ecafe16d5960982115afc9425e51',1,'ecs::DrawableServerSide']]],
+  ['setvelocity_91',['setVelocity',['../classecs_1_1_velocity.html#a7b2fe9c8a44da5b1ce8a7d873daee60e',1,'ecs::Velocity']]],
+  ['setx_92',['setX',['../classecs_1_1_hit_box.html#a4e061a66688b4a57f0fac7b10979afe4',1,'ecs::HitBox::setX()'],['../classecs_1_1_position.html#ad9d234da0393905159fea36944b13cfd',1,'ecs::Position::setX()'],['../classecs_1_1_velocity.html#a52c6b1277ad9767360fb5c13999c4c8b',1,'ecs::Velocity::setX()']]],
+  ['sety_93',['setY',['../classecs_1_1_hit_box.html#ac951409e2575d224fe11bc1e265a2ae6',1,'ecs::HitBox::setY()'],['../classecs_1_1_position.html#a66ad45871140bad28eef323b177a8ff7',1,'ecs::Position::setY()'],['../classecs_1_1_velocity.html#aec2705b01ff1be168b08518109593d7b',1,'ecs::Velocity::setY()']]],
+  ['switchto_94',['SwitchTo',['../classrtype_1_1_scene_system.html#a3ec91542cfc5996a39b59de87e343598',1,'rtype::SceneSystem']]],
+  ['systemalreadyexisting_95',['SystemAlreadyExisting',['../classecs_1_1_system_already_existing.html',1,'ecs']]],
+  ['systemnotcompatible_96',['SystemNotCompatible',['../classecs_1_1_system_not_compatible.html',1,'ecs']]],
+  ['systemnotexisting_97',['SystemNotExisting',['../classecs_1_1_system_not_existing.html',1,'ecs']]]
 ];
