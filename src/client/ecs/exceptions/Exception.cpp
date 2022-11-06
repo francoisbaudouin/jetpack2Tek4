@@ -54,15 +54,15 @@ ComponentNotCompatible::ComponentNotCompatible(std::string const &type)
 {
 }
 
-EntityAlreadyExisting::EntityAlreadyExisting(const size_t sceneId, const size_t entityId)
+EntityAlreadyExisting::EntityAlreadyExisting(const std::string sceneName, const size_t entityId)
     : Exception(
-        "Error 410: in Manager " + std::to_string(sceneId) + " Entity " + std::to_string(entityId) + " already exist")
+        "Error 410: in Manager " + sceneName + " Entity " + std::to_string(entityId) + " already exist")
 {
 }
 
-EntityNotExisting::EntityNotExisting(const size_t sceneId, const size_t entityId)
+EntityNotExisting::EntityNotExisting(const std::string sceneName, const size_t entityId)
     : Exception(
-        "Error 411: in Manager " + std::to_string(sceneId) + " Entity " + std::to_string(entityId) + " not existing")
+        "Error 411: in Manager " + sceneName + " Entity " + std::to_string(entityId) + " not existing")
 {
 }
 
