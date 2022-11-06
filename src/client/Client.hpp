@@ -11,12 +11,12 @@
 #define RUNNING 1
 
 #include <SFML/Graphics.hpp>
-#include "scenes/allScenes.hpp"
 #include <boost/array.hpp>
 #include <boost/asio.hpp>
 #include <iostream>
 #include <memory>
 #include <string>
+#include "scenes/allScenes.hpp"
 
 #include "TextureDatabase.hpp"
 #include "ecs/Ecs.hpp"
