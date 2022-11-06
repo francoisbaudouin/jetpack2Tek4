@@ -6,10 +6,6 @@
 */
 
 #include "GameScene.hpp"
-#include "../ecs/systems/Display.hpp"
-
-#include "../ecs/components/DrawableClientSide.hpp"
-#include "../ecs/components/Position.hpp"
 
 using namespace rtype;
 using namespace ecs;

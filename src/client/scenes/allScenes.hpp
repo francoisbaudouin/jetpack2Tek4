@@ -10,7 +10,7 @@
 
 #include "SceneSystem.hpp"
 
-#include "MainMenu.hpp"
 #include "GameScene.hpp"
+#include "MainMenu.hpp"
 
 #endif /* !ALLSCENES_HPP_ */

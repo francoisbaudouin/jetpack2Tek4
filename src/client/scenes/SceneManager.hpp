@@ -17,7 +17,12 @@ namespace rtype
       public:
         SceneManager();
         ~SceneManager();
+        /**
+         * @brief run the scene manager, where the main loop is
+         *
+         */
         void run();
+
       private:
         sf::RenderWindow _window;
         SceneSystem _sceneSystem;

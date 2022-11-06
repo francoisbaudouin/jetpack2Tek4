@@ -7,13 +7,6 @@
 
 #include "MainMenu.hpp"
 
-#include "../ecs/systems/Display.hpp"
-
-#include "../ecs/components/DrawableClientSide.hpp"
-#include "../ecs/components/Position.hpp"
-
-#include <ostream>
-
 using namespace ecs;
 using namespace rtype;
 
