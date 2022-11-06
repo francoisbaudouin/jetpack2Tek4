@@ -14,10 +14,11 @@ var searchData=
   ['getipadress_45',['getIpAdress',['../classrtype_1_1_client.html#a9795a04597964bb8d0465d10a6a91b3d',1,'rtype::Client']]],
   ['getnumberentities_46',['getNumberEntities',['../classecs_1_1_entity_manager.html#aef9ad12926a03c6a6f1842e634d526f7',1,'ecs::EntityManager']]],
   ['getport_47',['getPort',['../classrtype_1_1_client.html#ad6863b2aa83d0b540846d4dc8b6cb8dd',1,'rtype::Client']]],
-  ['getsprite_48',['getSprite',['../classecs_1_1_drawable_client_side.html#a524c8a71083a3696f22e345d18b5fe2f',1,'ecs::DrawableClientSide']]],
-  ['getsystem_49',['getSystem',['../classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924',1,'ecs::Ecs']]],
-  ['gettexturetype_50',['getTextureType',['../classecs_1_1_drawable_server_side.html#ae891e94b9c2fbdc770ee3028ad49dc45',1,'ecs::DrawableServerSide']]],
-  ['gettype_51',['getType',['../classecs_1_1_weapon.html#a82478509e42bcc688a97928212dff9e8',1,'ecs::Weapon']]],
-  ['getx_52',['getX',['../classecs_1_1_hit_box.html#aae881b98ec5471f86b4f9d3ec76b1352',1,'ecs::HitBox::getX()'],['../classecs_1_1_position.html#a252efaf275c7276a6f35338d198de7ee',1,'ecs::Position::getX()'],['../classecs_1_1_velocity.html#aae41640b70b537cf1dbf1594618bab0c',1,'ecs::Velocity::getX()']]],
-  ['gety_53',['getY',['../classecs_1_1_hit_box.html#a201ae07cd60feff0168c1b5ddb1033a4',1,'ecs::HitBox::getY()'],['../classecs_1_1_position.html#a53ad8ec2f8383db4d615b3fc4e888f77',1,'ecs::Position::getY()'],['../classecs_1_1_velocity.html#ad281d82c04c7efef9c0fb1a5a13abd83',1,'ecs::Velocity::getY()']]]
+  ['getscale_48',['getScale',['../classecs_1_1_drawable_client_side.html#ab301da35e41432e05079406415366481',1,'ecs::DrawableClientSide']]],
+  ['getsprite_49',['getSprite',['../classecs_1_1_drawable_client_side.html#a524c8a71083a3696f22e345d18b5fe2f',1,'ecs::DrawableClientSide']]],
+  ['getsystem_50',['getSystem',['../classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924',1,'ecs::Ecs']]],
+  ['gettexturetype_51',['getTextureType',['../classecs_1_1_drawable_server_side.html#ae891e94b9c2fbdc770ee3028ad49dc45',1,'ecs::DrawableServerSide']]],
+  ['gettype_52',['getType',['../classecs_1_1_weapon.html#a82478509e42bcc688a97928212dff9e8',1,'ecs::Weapon']]],
+  ['getx_53',['getX',['../classecs_1_1_hit_box.html#aae881b98ec5471f86b4f9d3ec76b1352',1,'ecs::HitBox::getX()'],['../classecs_1_1_position.html#a252efaf275c7276a6f35338d198de7ee',1,'ecs::Position::getX()'],['../classecs_1_1_velocity.html#aae41640b70b537cf1dbf1594618bab0c',1,'ecs::Velocity::getX()']]],
+  ['gety_54',['getY',['../classecs_1_1_hit_box.html#a201ae07cd60feff0168c1b5ddb1033a4',1,'ecs::HitBox::getY()'],['../classecs_1_1_position.html#a53ad8ec2f8383db4d615b3fc4e888f77',1,'ecs::Position::getY()'],['../classecs_1_1_velocity.html#ad281d82c04c7efef9c0fb1a5a13abd83',1,'ecs::Velocity::getY()']]]
 ];
