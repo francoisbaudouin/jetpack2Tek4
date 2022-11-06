@@ -10,6 +10,8 @@
 
 #include "SceneSystem.hpp"
 
+#include "Hub.hpp"
+
 namespace rtype
 {
     class SceneManager {

@@ -16,6 +16,9 @@ SceneManager::~SceneManager() {}
 void SceneManager::run()
 {
     sf::Event event;
+    Hub hubScene(_sceneSystem, _window);
+    std::shared_ptr<Hub> sharedHubScene = std::make_shared<Hub>(hubScene);
+    _sceneSystem.Add(sharedHubScene);
     // size_t messageLength = 0;
 
     while (_window.isOpen()) {
