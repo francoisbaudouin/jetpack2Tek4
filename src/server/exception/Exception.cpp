@@ -17,3 +17,8 @@ rtype::InvalideUnknownFile::InvalideUnknownFile(std::string const &message)
     : Exception("error: " + message + " config.ini is unreachable")
 {
 }
+
+rtype::InvalidConfigArgument::InvalidConfigArgument(std::string const &message)
+    : Exception("error: " + message + " is not a valid argument")
+{
+}

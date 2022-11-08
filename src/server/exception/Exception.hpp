@@ -38,6 +38,11 @@ namespace rtype
         InvalideUnknownFile(std::string const &message);
     };
 
+    class InvalidConfigArgument : public Exception {
+      public:
+        InvalidConfigArgument(std::string const &message);
+    };
+
 } // namespace rtype
 
 #endif /* !EXCEPTION_HPP_ */
