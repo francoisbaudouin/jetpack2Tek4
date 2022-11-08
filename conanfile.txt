@@ -1,4 +1,5 @@
 [generators]
+    MSBuildToolchain
     MSBuildDeps
     cmake
     cmake_paths

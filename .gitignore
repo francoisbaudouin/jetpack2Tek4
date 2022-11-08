@@ -37,6 +37,7 @@ vgcore.*
 #folder buidl
 build
 .vscode
+.vsconan
 r-type_server
 r-type_client
 
