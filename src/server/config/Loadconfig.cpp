@@ -7,6 +7,7 @@
 
 #include <filesystem>
 #include <fstream>
+#include <regex>
 #include <string>
 #include "../exception/Exception.hpp"
 #include "Loadconfig.hpp"
@@ -21,7 +22,7 @@ namespace configuration
 
     bool Loadconfig::setServerData()
     {
-        
+        auto it = _functPtr.find("");
         return (true);
     }
 
