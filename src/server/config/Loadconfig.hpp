@@ -33,7 +33,7 @@ namespace configuration
          * @return false In case if data dosn't allowed
          * @throw Data wich does't provice here
          */
-        bool setServerData(std::string line, std::regex regex);
+        bool setServerData(std::string line, std::regex regex, std::smatch match);
 
         /**
          * @brief Funct wich return true or false if configuration file

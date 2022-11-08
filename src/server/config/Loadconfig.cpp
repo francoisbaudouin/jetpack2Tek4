@@ -19,11 +19,17 @@ namespace configuration
 
     Loadconfig::~Loadconfig() {}
 
-    bool Loadconfig::setServerData(std::string line, std::regex regex)
+    bool Loadconfig::setServerData(std::string line, std::regex regex, std::smatch match)
     {
-        auto it = _functPtr.find("line");
+        auto it = _functPtr.find(line);
 
-        if (it == it->end())
+        if (std::regex_search(line, match, regex) != true)
+                return (false);
+
+        if (it == _functPtr.end()) {
+            throw rtype::InvalidConfigArgument(line);
+            return false;
+        }
         return (true);
     }
 
@@ -31,10 +37,17 @@ namespace configuration
     {
         std::string line;
         std::regex const regex("([a-z]*)=([a-z]*)");
+        std::smatch match;
 
-        while (std::getline(configFile, line)) {
-            if (line.compare("[server]"))
-                setServerData(line, regex);
+        while (std::getline(configFile, line) || !configFile.eof()) {
+            if (line.compare("[server]") == 0) {
+                while (std::getline(configFile, line) || !configFile.eof()) {
+                    if (line.compare("[server]") && std::regex_match(line, regex))
+                        setServerData(line, regex, match);
+                    else
+                        break;
+                }
+            }
         }
     }
 
