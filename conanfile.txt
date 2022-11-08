@@ -1,4 +1,5 @@
 [generators]
+    MSBuildDeps
     cmake
     cmake_paths
     cmake_find_package
