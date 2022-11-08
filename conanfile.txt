@@ -1,5 +1,6 @@
 [generators]
-    visual_studio
+    MSBuildToolchain
+    MSBuildDeps
     cmake
     cmake_paths
     cmake_find_package
