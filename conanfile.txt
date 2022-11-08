@@ -1,4 +1,5 @@
 [generators]
+    visual_studio
     cmake
     cmake_paths
     cmake_find_package
