@@ -1,4 +1,5 @@
 [generators]
+    Ninja
     mingw-w64/8.1 
     MSBuildToolchain
     MSBuildDeps
