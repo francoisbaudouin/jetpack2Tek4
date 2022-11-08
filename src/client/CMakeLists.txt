@@ -21,20 +21,20 @@ set(SRC
 )
 set(INCDIRS ${INCROOT})
 
-#set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
+add_subdirectory(ecs)
+add_subdirectory(scenes)
 
 #set_target_properties(${TARGET}
 #    PROPERTIES
 #    RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/
 #)
 
-add_subdirectory(ecs)
-
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 
 target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::sfml)
 target_link_libraries(${TARGET_NAME} PUBLIC Threads::Threads)
 target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::asio)
+target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::boost)
 
 target_include_directories(${TARGET_NAME} PUBLIC
             ${CONAN_INCLUDE_DIRS_SFML}

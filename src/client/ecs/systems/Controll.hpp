@@ -29,11 +29,11 @@ namespace ecs
         /**
          * @brief run the system
          *
-         * @param sceneId : id of the scene to select the entityManager related
+         * @param sceneName : Name of the scene to select the entityManager related
          * @param controll RType events vector
          * @param entityId id of the controllable entity
          **/
-        void run(const size_t sceneId, const std::vector<RTypeEvent> &controll, const size_t entityId);
+        void run(const std::string &sceneName, const std::vector<RTypeEvent> &controll, const size_t entityId);
 
       private:
         /**
@@ -45,7 +45,7 @@ namespace ecs
          * @param entityId the controllable entity id
          *
          */
-        void keyReaction(const size_t sceneId, Velocity &velocity, Controllable &controllable,
+        void keyReaction(const std::string &sceneName, Velocity &velocity, Controllable &controllable,
             const std::vector<RTypeEvent> &rTypeEvents, const size_t entityId);
     };
 } // namespace ecs

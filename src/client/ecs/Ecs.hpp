@@ -24,17 +24,17 @@ namespace ecs
         /**
          * @brief Create a Entity Manager for the scene specified by it's Id
          *
-         * @param sceneId : id of the scene using the manager
+         * @param sceneName : Name of the scene using the manager
          * @return EntityManager& : reference to the newly created manager
          */
-        EntityManager &createEntityManager(const size_t sceneId);
+        EntityManager &createEntityManager(const std::string &sceneName);
         /**
          * @brief Get the Entity Manager for the scene specified by it's Id
          *
-         * @param sceneId : id of the scene using the manager
+         * @param sceneName : Name of the scene using the manager
          * @return EntityManager& : reference to the manager needed
          */
-        EntityManager &getEntityManager(const size_t sceneId);
+        EntityManager &getEntityManager(const std::string &sceneName);
         /**
          * @brief destroy all managers
          *
@@ -84,7 +84,7 @@ namespace ecs
         void clearSystems();
 
       private:
-        std::unordered_map<size_t, EntityManager *> _entityManagers;
+        std::unordered_map<std::string, EntityManager *> _entityManagers;
         std::unordered_map<std::type_index, ISystem *> _systems;
     };
 } // namespace ecs

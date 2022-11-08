@@ -9,8 +9,10 @@ set(SRC
     ${SRCROOT}/Controllable.hpp
     ${SRCROOT}/HitBox.cpp
     ${SRCROOT}/HitBox.hpp
-    ${SRCROOT}/Drawable.cpp
-    ${SRCROOT}/Drawable.hpp
+    ${SRCROOT}/DrawableServerSide.cpp
+    ${SRCROOT}/DrawableServerSide.hpp
+    ${SRCROOT}/DrawableClientSide.cpp
+    ${SRCROOT}/DrawableClientSide.hpp
     ${SRCROOT}/IComponent.hpp
     ${SRCROOT}/Position.cpp
     ${SRCROOT}/Position.hpp
