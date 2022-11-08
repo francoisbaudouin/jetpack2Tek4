@@ -7,7 +7,6 @@
 
 #include <filesystem>
 #include <fstream>
-#include <regex>
 #include <string>
 #include "../exception/Exception.hpp"
 #include "Loadconfig.hpp"
@@ -20,19 +19,22 @@ namespace configuration
 
     Loadconfig::~Loadconfig() {}
 
-    bool Loadconfig::setServerData()
+    bool Loadconfig::setServerData(std::string line, std::regex regex)
     {
-        auto it = _functPtr.find("");
+        auto it = _functPtr.find("line");
+
+        if (it == it->end())
         return (true);
     }
 
     void Loadconfig::load_data(std::fstream configFile)
     {
         std::string line;
+        std::regex const regex("([a-z]*)=([a-z]*)");
 
         while (std::getline(configFile, line)) {
             if (line.compare("[server]"))
-                setServerData();
+                setServerData(line, regex);
         }
     }
 

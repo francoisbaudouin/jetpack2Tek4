@@ -10,6 +10,7 @@
 
 #include <functional>
 #include <map>
+#include <regex>
 #include <string>
 #include <unordered_map>
 
@@ -26,11 +27,13 @@ namespace configuration
         /**
          * @brief Set the Server Data object
          *
-         * @param it
-         * @return true
-         * @return false
+         * @param line Contains line data from config.ini
+         * @param regex use following regular expression patern ([a-z]*)=([a-z]*) to approve line format
+         * @return true In case if data is allowed
+         * @return false In case if data dosn't allowed
+         * @throw Data wich does't provice here
          */
-        bool setServerData();
+        bool setServerData(std::string line, std::regex regex);
 
         /**
          * @brief Funct wich return true or false if configuration file
