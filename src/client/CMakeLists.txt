@@ -4,7 +4,8 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/client)
 set(TARGET_NAME r-type_client)
 
 find_package(Threads REQUIRED)
-#find_package(Boost REQUIRED)
+
+# find_package(Boost REQUIRED)
 include(CompilerFlags)
 
 set(SRC
@@ -16,13 +17,12 @@ set(SRC
 )
 set(INCDIRS ${INCROOT})
 
-#set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
+set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")
 
-#set_target_properties(${TARGET}
-#    PROPERTIES
-#    RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/
-#)
-
+# set_target_properties(${TARGET}
+# PROPERTIES
+# RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/
+# )
 add_subdirectory(ecs)
 
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
@@ -33,15 +33,14 @@ target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::asio)
 target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::boost)
 
 target_include_directories(${TARGET_NAME} PUBLIC
-            ${CONAN_INCLUDE_DIRS_SFML}
-            ${CONAN_INCLUDE_DIRS_BOOST}
-            ${CONAN_INCLUDE_DIRS_ASIO}
-            )
+  ${CONAN_INCLUDE_DIRS_SFML}
+  ${CONAN_INCLUDE_DIRS_BOOST}
+  ${CONAN_INCLUDE_DIRS_ASIO}
+)
 
 add_custom_command(TARGET ${TARGET_NAME}
   POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:${TARGET_NAME}> ${PROJECT_SOURCE_DIR})
 
-  include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
-  conan_basic_setup(TARGETS)
-  
+include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
+conan_basic_setup(TARGETS)
