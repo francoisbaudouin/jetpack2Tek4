@@ -19,27 +19,37 @@ namespace ecs
          *
          * @param entityId : related entity id
          * @param texture : wanted texture for the DrawableClientSide entity
+         * @param scale : rendering scale
          */
-        DrawableClientSide(const size_t entityId, const sf::Texture &texture);
-
-        ~DrawableClientSide();
-
+        DrawableClientSide(const size_t entityId, const sf::Texture &texture, float scale = 1);
         /**
          * @brief Get the entity Sprite
          *
          * @return reference to the sf::Sprite of the entity
          */
         sf::Sprite &getSprite();
-
         /**
          * @brief Set the entity Sprite
          *
          * @param sprite : sprite to set
          */
         void setSprite(const sf::Sprite &sprite);
+        /**
+         * @brief Get the rendering scale
+         *
+         * @return a vector of float representing the rendering scale in abscissa and in ordinate
+         */
+        sf::Vector2f getScale() const;
+        /**
+         * @brief Set the rendering scale
+         *
+         * @param scale new rendering scale
+         */
+        void setScale(const float scale);
+        ~DrawableClientSide();
 
-      protected:
       private:
+        sf::Vector2f _scale;
         sf::Sprite _sprite;
     };
 } // namespace ecs

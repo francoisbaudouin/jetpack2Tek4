@@ -4,23 +4,11 @@
 ** File description:
 ** main
 */
-#include <boost/thread/thread.hpp>
-
-#include "Client.hpp"
-
-void communicate(rtype::Client *client)
-{
-    client->connectToServer();
-
-    return;
-}
+#include "scenes/SceneManager.hpp"
 
 int main(void)
 {
-    rtype::Client client;
-    boost::thread communicator(communicate, &client);
-
-    communicator.join();
-
+    rtype::SceneManager sceneManager;
+    sceneManager.run();
     return 0;
 }

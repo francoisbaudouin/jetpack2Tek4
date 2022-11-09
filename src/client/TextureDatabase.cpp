@@ -20,16 +20,14 @@ std::string fileTraduction(std::string &fileName)
     return path.generic_string().c_str();
 }
 
-TextureDatabase::TextureDatabase()
-{
-    _configFilePath.push_back("src/client/configs/game/TexturesConfigs/TextureConfiguration.json");
-    _configFilePath.push_back("src/client/configs/menu/TextureConfigs/TextureConfiguration.json");
-}
+TextureDatabase::TextureDatabase() {}
 
-void TextureDatabase::onCall(const size_t sceneId)
+void TextureDatabase::onCall(const std::string &sceneName)
 {
     boost::property_tree::ptree jsonFile;
-    boost::property_tree::read_json(_configFilePath[sceneId], jsonFile);
+    std::string scenePathString = "src/client/configs/" + sceneName + "/TextureConfigs/TextureConfiguration.json";
+    std::string scenePath = fileTraduction(scenePathString);
+    boost::property_tree::read_json(scenePath, jsonFile);
 
     for (auto line : jsonFile) {
         _textureMap[line.first].loadFromFile(fileTraduction(line.second.data()));
