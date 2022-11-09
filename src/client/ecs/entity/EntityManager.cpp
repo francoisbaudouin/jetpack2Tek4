@@ -9,12 +9,6 @@
 
 using namespace ecs;
 
-size_t getNewEntityId()
-{
-    static size_t id = 0;
-    return (id++);
-}
-
 EntityManager::EntityManager() : _entities(), _id(0) {}
 
 EntityManager::~EntityManager() {}
