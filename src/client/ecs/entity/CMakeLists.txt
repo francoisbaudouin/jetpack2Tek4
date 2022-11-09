@@ -7,6 +7,10 @@ set(SRC
     ${SRCROOT}/Entity.hpp
     ${SRCROOT}/EntityManager.cpp
     ${SRCROOT}/EntityManager.hpp
+    ${SRCROOT}/EntityGenerator.cpp
+    ${SRCROOT}/EntityGenerator.hpp
+    ${SRCROOT}/componentAdder.cpp
+    ${SRCROOT}/componentAdder.hpp
     PARENT_SCOPE
 )
 
