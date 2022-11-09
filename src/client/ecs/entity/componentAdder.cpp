@@ -5,6 +5,8 @@
 ** componentAdder
 */
 
+#include <unordered_map>
+
 #include "componentAdder.hpp"
 
 #include "../components/Controllable.hpp"

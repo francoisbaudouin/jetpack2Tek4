@@ -8,15 +8,10 @@
 #ifndef COMPONENTADDER_HPP_
 #define COMPONENTADDER_HPP_
 
-#include <functional>
-#include <unordered_map>
-
 #include "Entity.hpp"
 
 namespace ecs
 {
-    using functionType = std::function<void(Entity &)>;
-
     /**
      * @brief add the Controllable Compoenent passed as parameter
      *
