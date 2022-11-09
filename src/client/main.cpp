@@ -6,9 +6,14 @@
 */
 #include "scenes/SceneManager.hpp"
 
+#include "Client.hpp"
+
 int main(void)
 {
-    rtype::SceneManager sceneManager;
-    sceneManager.run();
+    rtype::Client client;
+    // rtype::SceneManager sceneManager;
+    // sceneManager.run();
+    client.connectToServer();
+
     return 0;
 }

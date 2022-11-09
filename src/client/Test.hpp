@@ -8,6 +8,7 @@
 #define TEST_HPP_
 
 #include <iostream>
+#include <vector>
 
 class Test {
   public:
@@ -25,12 +26,15 @@ class Test {
 
         return in;
     }
+    int getValue() const;
+    std::string getName() const;
     ~Test();
 
   protected:
   private:
     int _value;
     std::string _name;
+    std::vector<std::string> _tab;
 };
 
 #endif /* !TEST_HPP_ */

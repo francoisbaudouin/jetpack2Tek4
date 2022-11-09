@@ -9,8 +9,14 @@
 
 Test::Test()
 {
-    _value = 4;
-    _name = "Tom";
+    _value = 5;
+    _name = "Thomas";
+    _tab.push_back("salut");
+    _tab.push_back("Thomas");
 }
+
+int Test::getValue() const { return this->_value; }
+
+std::string Test::getName() const { return this->_name; }
 
 Test::~Test() {}

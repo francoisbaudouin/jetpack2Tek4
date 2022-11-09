@@ -7,10 +7,8 @@
 
 #include "Test.hpp"
 
-Test::Test()
+Test::Test(const std::string &name, int value) : _name(name), _value(value)
 {
-    _value = 4;
-    _name = "Tom";
 }
 
 Test::~Test() {}
