@@ -36,6 +36,13 @@ namespace ecs
      * @param entity : entity to add
      */
     void addWeapon(Entity &entity);
+    /**
+     * @brief add the TextBox Component passed as parameter
+     * 
+     * @param entity : entity to add
+     */
+    void addTextBox(Entity &entity);
+
 } // namespace ecs
 
 #endif /* !COMPONENTADDER_HPP_ */

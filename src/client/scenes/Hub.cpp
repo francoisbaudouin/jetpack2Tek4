@@ -41,18 +41,29 @@ void Hub::OnActivate()
 {
     /* wa are going to create different entity here (with they're components),
     dont forget to init the textureDatabase of the corresponding scene */
-    float scale = 4;
     _sceneSystem.getTextureDatabase()->onCall(this->getName());
-    auto &textBox = _sceneSystem.getEcs()->getEntityManager(this->getName()).createEntity();
-    auto &hube = _sceneSystem.getEcs()->getEntityManager(this->getName()).createEntity();
-    hube.addComponent<Position>(25, 25);
-    hube.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("HubForm"), scale);
-    textBox.addComponent<Position>(hube.getComponent<Position>().getX() + 25 * scale, hube.getComponent<Position>().getY() + 25 * scale);
-    textBox.addComponent<HitBox>(100 * scale, 20 * scale);
-    textBox.addComponent<TextBox>();
-    textBox.getComponent<TextBox>().setFont("assets/Boxy-Bold.ttf");
-    textBox.getComponent<TextBox>().setFontSize(15 * scale);
-    textBox.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("PlaceHolder"), scale);
+    auto &ecs = _sceneSystem.getEcs();
+    auto &hereManager = _sceneSystem.getEcs()->getEntityManager(this->getName());
+
+    auto &ipPlaceholder = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Placeholder"));
+    auto &portPlaceholder = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Placeholder"));
+    auto &hube = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Default"));
+
+    hube.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("HubForm"));
+    ipPlaceholder.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("PlaceHolder"));
+    portPlaceholder.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("PlaceHolder"));
+
+    hube.getComponent<Position>().setPosition(100, 100);
+
+    ipPlaceholder.getComponent<HitBox>().setHitBox(100, 20);
+    ipPlaceholder.getComponent<TextBox>().setFontSize(10);
+    ipPlaceholder.getComponent<Position>().setPosition(
+        hube.getComponent<Position>().getX() + 25, hube.getComponent<Position>().getY() + 10);
+
+    portPlaceholder.getComponent<HitBox>().setHitBox(100, 20);
+    portPlaceholder.getComponent<TextBox>().setFontSize(10);
+    portPlaceholder.getComponent<Position>().setPosition(
+        hube.getComponent<Position>().getX() + 25, hube.getComponent<Position>().getY() + 35);
 }
 
 void Hub::OnDeactivate() {}

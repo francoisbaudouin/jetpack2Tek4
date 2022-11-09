@@ -11,6 +11,7 @@
 #include <SFML/Graphics.hpp>
 #include "IScene.hpp"
 #include "SceneSystem.hpp"
+#include "../ecs/entity/EntityGenerator.hpp"
 
 namespace rtype
 {
@@ -29,6 +30,7 @@ namespace rtype
         rtype::SceneSystem &_sceneSystem;
         sf::RenderWindow &_window;
         std::string _sceneName;
+        ecs::EntityGenerator _entityGenerator;
 
       private:
     };

@@ -26,7 +26,7 @@ namespace ecs
          * @param scale scale of the font
          * @param maxLenght max lenght of the string that you can type
          */
-        TextBox(const size_t entityId, const std::string &fontPath = "assets/arial.ttf", const size_t fontSize = 20,
+        TextBox(const size_t entityId, const std::string &fontPath = "assets/Boxy-Bold.ttf", const size_t fontSize = 20,
             const std::string &baseString = "Default", const sf::Color color = sf::Color::Black, const float scale = 1,
             const size_t maxLenght = 20);
         ~TextBox();
