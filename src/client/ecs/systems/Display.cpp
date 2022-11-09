@@ -24,5 +24,11 @@ void Display::run(const std::string &sceneName, sf::RenderWindow &window)
             drawable.getSprite().setPosition(position.getX(), position.getY());
             window.draw(drawable.getSprite());
         }
+        if (entity.second->hasComponent<TextBox>() && entity.second->hasComponent<Position>()) {
+            TextBox &text = entity.second->getComponent<TextBox>();
+            Position &position = entity.second->getComponent<Position>();
+            text.getText().setPosition(position.getX(), position.getY());
+            window.draw(text.getText());
+        }
     }
 }

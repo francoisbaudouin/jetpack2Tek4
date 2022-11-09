@@ -19,6 +19,8 @@ set(SRC
     ${SRCROOT}/Fire.hpp
     ${SRCROOT}/ColliderReaction.cpp
     ${SRCROOT}/ColliderReaction.hpp
+    ${SRCROOT}/WriteInBox.hpp
+    ${SRCROOT}/WriteInBox.cpp
     ${SRCROOT}/ISystem.hpp
     ${SRCROOT}/Move.cpp
     ${SRCROOT}/Move.hpp

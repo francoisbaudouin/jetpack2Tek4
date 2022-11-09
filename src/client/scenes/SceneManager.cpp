@@ -16,9 +16,10 @@ SceneManager::~SceneManager() {}
 void SceneManager::run()
 {
     sf::Event event;
-    Hub hubScene(_sceneSystem, _window);
+    Hub hubScene(_sceneSystem, _window, event);
     std::shared_ptr<Hub> sharedHubScene = std::make_shared<Hub>(hubScene);
-    _sceneSystem.Add(sharedHubScene);
+    std::string tmpStringScene = _sceneSystem.Add(sharedHubScene);
+    _sceneSystem.SwitchTo(tmpStringScene);
     // size_t messageLength = 0;
 
     while (_window.isOpen()) {
@@ -29,8 +30,9 @@ void SceneManager::run()
         while (_window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 _window.close();
+            _sceneSystem.Update();
         }
-        _sceneSystem.Update();
+        _sceneSystem.Draw();
         _window.display();
     }
 }
