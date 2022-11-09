@@ -1,4 +1,5 @@
 [generators]
+    visual_studio
     MSBuildToolchain
     MSBuildDeps
     cmake
