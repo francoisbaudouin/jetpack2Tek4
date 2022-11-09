@@ -17,6 +17,7 @@ var annotated_dup =
       [ "Ecs", "classecs_1_1_ecs.html", "classecs_1_1_ecs" ],
       [ "Entity", "classecs_1_1_entity.html", "classecs_1_1_entity" ],
       [ "EntityAlreadyExisting", "classecs_1_1_entity_already_existing.html", "classecs_1_1_entity_already_existing" ],
+      [ "EntityGenerator", "classecs_1_1_entity_generator.html", "classecs_1_1_entity_generator" ],
       [ "EntityManager", "classecs_1_1_entity_manager.html", "classecs_1_1_entity_manager" ],
       [ "EntityManagerAlreadyExisting", "classecs_1_1_entity_manager_already_existing.html", "classecs_1_1_entity_manager_already_existing" ],
       [ "EntityManagerNotExisting", "classecs_1_1_entity_manager_not_existing.html", "classecs_1_1_entity_manager_not_existing" ],
