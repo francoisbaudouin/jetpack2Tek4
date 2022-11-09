@@ -9,7 +9,7 @@
 #define DISPLAY_HPP_
 
 #include <SFML/Graphics.hpp>
-#include "../components/Drawable.hpp"
+#include "../components/DrawableClientSide.hpp"
 #include "../components/Position.hpp"
 #include "ASystem.hpp"
 
@@ -30,10 +30,10 @@ namespace ecs
         /**
          * @brief run the display system
          *
-         * @param sceneId : id of the scene to select the entityManager related
+         * @param sceneName : Name of the scene to select the entityManager related
          * @param window reference to the SFML game's window
          */
-        void run(const size_t sceneId, sf::RenderWindow &window);
+        void run(const std::string &sceneName, sf::RenderWindow &window);
     };
 } // namespace ecs
 

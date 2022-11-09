@@ -18,22 +18,22 @@ Ecs::~Ecs()
     this->clearSystems();
 }
 
-EntityManager &Ecs::createEntityManager(const size_t sceneId)
+EntityManager &Ecs::createEntityManager(const std::string &sceneName)
 {
     EntityManager *manager;
 
-    if (_entityManagers.contains(sceneId))
-        throw EntityManagerAlreadyExisting(sceneId);
+    if (_entityManagers.contains(sceneName))
+        throw EntityManagerAlreadyExisting(sceneName);
     manager = new EntityManager();
-    _entityManagers.insert({sceneId, manager});
+    _entityManagers.insert({sceneName, manager});
     return (*manager);
 }
 
-EntityManager &Ecs::getEntityManager(const size_t sceneId)
+EntityManager &Ecs::getEntityManager(const std::string &sceneName)
 {
-    if (!_entityManagers.contains(sceneId))
-        throw EntityManagerNotExisting(sceneId);
-    return (*_entityManagers.at(sceneId));
+    if (!_entityManagers.contains(sceneName))
+        throw EntityManagerNotExisting(sceneName);
+    return (*_entityManagers.at(sceneName));
 }
 
 void Ecs::clearEntityManagers()
