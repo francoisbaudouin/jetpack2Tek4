@@ -19,25 +19,25 @@ namespace ecs
 
     /**
      * @brief add the Controllable Compoenent passed as parameter
-     * 
+     *
      * @param entity : entity to add
      */
     void addControllable(Entity &entity);
     /**
      * @brief add the HitBox Compoenent passed as parameter
-     * 
+     *
      * @param entity : entity to add
      */
     void addHitBox(Entity &entity);
     /**
      * @brief add the Velocity Compoenent passed as parameter
-     * 
+     *
      * @param entity : entity to add
      */
     void addVelocity(Entity &entity);
     /**
      * @brief add the Weapon Compoenent passed as parameter
-     * 
+     *
      * @param entity : entity to add
      */
     void addWeapon(Entity &entity);

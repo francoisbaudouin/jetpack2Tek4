@@ -45,19 +45,19 @@ namespace ecs
         WeaponType getType() const;
         /**
          * @brief Set the Fire Rate of the weapon
-         * 
+         *
          * @param fireRate : new fireRate
          */
         void setFireRate(const float fireRate);
         /**
          * @brief Set the Damage of the weapon
-         * 
+         *
          * @param damage  : new damage
          */
         void setDamage(const float damage);
         /**
          * @brief Set the Type of the weapon
-         * 
+         *
          * @param type : new type
          */
         void setType(const WeaponType type);
