@@ -45,16 +45,13 @@ void Client::connectToServer()
 void Client::communicate(boost::asio::ip::udp::socket &socket)
 {
     Test test;
-    size_t messageLength = 0;
     std::stringstream stringStream;
-    std::string tmp;
 
-    std::cout << "yo" << std::endl;
     this->_sendBuffer = {{0}};
     while (RUNNING) {
         // fonction pour envoyer des infos au serveur à mettre ici
         socket.send_to(boost::asio::buffer(this->_sendBuffer), this->_receiverEndpoint);
-        messageLength = socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
+        socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
         // std::cout.write(this->_receiveBuffer.data(), messageLength);
         stringStream << this->_receiveBuffer.data();
         stringStream >> test;

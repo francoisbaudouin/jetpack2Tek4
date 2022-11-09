@@ -45,4 +45,3 @@ add_custom_command(TARGET ${TARGET_NAME}
 
   include(${PROJECT_SOURCE_DIR}/build/conanbuildinfo.cmake)
   conan_basic_setup(TARGETS)
-  

@@ -64,6 +64,11 @@ namespace rtype
          *
          */
         void connectToServer();
+        /**
+         * @brief Initiates and maintains a communication between the client and the server
+         * 
+         * @param socket Socket of the server
+         */
         void communicate(boost::asio::ip::udp::socket &socket);
         ~Client() = default;
 
