@@ -17,9 +17,7 @@ namespace ecs
     class Ecs {
       public:
         Ecs();
-
         ~Ecs();
-
         //              ENTITY MANAGEMENT
         /**
          * @brief Create a Entity Manager for the scene specified by it's Id
@@ -40,7 +38,6 @@ namespace ecs
          *
          */
         void clearEntityManagers();
-
         //              SYSTEM MANAGEMENT
         /**
          * @brief add a system to the ecs from the type specified, exception is thrown if the system already exist
@@ -63,7 +60,6 @@ namespace ecs
                 throw SystemNotCompatible(typeid(System).name());
             }
         }
-
         /**
          * @brief Get a system from the type specified, exception is thrown if the system doesn't exist
          *
@@ -76,7 +72,6 @@ namespace ecs
                 throw SystemNotExisting(typeid(System).name());
             return (*static_cast<System *>(_systems.at(std::type_index(typeid(System)))));
         }
-
         /**
          * @brief clear the system stocke in the ecs
          *
