@@ -23,7 +23,7 @@ Animation createAnimation(const boost::property_tree::ptree &jsonFile)
     Animation animation;
     AnimationFrame animationFrame;
     size_t id = 0;
-    size_t size;
+    size_t size = 0;
 
     for (auto iterator : jsonFile) {
         if (id != 0)
