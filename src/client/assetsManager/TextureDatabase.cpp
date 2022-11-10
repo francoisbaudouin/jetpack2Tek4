@@ -9,23 +9,26 @@
 #include <boost/property_tree/json_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
 
+#include "../ecs/exceptions/Exception.hpp"
 #include "TextureDatabase.hpp"
-#include "ecs/exceptions/Exception.hpp"
+
+namespace rtype
+{
+    std::string fileTraduction(std::string &fileName)
+    {
+        std::filesystem::path path(fileName);
+        return path.generic_string().c_str();
+    }
+} // namespace rtype
 
 using namespace rtype;
-
-std::string fileTraduction(std::string &fileName)
-{
-    std::filesystem::path path(fileName);
-    return path.generic_string().c_str();
-}
 
 TextureDatabase::TextureDatabase() {}
 
 void TextureDatabase::onCall(const std::string &sceneName)
 {
     boost::property_tree::ptree jsonFile;
-    std::string scenePathString = "src/client/configs/" + sceneName + "/TextureConfigs/TextureConfiguration.json";
+    std::string scenePathString = "assets/configFiles/" + sceneName + "/Textures.json";
     std::string scenePath = fileTraduction(scenePathString);
     boost::property_tree::read_json(scenePath, jsonFile);
 

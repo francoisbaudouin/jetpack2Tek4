@@ -48,10 +48,10 @@ void Hub::OnActivate()
     _sceneSystem.getTextureDatabase()->onCall(this->getName());
     auto &hereManager = _sceneSystem.getEcs()->getEntityManager(this->getName());
 
-    auto &ipPlaceholder = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Placeholder"));
-    auto &portPlaceholder = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Placeholder"));
-    auto &confirmButton = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Button"));
-    auto &hube = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Default"));
+    auto &ipPlaceholder = hereManager.getEntity(ecs::generateEntity(hereManager, "Placeholder"));
+    auto &portPlaceholder = hereManager.getEntity(ecs::generateEntity(hereManager, "Placeholder"));
+    auto &confirmButton = hereManager.getEntity(ecs::generateEntity(hereManager, "Button"));
+    auto &hube = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
 
     hube.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("HubForm"), _scale);
     ipPlaceholder.addComponent<DrawableClientSide>(
