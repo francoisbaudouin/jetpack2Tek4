@@ -1,10 +1,10 @@
 var hierarchy =
 [
+    [ "rtype::AnimationDatabase", "classrtype_1_1_animation_database.html", null ],
     [ "rtype::Communicator", "classrtype_1_1_communicator.html", null ],
     [ "ecs::Device", "structecs_1_1_device.html", null ],
     [ "ecs::Ecs", "classecs_1_1_ecs.html", null ],
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
-    [ "ecs::EntityGenerator", "classecs_1_1_entity_generator.html", null ],
     [ "ecs::EntityManager", "classecs_1_1_entity_manager.html", null ],
     [ "exception", null, [
       [ "ecs::Exception", "classecs_1_1_exception.html", [

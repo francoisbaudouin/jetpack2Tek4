@@ -19,7 +19,6 @@ var annotated_dup =
       [ "Ecs", "classecs_1_1_ecs.html", "classecs_1_1_ecs" ],
       [ "Entity", "classecs_1_1_entity.html", "classecs_1_1_entity" ],
       [ "EntityAlreadyExisting", "classecs_1_1_entity_already_existing.html", "classecs_1_1_entity_already_existing" ],
-      [ "EntityGenerator", "classecs_1_1_entity_generator.html", "classecs_1_1_entity_generator" ],
       [ "EntityManager", "classecs_1_1_entity_manager.html", "classecs_1_1_entity_manager" ],
       [ "EntityManagerAlreadyExisting", "classecs_1_1_entity_manager_already_existing.html", "classecs_1_1_entity_manager_already_existing" ],
       [ "EntityManagerNotExisting", "classecs_1_1_entity_manager_not_existing.html", "classecs_1_1_entity_manager_not_existing" ],
@@ -49,6 +48,7 @@ var annotated_dup =
       [ "WriteInBox", "classecs_1_1_write_in_box.html", "classecs_1_1_write_in_box" ]
     ] ],
     [ "rtype", null, [
+      [ "AnimationDatabase", "classrtype_1_1_animation_database.html", "classrtype_1_1_animation_database" ],
       [ "AScene", "classrtype_1_1_a_scene.html", "classrtype_1_1_a_scene" ],
       [ "Communicator", "classrtype_1_1_communicator.html", "classrtype_1_1_communicator" ],
       [ "GameScene", "classrtype_1_1_game_scene.html", "classrtype_1_1_game_scene" ],

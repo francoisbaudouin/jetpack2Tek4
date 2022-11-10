@@ -106,28 +106,13 @@ $(document).ready(function(){initNavTree('_entity_generator_8hpp_source.html',''
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">using</span> functionType = std::function&lt;void(Entity &amp;)&gt;;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classecs_1_1_entity_generator.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classecs_1_1_entity_generator.html">EntityGenerator</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classecs_1_1_entity_generator.html">EntityGenerator</a>();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        ~<a class="code" href="classecs_1_1_entity_generator.html">EntityGenerator</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_entity_generator.html#ab1951d0a296711150f4678b37804719e">addComponent</a>(<a class="code" href="classecs_1_1_entity.html">Entity</a> &amp;entity, <span class="keyword">const</span> std::string &amp;component);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="classecs_1_1_entity_generator.html#a7857bd11abcdfb57dffdea525cc68774">createEntity</a>(<a class="code" href="classecs_1_1_entity_manager.html">EntityManager</a> &amp;manager, <span class="keyword">const</span> std::string &amp;type);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    };</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;} <span class="comment">// namespace ecs</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ENTITYGENERATOR_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">void</span> addPattern(Entity &amp;entity, <span class="keyword">const</span> std::string &amp;component);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">size_t</span> generateEntity(EntityManager &amp;manager, <span class="keyword">const</span> std::string &amp;type);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;} <span class="comment">// namespace ecs</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ENTITYGENERATOR_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassecs_1_1_entity_manager_html"><div class="ttname"><a href="classecs_1_1_entity_manager.html">ecs::EntityManager</a></div><div class="ttdef"><b>Definition:</b> EntityManager.hpp:17</div></div>
-<div class="ttc" id="aclassecs_1_1_entity_html_a8c4060c2f409a17e370e92680a3b79eb"><div class="ttname"><a href="classecs_1_1_entity.html#a8c4060c2f409a17e370e92680a3b79eb">ecs::Entity::addComponent</a></div><div class="ttdeci">Component &amp; addComponent(ComponentArguments &amp;&amp;...arguments)</div><div class="ttdoc">create a component from the type of the template</div><div class="ttdef"><b>Definition:</b> Entity.hpp:39</div></div>
-<div class="ttc" id="aclassecs_1_1_entity_manager_html_ada33886e6853e0d6ab9e562996b2cdf2"><div class="ttname"><a href="classecs_1_1_entity_manager.html#ada33886e6853e0d6ab9e562996b2cdf2">ecs::EntityManager::createEntity</a></div><div class="ttdeci">Entity &amp; createEntity()</div><div class="ttdoc">Create an Entity object.</div><div class="ttdef"><b>Definition:</b> EntityManager.cpp:18</div></div>
-<div class="ttc" id="aclassecs_1_1_position_html"><div class="ttname"><a href="classecs_1_1_position.html">ecs::Position</a></div><div class="ttdef"><b>Definition:</b> Position.hpp:15</div></div>
-<div class="ttc" id="aclassecs_1_1_entity_html_ada5a5c0f0ae1aef82289a1f145e027a3"><div class="ttname"><a href="classecs_1_1_entity.html#ada5a5c0f0ae1aef82289a1f145e027a3">ecs::Entity::getId</a></div><div class="ttdeci">size_t getId() const</div><div class="ttdoc">Get the Id of the entity.</div><div class="ttdef"><b>Definition:</b> Entity.cpp:24</div></div>
-<div class="ttc" id="aclassecs_1_1_entity_generator_html_a7857bd11abcdfb57dffdea525cc68774"><div class="ttname"><a href="classecs_1_1_entity_generator.html#a7857bd11abcdfb57dffdea525cc68774">ecs::EntityGenerator::createEntity</a></div><div class="ttdeci">size_t createEntity(EntityManager &amp;manager, const std::string &amp;type)</div><div class="ttdoc">Create an Entity and add components needed by the type.</div><div class="ttdef"><b>Definition:</b> EntityGenerator.cpp:39</div></div>
-<div class="ttc" id="aclassecs_1_1_entity_generator_html_ab1951d0a296711150f4678b37804719e"><div class="ttname"><a href="classecs_1_1_entity_generator.html#ab1951d0a296711150f4678b37804719e">ecs::EntityGenerator::addComponent</a></div><div class="ttdeci">void addComponent(Entity &amp;entity, const std::string &amp;component)</div><div class="ttdoc">add the component specified to the entity passed as parameter</div><div class="ttdef"><b>Definition:</b> EntityGenerator.cpp:37</div></div>
-<div class="ttc" id="aclassecs_1_1_entity_generator_html"><div class="ttname"><a href="classecs_1_1_entity_generator.html">ecs::EntityGenerator</a></div><div class="ttdef"><b>Definition:</b> EntityGenerator.hpp:19</div></div>
-<div class="ttc" id="aclassecs_1_1_entity_html"><div class="ttname"><a href="classecs_1_1_entity.html">ecs::Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.hpp:20</div></div>
-<div class="ttc" id="aclassecs_1_1_type_html"><div class="ttname"><a href="classecs_1_1_type.html">ecs::Type</a></div><div class="ttdef"><b>Definition:</b> Type.hpp:16</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

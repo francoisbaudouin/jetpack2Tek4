@@ -12,7 +12,7 @@ var searchData=
   ['connecttoserver_215',['connectToServer',['../classrtype_1_1_communicator.html#a4559f5543a50f7c6af5ef4a6a683e0d2',1,'rtype::Communicator']]],
   ['controll_216',['Controll',['../classecs_1_1_controll.html#a74ff3ca8a36fdf1e158f8d0806d2c83c',1,'ecs::Controll']]],
   ['controllable_217',['Controllable',['../classecs_1_1_controllable.html#a4c5a4e329cf913482ad1a8331faba9b6',1,'ecs::Controllable']]],
-  ['createentity_218',['createEntity',['../classecs_1_1_entity_generator.html#a7857bd11abcdfb57dffdea525cc68774',1,'ecs::EntityGenerator::createEntity()'],['../classecs_1_1_entity_manager.html#ada33886e6853e0d6ab9e562996b2cdf2',1,'ecs::EntityManager::createEntity()']]],
+  ['createentity_218',['createEntity',['../classecs_1_1_entity_manager.html#ada33886e6853e0d6ab9e562996b2cdf2',1,'ecs::EntityManager']]],
   ['createentitymanager_219',['createEntityManager',['../classecs_1_1_ecs.html#a1d2439393f90045ea766b71a8e3bd4c2',1,'ecs::Ecs']]],
   ['createprojectile_220',['createProjectile',['../classecs_1_1_fire.html#abfb244a38bdca4b93a6a3c41aaeb96fb',1,'ecs::Fire']]],
   ['createsystem_221',['createSystem',['../classecs_1_1_ecs.html#a2c8d81cf49248a56ac6a0429e6a0e976',1,'ecs::Ecs']]]
