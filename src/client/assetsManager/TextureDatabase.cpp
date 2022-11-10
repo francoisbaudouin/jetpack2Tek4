@@ -19,7 +19,7 @@ namespace rtype
         std::filesystem::path path(fileName);
         return path.generic_string().c_str();
     }
-} // namespace rtyep
+} // namespace rtype
 
 using namespace rtype;
 

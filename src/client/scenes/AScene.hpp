@@ -31,6 +31,7 @@ namespace rtype
         sf::RenderWindow &_window;
         std::string _sceneName;
         float _scale;
+
       private:
     };
 } // namespace rtype
