@@ -10,8 +10,8 @@
 using namespace ecs;
 using namespace rtype;
 
-MainMenu::MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName)
-    : AScene(sceneSystem, window, sceneName)
+MainMenu::MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale)
+    : AScene(sceneSystem, window, sceneName, scale)
 {
 }
 
