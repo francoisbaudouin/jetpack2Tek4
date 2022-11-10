@@ -14,11 +14,11 @@ namespace ecs
 {
     class Selectable : public AComponent {
       public:
-      /**
-       * @brief make an entity selectable when clicked
-       * 
-       * @param entityId id of the related entity
-       */
+        /**
+         * @brief make an entity selectable when clicked
+         *
+         * @param entityId id of the related entity
+         */
         Selectable(const size_t entityId);
         ~Selectable();
         /**
