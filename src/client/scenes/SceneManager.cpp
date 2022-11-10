@@ -6,16 +6,21 @@
 */
 
 #include "SceneManager.hpp"
+#include "Hub.hpp"
 
 using namespace rtype;
 
-SceneManager::SceneManager() : _window(sf::VideoMode(640, 360), "Subaquatica") {}
+SceneManager::SceneManager() : _scale(3), _window(sf::VideoMode(640 * _scale, 360 * _scale), "Subaquatica") {}
 
 SceneManager::~SceneManager() {}
 
 void SceneManager::run()
 {
     sf::Event event;
+    Hub hubScene(_sceneSystem, _window, event, "Hub", _scale);
+    std::shared_ptr<Hub> sharedHubScene = std::make_shared<Hub>(hubScene);
+    std::string tmpStringScene = _sceneSystem.Add(sharedHubScene);
+    _sceneSystem.SwitchTo(tmpStringScene);
     // size_t messageLength = 0;
 
     while (_window.isOpen()) {
@@ -26,8 +31,10 @@ void SceneManager::run()
         while (_window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
                 _window.close();
+            _sceneSystem.Update();
         }
-        _sceneSystem.Update();
+        _sceneSystem.Draw();
+        // receive data
         _window.display();
     }
 }

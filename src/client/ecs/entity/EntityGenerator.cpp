@@ -15,13 +15,19 @@ using namespace ecs;
 
 static std::unordered_map<std::string, std::vector<std::string>> types = {
     {"Player", {"Controllable", "HitBox", "Velocity", "Weapon"}}, {"Enemy", {"HitBox", "Velocity"}},
-    {"PlayerProjectile", {"HitBox", "HitBox", "Velocity"}}};
+    {"PlayerProjectile", {"HitBox", "Velocity"}},
+    {"Placeholder", {"HitBox", "TextBox", "Selectable", "Text", "Clickable"}},
+    {"Button", {"HitBox", "Clickable", "Text"}}, {"Default", {}}};
 
 static std::unordered_map<std::string, functionType> componentAdder = {
     {"Controllable", addControllable},
     {"HitBox", addHitBox},
     {"Velocity", addVelocity},
     {"Weapon", addWeapon},
+    {"TextBox", addTextBox},
+    {"Clickable", addClickable},
+    {"Text", addText},
+    {"Selectable", addSelectable},
 };
 
 EntityGenerator::EntityGenerator() {}

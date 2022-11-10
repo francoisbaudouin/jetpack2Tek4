@@ -1,30 +1,31 @@
 /*
 ** EPITECH PROJECT, 2022
-** RTypeMirror
+** jetpack2Tek4
 ** File description:
-** MainMenu
+** Hub
 */
 
-#ifndef MAINMENU_HPP_
-#define MAINMENU_HPP_
+#ifndef HUB_HPP_
+#define HUB_HPP_
 
 #include "AScene.hpp"
-#include "SFML/Graphics.hpp"
 
 namespace rtype
 {
-    class MainMenu : public AScene {
+    class Hub : public AScene {
       public:
         /**
-         * @brief Construct a new MainMenu Scene
+         * @brief Construct a new Hub Scene
          *
          * @param sceneSystem scene system that will manage scenes
          * @param window the window where the scene will be displayed
          * @param sceneName name of the scene
          * @param scale scale of the scene
+         *
          */
-        MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale);
-        ~MainMenu();
+        Hub(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
+            const float scale);
+        ~Hub();
         /**
          * @brief function called at creation of the scene (Add of sceneSystem)
          *
@@ -54,7 +55,10 @@ namespace rtype
         void Draw() override;
 
       private:
+        sf::Event &_event;
+        std::string _ipServer;
+        std::string _portServer;
     };
 } // namespace rtype
 
-#endif /* !MAINMENU_HPP_ */
+#endif /* !HUB_HPP_ */

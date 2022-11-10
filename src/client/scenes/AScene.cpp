@@ -9,8 +9,8 @@
 
 using namespace rtype;
 
-AScene::AScene(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName)
-    : _sceneSystem(sceneSystem), _window(window), _sceneName(sceneName)
+AScene::AScene(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale)
+    : _sceneSystem(sceneSystem), _window(window), _sceneName(sceneName), _scale(scale)
 {
 }
 
