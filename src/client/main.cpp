@@ -13,7 +13,8 @@ int main(void)
     // sceneManager.run();
     try {
         rtype::Communicator communicator;
-        boost::thread *communicationThread = new boost::thread(boost::bind(&rtype::Communicator::connectToServer, &communicator));
+        boost::thread *communicationThread =
+            new boost::thread(boost::bind(&rtype::Communicator::connectToServer, &communicator));
 
         communicationThread->join();
     } catch (std::exception &exception) {
