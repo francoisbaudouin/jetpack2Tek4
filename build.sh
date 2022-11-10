@@ -4,5 +4,5 @@ cd build
 conan install ../. --build=missing -c tools.system.package_manager:mode=install -c tools.system.package_manager:sudo=True
 cd ..
 cmake -B build/ -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=build/conan_paths.cmake
-cmake -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=Release --msvc_toolset=14.16 -DCMAKE_TOOLCHAIN_FILE=build/conan_paths.cmake
+cmake -G "Visual Studio 15 2017 Win64" -DCMAKE_BUILD_TYPE=Release --msvc
 cmake --build . -j
