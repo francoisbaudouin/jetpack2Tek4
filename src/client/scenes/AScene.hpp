@@ -9,9 +9,9 @@
 #define ASCENE_HPP_
 
 #include <SFML/Graphics.hpp>
+#include "../ecs/entity/EntityGenerator.hpp"
 #include "IScene.hpp"
 #include "SceneSystem.hpp"
-#include "../ecs/entity/EntityGenerator.hpp"
 
 namespace rtype
 {
