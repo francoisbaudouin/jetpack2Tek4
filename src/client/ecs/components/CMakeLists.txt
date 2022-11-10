@@ -22,8 +22,16 @@ set(SRC
     ${SRCROOT}/Weapon.hpp
     ${SRCROOT}/Type.cpp
     ${SRCROOT}/Type.hpp
+    ${SRCROOT}/TextBox.cpp
+    ${SRCROOT}/TextBox.hpp
     ${SRCROOT}/Controllable.cpp
     ${SRCROOT}/Controllable.hpp
+    ${SRCROOT}/Clickable.cpp
+    ${SRCROOT}/Clickable.hpp
+    ${SRCROOT}/Text.cpp
+    ${SRCROOT}/Text.hpp
+    ${SRCROOT}/Selectable.cpp
+    ${SRCROOT}/Selectable.hpp
     PARENT_SCOPE
 )
 

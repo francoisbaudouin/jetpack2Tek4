@@ -70,3 +70,13 @@ TextureNotInDatabase::TextureNotInDatabase(std::string const &type)
     : Exception("error 550: Texture " + type + " not exist in database, please check the configuration file")
 {
 }
+
+TextureNotLoadedSuccessfully::TextureNotLoadedSuccessfully(std::string const &type)
+    : Exception("error 551: Texture " + type + " not successefully loaded")
+{
+}
+
+FontNotLoadedSuccessfully::FontNotLoadedSuccessfully(std::string const &type)
+    : Exception("error 260: Font " + type + " not successefully loaded")
+{
+}
