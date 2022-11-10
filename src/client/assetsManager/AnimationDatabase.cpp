@@ -20,35 +20,35 @@ AnimationDatabase::~AnimationDatabase() {}
 
 Animation createAnimation(const boost::property_tree::ptree &jsonFile)
 {
-    Animation anim;
-    AnimationFrame animFrame;
+    Animation animation;
+    AnimationFrame animationFrame;
     size_t id = 0;
     size_t size;
 
-    for (auto it : jsonFile) {
+    for (auto iterator : jsonFile) {
         if (id != 0)
-            animFrame[id - 1] = it.second.get_value<float>();
+            animationFrame[id - 1] = iterator.second.get_value<float>();
         else
-            size = it.second.get_value<size_t>();
+            size = iterator.second.get_value<size_t>();
         id++;
     }
     for (id = 0; id < size; id++) {
-        anim.push_back(animFrame);
-        animFrame[0] += animFrame[2];
+        animation.push_back(animationFrame);
+        animationFrame[0] += animationFrame[2];
     }
-    return (anim);
+    return (animation);
 }
 
 Animations createEntityAnimations(const boost::property_tree::ptree &jsonFile)
 {
-    Animations anims;
+    Animations animations;
 
-    for (auto it2 : jsonFile) {
-        for (auto it3 : it2.second) {
-            anims.insert({it3.first, createAnimation(it3.second)});
+    for (auto iterator : jsonFile) {
+        for (auto iterator2 : iterator.second) {
+            animations.insert({iterator2.first, createAnimation(iterator2.second)});
         }
     }
-    return (anims);
+    return (animations);
 }
 
 void AnimationDatabase::onCall(const std::string &sceneName)
