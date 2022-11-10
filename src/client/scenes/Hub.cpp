@@ -101,7 +101,9 @@ void Hub::Update()
         _communicator->setIpAdress(_ipServer);
         _communicator->setPort(stoi(_portServer));
         _thread = std::make_shared<boost::thread>(boost::thread(boost::bind(&rtype::Communicator::connectToServer, _communicator)));
+        //while (1)
     }
+
 
     if (_sceneSystem.getEcs()->getEntityManager(this->getName()).getEntity(2).getComponent<Clickable>().isHovered()) {
         _sceneSystem.getEcs()

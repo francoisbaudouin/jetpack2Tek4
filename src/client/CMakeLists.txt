@@ -9,6 +9,7 @@ include(CompilerFlags)
 
 set(SRC
     ${SRC}
+    ${ecs_dir}
     ${SRCROOT}/Communicator.cpp
     ${INCROOT}/Communicator.hpp
     ${SRCROOT}/TextureDatabase.cpp
@@ -18,8 +19,8 @@ set(SRC
 )
 set(INCDIRS ${INCROOT})
 
-add_subdirectory(ecs)
 add_subdirectory(scenes)
+add_subdirectory(ecs)
 
 # set_target_properties(${TARGET}
 # PROPERTIES

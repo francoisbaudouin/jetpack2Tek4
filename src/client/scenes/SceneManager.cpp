@@ -31,6 +31,11 @@ void SceneManager::run()
                 _window.close();
             _sceneSystem.Update();
         }
+        _sceneSystem.getCurrentScene()->getCommunicator()->lockReceiveMutex();
+        if (_sceneSystem.getCurrentScene()->getCommunicator()->_receiveStream.str() == "NONE ") {
+            exit(0);
+        }
+        _sceneSystem.getCurrentScene()->getCommunicator()->unlockReceiveMutex();
         _sceneSystem.Draw();
         // receive data
         _window.display();

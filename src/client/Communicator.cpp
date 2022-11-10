@@ -5,12 +5,6 @@
 ** Communicator
 */
 #include "Communicator.hpp"
-#include "ecs/components/DrawableClientSide.hpp"
-#include "ecs/components/DrawableServerSide.hpp"
-#include "ecs/components/Position.hpp"
-#include "ecs/systems/Display.hpp"
-#include "ecs/systems/Input.hpp"
-
 #include "Test.hpp"
 
 using namespace rtype;
@@ -59,15 +53,12 @@ void Communicator::communicate(boost::asio::ip::udp::socket &socket)
         this->lockSendMutex();
         socket.send_to(boost::asio::buffer(this->_sendStream.str()), this->_receiverEndpoint);
         this->unlockSendMutex();
-        //receive
+        // receive
         this->lockReceiveMutex();
         this->_receiveStream.str(std::string());
         boost::array<char, 128> receiveBuffer = {{0}};
         socket.receive_from(boost::asio::buffer(receiveBuffer), this->_senderEndpoint);
         this->_receiveStream << receiveBuffer.data();
-        std::string tmp;
-        _receiveStream >> tmp;
-        std::cout << tmp;
         this->unlockReceiveMutex();
     }
 }

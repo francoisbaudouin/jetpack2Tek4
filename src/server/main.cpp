@@ -23,14 +23,11 @@ int main(void)
 
         while (1) {
             sharedServer->lockSendMutex();
-            sharedServer->_sendStream.str(std::string());
+            //sharedServer->_sendStream.str(std::string());
             //sharedServer->_sendStream << test << " " << test1 << " " << test2 << " ";
             sharedServer->unlockSendMutex();
             sharedServer->lockReceiveMutex();
-            std::string tmp;
-            sharedServer->_receiveStream >> tmp;
-            if (tmp.size() > 0)
-                std::cout << tmp << std::endl;
+            std::cout << sharedServer->_receiveStream.str() << std::endl;
             sharedServer->unlockReceiveMutex();    
         }
         communicationThread->join();
