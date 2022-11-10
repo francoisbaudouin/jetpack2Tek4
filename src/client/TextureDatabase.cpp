@@ -30,7 +30,11 @@ void TextureDatabase::onCall(const std::string &sceneName)
     boost::property_tree::read_json(scenePath, jsonFile);
 
     for (auto line : jsonFile) {
-        _textureMap[line.first].loadFromFile(fileTraduction(line.second.data()));
+        sf::Texture tmpTexture;
+        if (tmpTexture.loadFromFile(fileTraduction(line.second.data())) != true) {
+            throw ecs::TextureNotLoadedSuccessfully(fileTraduction(line.second.data()));
+        } else
+            _textureMap[line.first].loadFromFile(fileTraduction(line.second.data()));
     }
 }
 

@@ -6,6 +6,7 @@
 */
 
 #include "SceneManager.hpp"
+#include "Hub.hpp"
 
 using namespace rtype;
 

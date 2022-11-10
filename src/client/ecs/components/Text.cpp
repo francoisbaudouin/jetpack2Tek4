@@ -6,7 +6,7 @@
 */
 
 #include "Text.hpp"
-#include <iostream>
+#include "../exceptions/Exception.hpp"
 
 using namespace ecs;
 
@@ -14,9 +14,8 @@ Text::Text(const size_t entityId, const std::string &fontPath, const size_t font
     const sf::Color color, const float scale)
     : AComponent(entityId), _textColor(color)
 {
-    if (!_font.loadFromFile(fontPath)) {
-        std::cout << "error" << std::endl;
-    }
+    if (!_font.loadFromFile(fontPath))
+        throw FontNotLoadedSuccessfully(fontPath);
     _text.setString(baseString);
     _text.setScale(sf::Vector2f(scale, scale));
     _text.setFont(_font);
@@ -45,7 +44,7 @@ void Text::setFontSize(const size_t size) { _text.setCharacterSize(size); }
 void Text::setFont(const std::string &fontPath)
 {
     if (_font.loadFromFile(fontPath)) {
-        // throw error
+        throw FontNotLoadedSuccessfully(fontPath);
         return;
     }
     _text.setFont(_font);

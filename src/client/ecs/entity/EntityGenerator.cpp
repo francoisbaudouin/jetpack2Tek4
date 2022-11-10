@@ -15,7 +15,7 @@ using namespace ecs;
 
 static std::unordered_map<std::string, std::vector<std::string>> types = {
     {"Player", {"Controllable", "HitBox", "Velocity", "Weapon"}}, {"Enemy", {"HitBox", "Velocity"}},
-    {"PlayerProjectile", {"HitBox", "HitBox", "Velocity"}},
+    {"PlayerProjectile", {"HitBox", "Velocity"}},
     {"Placeholder", {"HitBox", "TextBox", "Selectable", "Text", "Clickable"}},
     {"Button", {"HitBox", "Clickable", "Text"}}, {"Default", {}}};
 
