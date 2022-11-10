@@ -9,14 +9,14 @@
 
 #include "componentAdder.hpp"
 
+#include "../components/Clickable.hpp"
 #include "../components/Controllable.hpp"
 #include "../components/HitBox.hpp"
+#include "../components/Selectable.hpp"
+#include "../components/Text.hpp"
+#include "../components/TextBox.hpp"
 #include "../components/Velocity.hpp"
 #include "../components/Weapon.hpp"
-#include "../components/TextBox.hpp"
-#include "../components/Clickable.hpp"
-#include "../components/Text.hpp"
-#include "../components/Selectable.hpp"
 
 #include "../enums/event.hpp"
 #include "../enums/weapons.hpp"

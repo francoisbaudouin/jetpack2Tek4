@@ -17,8 +17,7 @@ static std::unordered_map<std::string, std::vector<std::string>> types = {
     {"Player", {"Controllable", "HitBox", "Velocity", "Weapon"}}, {"Enemy", {"HitBox", "Velocity"}},
     {"PlayerProjectile", {"HitBox", "HitBox", "Velocity"}},
     {"Placeholder", {"HitBox", "TextBox", "Selectable", "Text", "Clickable"}},
-    {"Button", {"HitBox", "Clickable", "Text"}},
-    {"Default", {}}};
+    {"Button", {"HitBox", "Clickable", "Text"}}, {"Default", {}}};
 
 static std::unordered_map<std::string, functionType> componentAdder = {
     {"Controllable", addControllable},
