@@ -72,3 +72,5 @@ void SceneSystem::SwitchTo(const std::string &sceneName)
 std::shared_ptr<Ecs> &SceneSystem::getEcs() { return (_manager); }
 
 std::shared_ptr<TextureDatabase> &SceneSystem::getTextureDatabase() { return (_textureDatabase); }
+
+std::shared_ptr<IScene> SceneSystem::getCurrentScene() { return _curScene; }

@@ -12,21 +12,19 @@ using namespace rtype;
 
 SceneManager::SceneManager() : _scale(3), _window(sf::VideoMode(640 * _scale, 360 * _scale), "Subaquatica") {}
 
-SceneManager::~SceneManager() {}
+SceneManager::~SceneManager() { }
 
 void SceneManager::run()
 {
     sf::Event event;
-    Hub hubScene(_sceneSystem, _window, event, "Hub", _scale);
+    Communicator communicator;
+    std::shared_ptr<Communicator> sharedCommunicator = std::make_shared<Communicator>(communicator);
+    Hub hubScene(_sceneSystem, _window, event, "Hub", _scale, sharedCommunicator);
     std::shared_ptr<Hub> sharedHubScene = std::make_shared<Hub>(hubScene);
     std::string tmpStringScene = _sceneSystem.Add(sharedHubScene);
     _sceneSystem.SwitchTo(tmpStringScene);
-    // size_t messageLength = 0;
 
     while (_window.isOpen()) {
-        // fonction pour envoyer des infos au serveur à mettre ici
-        // fonction qui désérialise les infos reçues par le server à mettre ici
-        // update ecs côté client
         _window.clear();
         while (_window.pollEvent(event)) {
             if (event.type == sf::Event::Closed)
@@ -37,4 +35,7 @@ void SceneManager::run()
         // receive data
         _window.display();
     }
+    _sceneSystem.getCurrentScene()->getThread()->join();
+    _sceneSystem.getCurrentScene()->getCommunicator()->stopCommunication();
+
 }

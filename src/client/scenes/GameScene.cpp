@@ -11,8 +11,8 @@ using namespace rtype;
 using namespace ecs;
 
 GameScene::GameScene(
-    SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale)
-    : AScene(sceneSystem, window, sceneName, scale)
+    SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale, std::shared_ptr<Communicator> communicator)
+    : AScene(sceneSystem, window, sceneName, scale, communicator)
 {
 }
 

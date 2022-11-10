@@ -15,7 +15,10 @@
 
 using namespace rtype;
 
-Communicator::Communicator(const std::string &ipAdress, const size_t &port) : _ipAdress(ipAdress), _port(port) {}
+Communicator::Communicator(const std::string &ipAdress, const size_t &port)
+    : _ipAdress(ipAdress), _port(port), _isRunning(true)
+{
+}
 
 Communicator::Communicator(const Communicator &communicator)
 {
@@ -38,8 +41,11 @@ void Communicator::connectToServer()
     boost::asio::ip::udp::socket socket(this->_ioContext);
 
     socket.open(boost::asio::ip::udp::v4());
+    _isRunning = true;
     this->communicate(socket);
 }
+
+void Communicator::stopCommunication() { _isRunning = false; }
 
 void Communicator::communicate(boost::asio::ip::udp::socket &socket)
 {
@@ -47,22 +53,21 @@ void Communicator::communicate(boost::asio::ip::udp::socket &socket)
     std::stringstream stringStream;
 
     this->_sendStream.str(std::string());
-    this->_sendStream << "STOP ";
-    while (RUNNING) {
+    this->_sendStream << "CONNECT ";
+    while (_isRunning) {
+        // send
         this->lockSendMutex();
         socket.send_to(boost::asio::buffer(this->_sendStream.str()), this->_receiverEndpoint);
         this->unlockSendMutex();
+        //receive
         this->lockReceiveMutex();
         this->_receiveStream.str(std::string());
         boost::array<char, 128> receiveBuffer = {{0}};
         socket.receive_from(boost::asio::buffer(receiveBuffer), this->_senderEndpoint);
-        stringStream << receiveBuffer.data();
-        stringStream >> test;
-        std::cout << "1 name: " << test.getName() << " value: " << test.getValue() << std::endl;
-        stringStream >> test;
-        std::cout << "2 name: " << test.getName() << " value: " << test.getValue() << std::endl;
-        stringStream >> test;
-        std::cout << "3 name: " << test.getName() << " value: " << test.getValue() << std::endl;
+        this->_receiveStream << receiveBuffer.data();
+        std::string tmp;
+        _receiveStream >> tmp;
+        std::cout << tmp;
         this->unlockReceiveMutex();
     }
 }

@@ -34,12 +34,14 @@ void Communicator::run()
 
     this->_sendStream << "NONE ";
     while (RUNNING) {
+        //receive
         this->lockReceiveMutex();
         this->_receiveStream.str(std::string());
         this->_receiveBuffer = {{0}};
         socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_remoteEndpoint);
         this->_receiveStream << this->_receiveBuffer.data();
         this->unlockReceiveMutex();
+        //send
         this->lockSendMutex();
         socket.send_to(boost::asio::buffer(this->_sendStream.str()), this->_remoteEndpoint);
         this->unlockSendMutex();

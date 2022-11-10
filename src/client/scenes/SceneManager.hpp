@@ -23,9 +23,9 @@ namespace rtype
         void run();
 
       private:
+        SceneSystem _sceneSystem;
         float _scale;
         sf::RenderWindow _window;
-        SceneSystem _sceneSystem;
     };
 } // namespace rtype
 
