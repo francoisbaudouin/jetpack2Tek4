@@ -2,32 +2,32 @@
 ** EPITECH PROJECT, 2022
 ** jetpack2Tek4
 ** File description:
-** Server
+** Communicator
 */
 
-#include "Server.hpp"
+#include "Communicator.hpp"
 
 #include "Test.hpp"
 
 using namespace rtype;
 
-Server::Server(const size_t &port) : _port(port) {}
+Communicator::Communicator(const size_t &port) : _port(port) {}
 
-Server::Server(const Server &server) { this->setPort(server.getPort()); }
+Communicator::Communicator(const Communicator &communicator) { this->setPort(communicator.getPort()); }
 
-size_t Server::getPort() const { return this->_port; }
+size_t Communicator::getPort() const { return this->_port; }
 
-void Server::setPort(const size_t &port) { this->_port = port; }
+void Communicator::setPort(const size_t &port) { this->_port = port; }
 
-void Server::lockSendMutex() { this->_sendMutex.lock(); }
+void Communicator::lockSendMutex() { this->_sendMutex.lock(); }
 
-void Server::unlockSendMutex() { this->_sendMutex.unlock(); }
+void Communicator::unlockSendMutex() { this->_sendMutex.unlock(); }
 
-void Server::lockReceiveMutex() { this->_receiveMutex.lock(); }
+void Communicator::lockReceiveMutex() { this->_receiveMutex.lock(); }
 
-void Server::unlockReceiveMutex() { this->_receiveMutex.unlock(); }
+void Communicator::unlockReceiveMutex() { this->_receiveMutex.unlock(); }
 
-void Server::run()
+void Communicator::run()
 {
     boost::asio::ip::udp::socket socket(
         this->_ioContext, boost::asio::ip::udp::endpoint(boost::asio::ip::udp::v4(), this->_port));
@@ -46,4 +46,4 @@ void Server::run()
     }
 }
 
-Server::~Server() {}
+Communicator::~Communicator() {}

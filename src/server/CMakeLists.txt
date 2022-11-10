@@ -3,8 +3,8 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/server)
 
 set(SRC
     ${SRC}
-    ${SRCROOT}/Server.cpp
-    ${INCROOT}/Server.hpp
+    ${SRCROOT}/Communicator.cpp
+    ${INCROOT}/Communicator.hpp
     ${SRCROOT}/Test.cpp # à retirer avant de merge
     ${INCROOT}/Test.hpp # à retirer avant de merge
 )

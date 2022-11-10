@@ -9,8 +9,8 @@ include(CompilerFlags)
 
 set(SRC
     ${SRC}
-    ${SRCROOT}/Client.cpp
-    ${INCROOT}/Client.hpp
+    ${SRCROOT}/Communicator.cpp
+    ${INCROOT}/Communicator.hpp
     ${SRCROOT}/TextureDatabase.cpp
     ${INCROOT}/TextureDatabase.hpp
     ${SRCROOT}/Test.cpp # à retirer avant de merge

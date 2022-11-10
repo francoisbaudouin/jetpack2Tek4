@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2022
 ** jetpack2Tek4
 ** File description:
-** Client
+** Communicator
 */
 
 #ifndef CLIENT_HPP_
@@ -17,22 +17,22 @@
 
 namespace rtype
 {
-    class Client {
+    class Communicator {
       public:
         /* Member functions */
         /**
-         * @brief Constructs a new Client object
+         * @brief Constructs a new Communicator object
          *
          * @param ipAdress ipAdress of the server
          * @param port port of the server
          */
-        Client(const std::string &ipAdress = "127.0.0.1", const size_t &port = 42069);
+        Communicator(const std::string &ipAdress = "127.0.0.1", const size_t &port = 42069);
         /**
-         * @brief Constructs a new Client object
+         * @brief Constructs a new Communicator object
          *
-         * @param client object from which to construct a new Client object
+         * @param communicator object from which to construct a new Communicator object
          */
-        Client(const Client &client);
+        Communicator(const Communicator &communicator);
         /**
          * @brief Gets the Ip Adress object
          *
@@ -58,12 +58,13 @@ namespace rtype
          */
         void setPort(const size_t &port);
         /**
-         * @brief Connects to the server using an ipAdress and a port given as parameter during the client construction
+         * @brief Connects to the server using an ipAdress and a port given as parameter during the communicator
+         * construction
          *
          */
         void connectToServer();
         /**
-         * @brief Initiates and maintains a communication between the client and the server
+         * @brief Initiates and maintains a communication between the communicator and the server
          *
          * @param socket Socket of the server
          */
@@ -88,7 +89,7 @@ namespace rtype
          *
          */
         void unlockReceiveMutex();
-        ~Client() = default;
+        ~Communicator() = default;
 
         /* Properties */
         std::stringstream _sendStream;

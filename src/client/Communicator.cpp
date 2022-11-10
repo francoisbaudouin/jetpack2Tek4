@@ -2,9 +2,9 @@
 ** EPITECH PROJECT, 2022
 ** jetpack2Tek4
 ** File description:
-** Client
+** Communicator
 */
-#include "Client.hpp"
+#include "Communicator.hpp"
 #include "ecs/components/DrawableClientSide.hpp"
 #include "ecs/components/DrawableServerSide.hpp"
 #include "ecs/components/Position.hpp"
@@ -15,23 +15,23 @@
 
 using namespace rtype;
 
-Client::Client(const std::string &ipAdress, const size_t &port) : _ipAdress(ipAdress), _port(port) {}
+Communicator::Communicator(const std::string &ipAdress, const size_t &port) : _ipAdress(ipAdress), _port(port) {}
 
-Client::Client(const Client &client)
+Communicator::Communicator(const Communicator &communicator)
 {
-    this->setIpAdress(client.getIpAdress());
-    this->setPort(client.getPort());
+    this->setIpAdress(communicator.getIpAdress());
+    this->setPort(communicator.getPort());
 }
 
-std::string Client::getIpAdress() const { return this->_ipAdress; }
+std::string Communicator::getIpAdress() const { return this->_ipAdress; }
 
-size_t Client::getPort() const { return this->_port; }
+size_t Communicator::getPort() const { return this->_port; }
 
-void Client::setIpAdress(const std::string &ipAdress) { this->_ipAdress = ipAdress; }
+void Communicator::setIpAdress(const std::string &ipAdress) { this->_ipAdress = ipAdress; }
 
-void Client::setPort(const size_t &port) { this->_port = port; }
+void Communicator::setPort(const size_t &port) { this->_port = port; }
 
-void Client::connectToServer()
+void Communicator::connectToServer()
 {
     this->_receiverEndpoint =
         boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(this->_ipAdress), this->_port);
@@ -41,7 +41,7 @@ void Client::connectToServer()
     this->communicate(socket);
 }
 
-void Client::communicate(boost::asio::ip::udp::socket &socket)
+void Communicator::communicate(boost::asio::ip::udp::socket &socket)
 {
     Test test;
     std::stringstream stringStream;
@@ -67,10 +67,10 @@ void Client::communicate(boost::asio::ip::udp::socket &socket)
     }
 }
 
-void Client::lockSendMutex() { this->_sendMutex.lock(); }
+void Communicator::lockSendMutex() { this->_sendMutex.lock(); }
 
-void Client::unlockSendMutex() { this->_sendMutex.unlock(); }
+void Communicator::unlockSendMutex() { this->_sendMutex.unlock(); }
 
-void Client::lockReceiveMutex() { this->_sendMutex.lock(); }
+void Communicator::lockReceiveMutex() { this->_sendMutex.lock(); }
 
-void Client::unlockReceiveMutex() { this->_sendMutex.unlock(); }
+void Communicator::unlockReceiveMutex() { this->_sendMutex.unlock(); }

@@ -4,7 +4,7 @@
 ** File description:
 ** main
 */
-#include "Client.hpp"
+#include "Communicator.hpp"
 #include "scenes/SceneManager.hpp"
 
 int main(void)
@@ -12,8 +12,8 @@ int main(void)
     // rtype::SceneManager sceneManager;
     // sceneManager.run();
     try {
-        rtype::Client client;
-        boost::thread *communicationThread = new boost::thread(boost::bind(&rtype::Client::connectToServer, &client));
+        rtype::Communicator communicator;
+        boost::thread *communicationThread = new boost::thread(boost::bind(&rtype::Communicator::connectToServer, &communicator));
 
         communicationThread->join();
     } catch (std::exception &exception) {

@@ -2,7 +2,7 @@
 ** EPITECH PROJECT, 2022
 ** jetpack2Tek4
 ** File description:
-** Server
+** Communicator
 */
 
 #ifndef SERVER_HPP_
@@ -16,35 +16,35 @@
 
 namespace rtype
 {
-    class Server {
+    class Communicator {
       public:
         /* Member functions */
         /**
-         * @brief Constructs a new Server object
+         * @brief Constructs a new Communicator object
          *
-         * @param port Port of the server
+         * @param port Port of the communicator
          */
-        Server(const size_t &port = 42069);
+        Communicator(const size_t &port = 42069);
         /**
-         * @brief Constructs a new Server object
+         * @brief Constructs a new Communicator object
          *
-         * @param server Object form which to construct a new Server object
+         * @param communicator Object form which to construct a new Communicator object
          */
-        Server(const Server &server);
+        Communicator(const Communicator &communicator);
         /**
          * @brief Gets the Port object
          *
-         * @return An unsigned integer representing the port of the server
+         * @return An unsigned integer representing the port of the communicator
          */
         size_t getPort() const;
         /**
          * @brief Sets the Port object
          *
-         * @param port An unsigned integer representing the port of the server
+         * @param port An unsigned integer representing the port of the communicator
          */
         void setPort(const size_t &port);
         /**
-         * @brief Launches the server and manage client interactions
+         * @brief Launches the communicator and manage client interactions
          *
          */
         void run();
@@ -68,7 +68,7 @@ namespace rtype
          *
          */
         void unlockReceiveMutex();
-        ~Server();
+        ~Communicator();
 
         /* Properties */
         std::stringstream _sendStream;

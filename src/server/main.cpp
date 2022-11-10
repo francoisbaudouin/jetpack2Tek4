@@ -7,16 +7,16 @@
 #include <boost/thread/thread.hpp>
 #include <iostream>
 
-#include "Server.hpp"
+#include "Communicator.hpp"
 
 #include "Test.hpp"
 
 int main(void)
 {
     try {
-        rtype::Server server;
-        std::shared_ptr<rtype::Server> sharedServer = std::make_shared<rtype::Server>(server);
-        boost::thread *communicationThread = new boost::thread(boost::bind(&rtype::Server::run, sharedServer));
+        rtype::Communicator communicator;
+        std::shared_ptr<rtype::Communicator> sharedServer = std::make_shared<rtype::Communicator>(communicator);
+        boost::thread *communicationThread = new boost::thread(boost::bind(&rtype::Communicator::run, sharedServer));
         Test test("Bobby", 41);
         Test test1("Mathieu", 6);
         Test test2("Barnabé", 59);
