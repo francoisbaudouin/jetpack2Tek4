@@ -9,7 +9,6 @@
 #include "componentAdder.hpp"
 
 #include "../components/Position.hpp"
-#include "../components/TextBox.hpp"
 #include "../components/Type.hpp"
 
 using namespace ecs;
@@ -17,7 +16,8 @@ using namespace ecs;
 static std::unordered_map<std::string, std::vector<std::string>> types = {
     {"Player", {"Controllable", "HitBox", "Velocity", "Weapon"}}, {"Enemy", {"HitBox", "Velocity"}},
     {"PlayerProjectile", {"HitBox", "HitBox", "Velocity"}},
-    {"Placeholder", {"HitBox", "TextBox"}},
+    {"Placeholder", {"HitBox", "TextBox", "Selectable", "Text", "Clickable"}},
+    {"Button", {"HitBox", "Clickable", "Text"}},
     {"Default", {}}};
 
 static std::unordered_map<std::string, functionType> componentAdder = {
@@ -26,6 +26,9 @@ static std::unordered_map<std::string, functionType> componentAdder = {
     {"Velocity", addVelocity},
     {"Weapon", addWeapon},
     {"TextBox", addTextBox},
+    {"Clickable", addClickable},
+    {"Text", addText},
+    {"Selectable", addSelectable},
 };
 
 EntityGenerator::EntityGenerator() {}

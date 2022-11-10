@@ -12,6 +12,7 @@
 #include "../components/DrawableClientSide.hpp"
 #include "../components/Position.hpp"
 #include "../components/TextBox.hpp"
+#include "../components/Text.hpp"
 #include "ASystem.hpp"
 
 namespace ecs

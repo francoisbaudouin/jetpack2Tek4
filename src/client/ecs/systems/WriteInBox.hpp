@@ -16,10 +16,15 @@ namespace ecs
     class Ecs;
     class WriteInBox : public ASystem {
       public:
+      /**
+       * @brief permit to write and replace Text if the entity has the TextBox component
+       * 
+       * @param manager shared_ptr to the ecs
+       */
         WriteInBox(std::shared_ptr<Ecs> &manager);
         ~WriteInBox();
 
-        void run(const std::string &sceneName, const sf::Event &event, sf::RenderWindow &window);
+        void run(const std::string &sceneName, const sf::Event &event);
       private:
         std::string stringToAppend;
     };

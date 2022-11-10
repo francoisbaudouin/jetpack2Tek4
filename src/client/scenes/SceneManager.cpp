@@ -33,6 +33,7 @@ void SceneManager::run()
             _sceneSystem.Update();
         }
         _sceneSystem.Draw();
+        //receive data 
         _window.display();
     }
 }

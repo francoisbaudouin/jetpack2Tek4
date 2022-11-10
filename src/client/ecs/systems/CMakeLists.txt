@@ -24,6 +24,8 @@ set(SRC
     ${SRCROOT}/ISystem.hpp
     ${SRCROOT}/Move.cpp
     ${SRCROOT}/Move.hpp
+    ${SRCROOT}/Click.cpp
+    ${SRCROOT}/Click.hpp
     PARENT_SCOPE
 )
 

@@ -53,6 +53,8 @@ namespace rtype
 
       private:
         sf::Event &_event;
+        std::string _ipServer;
+        std::string _portServer;
     };
 } // namespace rtype
 
