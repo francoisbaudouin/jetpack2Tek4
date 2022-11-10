@@ -4,13 +4,8 @@
 ** File description:
 ** main
 */
-#include "scenes/SceneManager.hpp"
 #include "Client.hpp"
-
-void connectToServer()
-{
-    return;
-}
+#include "scenes/SceneManager.hpp"
 
 int main(void)
 {

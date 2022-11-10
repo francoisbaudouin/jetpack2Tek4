@@ -49,10 +49,10 @@ void Client::communicate(boost::asio::ip::udp::socket &socket)
     this->_sendStream.str(std::string());
     this->_sendStream << "STOP ";
     while (RUNNING) {
-        this->lockMutex();
+        this->lockSendMutex();
         socket.send_to(boost::asio::buffer(this->_sendStream.str()), this->_receiverEndpoint);
-        this->unlockMutex();
-        this->lockMutex();
+        this->unlockSendMutex();
+        this->lockReceiveMutex();
         this->_receiveStream.str(std::string());
         boost::array<char, 128> receiveBuffer = {{0}};
         socket.receive_from(boost::asio::buffer(receiveBuffer), this->_senderEndpoint);
@@ -63,16 +63,14 @@ void Client::communicate(boost::asio::ip::udp::socket &socket)
         std::cout << "2 name: " << test.getName() << " value: " << test.getValue() << std::endl;
         stringStream >> test;
         std::cout << "3 name: " << test.getName() << " value: " << test.getValue() << std::endl;
-        this->unlockMutex();
+        this->unlockReceiveMutex();
     }
 }
 
-void Client::lockMutex()
-{
-    this->_mutex.lock();
-}
+void Client::lockSendMutex() { this->_sendMutex.lock(); }
 
-void Client::unlockMutex()
-{
-    this->_mutex.unlock();
-}
+void Client::unlockSendMutex() { this->_sendMutex.unlock(); }
+
+void Client::lockReceiveMutex() { this->_sendMutex.lock(); }
+
+void Client::unlockReceiveMutex() { this->_sendMutex.unlock(); }

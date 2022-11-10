@@ -18,6 +18,7 @@ namespace rtype
 {
     class Server {
       public:
+        /* Member functions */
         /**
          * @brief Constructs a new Server object
          *
@@ -48,17 +49,28 @@ namespace rtype
          */
         void run();
         /**
-         * @brief Locks the mutex
+         * @brief Locks the mutex for sending process
          *
          */
-        void lockMutex();
+        void lockSendMutex();
         /**
-         * @brief Unlocks the mutex
+         * @brief Unlocks the mutex for sending process
          *
          */
-        void unlockMutex();
+        void unlockSendMutex();
+        /**
+         * @brief Locks the mutex for receiving process
+         *
+         */
+        void lockReceiveMutex();
+        /**
+         * @brief Unlocks the mutex for receiving process
+         *
+         */
+        void unlockReceiveMutex();
         ~Server();
 
+        /* Properties */
         std::stringstream _sendStream;
 
       protected:
@@ -68,7 +80,8 @@ namespace rtype
         boost::asio::io_context _ioContext;
         boost::array<char, 128> _receiveBuffer;
         std::stringstream _receiveStream;
-        boost::mutex _mutex;
+        boost::mutex _receiveMutex;
+        boost::mutex _sendMutex;
     };
 } // namespace rtype
 

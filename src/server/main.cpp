@@ -22,12 +22,10 @@ int main(void)
         Test test2("Barnabé", 59);
 
         while (1) {
-            std::cout << "before modifications: " << sharedServer->_sendStream.str() << std::endl;
-            sharedServer->lockMutex();
+            sharedServer->lockSendMutex();
             sharedServer->_sendStream.str(std::string());
             sharedServer->_sendStream << test << " " << test1 << " " << test2 << " ";
-            sharedServer->unlockMutex();
-            std::cout << "done " << sharedServer->_sendStream.str() << std::endl;
+            sharedServer->unlockSendMutex();
         }
 
         communicationThread->join();

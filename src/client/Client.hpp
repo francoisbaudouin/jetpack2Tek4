@@ -19,6 +19,7 @@ namespace rtype
 {
     class Client {
       public:
+        /* Member functions */
         /**
          * @brief Constructs a new Client object
          *
@@ -68,18 +69,29 @@ namespace rtype
          */
         void communicate(boost::asio::ip::udp::socket &socket);
         /**
-         * @brief Locks the mutex
-         * 
+         * @brief Locks the mutex for sending process
+         *
          */
-        void lockMutex();
+        void lockSendMutex();
         /**
-         * @brief Unlocks the mutex
-         * 
+         * @brief Unlocks the mutex for sending process
+         *
          */
-        void unlockMutex();
+        void unlockSendMutex();
+        /**
+         * @brief Locks the mutex for receiving process
+         *
+         */
+        void lockReceiveMutex();
+        /**
+         * @brief Unlocks the mutex for receiving process
+         *
+         */
+        void unlockReceiveMutex();
         ~Client() = default;
 
-        boost::mutex _mutex;
+        /* Properties */
+        std::stringstream _sendStream;
 
       protected:
       private:
@@ -89,8 +101,9 @@ namespace rtype
         boost::asio::ip::udp::endpoint _senderEndpoint;
         boost::asio::io_context _ioContext;
         boost::array<char, 128> _receiveBuffer;
-        std::stringstream _sendStream;
         std::stringstream _receiveStream;
+        boost::mutex _sendMutex;
+        boost::mutex _receiveMutex;
     };
 } // namespace rtype
 
