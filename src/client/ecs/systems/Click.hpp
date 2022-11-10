@@ -18,17 +18,17 @@ namespace ecs
 {
     class Click : public ASystem {
       public:
-      /**
-       * @brief click will set all clickable's states (isHovered, isClicked) depending on mouse position
-       * 
-       * @param manager shared_ptr to the ecs
-       */
+        /**
+         * @brief click will set all clickable's states (isHovered, isClicked) depending on mouse position
+         *
+         * @param manager shared_ptr to the ecs
+         */
         Click(std::shared_ptr<Ecs> &manager);
         ~Click();
 
         /**
          * @brief check if the mouse is in the hitBox situated at position
-         * 
+         *
          * @param window window of the scene
          * @param hitBox hitBox of the Clickable entity
          * @param position position of the hitBox

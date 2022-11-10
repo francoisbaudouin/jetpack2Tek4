@@ -10,13 +10,9 @@
 
 using namespace ecs;
 
-TextBox::TextBox(const size_t entityId, const size_t maxLenght)
-    : AComponent(entityId), _maxLenght(maxLenght)
-{
-}
+TextBox::TextBox(const size_t entityId, const size_t maxLenght) : AComponent(entityId), _maxLenght(maxLenght) {}
 
 TextBox::~TextBox() {}
-
 
 void TextBox::appendChar(const char &charToAppend)
 {

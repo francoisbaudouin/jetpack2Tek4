@@ -10,8 +10,8 @@
 
 using namespace ecs;
 
-Text::Text(const size_t entityId, const std::string &fontPath, const size_t fontSize,
-    const std::string &baseString, const sf::Color color, const float scale)
+Text::Text(const size_t entityId, const std::string &fontPath, const size_t fontSize, const std::string &baseString,
+    const sf::Color color, const float scale)
     : AComponent(entityId), _textColor(color)
 {
     if (!_font.loadFromFile(fontPath)) {

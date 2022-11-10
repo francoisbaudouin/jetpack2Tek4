@@ -8,9 +8,9 @@
 #include "WriteInBox.hpp"
 #include "../components/HitBox.hpp"
 #include "../components/Position.hpp"
+#include "../components/Selectable.hpp"
 #include "../components/Text.hpp"
 #include "../components/TextBox.hpp"
-#include "../components/Selectable.hpp"
 
 using namespace ecs;
 
@@ -31,7 +31,8 @@ void WriteInBox::run(const std::string &sceneName, const sf::Event &event)
             if (entity.second->getComponent<Selectable>().isSelected()) {
                 if (event.type == sf::Event::TextEntered) {
                     entity.second->getComponent<TextBox>().appendChar(event.text.unicode);
-                    entity.second->getComponent<Text>().setText(entity.second->getComponent<TextBox>().getReferenceString());
+                    entity.second->getComponent<Text>().setText(
+                        entity.second->getComponent<TextBox>().getReferenceString());
                 }
             }
         }

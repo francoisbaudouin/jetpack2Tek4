@@ -16,7 +16,8 @@ Click::~Click() {}
 
 bool Click::isMouseIn(sf::RenderWindow &window, HitBox &hitBox, Position &position)
 {
-    if (sf::Mouse::getPosition(window).x >= position.getX() && sf::Mouse::getPosition(window).x <= position.getX() + hitBox.getX()
+    if (sf::Mouse::getPosition(window).x >= position.getX()
+        && sf::Mouse::getPosition(window).x <= position.getX() + hitBox.getX()
         && sf::Mouse::getPosition(window).y >= position.getY()
         && sf::Mouse::getPosition(window).y <= position.getY() + hitBox.getY())
         return true;
@@ -57,8 +58,8 @@ void Click::run(const std::string &sceneName, sf::RenderWindow &window)
     for (auto &entity : _manager->getEntityManager(sceneName).getEntities()) {
         if (entity.second->hasComponent<Clickable>() && entity.second->hasComponent<HitBox>()
             && entity.second->hasComponent<Position>()) {
-                hovered(window, entity.second);
-                clicked(window, entity.second);
-            }
+            hovered(window, entity.second);
+            clicked(window, entity.second);
+        }
     }
 }

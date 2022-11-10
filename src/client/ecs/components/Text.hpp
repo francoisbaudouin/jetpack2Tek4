@@ -59,31 +59,31 @@ namespace ecs
         sf::Color getColor() const;
         /**
          * @brief Set the Font of the text
-         * 
+         *
          * @param fontPath path to the font
          */
         void setFont(const std::string &fontPath);
         /**
          * @brief Set the Font of the text
-         * 
+         *
          * @param font  object font already loaded
          */
         void setFont(sf::Font &font);
         /**
          * @brief Get the Font of the text
-         * 
+         *
          * @return sf::Font font of the text
          */
         sf::Font getFont() const;
         /**
          * @brief Set the Font Size of the text
-         * 
+         *
          * @param size font size of the text
          */
         void setFontSize(const size_t size);
         /**
          * @brief Get the Font size of the text
-         * 
+         *
          * @return size_t size of the text
          */
         size_t getFontSize() const;

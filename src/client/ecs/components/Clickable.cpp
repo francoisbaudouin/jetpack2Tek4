@@ -9,30 +9,14 @@
 
 using namespace ecs;
 
-Clickable::Clickable(const size_t entityId) : AComponent(entityId), _isHovered(false), _isClicked(false)
-{
-}
+Clickable::Clickable(const size_t entityId) : AComponent(entityId), _isHovered(false), _isClicked(false) {}
 
-Clickable::~Clickable()
-{
-}
+Clickable::~Clickable() {}
 
-bool Clickable::isClicked() const
-{
-  return _isClicked;
-}
+bool Clickable::isClicked() const { return _isClicked; }
 
-bool Clickable::isHovered() const
-{
-  return _isHovered;
-}
+bool Clickable::isHovered() const { return _isHovered; }
 
-void Clickable::setClicked(const bool isClicked)
-{
-  _isClicked = isClicked;
-}
+void Clickable::setClicked(const bool isClicked) { _isClicked = isClicked; }
 
-void Clickable::setHovered(const bool isHovered)
-{
-  _isHovered = isHovered;
-}
+void Clickable::setHovered(const bool isHovered) { _isHovered = isHovered; }
