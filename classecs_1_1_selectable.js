@@ -1,0 +1,7 @@
+var classecs_1_1_selectable =
+[
+    [ "Selectable", "classecs_1_1_selectable.html#a5bba9e2444c4ccc72241e8e661ac4c2e", null ],
+    [ "~Selectable", "classecs_1_1_selectable.html#a82cf5be0e7e0f394f388e86c7e5a0f10", null ],
+    [ "isSelected", "classecs_1_1_selectable.html#a06dbb3e7d5a483d1ddfd686229187836", null ],
+    [ "setSelected", "classecs_1_1_selectable.html#a427d14a82f1488bff979171774d8c56b", null ]
+];
