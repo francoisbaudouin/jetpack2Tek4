@@ -13,8 +13,9 @@ int main(void)
     // sceneManager.run();
     try {
         rtype::Communicator communicator;
+        std::shared_ptr<rtype::Communicator> sharedCommunicator = std::make_shared<rtype::Communicator>(communicator);
         boost::thread *communicationThread =
-            new boost::thread(boost::bind(&rtype::Communicator::connectToServer, &communicator));
+            new boost::thread(boost::bind(&rtype::Communicator::connectToServer, sharedCommunicator));
 
         communicationThread->join();
     } catch (std::exception &exception) {

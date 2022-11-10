@@ -11,8 +11,12 @@ Test::Test()
 {
     _value = 5;
     _name = "Thomas";
-    _tab.push_back("salut");
-    _tab.push_back("Thomas");
+}
+
+Test::Test(const Test &test)
+{
+    this->_value = test.getValue();
+    this->_name = test.getName();
 }
 
 int Test::getValue() const { return this->_value; }

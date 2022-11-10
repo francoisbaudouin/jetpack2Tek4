@@ -71,6 +71,7 @@ namespace rtype
         ~Communicator();
 
         /* Properties */
+        std::stringstream _receiveStream;
         std::stringstream _sendStream;
 
       protected:
@@ -79,7 +80,6 @@ namespace rtype
         boost::asio::ip::udp::endpoint _remoteEndpoint;
         boost::asio::io_context _ioContext;
         boost::array<char, 128> _receiveBuffer;
-        std::stringstream _receiveStream;
         boost::mutex _receiveMutex;
         boost::mutex _sendMutex;
     };

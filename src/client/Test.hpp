@@ -13,6 +13,7 @@
 class Test {
   public:
     Test();
+    Test(const Test &test);
     friend std::ostream &operator<<(std::ostream &out, Test &test)
     {
         out << test._value << " " << test._name;

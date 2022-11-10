@@ -27,11 +27,11 @@ class Test {
         return in;
     }
     ~Test();
+    std::string _name;
+    int _value;
 
   protected:
   private:
-    std::string _name;
-    int _value;
 };
 
 #endif /* !TEST_HPP_ */

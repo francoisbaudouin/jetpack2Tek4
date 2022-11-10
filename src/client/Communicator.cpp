@@ -4,6 +4,8 @@
 ** File description:
 ** Communicator
 */
+#include <memory>
+
 #include "Communicator.hpp"
 #include "ecs/components/DrawableClientSide.hpp"
 #include "ecs/components/DrawableServerSide.hpp"
@@ -43,7 +45,8 @@ void Communicator::connectToServer()
 
 void Communicator::communicate(boost::asio::ip::udp::socket &socket)
 {
-    Test test;
+    void *tmp;
+    Test *test = new Test;
     std::stringstream stringStream;
 
     this->_sendStream.str(std::string());
@@ -55,14 +58,26 @@ void Communicator::communicate(boost::asio::ip::udp::socket &socket)
         this->lockReceiveMutex();
         this->_receiveStream.str(std::string());
         boost::array<char, 128> receiveBuffer = {{0}};
+        std::cout << "a\n";
         socket.receive_from(boost::asio::buffer(receiveBuffer), this->_senderEndpoint);
         stringStream << receiveBuffer.data();
-        stringStream >> test;
-        std::cout << "1 name: " << test.getName() << " value: " << test.getValue() << std::endl;
-        stringStream >> test;
-        std::cout << "2 name: " << test.getName() << " value: " << test.getValue() << std::endl;
-        stringStream >> test;
-        std::cout << "3 name: " << test.getName() << " value: " << test.getValue() << std::endl;
+        std::cout << "b\n";
+        stringStream >> tmp;
+        std::cout << "c\n";
+        // memcpy(test, tmp, sizeof(Test));
+        test = reinterpret_cast<Test *>(tmp);
+        std::cout << "d\n" << test << " adress: " << tmp << std::endl;
+        // std::cout << "1 name: " << test->getName() << " value: " << test->getValue() << std::endl;
+        // free(tmp);
+        // tmp = malloc(sizeof(Test) + 1);
+        // stringStream >> tmp;
+        // test = reinterpret_cast<Test *>(tmp);
+        // std::cout << "2 name: " << test->getName() << " value: " << test->getValue() << std::endl;
+        // free(tmp);
+        // tmp = malloc(sizeof(Test) + 1);
+        // stringStream >> tmp;
+        // test = reinterpret_cast<Test *>(tmp);
+        // std::cout << "3 name: " << test->getName() << " value: " << test->getValue() << std::endl;
         this->unlockReceiveMutex();
     }
 }
