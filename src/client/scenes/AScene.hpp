@@ -30,7 +30,6 @@ namespace rtype
         rtype::SceneSystem &_sceneSystem;
         sf::RenderWindow &_window;
         std::string _sceneName;
-        ecs::EntityGenerator _entityGenerator;
 
       private:
     };

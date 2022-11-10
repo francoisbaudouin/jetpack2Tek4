@@ -1,0 +1,8 @@
+{
+  "Player": "assets/sprites/Character.png",
+  "Enemy": "assets/sprites/Peeper.png",
+  "PlaceHolder": "assets/sprites/plasseOldeure.png",
+  "PlayerProjectile": "assets/sprites/projecktile.png",
+  "Background": "assets/sprites/Parallax.png",
+  "HubForm": "assets/sprites/Hube.png"
+}

@@ -10,7 +10,7 @@
 #include <boost/property_tree/ptree.hpp>
 
 #include "TextureDatabase.hpp"
-#include "ecs/exceptions/Exception.hpp"
+#include "../ecs/exceptions/Exception.hpp"
 
 using namespace rtype;
 
@@ -25,7 +25,7 @@ TextureDatabase::TextureDatabase() {}
 void TextureDatabase::onCall(const std::string &sceneName)
 {
     boost::property_tree::ptree jsonFile;
-    std::string scenePathString = "src/client/configs/" + sceneName + "/TextureConfigs/TextureConfiguration.json";
+    std::string scenePathString = "assets/configFiles/" + sceneName + "/TextureConfiguration.json";
     std::string scenePath = fileTraduction(scenePathString);
     boost::property_tree::read_json(scenePath, jsonFile);
 

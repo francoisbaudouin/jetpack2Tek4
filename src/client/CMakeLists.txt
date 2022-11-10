@@ -11,13 +11,14 @@ set(SRC
   ${SRC}
   ${SRCROOT}/Client.cpp
   ${INCROOT}/Client.hpp
-  ${SRCROOT}/TextureDatabase.cpp
-  ${INCROOT}/TextureDatabase.hpp
+  ${SRCROOT}/Test.cpp
+  ${INCROOT}/Test.hpp
 )
 set(INCDIRS ${INCROOT})
 
 add_subdirectory(ecs)
 add_subdirectory(scenes)
+add_subdirectory(assetsManager)
 
 #set_target_properties(${TARGET}
 #    PROPERTIES

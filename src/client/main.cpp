@@ -4,11 +4,12 @@
 ** File description:
 ** main
 */
-#include "scenes/SceneManager.hpp"
+
+#include "Test.hpp"
 
 int main(void)
 {
-    rtype::SceneManager sceneManager;
-    sceneManager.run();
+    rtype::Test test;
+    test.run();
     return 0;
 }
