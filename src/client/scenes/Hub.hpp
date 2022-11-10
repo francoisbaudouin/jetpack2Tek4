@@ -20,8 +20,11 @@ namespace rtype
          * @param sceneSystem scene system that will manage scenes
          * @param window the window where the scene will be displayed
          * @param sceneName name of the scene
+         * @param scale scale of the scene
+         *
          */
-        Hub(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName = "Hub");
+        Hub(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
+            const float scale);
         ~Hub();
         /**
          * @brief function called at creation of the scene (Add of sceneSystem)
