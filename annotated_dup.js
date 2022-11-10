@@ -50,7 +50,7 @@ var annotated_dup =
     ] ],
     [ "rtype", null, [
       [ "AScene", "classrtype_1_1_a_scene.html", "classrtype_1_1_a_scene" ],
-      [ "Client", "classrtype_1_1_client.html", "classrtype_1_1_client" ],
+      [ "Communicator", "classrtype_1_1_communicator.html", "classrtype_1_1_communicator" ],
       [ "GameScene", "classrtype_1_1_game_scene.html", "classrtype_1_1_game_scene" ],
       [ "Hub", "classrtype_1_1_hub.html", "classrtype_1_1_hub" ],
       [ "IScene", "classrtype_1_1_i_scene.html", "classrtype_1_1_i_scene" ],
@@ -58,5 +58,6 @@ var annotated_dup =
       [ "SceneManager", "classrtype_1_1_scene_manager.html", "classrtype_1_1_scene_manager" ],
       [ "SceneSystem", "classrtype_1_1_scene_system.html", "classrtype_1_1_scene_system" ],
       [ "TextureDatabase", "classrtype_1_1_texture_database.html", "classrtype_1_1_texture_database" ]
-    ] ]
+    ] ],
+    [ "Test", "class_test.html", "class_test" ]
 ];

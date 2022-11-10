@@ -1,6 +1,6 @@
 var hierarchy =
 [
-    [ "rtype::Client", "classrtype_1_1_client.html", null ],
+    [ "rtype::Communicator", "classrtype_1_1_communicator.html", null ],
     [ "ecs::Device", "structecs_1_1_device.html", null ],
     [ "ecs::Ecs", "classecs_1_1_ecs.html", null ],
     [ "ecs::Entity", "classecs_1_1_entity.html", null ],
@@ -63,5 +63,6 @@ var hierarchy =
     [ "ecs::RTypeEvent", "structecs_1_1_r_type_event.html", null ],
     [ "rtype::SceneManager", "classrtype_1_1_scene_manager.html", null ],
     [ "rtype::SceneSystem", "classrtype_1_1_scene_system.html", null ],
+    [ "Test", "class_test.html", null ],
     [ "rtype::TextureDatabase", "classrtype_1_1_texture_database.html", null ]
 ];
