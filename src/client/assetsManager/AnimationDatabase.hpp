@@ -8,6 +8,8 @@
 #ifndef ANIMATIONDATABASE_HPP_
 #define ANIMATIONDATABASE_HPP_
 
+#define DEFAULT "IDLE"
+
 #include <array>
 #include <string>
 #include <vector>
@@ -25,6 +27,10 @@ namespace rtype
         ~AnimationDatabase();
 
         void onCall(const std::string &sceneName);
+        size_t getAnimationSize(const std::string &entityType, const std::string &animationType) const;
+        Animation &getAnimation(const std::string &entityType, const std::string &animationType);
+        AnimationFrame &getAnimationFrame(
+            const std::string &entityType, const std::string &animationType, const size_t frameId);
 
       private:
         std::unordered_map<std::string, Animations> _animationMap;

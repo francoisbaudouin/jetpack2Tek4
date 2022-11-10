@@ -6,10 +6,13 @@
 */
 
 #include "Test.hpp"
+#include "assetsManager/AnimationDatabase.hpp"
 
 int main(void)
 {
-    rtype::Test test;
-    test.run();
+    rtype::AnimationDatabase data;
+    data.onCall("Game");
+    // rtype::Test test;
+    // test.run();
     return 0;
 }

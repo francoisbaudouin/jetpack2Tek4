@@ -5,6 +5,8 @@ set(SRC
   ${SRC}
   ${SRCROOT}/TextureDatabase.cpp
   ${INCROOT}/TextureDatabase.hpp
+  ${SRCROOT}/AnimationDatabase.cpp
+  ${INCROOT}/AnimationDatabase.hpp
   PARENT_SCOPE
 )
 

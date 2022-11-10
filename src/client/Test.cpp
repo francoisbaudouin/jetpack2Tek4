@@ -25,7 +25,7 @@ Test::Test() : _window(sf::VideoMode(640, 360), "Subaquatica")
     size_t id = ecs::generateEntity(_manager->getEntityManager("Game"), "Player");
 
     ecs::Entity &ent = _manager->getEntityManager("Game").getEntity(id);
-    ent.addComponent<ecs::DrawableClientSide>(_textures->getTexture("Player"));
+    ent.addComponent<ecs::DrawableClientSide>(_textures->getTexture("Player"), 4);
 }
 
 void Test::run()
