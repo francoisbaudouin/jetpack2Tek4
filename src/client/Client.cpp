@@ -4,14 +4,14 @@
 ** File description:
 ** Client
 */
-
 #include "Client.hpp"
-#include "ecs/systems/Display.hpp"
-#include "ecs/systems/Input.hpp"
-
 #include "ecs/components/DrawableClientSide.hpp"
 #include "ecs/components/DrawableServerSide.hpp"
 #include "ecs/components/Position.hpp"
+#include "ecs/systems/Display.hpp"
+#include "ecs/systems/Input.hpp"
+
+#include "Test.hpp"
 
 using namespace rtype;
 
@@ -43,12 +43,34 @@ void Client::connectToServer()
 
 void Client::communicate(boost::asio::ip::udp::socket &socket)
 {
-    // size_t messageLength = 0;
-    (void)socket;
+    Test test;
+    std::stringstream stringStream;
 
+    this->_sendStream.clear();
+    this->_sendStream << "STOP ";
     while (RUNNING) {
-        // fonction pour envoyer des infos au serveur à mettre ici
-        // messageLength = socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
-        // fonction qui désérialise les infos reçues par le server à mettre ici
+        this->lockMutex();
+        socket.send_to(boost::asio::buffer(this->_sendStream.str()), this->_receiverEndpoint);
+        this->unlockMutex();
+        this->lockMutex();
+        socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
+        stringStream << this->_receiveBuffer.data();
+        stringStream >> test;
+        std::cout << "1 name: " << test.getName() << " value: " << test.getValue() << std::endl;
+        stringStream >> test;
+        std::cout << "2 name: " << test.getName() << " value: " << test.getValue() << std::endl;
+        stringStream >> test;
+        std::cout << "3 name: " << test.getName() << " value: " << test.getValue() << std::endl;
+        this->unlockMutex();
     }
+}
+
+void Client::lockMutex()
+{
+    this->_mutex.lock();
+}
+
+void Client::unlockMutex()
+{
+    this->_mutex.unlock();
 }

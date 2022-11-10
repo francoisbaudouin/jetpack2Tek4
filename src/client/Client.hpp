@@ -10,13 +10,10 @@
 
 #define RUNNING 1
 
-#include <SFML/Graphics.hpp>
 #include <boost/array.hpp>
 #include <boost/asio.hpp>
+#include <boost/thread/thread.hpp>
 #include <iostream>
-#include <memory>
-#include <string>
-#include "ecs/Ecs.hpp"
 
 namespace rtype
 {
@@ -64,19 +61,36 @@ namespace rtype
          *
          */
         void connectToServer();
+        /**
+         * @brief Initiates and maintains a communication between the client and the server
+         *
+         * @param socket Socket of the server
+         */
         void communicate(boost::asio::ip::udp::socket &socket);
+        /**
+         * @brief Locks the mutex
+         * 
+         */
+        void lockMutex();
+        /**
+         * @brief Unlocks the mutex
+         * 
+         */
+        void unlockMutex();
         ~Client() = default;
+
+        boost::mutex _mutex;
 
       protected:
       private:
         std::string _ipAdress;
         size_t _port;
-        std::shared_ptr<std::unordered_map<size_t, std::shared_ptr<ecs::Entity>>> _entities;
         boost::asio::ip::udp::endpoint _receiverEndpoint;
         boost::asio::ip::udp::endpoint _senderEndpoint;
         boost::asio::io_context _ioContext;
-        boost::array<char, 128> _sendBuffer;
         boost::array<char, 128> _receiveBuffer;
+        std::stringstream _sendStream;
+        std::stringstream _receiveStream;
     };
 } // namespace rtype
 
