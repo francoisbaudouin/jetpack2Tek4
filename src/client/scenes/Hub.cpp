@@ -21,8 +21,9 @@
 using namespace ecs;
 using namespace rtype;
 
-Hub::Hub(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName)
-    : AScene(sceneSystem, window, sceneName), _event(event)
+Hub::Hub(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
+    const float scale)
+    : AScene(sceneSystem, window, sceneName, scale), _event(event)
 {
 }
 
@@ -52,27 +53,29 @@ void Hub::OnActivate()
     auto &confirmButton = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Button"));
     auto &hube = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Default"));
 
-    hube.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("HubForm"));
-    ipPlaceholder.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("PlaceHolder"));
-    portPlaceholder.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("PlaceHolder"));
+    hube.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("HubForm"), _scale);
+    ipPlaceholder.addComponent<DrawableClientSide>(
+        _sceneSystem.getTextureDatabase()->getTexture("PlaceHolder"), _scale);
+    portPlaceholder.addComponent<DrawableClientSide>(
+        _sceneSystem.getTextureDatabase()->getTexture("PlaceHolder"), _scale);
 
-    hube.getComponent<Position>().setPosition(100, 100);
+    hube.getComponent<Position>().setPosition(100 * _scale, 100 * _scale);
 
-    ipPlaceholder.getComponent<HitBox>().setHitBox(100, 20);
-    ipPlaceholder.getComponent<Text>().setFontSize(10);
+    ipPlaceholder.getComponent<HitBox>().setHitBox(100 * _scale, 20 * _scale);
+    ipPlaceholder.getComponent<Text>().setFontSize(10 * _scale);
     ipPlaceholder.getComponent<Position>().setPosition(
-        hube.getComponent<Position>().getX() + 25, hube.getComponent<Position>().getY() + 10);
+        hube.getComponent<Position>().getX() + (25 * _scale), hube.getComponent<Position>().getY() + (10 * _scale));
 
-    portPlaceholder.getComponent<HitBox>().setHitBox(100, 20);
-    portPlaceholder.getComponent<Text>().setFontSize(10);
+    portPlaceholder.getComponent<HitBox>().setHitBox(100 * _scale, 20 * _scale);
+    portPlaceholder.getComponent<Text>().setFontSize(10 * _scale);
     portPlaceholder.getComponent<Position>().setPosition(
-        hube.getComponent<Position>().getX() + 25, hube.getComponent<Position>().getY() + 35);
+        hube.getComponent<Position>().getX() + (25 * _scale), hube.getComponent<Position>().getY() + (35 * _scale));
 
-    confirmButton.getComponent<HitBox>().setHitBox(100, 20);
+    confirmButton.getComponent<HitBox>().setHitBox(100 * _scale, 20 * _scale);
     confirmButton.getComponent<Text>().setText(std::string("CONFIRM"));
-    confirmButton.getComponent<Text>().setFontSize(10);
+    confirmButton.getComponent<Text>().setFontSize(10 * _scale);
     confirmButton.getComponent<Position>().setPosition(
-        hube.getComponent<Position>().getX() + 40, hube.getComponent<Position>().getY() + 60);
+        hube.getComponent<Position>().getX() + (40 * _scale), hube.getComponent<Position>().getY() + (60 * _scale));
 }
 
 void Hub::OnDeactivate() {}

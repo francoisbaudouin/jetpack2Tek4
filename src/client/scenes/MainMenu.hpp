@@ -21,8 +21,9 @@ namespace rtype
          * @param sceneSystem scene system that will manage scenes
          * @param window the window where the scene will be displayed
          * @param sceneName name of the scene
+         * @param scale scale of the scene
          */
-        MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName = "MainMenu");
+        MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale);
         ~MainMenu();
         /**
          * @brief function called at creation of the scene (Add of sceneSystem)

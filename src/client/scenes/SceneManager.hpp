@@ -23,6 +23,7 @@ namespace rtype
         void run();
 
       private:
+        float _scale;
         sf::RenderWindow _window;
         SceneSystem _sceneSystem;
     };
