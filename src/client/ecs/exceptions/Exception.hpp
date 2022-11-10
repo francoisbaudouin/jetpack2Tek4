@@ -101,6 +101,15 @@ namespace ecs
       public:
         EntityNotExisting(const size_t sceneId, const size_t entityId);
     };
+    class TextureNotLoadedSuccessfully : public Exception {
+      public:
+        TextureNotLoadedSuccessfully(std::string const &type);
+    };
+    class FontNotLoadedSuccessfully : public Exception {
+      public:
+        FontNotLoadedSuccessfully(std::string const &type);
+    };
+
 } // namespace ecs
 
 #endif /* !EXCEPTION_HPP_ */

@@ -14,6 +14,8 @@ set(SRC
     ${INCROOT}/GameScene.hpp
     ${INCROOT}/MainMenu.cpp
     ${INCROOT}/MainMenu.hpp
+    ${INCROOT}/Hub.cpp
+    ${INCROOT}/Hub.hpp
     PARENT_SCOPE
 )
 
