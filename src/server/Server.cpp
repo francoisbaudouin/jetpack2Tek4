@@ -32,19 +32,20 @@ void Server::run()
     Test test2("Timothé", 1);
     std::string tmp;
 
-    this->_sendStream << test << " " << test1 << " " << test2 << " ";
-    this->_receiveStream.clear();
     while (RUNNING) {
         this->lockMutex();
+        this->_receiveStream.str(std::string());
+        this->_receiveBuffer = {{0}};
         socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_remoteEndpoint);
         this->_receiveStream << this->_receiveBuffer.data();
         this->_receiveStream >> tmp;
         std::cout << tmp << std::endl;
         this->unlockMutex();
-
         this->lockMutex();
-        socket.send_to(boost::asio::buffer(this->_sendStream.str()), this->_remoteEndpoint);
+        this->_sendStream.str(std::string());
+        this->_sendStream << test << " " << test1 << " " << test2 << " ";
         this->unlockMutex();
+        socket.send_to(boost::asio::buffer(this->_sendStream.str()), this->_remoteEndpoint);
     }
 }
 

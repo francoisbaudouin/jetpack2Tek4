@@ -46,15 +46,17 @@ void Client::communicate(boost::asio::ip::udp::socket &socket)
     Test test;
     std::stringstream stringStream;
 
-    this->_sendStream.clear();
+    this->_sendStream.str(std::string());
     this->_sendStream << "STOP ";
     while (RUNNING) {
         this->lockMutex();
         socket.send_to(boost::asio::buffer(this->_sendStream.str()), this->_receiverEndpoint);
         this->unlockMutex();
         this->lockMutex();
-        socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_senderEndpoint);
-        stringStream << this->_receiveBuffer.data();
+        this->_receiveStream.str(std::string());
+        boost::array<char, 128> receiveBuffer = {{0}};
+        socket.receive_from(boost::asio::buffer(receiveBuffer), this->_senderEndpoint);
+        stringStream << receiveBuffer.data();
         stringStream >> test;
         std::cout << "1 name: " << test.getName() << " value: " << test.getValue() << std::endl;
         stringStream >> test;

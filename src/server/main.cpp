@@ -14,7 +14,6 @@
 int main(void)
 {
     try {
-        // rtype::Server *server = new rtype::Server();
         rtype::Server server;
         std::shared_ptr<rtype::Server> sharedServer = std::make_shared<rtype::Server>(server);
         boost::thread *communicationThread = new boost::thread(boost::bind(&rtype::Server::run, sharedServer));
@@ -22,12 +21,14 @@ int main(void)
         Test test1("Mathieu", 6);
         Test test2("Barnabé", 59);
 
-        std::cout << "before modifications: " << sharedServer->_sendStream.str() << std::endl;
-        sharedServer->lockMutex();
-        
-        sharedServer->_sendStream << test << " " << test1 << " " << test2 << " ";
-        sharedServer->unlockMutex();
-        std::cout << "done " << sharedServer->_sendStream.str() << std::endl;
+        while (1) {
+            std::cout << "before modifications: " << sharedServer->_sendStream.str() << std::endl;
+            sharedServer->lockMutex();
+            sharedServer->_sendStream.str(std::string());
+            sharedServer->_sendStream << test << " " << test1 << " " << test2 << " ";
+            sharedServer->unlockMutex();
+            std::cout << "done " << sharedServer->_sendStream.str() << std::endl;
+        }
 
         communicationThread->join();
     } catch (std::exception &exception) {
