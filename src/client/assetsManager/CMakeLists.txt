@@ -7,6 +7,8 @@ set(SRC
   ${INCROOT}/TextureDatabase.hpp
   ${SRCROOT}/AnimationDatabase.cpp
   ${INCROOT}/AnimationDatabase.hpp
+  ${SRCROOT}/fileOpener.cpp
+  ${INCROOT}/fileOpener.hpp
   PARENT_SCOPE
 )
 

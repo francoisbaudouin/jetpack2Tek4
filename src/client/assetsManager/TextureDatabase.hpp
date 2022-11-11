@@ -14,8 +14,6 @@
 
 namespace rtype
 {
-    std::string fileTraduction(std::string &fileName);
-
     class TextureDatabase {
       public:
         TextureDatabase();

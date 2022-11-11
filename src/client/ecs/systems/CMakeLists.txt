@@ -5,6 +5,8 @@ set(SRC
     ${SRC}
     ${SRCROOT}/ASystem.cpp
     ${SRCROOT}/ASystem.hpp
+    ${SRCROOT}/Animate.cpp
+    ${SRCROOT}/Animate.hpp
     ${SRCROOT}/Collider.cpp
     ${SRCROOT}/Collider.hpp
     ${SRCROOT}/Controll.cpp

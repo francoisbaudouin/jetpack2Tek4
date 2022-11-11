@@ -109,6 +109,22 @@ namespace ecs
       public:
         FontNotLoadedSuccessfully(std::string const &type);
     };
+    class TypeNotInAnimationDataBase : public Exception {
+      public:
+        TypeNotInAnimationDataBase(std::string const &entity);
+    };
+    class WrongAnimationCalled : public Exception {
+      public:
+        WrongAnimationCalled(std::string const &entity, std::string const &animation);
+    };
+    class AnimationFrameOutOfRange : public Exception {
+      public:
+        AnimationFrameOutOfRange(std::string const &entity, std::string const &animation, const size_t maxFrame, const size_t frame);
+    };
+    class JsonFileOpenerFailed : public Exception {
+      public:
+        JsonFileOpenerFailed(std::string const &file);
+    };
 
 } // namespace ecs
 

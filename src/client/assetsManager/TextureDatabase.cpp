@@ -5,21 +5,10 @@
 ** TextureDatabase
 */
 
-#include <filesystem>
-#include <boost/property_tree/json_parser.hpp>
-#include <boost/property_tree/ptree.hpp>
+#include "fileOpener.hpp"
 
 #include "../ecs/exceptions/Exception.hpp"
 #include "TextureDatabase.hpp"
-
-namespace rtype
-{
-    std::string fileTraduction(std::string &fileName)
-    {
-        std::filesystem::path path(fileName);
-        return path.generic_string().c_str();
-    }
-} // namespace rtype
 
 using namespace rtype;
 
@@ -27,17 +16,14 @@ TextureDatabase::TextureDatabase() {}
 
 void TextureDatabase::onCall(const std::string &sceneName)
 {
-    boost::property_tree::ptree jsonFile;
-    std::string scenePathString = "assets/configFiles/" + sceneName + "/Textures.json";
-    std::string scenePath = fileTraduction(scenePathString);
-    boost::property_tree::read_json(scenePath, jsonFile);
+    std::string path = "assets/configFiles/" + sceneName + "/Textures.json";
+    boost::property_tree::ptree jsonFile = openJsonFile(path);
 
     for (auto line : jsonFile) {
         sf::Texture tmpTexture;
-        if (tmpTexture.loadFromFile(fileTraduction(line.second.data())) != true) {
+        if (tmpTexture.loadFromFile(fileTraduction(line.second.data())) != true)
             throw ecs::TextureNotLoadedSuccessfully(fileTraduction(line.second.data()));
-        } else
-            _textureMap[line.first].loadFromFile(fileTraduction(line.second.data()));
+        _textureMap[line.first].loadFromFile(fileTraduction(line.second.data()));
     }
 }
 
