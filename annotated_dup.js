@@ -2,6 +2,9 @@ var annotated_dup =
 [
     [ "ecs", null, [
       [ "AComponent", "classecs_1_1_a_component.html", "classecs_1_1_a_component" ],
+      [ "Animate", "classecs_1_1_animate.html", "classecs_1_1_animate" ],
+      [ "AnimationFrame", "classecs_1_1_animation_frame.html", "classecs_1_1_animation_frame" ],
+      [ "AnimationFrameOutOfRange", "classecs_1_1_animation_frame_out_of_range.html", "classecs_1_1_animation_frame_out_of_range" ],
       [ "ASystem", "classecs_1_1_a_system.html", "classecs_1_1_a_system" ],
       [ "Click", "classecs_1_1_click.html", "classecs_1_1_click" ],
       [ "Clickable", "classecs_1_1_clickable.html", "classecs_1_1_clickable" ],
@@ -30,6 +33,7 @@ var annotated_dup =
       [ "IComponent", "classecs_1_1_i_component.html", "classecs_1_1_i_component" ],
       [ "Input", "classecs_1_1_input.html", "classecs_1_1_input" ],
       [ "ISystem", "classecs_1_1_i_system.html", "classecs_1_1_i_system" ],
+      [ "JsonFileOpenerFailed", "classecs_1_1_json_file_opener_failed.html", "classecs_1_1_json_file_opener_failed" ],
       [ "Move", "classecs_1_1_move.html", "classecs_1_1_move" ],
       [ "Position", "classecs_1_1_position.html", "classecs_1_1_position" ],
       [ "RTypeEvent", "structecs_1_1_r_type_event.html", "structecs_1_1_r_type_event" ],
@@ -43,9 +47,11 @@ var annotated_dup =
       [ "TextureNotInDatabase", "classecs_1_1_texture_not_in_database.html", "classecs_1_1_texture_not_in_database" ],
       [ "TextureNotLoadedSuccessfully", "classecs_1_1_texture_not_loaded_successfully.html", "classecs_1_1_texture_not_loaded_successfully" ],
       [ "Type", "classecs_1_1_type.html", "classecs_1_1_type" ],
+      [ "TypeNotInAnimationDataBase", "classecs_1_1_type_not_in_animation_data_base.html", "classecs_1_1_type_not_in_animation_data_base" ],
       [ "Velocity", "classecs_1_1_velocity.html", "classecs_1_1_velocity" ],
       [ "Weapon", "classecs_1_1_weapon.html", "classecs_1_1_weapon" ],
-      [ "WriteInBox", "classecs_1_1_write_in_box.html", "classecs_1_1_write_in_box" ]
+      [ "WriteInBox", "classecs_1_1_write_in_box.html", "classecs_1_1_write_in_box" ],
+      [ "WrongAnimationCalled", "classecs_1_1_wrong_animation_called.html", "classecs_1_1_wrong_animation_called" ]
     ] ],
     [ "rtype", null, [
       [ "AnimationDatabase", "classrtype_1_1_animation_database.html", "classrtype_1_1_animation_database" ],

@@ -1,6 +1,7 @@
 var dir_d4e1b3b8558100346f498c4e0695534b =
 [
     [ "AComponent.hpp", "_a_component_8hpp_source.html", null ],
+    [ "AnimationFrame.hpp", "_animation_frame_8hpp_source.html", null ],
     [ "Clickable.hpp", "_clickable_8hpp_source.html", null ],
     [ "Controllable.hpp", "_controllable_8hpp_source.html", null ],
     [ "DrawableClientSide.hpp", "_drawable_client_side_8hpp_source.html", null ],

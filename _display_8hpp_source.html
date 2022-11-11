@@ -99,32 +99,30 @@ $(document).ready(function(){initNavTree('_display_8hpp_source.html',''); initRe
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define DISPLAY_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../components/DrawableClientSide.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../components/Position.hpp&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;../components/Text.hpp&quot;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../components/TextBox.hpp&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;ASystem.hpp&quot;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span>ecs</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">class </span>Ecs;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classecs_1_1_display.html">   22</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classecs_1_1_display.html">Display</a> : <span class="keyword">public</span> <a class="code" href="classecs_1_1_a_system.html">ASystem</a> {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classecs_1_1_display.html#ad02aea8a18ba227e0c4ae2fa7e495a34">Display</a>(std::shared_ptr&lt;Ecs&gt; &amp;manager);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        ~<a class="code" href="classecs_1_1_display.html">Display</a>();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_display.html#a462237eee54f317b4c36647cbb6d614b">run</a>(<span class="keyword">const</span> std::string &amp;sceneName, sf::RenderWindow &amp;window);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    };</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;} <span class="comment">// namespace ecs</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !DISPLAY_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../assetsManager/AnimationDatabase.hpp&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;ASystem.hpp&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>ecs</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">class </span>Ecs;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classecs_1_1_display.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classecs_1_1_display.html">Display</a> : <span class="keyword">public</span> <a class="code" href="classecs_1_1_a_system.html">ASystem</a> {</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classecs_1_1_display.html#ad02aea8a18ba227e0c4ae2fa7e495a34">Display</a>(std::shared_ptr&lt;Ecs&gt; &amp;manager);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        ~<a class="code" href="classecs_1_1_display.html">Display</a>();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_display.html#a462237eee54f317b4c36647cbb6d614b">run</a>(<span class="keyword">const</span> std::string &amp;sceneName, sf::RenderWindow &amp;window);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    };</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;} <span class="comment">// namespace ecs</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !DISPLAY_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassecs_1_1_display_html"><div class="ttname"><a href="classecs_1_1_display.html">ecs::Display</a></div><div class="ttdef"><b>Definition:</b> Display.hpp:22</div></div>
+<div class="ttc" id="aclassecs_1_1_display_html"><div class="ttname"><a href="classecs_1_1_display.html">ecs::Display</a></div><div class="ttdef"><b>Definition:</b> Display.hpp:20</div></div>
 <div class="ttc" id="aclassecs_1_1_drawable_client_side_html_a524c8a71083a3696f22e345d18b5fe2f"><div class="ttname"><a href="classecs_1_1_drawable_client_side.html#a524c8a71083a3696f22e345d18b5fe2f">ecs::DrawableClientSide::getSprite</a></div><div class="ttdeci">sf::Sprite &amp; getSprite()</div><div class="ttdoc">Get the entity Sprite.</div><div class="ttdef"><b>Definition:</b> DrawableClientSide.cpp:22</div></div>
-<div class="ttc" id="aclassecs_1_1_display_html_a462237eee54f317b4c36647cbb6d614b"><div class="ttname"><a href="classecs_1_1_display.html#a462237eee54f317b4c36647cbb6d614b">ecs::Display::run</a></div><div class="ttdeci">void run(const std::string &amp;sceneName, sf::RenderWindow &amp;window)</div><div class="ttdoc">run the display system</div><div class="ttdef"><b>Definition:</b> Display.cpp:16</div></div>
-<div class="ttc" id="aclassecs_1_1_display_html_ad02aea8a18ba227e0c4ae2fa7e495a34"><div class="ttname"><a href="classecs_1_1_display.html#ad02aea8a18ba227e0c4ae2fa7e495a34">ecs::Display::Display</a></div><div class="ttdeci">Display(std::shared_ptr&lt; Ecs &gt; &amp;manager)</div><div class="ttdoc">Construct a display system that display SFML entities on Window.</div><div class="ttdef"><b>Definition:</b> Display.cpp:12</div></div>
+<div class="ttc" id="aclassecs_1_1_display_html_a462237eee54f317b4c36647cbb6d614b"><div class="ttname"><a href="classecs_1_1_display.html#a462237eee54f317b4c36647cbb6d614b">ecs::Display::run</a></div><div class="ttdeci">void run(const std::string &amp;sceneName, sf::RenderWindow &amp;window)</div><div class="ttdoc">run the display system</div><div class="ttdef"><b>Definition:</b> Display.cpp:21</div></div>
+<div class="ttc" id="aclassecs_1_1_display_html_ad02aea8a18ba227e0c4ae2fa7e495a34"><div class="ttname"><a href="classecs_1_1_display.html#ad02aea8a18ba227e0c4ae2fa7e495a34">ecs::Display::Display</a></div><div class="ttdeci">Display(std::shared_ptr&lt; Ecs &gt; &amp;manager)</div><div class="ttdoc">Construct a display system that display SFML entities on Window.</div><div class="ttdef"><b>Definition:</b> Display.cpp:17</div></div>
 <div class="ttc" id="aclassecs_1_1_position_html"><div class="ttname"><a href="classecs_1_1_position.html">ecs::Position</a></div><div class="ttdef"><b>Definition:</b> Position.hpp:15</div></div>
 <div class="ttc" id="aclassecs_1_1_drawable_client_side_html"><div class="ttname"><a href="classecs_1_1_drawable_client_side.html">ecs::DrawableClientSide</a></div><div class="ttdef"><b>Definition:</b> DrawableClientSide.hpp:15</div></div>
 <div class="ttc" id="aclassecs_1_1_a_system_html"><div class="ttname"><a href="classecs_1_1_a_system.html">ecs::ASystem</a></div><div class="ttdef"><b>Definition:</b> ASystem.hpp:19</div></div>

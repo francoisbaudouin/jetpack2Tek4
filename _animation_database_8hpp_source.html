@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('_animation_database_8hpp_source.html',
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef ANIMATIONDATABASE_HPP_</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define ANIMATIONDATABASE_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define DEFAULT &quot;IDLE&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define DEFAULT &quot;Idle&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -107,30 +107,35 @@ $(document).ready(function(){initNavTree('_animation_database_8hpp_source.html',
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span>rtype</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">using</span> AnimationFrame = std::array&lt;float, 4&gt;;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">using</span> Animation = std::vector&lt;AnimationFrame&gt;;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">using</span> Frame = std::array&lt;int, 4&gt;;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">using</span> Animation = std::vector&lt;Frame&gt;;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">using</span> Animations = std::unordered_map&lt;std::string, Animation&gt;;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classrtype_1_1_animation_database.html">   24</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classrtype_1_1_animation_database.html">AnimationDatabase</a> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="classrtype_1_1_animation_database.html">AnimationDatabase</a>();</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        ~<a class="code" href="classrtype_1_1_animation_database.html">AnimationDatabase</a>();</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">void</span> onCall(<span class="keyword">const</span> std::string &amp;sceneName);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">size_t</span> getAnimationSize(<span class="keyword">const</span> std::string &amp;entityType, <span class="keyword">const</span> std::string &amp;animationType) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        Animation &amp;getAnimation(<span class="keyword">const</span> std::string &amp;entityType, <span class="keyword">const</span> std::string &amp;animationType);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        AnimationFrame &amp;getAnimationFrame(</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">const</span> std::string &amp;entityType, <span class="keyword">const</span> std::string &amp;animationType, <span class="keyword">const</span> <span class="keywordtype">size_t</span> frameId);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        std::unordered_map&lt;std::string, Animations&gt; _animationMap;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    };</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;} <span class="comment">// namespace rtype</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ANIMATIONDATABASE_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classrtype_1_1_animation_database.html#a6710cb8c9ee76e0e3cd913064351bb00">onCall</a>(<span class="keyword">const</span> std::string &amp;sceneName);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="classrtype_1_1_animation_database.html#a0740c53e61a0589a6f207129d66faa86">getAnimationSize</a>(<span class="keyword">const</span> std::string &amp;entityType, <span class="keyword">const</span> std::string &amp;animationType) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        Animation &amp;<a class="code" href="classrtype_1_1_animation_database.html#a3d75aa1a219c1fd0febc1e3e4308b982">getAnimation</a>(<span class="keyword">const</span> std::string &amp;entityType, <span class="keyword">const</span> std::string &amp;animationType);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        Frame &amp;<a class="code" href="classrtype_1_1_animation_database.html#a237878f348e50e846eb6745abe9d6c19">getFrame</a>(<span class="keyword">const</span> std::string &amp;entityType, <span class="keyword">const</span> std::string &amp;animationType, <span class="keyword">const</span> <span class="keywordtype">size_t</span> frameId);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::unordered_map&lt;std::string, Animations&gt; _animationMap;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    };</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;} <span class="comment">// namespace rtype</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ANIMATIONDATABASE_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassrtype_1_1_animation_database_html"><div class="ttname"><a href="classrtype_1_1_animation_database.html">rtype::AnimationDatabase</a></div><div class="ttdef"><b>Definition:</b> AnimationDatabase.hpp:24</div></div>
+<div class="ttc" id="aclassrtype_1_1_animation_database_html_a3d75aa1a219c1fd0febc1e3e4308b982"><div class="ttname"><a href="classrtype_1_1_animation_database.html#a3d75aa1a219c1fd0febc1e3e4308b982">rtype::AnimationDatabase::getAnimation</a></div><div class="ttdeci">Animation &amp; getAnimation(const std::string &amp;entityType, const std::string &amp;animationType)</div><div class="ttdoc">Get the animation at type of entity passed as parameter.</div><div class="ttdef"><b>Definition:</b> AnimationDatabase.cpp:74</div></div>
+<div class="ttc" id="aclassecs_1_1_type_not_in_animation_data_base_html"><div class="ttname"><a href="classecs_1_1_type_not_in_animation_data_base.html">ecs::TypeNotInAnimationDataBase</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:112</div></div>
+<div class="ttc" id="aclassrtype_1_1_animation_database_html_a6710cb8c9ee76e0e3cd913064351bb00"><div class="ttname"><a href="classrtype_1_1_animation_database.html#a6710cb8c9ee76e0e3cd913064351bb00">rtype::AnimationDatabase::onCall</a></div><div class="ttdeci">void onCall(const std::string &amp;sceneName)</div><div class="ttdoc">Load the json files needed by the current scene and fill _animationMap for use.</div><div class="ttdef"><b>Definition:</b> AnimationDatabase.cpp:54</div></div>
+<div class="ttc" id="aclassrtype_1_1_animation_database_html_a237878f348e50e846eb6745abe9d6c19"><div class="ttname"><a href="classrtype_1_1_animation_database.html#a237878f348e50e846eb6745abe9d6c19">rtype::AnimationDatabase::getFrame</a></div><div class="ttdeci">Frame &amp; getFrame(const std::string &amp;entityType, const std::string &amp;animationType, const size_t frameId)</div><div class="ttdoc">Get the frame from the animation passed as parameter.</div><div class="ttdef"><b>Definition:</b> AnimationDatabase.cpp:83</div></div>
+<div class="ttc" id="aclassecs_1_1_animation_frame_out_of_range_html"><div class="ttname"><a href="classecs_1_1_animation_frame_out_of_range.html">ecs::AnimationFrameOutOfRange</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:120</div></div>
+<div class="ttc" id="aclassecs_1_1_wrong_animation_called_html"><div class="ttname"><a href="classecs_1_1_wrong_animation_called.html">ecs::WrongAnimationCalled</a></div><div class="ttdef"><b>Definition:</b> Exception.hpp:116</div></div>
+<div class="ttc" id="aclassrtype_1_1_animation_database_html_a0740c53e61a0589a6f207129d66faa86"><div class="ttname"><a href="classrtype_1_1_animation_database.html#a0740c53e61a0589a6f207129d66faa86">rtype::AnimationDatabase::getAnimationSize</a></div><div class="ttdeci">size_t getAnimationSize(const std::string &amp;entityType, const std::string &amp;animationType) const</div><div class="ttdoc">Get the size of the animation specified as parameter.</div><div class="ttdef"><b>Definition:</b> AnimationDatabase.cpp:65</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

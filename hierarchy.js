@@ -8,6 +8,7 @@ var hierarchy =
     [ "ecs::EntityManager", "classecs_1_1_entity_manager.html", null ],
     [ "exception", null, [
       [ "ecs::Exception", "classecs_1_1_exception.html", [
+        [ "ecs::AnimationFrameOutOfRange", "classecs_1_1_animation_frame_out_of_range.html", null ],
         [ "ecs::ComponentAlreadyExisting", "classecs_1_1_component_already_existing.html", null ],
         [ "ecs::ComponentNotCompatible", "classecs_1_1_component_not_compatible.html", null ],
         [ "ecs::ComponentNotExisting", "classecs_1_1_component_not_existing.html", null ],
@@ -16,16 +17,20 @@ var hierarchy =
         [ "ecs::EntityManagerNotExisting", "classecs_1_1_entity_manager_not_existing.html", null ],
         [ "ecs::EntityNotExisting", "classecs_1_1_entity_not_existing.html", null ],
         [ "ecs::FontNotLoadedSuccessfully", "classecs_1_1_font_not_loaded_successfully.html", null ],
+        [ "ecs::JsonFileOpenerFailed", "classecs_1_1_json_file_opener_failed.html", null ],
         [ "ecs::SystemAlreadyExisting", "classecs_1_1_system_already_existing.html", null ],
         [ "ecs::SystemNotCompatible", "classecs_1_1_system_not_compatible.html", null ],
         [ "ecs::SystemNotExisting", "classecs_1_1_system_not_existing.html", null ],
         [ "ecs::Test", "classecs_1_1_test.html", null ],
         [ "ecs::TextureNotInDatabase", "classecs_1_1_texture_not_in_database.html", null ],
-        [ "ecs::TextureNotLoadedSuccessfully", "classecs_1_1_texture_not_loaded_successfully.html", null ]
+        [ "ecs::TextureNotLoadedSuccessfully", "classecs_1_1_texture_not_loaded_successfully.html", null ],
+        [ "ecs::TypeNotInAnimationDataBase", "classecs_1_1_type_not_in_animation_data_base.html", null ],
+        [ "ecs::WrongAnimationCalled", "classecs_1_1_wrong_animation_called.html", null ]
       ] ]
     ] ],
     [ "ecs::IComponent", "classecs_1_1_i_component.html", [
       [ "ecs::AComponent", "classecs_1_1_a_component.html", [
+        [ "ecs::AnimationFrame", "classecs_1_1_animation_frame.html", null ],
         [ "ecs::Clickable", "classecs_1_1_clickable.html", null ],
         [ "ecs::Controllable", "classecs_1_1_controllable.html", null ],
         [ "ecs::DrawableClientSide", "classecs_1_1_drawable_client_side.html", null ],
@@ -49,6 +54,7 @@ var hierarchy =
     ] ],
     [ "ecs::ISystem", "classecs_1_1_i_system.html", [
       [ "ecs::ASystem", "classecs_1_1_a_system.html", [
+        [ "ecs::Animate", "classecs_1_1_animate.html", null ],
         [ "ecs::Click", "classecs_1_1_click.html", null ],
         [ "ecs::Collider", "classecs_1_1_collider.html", null ],
         [ "ecs::ColliderReaction", "classecs_1_1_collider_reaction.html", null ],
