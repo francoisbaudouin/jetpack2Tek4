@@ -31,19 +31,19 @@ namespace ecs
         std::string getAnimation() const;
         /**
          * @brief Get the id of the frame
-         * 
+         *
          * @return size_t : id of the frame
          */
         size_t getFrame() const;
         /**
          * @brief Set the name of the current animation
-         * 
+         *
          * @param animation : name of the current animation
          */
         void setAnimation(const std::string &animation);
         /**
          * @brief Set the frame of the animation
-         * 
+         *
          * @param frame : frame of the animation
          */
         void setFrame(const size_t frame);

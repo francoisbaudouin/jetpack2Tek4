@@ -13,7 +13,6 @@
 
 namespace rtype
 {
-
     std::string fileTraduction(std::string &fileName)
     {
         std::filesystem::path path(fileName);

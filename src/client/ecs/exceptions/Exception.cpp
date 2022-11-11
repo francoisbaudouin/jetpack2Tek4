@@ -93,12 +93,12 @@ WrongAnimationCalled::WrongAnimationCalled(std::string const &entity, std::strin
 
 AnimationFrameOutOfRange::AnimationFrameOutOfRange(
     std::string const &entity, std::string const &animation, const size_t maxFrame, const size_t frame)
-    : Exception("Error 771: Type " + entity + ": frame in " + animation + " out of range "
-        + std::to_string(frame) + "/" + std::to_string(maxFrame))
+    : Exception("Error 771: Type " + entity + ": frame in " + animation + " out of range " + std::to_string(frame) + "/"
+        + std::to_string(maxFrame))
 {
 }
 
 JsonFileOpenerFailed::JsonFileOpenerFailed(std::string const &file)
-    : Exception("error 990: Json file does not exist: '" + file + "'")
+    : Exception("error 880: Json file does not exist: '" + file + "'")
 {
 }

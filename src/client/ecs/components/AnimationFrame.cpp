@@ -20,6 +20,6 @@ std::string AnimationFrame::getAnimation() const { return (_animation); }
 
 size_t AnimationFrame::getFrame() const { return (_frame); }
 
-void AnimationFrame::setAnimation(const std::string &animation) {_animation = animation; }
+void AnimationFrame::setAnimation(const std::string &animation) { _animation = animation; }
 
-void AnimationFrame::setFrame(const size_t frame) {_frame = frame; }
+void AnimationFrame::setFrame(const size_t frame) { _frame = frame; }

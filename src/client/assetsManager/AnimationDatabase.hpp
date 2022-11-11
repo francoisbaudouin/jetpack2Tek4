@@ -33,7 +33,7 @@ namespace rtype
         void onCall(const std::string &sceneName);
         /**
          * @brief Get the size of the animation specified as parameter
-         * 
+         *
          * @param entityType : type of the entity that refer to it's animation
          * @param animationType : type of the animation to check
          * @return size_t : size of the animation
@@ -41,7 +41,7 @@ namespace rtype
         size_t getAnimationSize(const std::string &entityType, const std::string &animationType) const;
         /**
          * @brief Get the animation at type of entity passed as parameter
-         * 
+         *
          * @param entityType : type of the entity needed
          * @param animationType : type of the animation
          * @return Animation& : animation to return
@@ -49,7 +49,7 @@ namespace rtype
         Animation &getAnimation(const std::string &entityType, const std::string &animationType);
         /**
          * @brief Get the frame from the animation passed as parameter
-         * 
+         *
          * @param entityType : type of the entity needing the aimation
          * @param animationType : type of the animation
          * @param frameId : id of the frame in the animation

@@ -119,7 +119,8 @@ namespace ecs
     };
     class AnimationFrameOutOfRange : public Exception {
       public:
-        AnimationFrameOutOfRange(std::string const &entity, std::string const &animation, const size_t maxFrame, const size_t frame);
+        AnimationFrameOutOfRange(
+            std::string const &entity, std::string const &animation, const size_t maxFrame, const size_t frame);
     };
     class JsonFileOpenerFailed : public Exception {
       public:
