@@ -6,11 +6,11 @@
 */
 
 #include <iostream>
-#include <boost/property_tree/json_parser.hpp>
-#include <boost/property_tree/ptree.hpp>
 
+#include "../ecs/exceptions/Exception.hpp"
 #include "AnimationDatabase.hpp"
 #include "TextureDatabase.hpp"
+#include "fileOpener.hpp"
 
 using namespace rtype;
 
@@ -21,20 +21,20 @@ AnimationDatabase::~AnimationDatabase() {}
 Animation createAnimation(const boost::property_tree::ptree &jsonFile)
 {
     Animation animation;
-    AnimationFrame animationFrame;
+    Frame frame;
     size_t id = 0;
     size_t size = 0;
 
     for (auto iterator : jsonFile) {
         if (id != 0)
-            animationFrame[id - 1] = iterator.second.get_value<float>();
+            frame[id - 1] = iterator.second.get_value<int>();
         else
             size = iterator.second.get_value<size_t>();
         id++;
     }
     for (id = 0; id < size; id++) {
-        animation.push_back(animationFrame);
-        animationFrame[0] += animationFrame[2];
+        animation.push_back(frame);
+        frame[0] += frame[2];
     }
     return (animation);
 }
@@ -53,11 +53,8 @@ Animations createEntityAnimations(const boost::property_tree::ptree &jsonFile)
 
 void AnimationDatabase::onCall(const std::string &sceneName)
 {
-    boost::property_tree::ptree jsonFile;
     std::string path("assets/configFiles/" + sceneName + "/Animations.json");
-    std::string scenePath = fileTraduction(path);
-    boost::property_tree::read_json(scenePath, jsonFile);
-    std::vector<std::string> strs;
+    boost::property_tree::ptree jsonFile = openJsonFile(path);
 
     _animationMap.clear();
     for (auto iterator : jsonFile) {
@@ -67,16 +64,32 @@ void AnimationDatabase::onCall(const std::string &sceneName)
 
 size_t AnimationDatabase::getAnimationSize(const std::string &entityType, const std::string &animationType) const
 {
+    if (!_animationMap.contains(entityType))
+        throw ecs::TypeNotInAnimationDataBase(entityType);
+    if (!_animationMap.at(entityType).contains(animationType))
+        throw ecs::WrongAnimationCalled(entityType, animationType);
     return (_animationMap.at(entityType).at(animationType).size());
 }
 
 Animation &AnimationDatabase::getAnimation(const std::string &entityType, const std::string &animationType)
 {
+    if (!_animationMap.contains(entityType))
+        throw ecs::TypeNotInAnimationDataBase(entityType);
+    if (!_animationMap.at(entityType).contains(animationType))
+        throw ecs::WrongAnimationCalled(entityType, animationType);
     return (_animationMap.at(entityType).at(animationType));
 }
 
-AnimationFrame &AnimationDatabase::getAnimationFrame(
+Frame &AnimationDatabase::getFrame(
     const std::string &entityType, const std::string &animationType, const size_t frameId)
 {
+    size_t size = 0;
+    if (!_animationMap.contains(entityType))
+        throw ecs::TypeNotInAnimationDataBase(entityType);
+    if (!_animationMap.at(entityType).contains(animationType))
+        throw ecs::WrongAnimationCalled(entityType, animationType);
+    size = _animationMap.at(entityType).at(animationType).size();
+    if (_animationMap.at(entityType).at(animationType).size() < frameId)
+        throw ecs::AnimationFrameOutOfRange(entityType, animationType, size, frameId);
     return (_animationMap.at(entityType).at(animationType).at(frameId));
 }
