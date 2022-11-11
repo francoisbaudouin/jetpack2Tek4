@@ -8,26 +8,22 @@
 #include <iostream>
 
 #include "Communicator.hpp"
+#include "Server.hpp"
+#include "ecs/Ecs.hpp"
 
 #include "Test.hpp"
 
 int main(void)
 {
     try {
+        ecs::Ecs ecs;
+        std::shared_ptr<ecs::Ecs> sharedEcs = std::make_shared<ecs::Ecs>(ecs);
         rtype::Communicator communicator;
-        std::shared_ptr<rtype::Communicator> sharedServer = std::make_shared<rtype::Communicator>(communicator);
-        boost::thread *communicationThread = new boost::thread(boost::bind(&rtype::Communicator::run, sharedServer));
-        Test test("Bobby", 41);
-        Test test1("Mathieu", 6);
-        Test test2("Barnabé", 59);
+        std::shared_ptr<rtype::Communicator> sharedCommunicator = std::make_shared<rtype::Communicator>(communicator);
+        rtype::Server server(sharedCommunicator, sharedEcs);
+        boost::thread *communicationThread = new boost::thread(boost::bind(&rtype::Communicator::run, sharedCommunicator));
 
-        while (1) {
-            sharedServer->lockSendMutex();
-            sharedServer->_sendStream.str(std::string());
-            sharedServer->_sendStream << test << " " << test1 << " " << test2 << " ";
-            sharedServer->unlockSendMutex();
-        }
-
+        server.run();
         communicationThread->join();
     } catch (std::exception &exception) {
         std::cerr << exception.what() << std::endl;

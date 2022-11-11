@@ -3,8 +3,11 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/server)
 
 set(SRC
     ${SRC}
+    ${ecs_dir}
     ${SRCROOT}/Communicator.cpp
     ${INCROOT}/Communicator.hpp
+    ${SRCROOT}/Server.cpp
+    ${INCROOT}/Server.hpp
     ${SRCROOT}/Test.cpp # à retirer avant de merge
     ${INCROOT}/Test.hpp # à retirer avant de merge
 )
@@ -18,6 +21,7 @@ find_package(Threads REQUIRED)
 find_package(Boost REQUIRED)
 include(CompilerFlags)
 
+add_subdirectory(ecs)
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 
 target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::sfml)

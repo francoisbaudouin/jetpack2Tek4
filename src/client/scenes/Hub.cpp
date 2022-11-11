@@ -7,6 +7,7 @@
 
 #include "Hub.hpp"
 #include <SFML/Graphics/Text.hpp>
+#include <string>
 
 #include "../ecs/components/DrawableClientSide.hpp"
 #include "../ecs/components/HitBox.hpp"
@@ -22,8 +23,8 @@ using namespace ecs;
 using namespace rtype;
 
 Hub::Hub(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
-    const float scale)
-    : AScene(sceneSystem, window, sceneName, scale), _event(event)
+    const float scale, std::shared_ptr<Communicator> communicator)
+    : AScene(sceneSystem, window, sceneName, scale, communicator), _event(event)
 {
 }
 
@@ -48,10 +49,10 @@ void Hub::OnActivate()
     _sceneSystem.getTextureDatabase()->onCall(this->getName());
     auto &hereManager = _sceneSystem.getEcs()->getEntityManager(this->getName());
 
-    auto &ipPlaceholder = hereManager.getEntity(ecs::generateEntity(hereManager, "Placeholder"));
-    auto &portPlaceholder = hereManager.getEntity(ecs::generateEntity(hereManager, "Placeholder"));
-    auto &confirmButton = hereManager.getEntity(ecs::generateEntity(hereManager, "Button"));
-    auto &hube = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
+    auto &ipPlaceholder = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Placeholder"));
+    auto &portPlaceholder = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Placeholder"));
+    auto &confirmButton = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Button"));
+    auto &hube = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Default"));
 
     hube.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("HubForm"), _scale);
     ipPlaceholder.addComponent<DrawableClientSide>(
@@ -97,7 +98,12 @@ void Hub::Update()
                           .getEntity(1)
                           .getComponent<TextBox>()
                           .getReferenceString();
+        _communicator->setIpAdress(_ipServer);
+        _communicator->setPort(stoi(_portServer));
+        _thread = std::make_shared<boost::thread>(boost::thread(boost::bind(&rtype::Communicator::connectToServer, _communicator)));
+        //while (1)
     }
+
 
     if (_sceneSystem.getEcs()->getEntityManager(this->getName()).getEntity(2).getComponent<Clickable>().isHovered()) {
         _sceneSystem.getEcs()

@@ -5,8 +5,8 @@
 ** Communicator
 */
 
-#ifndef SERVER_HPP_
-#define SERVER_HPP_
+#ifndef COMMUNICATOR_HPP_
+#define COMMUNICATOR_HPP_
 
 #define RUNNING 1
 
@@ -72,6 +72,7 @@ namespace rtype
 
         /* Properties */
         std::stringstream _sendStream;
+        std::stringstream _receiveStream;
 
       protected:
       private:
@@ -79,10 +80,9 @@ namespace rtype
         boost::asio::ip::udp::endpoint _remoteEndpoint;
         boost::asio::io_context _ioContext;
         boost::array<char, 128> _receiveBuffer;
-        std::stringstream _receiveStream;
         boost::mutex _receiveMutex;
         boost::mutex _sendMutex;
     };
 } // namespace rtype
 
-#endif /* !SERVER_HPP_ */
+#endif /* !COMMUNICATOR_HPP_ */

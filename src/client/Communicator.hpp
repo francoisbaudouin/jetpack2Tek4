@@ -5,8 +5,8 @@
 ** Communicator
 */
 
-#ifndef CLIENT_HPP_
-#define CLIENT_HPP_
+#ifndef COMMUNICATOR_HPP_
+#define COMMUNICATOR_HPP_
 
 #define RUNNING 1
 
@@ -89,10 +89,17 @@ namespace rtype
          *
          */
         void unlockReceiveMutex();
+        /**
+         * @brief stop the communication
+         * 
+         */
+        void stopCommunication();
+
         ~Communicator() = default;
 
         /* Properties */
         std::stringstream _sendStream;
+        std::stringstream _receiveStream;
 
       protected:
       private:
@@ -102,10 +109,10 @@ namespace rtype
         boost::asio::ip::udp::endpoint _senderEndpoint;
         boost::asio::io_context _ioContext;
         boost::array<char, 128> _receiveBuffer;
-        std::stringstream _receiveStream;
         boost::mutex _sendMutex;
         boost::mutex _receiveMutex;
+        bool _isRunning;
     };
 } // namespace rtype
 
-#endif /* !CLIENT_HPP_ */
+#endif /* !COMMUNICATOR_HPP_ */
