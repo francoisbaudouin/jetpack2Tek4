@@ -2,21 +2,20 @@
 ** EPITECH PROJECT, 2022
 ** jetpack2Tek4
 ** File description:
-** Hub
+** Lobby
 */
 
-#ifndef HUB_HPP_
-#define HUB_HPP_
+#ifndef LOBBY_HPP_
+#define LOBBY_HPP_
 
 #include "AScene.hpp"
-#include "../Communicator.hpp"
 
 namespace rtype
 {
-    class Hub : public AScene {
+class Lobby : public AScene {
       public:
         /**
-         * @brief Construct a new Hub Scene
+         * @brief Construct a new Lobby Scene
          *
          * @param sceneSystem scene system that will manage scenes
          * @param window the window where the scene will be displayed
@@ -24,9 +23,9 @@ namespace rtype
          * @param scale scale of the scene
          *
          */
-        Hub(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
+        Lobby(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
             const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread);
-        ~Hub();
+        ~Lobby();
         /**
          * @brief function called at creation of the scene (Add of sceneSystem)
          *
@@ -56,10 +55,12 @@ namespace rtype
         void Draw() override;
 
       private:
+        void updateEntity(ecs::Entity &entity, std::string data);
+        void createEntity(std::string data, const size_t entityId);
         sf::Event &_event;
         std::string _ipServer;
         std::string _portServer;
     };
 } // namespace rtype
 
-#endif /* !HUB_HPP_ */
+#endif /* !LOBBY_HPP_ */

@@ -19,7 +19,7 @@ namespace rtype
     class AScene : public IScene {
       public:
         AScene(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale,
-            std::shared_ptr<Communicator> communicator);
+            std::shared_ptr<Communicator> communicator, boost::thread *thread);
         ~AScene() = default;
         /**
          * @brief Get the Name of the scene
@@ -32,7 +32,7 @@ namespace rtype
          * 
          * @return ptr to the thread of the scene
          */
-        std::shared_ptr<boost::thread> getThread() override;
+        boost::thread *getThread() override;
         /**
          * @brief get a shared ptr to the communicator 
          * 
@@ -47,7 +47,7 @@ namespace rtype
         std::string _sceneName;
         float _scale;
         std::shared_ptr<Communicator> _communicator;
-        std::shared_ptr<boost::thread> _thread;
+        boost::thread *_thread;
         ecs::EntityGenerator _entityGenerator;
       private:
     };

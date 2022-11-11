@@ -24,7 +24,7 @@ namespace rtype
          * @param scale scale of the scene
          */
         MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale,
-            std::shared_ptr<Communicator> communicator);
+            std::shared_ptr<Communicator> communicator, boost::thread *thread);
         ~MainMenu();
         /**
          * @brief function called at creation of the scene (Add of sceneSystem)

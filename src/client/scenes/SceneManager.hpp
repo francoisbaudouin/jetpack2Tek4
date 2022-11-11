@@ -22,10 +22,13 @@ namespace rtype
          */
         void run();
 
+        void receiver();
+
       private:
         SceneSystem _sceneSystem;
         float _scale;
         sf::RenderWindow _window;
+        sf::Event _event;
     };
 } // namespace rtype
 

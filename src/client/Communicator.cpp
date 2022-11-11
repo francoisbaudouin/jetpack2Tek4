@@ -10,7 +10,7 @@
 using namespace rtype;
 
 Communicator::Communicator(const std::string &ipAdress, const size_t &port)
-    : _ipAdress(ipAdress), _port(port), _isRunning(true)
+    : _ipAdress(ipAdress), _port(port), _isRunning(true), _bind(false)
 {
 }
 
@@ -30,6 +30,10 @@ void Communicator::setPort(const size_t &port) { this->_port = port; }
 
 void Communicator::connectToServer()
 {
+    while (_bind != true) {
+        if (_exit == true)
+            return;
+    }
     this->_receiverEndpoint =
         boost::asio::ip::udp::endpoint(boost::asio::ip::address::from_string(this->_ipAdress), this->_port);
     boost::asio::ip::udp::socket socket(this->_ioContext);
@@ -39,7 +43,13 @@ void Communicator::connectToServer()
     this->communicate(socket);
 }
 
-void Communicator::stopCommunication() { _isRunning = false; }
+void Communicator::stopCommunication()
+{
+    _isRunning = false;
+    _exit = true;
+}
+
+void Communicator::startCommunication() { _bind = true; }
 
 void Communicator::communicate(boost::asio::ip::udp::socket &socket)
 {

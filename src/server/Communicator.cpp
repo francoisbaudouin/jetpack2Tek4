@@ -32,7 +32,7 @@ void Communicator::run()
     boost::asio::ip::udp::socket socket(
         this->_ioContext, boost::asio::ip::udp::endpoint(boost::asio::ip::udp::v4(), this->_port));
 
-    this->_sendStream << "NONE ";
+    this->_sendStream << "Lobby 0_Player:200,200 1_Enemy:100,100 ";
     while (RUNNING) {
         //receive
         this->lockReceiveMutex();

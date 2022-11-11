@@ -94,6 +94,11 @@ namespace rtype
          * 
          */
         void stopCommunication();
+        /**
+         * @brief start the communication
+         * 
+         */
+        void startCommunication();
 
         ~Communicator() = default;
 
@@ -112,6 +117,8 @@ namespace rtype
         boost::mutex _sendMutex;
         boost::mutex _receiveMutex;
         bool _isRunning;
+        bool _bind;
+        bool _exit;
     };
 } // namespace rtype
 
