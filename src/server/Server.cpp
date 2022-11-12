@@ -44,6 +44,7 @@ void Server::manageReceiveData()
     static int n = 0;
     static int nbReady = 0;
 
+    // std::cout << receiveMessage << " ";
     if (!receiveMessage.empty()) {
         header = receiveMessage.substr(0, receiveMessage.find_first_of(' '));
         if (header == "connect" && n < 4) {

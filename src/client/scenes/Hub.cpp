@@ -18,6 +18,8 @@
 #include "../ecs/systems/Click.hpp"
 #include "../ecs/systems/Display.hpp"
 #include "../ecs/systems/WriteInBox.hpp"
+#include "../ecs/systems/Input.hpp"
+#include "../ecs/systems/Fire.hpp"
 
 using namespace ecs;
 using namespace rtype;
@@ -38,6 +40,9 @@ void Hub::OnCreate()
     _sceneSystem.getEcs()->createSystem<WriteInBox>(_sceneSystem.getEcs());
     _sceneSystem.getEcs()->createSystem<Display>(_sceneSystem.getEcs());
     _sceneSystem.getEcs()->createSystem<Click>(_sceneSystem.getEcs());
+
+    _sceneSystem.getEcs()->createSystem<Input>(_sceneSystem.getEcs());
+    _sceneSystem.getEcs()->createSystem<Fire>(_sceneSystem.getEcs());
 }
 
 void Hub::OnDestroy() {}

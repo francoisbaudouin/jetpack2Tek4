@@ -7,6 +7,11 @@
 
 #include "GameScene.hpp"
 
+// #include "../ecs/enums/event.hpp"
+
+#include "../ecs/systems/Input.hpp"
+#include "../ecs/systems/Fire.hpp"
+
 using namespace rtype;
 using namespace ecs;
 
@@ -28,6 +33,26 @@ void GameScene::OnDeactivate() {}
 
 void GameScene::ProcessInput() {}
 
-void GameScene::Update() {}
+void GameScene::Update()
+{
+    std::cout << _sceneSystem.getEcs()->getSystem<Input>().getInput(_event).size() << " ";
+    // std::vector<RTypeEvent> rTypeEvent(_sceneSystem.getEcs()->getSystem<Input>().getInput(_event));
+
+    // _communicator->lockSendMutex();
+    // for (auto iterator : rTypeEvent) {
+    //     std::cout << "ici ";
+    //     if (iterator.keyboardKey == Device::KeyBoardKey::Z) {
+    //         _communicator->_sendStream << this->_id << " up ";
+    //     } else if (iterator.keyboardKey == Device::KeyBoardKey::Q) {
+    //         _communicator->_sendStream << this->_id << " left ";
+    //     } else if (iterator.keyboardKey == Device::KeyBoardKey::S) {
+    //         _communicator->_sendStream << this->_id << " down ";
+    //     } else if (iterator.keyboardKey == Device::KeyBoardKey::D) {
+    //         _communicator->_sendStream << this->_id << " right ";
+    //     }
+    // }
+    // _communicator->unlockSendMutex();
+    return;
+}
 
 void GameScene::Draw() {}

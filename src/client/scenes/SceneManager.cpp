@@ -37,6 +37,10 @@ SceneManager::SceneManager() : _scale(1), _window(sf::VideoMode(640 * _scale, 36
 
 SceneManager::~SceneManager() {}
 
+size_t SceneManager::getId() const { return this->_id; }
+
+void SceneManager::setId(const size_t &id) { this->_id = id; }
+
 void SceneManager::receiver()
 {
     _sceneSystem.getCurrentScene()->getCommunicator()->lockReceiveMutex();
@@ -50,8 +54,10 @@ void SceneManager::receiver()
         }
     }
     if (!_sceneSystem.getReceivedData().empty() && _sceneSystem.getCurrentScene()->getName() == "Lobby") {
-        if (_sceneSystem.getReceivedData().substr(0, _sceneSystem.getReceivedData().find('%')) == "Launch")
+        if (_sceneSystem.getReceivedData().substr(0, _sceneSystem.getReceivedData().find('%')) == "Launch") {
             _sceneSystem.SwitchTo("GameScene");
+            _sceneSystem.getCurrentScene()->setId(_id);
+        }
     }
     _sceneSystem.getCurrentScene()->getCommunicator()->unlockReceiveMutex();
 }
