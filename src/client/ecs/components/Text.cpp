@@ -43,7 +43,7 @@ void Text::setFontSize(const size_t size) { _text.setCharacterSize(size); }
 
 void Text::setFont(const std::string &fontPath)
 {
-    if (_font.loadFromFile(fontPath)) {
+    if (!_font.loadFromFile(fontPath)) {
         throw FontNotLoadedSuccessfully(fontPath);
         return;
     }
@@ -57,3 +57,5 @@ void Text::setFont(sf::Font &font)
 }
 
 sf::Font Text::getFont() const { return _font; }
+
+size_t Text::getFontSize() const { return _text.getCharacterSize(); }

@@ -6,7 +6,6 @@
 */
 
 #include "SceneSystem.hpp"
-
 using namespace rtype;
 using namespace ecs;
 

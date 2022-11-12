@@ -9,7 +9,6 @@
 #define SCENEMANAGER_HPP_
 
 #include "SceneSystem.hpp"
-
 namespace rtype
 {
     class SceneManager {
@@ -25,7 +24,7 @@ namespace rtype
         void receiver();
 
       private:
-        SceneSystem _sceneSystem;
+        std::shared_ptr<SceneSystem> _sceneSystem;
         float _scale;
         sf::RenderWindow _window;
         sf::Event _event;

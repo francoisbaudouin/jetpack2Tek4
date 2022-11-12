@@ -23,7 +23,7 @@ namespace rtype
          * @param sceneName name of the scene
          * @param scale scale of the scene
          */
-        MainMenu(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale,
+        MainMenu(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName, const float scale,
             std::shared_ptr<Communicator> communicator, boost::thread *thread);
         ~MainMenu();
         /**
@@ -55,6 +55,7 @@ namespace rtype
         void Draw() override;
 
       private:
+        sf::Event _event;
     };
 } // namespace rtype
 
