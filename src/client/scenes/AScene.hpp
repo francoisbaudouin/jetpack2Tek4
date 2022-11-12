@@ -47,6 +47,7 @@ namespace rtype
         float _scale;
         std::shared_ptr<Communicator> _communicator;
         boost::thread *_thread;
+
       private:
     };
 } // namespace rtype
