@@ -30,7 +30,7 @@ namespace ecs
         Entity &createEntity();
         /**
          * @brief Create a Entity object
-         * 
+         *
          * @param id id to specify
          * @return Entity& : entity that was created
          */
