@@ -5,6 +5,8 @@ set(SRC
     ${SRC}
     ${SRCROOT}/AComponent.cpp
     ${SRCROOT}/AComponent.hpp
+    ${SRCROOT}/AnimationFrame.cpp
+    ${SRCROOT}/AnimationFrame.hpp
     ${SRCROOT}/Controllable.cpp
     ${SRCROOT}/Controllable.hpp
     ${SRCROOT}/HitBox.cpp

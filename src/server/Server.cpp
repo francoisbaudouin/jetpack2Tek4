@@ -50,12 +50,9 @@ void Server::manageReceiveData()
             n += 1;
             this->_communicator->_receiveStream.str(std::string());
         } else if (header == "connect" && n >= 4) {
-            // this->_communicator->lockSendMutex();
-            // this->_communicator->_sendStream.str(std::string());
-            // this->_communicator->_sendStream << "REJECT ";
-            // this->_communicator->unlockSendMutex();
+            this->_communicator->_sendStream << "reject ";
         } else if (header == "ready") {
-            nbReady+=1;
+            nbReady += 1;
             if (nbReady == n)
                 context = "Launch%";
             this->_communicator->_receiveStream.str(std::string());

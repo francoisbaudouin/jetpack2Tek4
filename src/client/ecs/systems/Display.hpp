@@ -9,10 +9,8 @@
 #define DISPLAY_HPP_
 
 #include <SFML/Graphics.hpp>
-#include "../components/DrawableClientSide.hpp"
-#include "../components/Position.hpp"
-#include "../components/Text.hpp"
-#include "../components/TextBox.hpp"
+
+#include "../../assetsManager/AnimationDatabase.hpp"
 #include "ASystem.hpp"
 
 namespace ecs

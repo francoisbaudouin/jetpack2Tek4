@@ -28,7 +28,6 @@ void Communicator::unlockReceiveMutex() { this->_receiveMutex.unlock(); }
 
 void Communicator::stopCommunication() { this->_isRunning = false; }
 
-
 void Communicator::run()
 {
     boost::asio::ip::udp::socket socket(
@@ -36,14 +35,14 @@ void Communicator::run()
 
     this->_sendStream << "Default ";
     while (_isRunning) {
-        //receive
+        // receive
         this->lockReceiveMutex();
         this->_receiveStream.str(std::string());
         this->_receiveBuffer = {{0}};
         socket.receive_from(boost::asio::buffer(this->_receiveBuffer), this->_remoteEndpoint);
         this->_receiveStream << this->_receiveBuffer.data();
         this->unlockReceiveMutex();
-        //send
+        // send
         this->lockSendMutex();
         socket.send_to(boost::asio::buffer(this->_sendStream.str()), this->_remoteEndpoint);
         this->unlockSendMutex();

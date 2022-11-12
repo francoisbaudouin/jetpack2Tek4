@@ -47,8 +47,6 @@ namespace rtype
         float _scale;
         std::shared_ptr<Communicator> _communicator;
         boost::thread *_thread;
-        ecs::EntityGenerator _entityGenerator;
-
       private:
     };
 } // namespace rtype

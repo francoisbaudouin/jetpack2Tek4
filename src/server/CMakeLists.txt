@@ -8,8 +8,6 @@ set(SRC
     ${INCROOT}/Communicator.hpp
     ${INCROOT}/Server.cpp
     ${INCROOT}/Server.hpp
-    ${SRCROOT}/Test.cpp # à retirer avant de merge
-    ${INCROOT}/Test.hpp # à retirer avant de merge
 )
 
 set_property(TARGET ${TARGET} PROPERTY MSVC_RUNTIME_LIBRARY "")

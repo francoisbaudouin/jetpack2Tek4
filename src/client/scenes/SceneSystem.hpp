@@ -10,7 +10,7 @@
 
 #include <memory>
 #include "../Communicator.hpp"
-#include "../TextureDatabase.hpp"
+#include "../assetsManager/TextureDatabase.hpp"
 #include "../ecs/Ecs.hpp"
 #include "IScene.hpp"
 #include <unordered_map>

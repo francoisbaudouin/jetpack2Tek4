@@ -5,7 +5,6 @@
 ** Communicator
 */
 #include "Communicator.hpp"
-#include "Test.hpp"
 
 using namespace rtype;
 
@@ -53,11 +52,6 @@ void Communicator::startCommunication() { _bind = true; }
 
 void Communicator::communicate(boost::asio::ip::udp::socket &socket)
 {
-    Test test;
-    std::stringstream stringStream;
-
-    //this->_sendStream.str(std::string());
-    //this->_sendStream << "Default ";
     while (_isRunning) {
         // send
         this->lockSendMutex();

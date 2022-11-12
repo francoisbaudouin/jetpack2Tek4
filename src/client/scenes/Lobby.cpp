@@ -43,7 +43,7 @@ void Lobby::OnActivate()
     _sceneSystem.getTextureDatabase()->onCall(this->getName());
     auto &hereManager = _sceneSystem.getEcs()->getEntityManager(this->getName());
 
-    auto &readyButton = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Button", 5));
+    auto &readyButton = hereManager.getEntity(generateEntity(hereManager, "Button", 5));
     readyButton.getComponent<HitBox>().setHitBox(100 * _scale, 20 * _scale);
     readyButton.getComponent<Text>().setText(std::string("CONFIRM"));
     readyButton.getComponent<Text>().setFontSize(10 * _scale);

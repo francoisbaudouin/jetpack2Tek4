@@ -25,6 +25,7 @@ namespace rtype
         void manageSendData();
 
         void run();
+
       protected:
       private:
         boost::thread *_communicationThread;
