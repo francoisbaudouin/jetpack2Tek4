@@ -19,6 +19,3 @@ set(INCDIRS
   ${INCROOT}
   PARENT_SCOPE
 )
-
-
-file(GLOB ${SRC} ecs_dir)

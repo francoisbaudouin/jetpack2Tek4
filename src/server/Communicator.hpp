@@ -8,8 +8,6 @@
 #ifndef COMMUNICATOR_HPP_
 #define COMMUNICATOR_HPP_
 
-#define RUNNING 1
-
 #include <boost/array.hpp>
 #include <boost/asio.hpp>
 #include <boost/thread/thread.hpp>

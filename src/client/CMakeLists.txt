@@ -9,7 +9,6 @@ include(CompilerFlags)
 
 set(SRC
     ${SRC}
-    ${ecs_dir}
     ${SRCROOT}/Communicator.cpp
     ${INCROOT}/Communicator.hpp
 )

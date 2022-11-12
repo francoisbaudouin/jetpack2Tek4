@@ -3,7 +3,6 @@ set(SRCROOT ${PROJECT_SOURCE_DIR}/src/server)
 
 set(SRC
     ${SRC}
-    ${ecs_dir}
     ${SRCROOT}/Communicator.cpp
     ${INCROOT}/Communicator.hpp
     ${INCROOT}/Server.cpp
