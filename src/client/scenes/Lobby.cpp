@@ -7,9 +7,13 @@
 
 #include "Lobby.hpp"
 
+#include "../ecs/components/Clickable.hpp"
 #include "../ecs/components/DrawableClientSide.hpp"
+#include "../ecs/components/HitBox.hpp"
 #include "../ecs/components/Position.hpp"
+#include "../ecs/components/Text.hpp"
 
+#include "../ecs/systems/Click.hpp"
 #include "../ecs/systems/Display.hpp"
 
 using namespace rtype;
@@ -39,22 +43,44 @@ void Lobby::OnActivate()
     _sceneSystem.getTextureDatabase()->onCall(this->getName());
     auto &hereManager = _sceneSystem.getEcs()->getEntityManager(this->getName());
 
-    auto &player = hereManager.createEntity();
-    player.addComponent<DrawableClientSide>(_sceneSystem.getTextureDatabase()->getTexture("Player"), _scale);
-    player.addComponent<Position>(0 * _scale, 0 * _scale);
+    auto &readyButton = hereManager.getEntity(_entityGenerator.createEntity(hereManager, "Button", 5));
+    readyButton.getComponent<HitBox>().setHitBox(100 * _scale, 20 * _scale);
+    readyButton.getComponent<Text>().setText(std::string("CONFIRM"));
+    readyButton.getComponent<Text>().setFontSize(10 * _scale);
+    readyButton.getComponent<Position>().setPosition(100, 100);
 }
-
 void Lobby::OnDeactivate() {}
 
 void Lobby::ProcessInput() {}
 
-void Lobby::Update() {}
+void Lobby::Update()
+{
+    _sceneSystem.getEcs()->getSystem<Click>().run(_sceneName, _window);
+    if (_sceneSystem.getEcs()->getEntityManager(this->getName()).getEntity(5).getComponent<Clickable>().isClicked()) {
+        _communicator->lockSendMutex();
+        _communicator->_sendStream.str(std::string());
+        _communicator->_sendStream << "ready ";
+        _communicator->unlockSendMutex();
+    }
+    if (_sceneSystem.getEcs()->getEntityManager(this->getName()).getEntity(5).getComponent<Clickable>().isHovered()) {
+        _sceneSystem.getEcs()
+            ->getEntityManager(this->getName())
+            .getEntity(5)
+            .getComponent<Text>()
+            .setColor(sf::Color::Red);
+    } else {
+        _sceneSystem.getEcs()
+            ->getEntityManager(this->getName())
+            .getEntity(5)
+            .getComponent<Text>()
+            .setColor(sf::Color::White);
+    }
+}
 
 void Lobby::createEntity(std::string data, size_t entityId)
 {
     // special case type
-    auto &entity = _sceneSystem.getEcs()->getEntityManager(this->getName()).createEntity();
-    entity.setId(entityId);
+    auto &entity = _sceneSystem.getEcs()->getEntityManager(this->getName()).createEntity(entityId);
 
     // setType
     std::string type = data.substr(0, data.find(':'));
@@ -71,8 +97,7 @@ void Lobby::createEntity(std::string data, size_t entityId)
 
 void Lobby::updateEntity(ecs::Entity &entity, std::string data)
 {
-    size_t scale = entity.getComponent<DrawableClientSide>().getScale().x;
-    // special case type
+    //  special case type
     if (data == "delete") {
         _sceneSystem.getEcs()->getEntityManager(this->getName()).removeEntity(entity.getId());
         return;
@@ -84,15 +109,15 @@ void Lobby::updateEntity(ecs::Entity &entity, std::string data)
     std::string positions = data.substr(0, data.find(':'));
     std::string positionX = positions.substr(0, data.find(','));
     std::string positionY = positions.substr(data.find(',') + 1, positions.size());
-    entity.getComponent<Position>().setPosition(stoi(positionX) * scale, stoi(positionY) * scale);
+    entity.getComponent<Position>().setPosition(stoi(positionX) * _scale, stoi(positionY) * _scale);
     data.erase(0, data.find(':') + 1);
 }
 
 void Lobby::Draw()
 {
     // receive packet
-    std::string receivedData(_communicator->_receiveStream.str());
-    receivedData.erase(0, this->getName().size() + 1);
+    std::string receivedData(_sceneSystem.getReceivedData());
+    receivedData.erase(0, receivedData.find('%') + 3);
 
     while (receivedData.size() > 0) {
         std::string token = receivedData.substr(0, receivedData.find(' '));

@@ -56,12 +56,13 @@ void Communicator::communicate(boost::asio::ip::udp::socket &socket)
     Test test;
     std::stringstream stringStream;
 
-    this->_sendStream.str(std::string());
-    this->_sendStream << "CONNECT ";
+    //this->_sendStream.str(std::string());
+    //this->_sendStream << "Default ";
     while (_isRunning) {
         // send
         this->lockSendMutex();
         socket.send_to(boost::asio::buffer(this->_sendStream.str()), this->_receiverEndpoint);
+        this->_sendStream.str(std::string());
         this->unlockSendMutex();
         // receive
         this->lockReceiveMutex();

@@ -12,7 +12,7 @@
 
 namespace rtype
 {
-class Lobby : public AScene {
+    class Lobby : public AScene {
       public:
         /**
          * @brief Construct a new Lobby Scene
@@ -58,8 +58,6 @@ class Lobby : public AScene {
         void updateEntity(ecs::Entity &entity, std::string data);
         void createEntity(std::string data, const size_t entityId);
         sf::Event &_event;
-        std::string _ipServer;
-        std::string _portServer;
     };
 } // namespace rtype
 

@@ -6,6 +6,8 @@ set(SRC
     ${ecs_dir}
     ${SRCROOT}/Communicator.cpp
     ${INCROOT}/Communicator.hpp
+    ${INCROOT}/Server.cpp
+    ${INCROOT}/Server.hpp
     ${SRCROOT}/Test.cpp # à retirer avant de merge
     ${INCROOT}/Test.hpp # à retirer avant de merge
 )

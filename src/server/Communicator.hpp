@@ -5,8 +5,8 @@
 ** Communicator
 */
 
-#ifndef SERVER_HPP_
-#define SERVER_HPP_
+#ifndef COMMUNICATOR_HPP_
+#define COMMUNICATOR_HPP_
 
 #define RUNNING 1
 
@@ -68,6 +68,11 @@ namespace rtype
          *
          */
         void unlockReceiveMutex();
+        /**
+         * @brief stop the communication
+         *
+         */
+        void stopCommunication();
         ~Communicator();
 
         /* Properties */
@@ -82,7 +87,8 @@ namespace rtype
         boost::array<char, 128> _receiveBuffer;
         boost::mutex _receiveMutex;
         boost::mutex _sendMutex;
+        bool _isRunning;
     };
 } // namespace rtype
 
-#endif /* !SERVER_HPP_ */
+#endif /* !COMMUNICATOR_HPP_ */

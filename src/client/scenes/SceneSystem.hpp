@@ -71,7 +71,12 @@ namespace rtype
          */
         std::shared_ptr<IScene> getCurrentScene();
 
+        void setReceivedData(std::string receivedData);
+
+        std::string getReceivedData() const;
+
       private:
+        std::string _receivedData;
         std::unordered_map<std::string, std::shared_ptr<IScene>> _scenes;
         std::shared_ptr<IScene> _curScene;
         std::shared_ptr<ecs::Ecs> _manager;

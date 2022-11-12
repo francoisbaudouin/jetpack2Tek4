@@ -35,6 +35,17 @@ namespace ecs
          * @return size_t : id of the newly created entity
          */
         size_t createEntity(EntityManager &manager, const std::string &type);
+        /**
+         * @brief Create a Entity object
+         * 
+         * @param manager : manager that will get the new entity
+         * @param type : type of the entity to create
+         * @param id : specify the id of the entity
+         * @return size_t : id of the newly created entity
+         * 
+         */
+        size_t createEntity(EntityManager &manager, const std::string &type, const size_t id);
+
     };
 } // namespace ecs
 

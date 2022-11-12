@@ -9,8 +9,8 @@
 #define ISCENE_HPP_
 
 #include <boost/thread/thread.hpp>
-#include "../Communicator.hpp"
 #include <memory>
+#include "../Communicator.hpp"
 
 namespace rtype
 {
@@ -27,7 +27,6 @@ namespace rtype
         virtual std::string getName() const = 0;
         virtual boost::thread *getThread() = 0;
         virtual std::shared_ptr<Communicator> getCommunicator() = 0;
-
     };
 } // namespace rtype
 

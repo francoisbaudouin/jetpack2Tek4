@@ -101,6 +101,10 @@ void Hub::Update()
         _communicator->setIpAdress(_ipServer);
         _communicator->setPort(stoi(_portServer));
         _communicator->startCommunication();
+
+        _communicator->lockSendMutex();
+        _communicator->_sendStream << "connect ";
+        _communicator->unlockSendMutex();
     }
 
     if (_sceneSystem.getEcs()->getEntityManager(this->getName()).getEntity(2).getComponent<Clickable>().isHovered()) {

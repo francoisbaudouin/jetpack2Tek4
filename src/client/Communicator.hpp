@@ -91,12 +91,12 @@ namespace rtype
         void unlockReceiveMutex();
         /**
          * @brief stop the communication
-         * 
+         *
          */
         void stopCommunication();
         /**
          * @brief start the communication
-         * 
+         *
          */
         void startCommunication();
 

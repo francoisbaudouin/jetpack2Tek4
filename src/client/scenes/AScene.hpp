@@ -9,10 +9,10 @@
 #define ASCENE_HPP_
 
 #include <SFML/Graphics.hpp>
+#include <memory>
 #include "../ecs/entity/EntityGenerator.hpp"
 #include "IScene.hpp"
 #include "SceneSystem.hpp"
-#include <memory>
 
 namespace rtype
 {
@@ -29,17 +29,16 @@ namespace rtype
         std::string getName() const override;
         /**
          * @brief Get the Thread of the scene
-         * 
+         *
          * @return ptr to the thread of the scene
          */
         boost::thread *getThread() override;
         /**
-         * @brief get a shared ptr to the communicator 
-         * 
+         * @brief get a shared ptr to the communicator
+         *
          * @return shared_ptr to the communicator of the scene
          */
         std::shared_ptr<Communicator> getCommunicator() override;
-
 
       protected:
         rtype::SceneSystem &_sceneSystem;
@@ -49,6 +48,7 @@ namespace rtype
         std::shared_ptr<Communicator> _communicator;
         boost::thread *_thread;
         ecs::EntityGenerator _entityGenerator;
+
       private:
     };
 } // namespace rtype

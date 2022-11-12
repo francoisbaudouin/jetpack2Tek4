@@ -29,6 +29,7 @@ namespace rtype
         float _scale;
         sf::RenderWindow _window;
         sf::Event _event;
+        size_t _id;
     };
 } // namespace rtype
 

@@ -8,8 +8,8 @@
 #ifndef HUB_HPP_
 #define HUB_HPP_
 
-#include "AScene.hpp"
 #include "../Communicator.hpp"
+#include "AScene.hpp"
 
 namespace rtype
 {
