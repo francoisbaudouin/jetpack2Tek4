@@ -8,6 +8,7 @@
 #ifndef HUB_HPP_
 #define HUB_HPP_
 
+#include "../Communicator.hpp"
 #include "AScene.hpp"
 
 namespace rtype
@@ -24,7 +25,7 @@ namespace rtype
          *
          */
         Hub(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
-            const float scale);
+            const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread);
         ~Hub();
         /**
          * @brief function called at creation of the scene (Add of sceneSystem)

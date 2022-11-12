@@ -71,4 +71,10 @@ void SceneSystem::SwitchTo(const std::string &sceneName)
 
 std::shared_ptr<Ecs> &SceneSystem::getEcs() { return (_manager); }
 
+void SceneSystem::setReceivedData(std::string receivedDatas) { _receivedData = receivedDatas; }
+
+std::string SceneSystem::getReceivedData() const { return _receivedData; }
+
 std::shared_ptr<TextureDatabase> &SceneSystem::getTextureDatabase() { return (_textureDatabase); }
+
+std::shared_ptr<IScene> SceneSystem::getCurrentScene() { return _curScene; }

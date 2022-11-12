@@ -9,6 +9,7 @@
 #define SCENESYSTEM_HPP_
 
 #include <memory>
+#include "../Communicator.hpp"
 #include "../assetsManager/TextureDatabase.hpp"
 #include "../ecs/Ecs.hpp"
 #include "IScene.hpp"
@@ -63,8 +64,19 @@ namespace rtype
          * @return reference to a shared pointer of TextureDatabase
          */
         std::shared_ptr<rtype::TextureDatabase> &getTextureDatabase();
+        /**
+         * @brief Get the Current Scene
+         *
+         * @return std::shared_ptr<IScene> of the current scene
+         */
+        std::shared_ptr<IScene> getCurrentScene();
+
+        void setReceivedData(std::string receivedData);
+
+        std::string getReceivedData() const;
 
       private:
+        std::string _receivedData;
         std::unordered_map<std::string, std::shared_ptr<IScene>> _scenes;
         std::shared_ptr<IScene> _curScene;
         std::shared_ptr<ecs::Ecs> _manager;

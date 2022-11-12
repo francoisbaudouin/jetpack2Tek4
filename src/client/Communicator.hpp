@@ -89,10 +89,22 @@ namespace rtype
          *
          */
         void unlockReceiveMutex();
+        /**
+         * @brief stop the communication
+         *
+         */
+        void stopCommunication();
+        /**
+         * @brief start the communication
+         *
+         */
+        void startCommunication();
+
         ~Communicator() = default;
 
         /* Properties */
         std::stringstream _sendStream;
+        std::stringstream _receiveStream;
 
       protected:
       private:
@@ -102,9 +114,11 @@ namespace rtype
         boost::asio::ip::udp::endpoint _senderEndpoint;
         boost::asio::io_context _ioContext;
         boost::array<char, 128> _receiveBuffer;
-        std::stringstream _receiveStream;
         boost::mutex _sendMutex;
         boost::mutex _receiveMutex;
+        bool _isRunning;
+        bool _bind;
+        bool _exit;
     };
 } // namespace rtype
 

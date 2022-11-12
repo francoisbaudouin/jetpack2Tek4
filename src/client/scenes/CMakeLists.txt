@@ -16,6 +16,8 @@ set(SRC
     ${INCROOT}/MainMenu.hpp
     ${INCROOT}/Hub.cpp
     ${INCROOT}/Hub.hpp
+    ${INCROOT}/Lobby.cpp
+    ${INCROOT}/Lobby.hpp
     PARENT_SCOPE
 )
 

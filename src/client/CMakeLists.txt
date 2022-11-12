@@ -8,16 +8,14 @@ find_package(Boost REQUIRED)
 include(CompilerFlags)
 
 set(SRC
-  ${SRC}
-  ${SRCROOT}/Communicator.cpp
-  ${INCROOT}/Communicator.hpp
-  ${SRCROOT}/Test.cpp # à retirer avant de merge
-  ${INCROOT}/Test.hpp # à retirer avant de merge
+    ${SRC}
+    ${SRCROOT}/Communicator.cpp
+    ${INCROOT}/Communicator.hpp
 )
 set(INCDIRS ${INCROOT})
 
-add_subdirectory(ecs)
 add_subdirectory(scenes)
+add_subdirectory(ecs)
 add_subdirectory(assetsManager)
 
 # set_target_properties(${TARGET}
