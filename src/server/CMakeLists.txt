@@ -21,6 +21,7 @@ find_package(Boost REQUIRED)
 include(CompilerFlags)
 
 add_subdirectory(ecs)
+add_subdirectory(assetsManager)
 add_executable(${TARGET_NAME} ${SRCROOT}/main.cpp ${SRC})
 
 target_link_libraries(${TARGET_NAME} PUBLIC CONAN_PKG::sfml)
