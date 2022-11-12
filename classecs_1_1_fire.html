@@ -113,6 +113,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a01fc32184c05d7c39ffd2072ac6e5db7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_fire.html#a01fc32184c05d7c39ffd2072ac6e5db7">run</a> (const std::string &amp;sceneName, const size_t entityId)</td></tr>
 <tr class="memdesc:a01fc32184c05d7c39ffd2072ac6e5db7"><td class="mdescLeft">&#160;</td><td class="mdescRight">fire a projectile one time respecting the fireRate weapon's property  <a href="classecs_1_1_fire.html#a01fc32184c05d7c39ffd2072ac6e5db7">More...</a><br /></td></tr>
 <tr class="separator:a01fc32184c05d7c39ffd2072ac6e5db7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d89868986d1b3e91e42edb071ef88f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_fire.html#a1d89868986d1b3e91e42edb071ef88f7">Fire</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
+<tr class="memdesc:a1d89868986d1b3e91e42edb071ef88f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classecs_1_1_fire.html">Fire</a> system that fire a projectile belong to weapon component.  <a href="classecs_1_1_fire.html#a1d89868986d1b3e91e42edb071ef88f7">More...</a><br /></td></tr>
+<tr class="separator:a1d89868986d1b3e91e42edb071ef88f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85b58da6dda2752f4bc84a697c39311a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_fire.html#a85b58da6dda2752f4bc84a697c39311a">createProjectile</a> (const std::string &amp;sceneName, const size_t entityId)</td></tr>
+<tr class="memdesc:a85b58da6dda2752f4bc84a697c39311a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a projectile at the position of the player.  <a href="classecs_1_1_fire.html#a85b58da6dda2752f4bc84a697c39311a">More...</a><br /></td></tr>
+<tr class="separator:a85b58da6dda2752f4bc84a697c39311a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a635f8d562adea46ab0550d26a0e04f93"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_fire.html#a635f8d562adea46ab0550d26a0e04f93">run</a> (const std::string &amp;sceneName, const size_t entityId)</td></tr>
+<tr class="memdesc:a635f8d562adea46ab0550d26a0e04f93"><td class="mdescLeft">&#160;</td><td class="mdescRight">fire a projectile one time respecting the fireRate weapon's property  <a href="classecs_1_1_fire.html#a635f8d562adea46ab0550d26a0e04f93">More...</a><br /></td></tr>
+<tr class="separator:a635f8d562adea46ab0550d26a0e04f93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classecs_1_1_a_system"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecs_1_1_a_system')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td></tr>
 <tr class="memitem:ab3495f5e03dfd716257ae1ac92deabe0 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">ASystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
 <tr class="memdesc:ab3495f5e03dfd716257ae1ac92deabe0 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for systems.  <a href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">More...</a><br /></td></tr>
@@ -120,17 +129,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aea8faa2947125d308f99e29dbb8a0db5 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#aea8faa2947125d308f99e29dbb8a0db5">run</a> (const std::string &amp;sceneName) override</td></tr>
 <tr class="memdesc:aea8faa2947125d308f99e29dbb8a0db5 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the system  <a href="classecs_1_1_a_system.html#aea8faa2947125d308f99e29dbb8a0db5">More...</a><br /></td></tr>
 <tr class="separator:aea8faa2947125d308f99e29dbb8a0db5 inherit pub_methods_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae150941b7528bbbc69bb568478e24537 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#ae150941b7528bbbc69bb568478e24537">ASystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
+<tr class="memdesc:ae150941b7528bbbc69bb568478e24537 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for systems.  <a href="classecs_1_1_a_system.html#ae150941b7528bbbc69bb568478e24537">More...</a><br /></td></tr>
+<tr class="separator:ae150941b7528bbbc69bb568478e24537 inherit pub_methods_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81e035badf7943ba9c48ed0b2177efb inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#aa81e035badf7943ba9c48ed0b2177efb">run</a> (const std::string &amp;sceneName) override</td></tr>
+<tr class="memdesc:aa81e035badf7943ba9c48ed0b2177efb inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the system  <a href="classecs_1_1_a_system.html#aa81e035badf7943ba9c48ed0b2177efb">More...</a><br /></td></tr>
+<tr class="separator:aa81e035badf7943ba9c48ed0b2177efb inherit pub_methods_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classecs_1_1_a_system"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classecs_1_1_a_system')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td></tr>
-<tr class="memitem:a782e261e3d4ef817556d55fc3c6e9001 inherit pro_attribs_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top"><a id="a782e261e3d4ef817556d55fc3c6e9001"></a>
+<tr class="memitem:aa164fb549f1af75289b042ed69f906c8 inherit pro_attribs_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top"><a id="aa164fb549f1af75289b042ed69f906c8"></a>
 std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_manager</b></td></tr>
-<tr class="separator:a782e261e3d4ef817556d55fc3c6e9001 inherit pro_attribs_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aa164fb549f1af75289b042ed69f906c8 inherit pro_attribs_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a657abe2132039a43c6c366bd77539e08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a657abe2132039a43c6c366bd77539e08">&#9670;&nbsp;</a></span>Fire()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a657abe2132039a43c6c366bd77539e08">&#9670;&nbsp;</a></span>Fire() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,9 +170,35 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 
 </div>
 </div>
+<a id="a1d89868986d1b3e91e42edb071ef88f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d89868986d1b3e91e42edb071ef88f7">&#9670;&nbsp;</a></span>Fire() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ecs::Fire::Fire </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>manager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classecs_1_1_fire.html">Fire</a> system that fire a projectile belong to weapon component. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">manager</td><td>reference to shared_ptr of the ecs class </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="abfb244a38bdca4b93a6a3c41aaeb96fb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abfb244a38bdca4b93a6a3c41aaeb96fb">&#9670;&nbsp;</a></span>createProjectile()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abfb244a38bdca4b93a6a3c41aaeb96fb">&#9670;&nbsp;</a></span>createProjectile() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,8 +234,81 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 
 </div>
 </div>
+<a id="a85b58da6dda2752f4bc84a697c39311a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85b58da6dda2752f4bc84a697c39311a">&#9670;&nbsp;</a></span>createProjectile() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecs::Fire::createProjectile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sceneName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>entityId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a projectile at the position of the player. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneName</td><td>: Name of the scene to select the entityManager related </td></tr>
+    <tr><td class="paramname">entityId</td><td>: id of the entity that triggered the fire system </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a635f8d562adea46ab0550d26a0e04f93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a635f8d562adea46ab0550d26a0e04f93">&#9670;&nbsp;</a></span>run() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecs::Fire::run </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sceneName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>entityId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>fire a projectile one time respecting the fireRate weapon's property </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entityId</td><td>: Id of the entity that triggered the fire system </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a01fc32184c05d7c39ffd2072ac6e5db7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01fc32184c05d7c39ffd2072ac6e5db7">&#9670;&nbsp;</a></span>run()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a01fc32184c05d7c39ffd2072ac6e5db7">&#9670;&nbsp;</a></span>run() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +344,7 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/client/ecs/systems/<a class="el" href="_fire_8hpp_source.html">Fire.hpp</a></li>
+<li>src/client/ecs/systems/<a class="el" href="client_2ecs_2systems_2_fire_8hpp_source.html">Fire.hpp</a></li>
 <li>src/client/ecs/systems/Fire.cpp</li>
 </ul>
 </div><!-- contents -->

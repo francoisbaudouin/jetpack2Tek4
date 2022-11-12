@@ -94,13 +94,441 @@ $(document).ready(function(){initNavTree('structecs_1_1_device.html',''); initRe
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:af80fd82dc75ae7a23f246d41263dbc63"><td class="memItemLeft" align="right" valign="top"><a id="af80fd82dc75ae7a23f246d41263dbc63"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>MouseKey</b> { <b>UNKNOWN_MOUSE_KEY</b>, 
+<tr class="memitem:af80fd82dc75ae7a23f246d41263dbc63"><td class="memItemLeft" align="right" valign="top"><a id="af80fd82dc75ae7a23f246d41263dbc63"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>MouseKey</b> { <br />
+&#160;&#160;<b>UNKNOWN_MOUSE_KEY</b>, 
+<b>LEFT</b>, 
+<b>RIGHT</b>, 
+<b>WHEEL</b>, 
+<br />
+&#160;&#160;<b>UNKNOWN_MOUSE_KEY</b>, 
 <b>LEFT</b>, 
 <b>RIGHT</b>, 
 <b>WHEEL</b>
+<br />
  }</td></tr>
 <tr class="separator:af80fd82dc75ae7a23f246d41263dbc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f5e20034181950ad23b8921c01df92d"><td class="memItemLeft" align="right" valign="top"><a id="a9f5e20034181950ad23b8921c01df92d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>KeyBoardKey</b> { <br />
+&#160;&#160;<b>UNKNOWN_KEYBOARD_KEY</b>, 
+<b>A</b> = 0, 
+<b>B</b>, 
+<b>C</b>, 
+<br />
+&#160;&#160;<b>D</b>, 
+<b>E</b>, 
+<b>F</b>, 
+<b>G</b>, 
+<br />
+&#160;&#160;<b>H</b>, 
+<b>I</b>, 
+<b>J</b>, 
+<b>K</b>, 
+<br />
+&#160;&#160;<b>L</b>, 
+<b>M</b>, 
+<b>N</b>, 
+<b>O</b>, 
+<br />
+&#160;&#160;<b>P</b>, 
+<b>Q</b>, 
+<b>R</b>, 
+<b>S</b>, 
+<br />
+&#160;&#160;<b>T</b>, 
+<b>U</b>, 
+<b>V</b>, 
+<b>W</b>, 
+<br />
+&#160;&#160;<b>X</b>, 
+<b>Y</b>, 
+<b>Z</b>, 
+<b>Num0</b>, 
+<br />
+&#160;&#160;<b>Num1</b>, 
+<b>Num2</b>, 
+<b>Num3</b>, 
+<b>Num4</b>, 
+<br />
+&#160;&#160;<b>Num5</b>, 
+<b>Num6</b>, 
+<b>Num7</b>, 
+<b>Num8</b>, 
+<br />
+&#160;&#160;<b>Num9</b>, 
+<b>Escape</b>, 
+<b>LControl</b>, 
+<b>LShift</b>, 
+<br />
+&#160;&#160;<b>LAlt</b>, 
+<b>LSystem</b>, 
+<b>RControl</b>, 
+<b>RShift</b>, 
+<br />
+&#160;&#160;<b>RAlt</b>, 
+<b>RSystem</b>, 
+<b>Menu</b>, 
+<b>LBracket</b>, 
+<br />
+&#160;&#160;<b>RBracket</b>, 
+<b>Semicolon</b>, 
+<b>Comma</b>, 
+<b>Period</b>, 
+<br />
+&#160;&#160;<b>Quote</b>, 
+<b>Slash</b>, 
+<b>Backslash</b>, 
+<b>Tilde</b>, 
+<br />
+&#160;&#160;<b>Equal</b>, 
+<b>Hyphen</b>, 
+<b>SPACE</b>, 
+<b>Enter</b>, 
+<br />
+&#160;&#160;<b>Backspace</b>, 
+<b>Tab</b>, 
+<b>PageUp</b>, 
+<b>PageDown</b>, 
+<br />
+&#160;&#160;<b>End</b>, 
+<b>Home</b>, 
+<b>Insert</b>, 
+<b>Delete</b>, 
+<br />
+&#160;&#160;<b>Add</b>, 
+<b>Subtract</b>, 
+<b>Multiply</b>, 
+<b>Divide</b>, 
+<br />
+&#160;&#160;<b>Left</b>, 
+<b>Right</b>, 
+<b>Up</b>, 
+<b>Down</b>, 
+<br />
+&#160;&#160;<b>Numpad0</b>, 
+<b>Numpad1</b>, 
+<b>Numpad2</b>, 
+<b>Numpad3</b>, 
+<br />
+&#160;&#160;<b>Numpad4</b>, 
+<b>Numpad5</b>, 
+<b>Numpad6</b>, 
+<b>Numpad7</b>, 
+<br />
+&#160;&#160;<b>Numpad8</b>, 
+<b>Numpad9</b>, 
+<b>F1</b>, 
+<b>F2</b>, 
+<br />
+&#160;&#160;<b>F3</b>, 
+<b>F4</b>, 
+<b>F5</b>, 
+<b>F6</b>, 
+<br />
+&#160;&#160;<b>F7</b>, 
+<b>F8</b>, 
+<b>F9</b>, 
+<b>F10</b>, 
+<br />
+&#160;&#160;<b>F11</b>, 
+<b>F12</b>, 
+<b>F13</b>, 
+<b>F14</b>, 
+<br />
+&#160;&#160;<b>F15</b>, 
+<b>Pause</b>, 
+<b>KeyCount</b>, 
+<b>Dash</b> = Hyphen, 
+<br />
+&#160;&#160;<b>BackSpace</b> = Backspace, 
+<b>BackSlash</b> = Backslash, 
+<b>SemiColon</b> = Semicolon, 
+<b>Return</b> = Enter, 
+<br />
+&#160;&#160;<b>UNKNOWN_KEYBOARD_KEY</b>, 
+<b>A</b> = 0, 
+<b>B</b>, 
+<b>C</b>, 
+<br />
+&#160;&#160;<b>D</b>, 
+<b>E</b>, 
+<b>F</b>, 
+<b>G</b>, 
+<br />
+&#160;&#160;<b>H</b>, 
+<b>I</b>, 
+<b>J</b>, 
+<b>K</b>, 
+<br />
+&#160;&#160;<b>L</b>, 
+<b>M</b>, 
+<b>N</b>, 
+<b>O</b>, 
+<br />
+&#160;&#160;<b>P</b>, 
+<b>Q</b>, 
+<b>R</b>, 
+<b>S</b>, 
+<br />
+&#160;&#160;<b>T</b>, 
+<b>U</b>, 
+<b>V</b>, 
+<b>W</b>, 
+<br />
+&#160;&#160;<b>X</b>, 
+<b>Y</b>, 
+<b>Z</b>, 
+<b>Num0</b>, 
+<br />
+&#160;&#160;<b>Num1</b>, 
+<b>Num2</b>, 
+<b>Num3</b>, 
+<b>Num4</b>, 
+<br />
+&#160;&#160;<b>Num5</b>, 
+<b>Num6</b>, 
+<b>Num7</b>, 
+<b>Num8</b>, 
+<br />
+&#160;&#160;<b>Num9</b>, 
+<b>Escape</b>, 
+<b>LControl</b>, 
+<b>LShift</b>, 
+<br />
+&#160;&#160;<b>LAlt</b>, 
+<b>LSystem</b>, 
+<b>RControl</b>, 
+<b>RShift</b>, 
+<br />
+&#160;&#160;<b>RAlt</b>, 
+<b>RSystem</b>, 
+<b>Menu</b>, 
+<b>LBracket</b>, 
+<br />
+&#160;&#160;<b>RBracket</b>, 
+<b>Semicolon</b>, 
+<b>Comma</b>, 
+<b>Period</b>, 
+<br />
+&#160;&#160;<b>Quote</b>, 
+<b>Slash</b>, 
+<b>Backslash</b>, 
+<b>Tilde</b>, 
+<br />
+&#160;&#160;<b>Equal</b>, 
+<b>Hyphen</b>, 
+<b>SPACE</b>, 
+<b>Enter</b>, 
+<br />
+&#160;&#160;<b>Backspace</b>, 
+<b>Tab</b>, 
+<b>PageUp</b>, 
+<b>PageDown</b>, 
+<br />
+&#160;&#160;<b>End</b>, 
+<b>Home</b>, 
+<b>Insert</b>, 
+<b>Delete</b>, 
+<br />
+&#160;&#160;<b>Add</b>, 
+<b>Subtract</b>, 
+<b>Multiply</b>, 
+<b>Divide</b>, 
+<br />
+&#160;&#160;<b>Left</b>, 
+<b>Right</b>, 
+<b>Up</b>, 
+<b>Down</b>, 
+<br />
+&#160;&#160;<b>Numpad0</b>, 
+<b>Numpad1</b>, 
+<b>Numpad2</b>, 
+<b>Numpad3</b>, 
+<br />
+&#160;&#160;<b>Numpad4</b>, 
+<b>Numpad5</b>, 
+<b>Numpad6</b>, 
+<b>Numpad7</b>, 
+<br />
+&#160;&#160;<b>Numpad8</b>, 
+<b>Numpad9</b>, 
+<b>F1</b>, 
+<b>F2</b>, 
+<br />
+&#160;&#160;<b>F3</b>, 
+<b>F4</b>, 
+<b>F5</b>, 
+<b>F6</b>, 
+<br />
+&#160;&#160;<b>F7</b>, 
+<b>F8</b>, 
+<b>F9</b>, 
+<b>F10</b>, 
+<br />
+&#160;&#160;<b>F11</b>, 
+<b>F12</b>, 
+<b>F13</b>, 
+<b>F14</b>, 
+<br />
+&#160;&#160;<b>F15</b>, 
+<b>Pause</b>, 
+<b>KeyCount</b>, 
+<b>Dash</b> = Hyphen, 
+<br />
+&#160;&#160;<b>BackSpace</b> = Backspace, 
+<b>BackSlash</b> = Backslash, 
+<b>SemiColon</b> = Semicolon, 
+<b>Return</b> = Enter
+<br />
+ }</td></tr>
+<tr class="separator:a9f5e20034181950ad23b8921c01df92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80fd82dc75ae7a23f246d41263dbc63"><td class="memItemLeft" align="right" valign="top"><a id="af80fd82dc75ae7a23f246d41263dbc63"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>MouseKey</b> { <br />
+&#160;&#160;<b>UNKNOWN_MOUSE_KEY</b>, 
+<b>LEFT</b>, 
+<b>RIGHT</b>, 
+<b>WHEEL</b>, 
+<br />
+&#160;&#160;<b>UNKNOWN_MOUSE_KEY</b>, 
+<b>LEFT</b>, 
+<b>RIGHT</b>, 
+<b>WHEEL</b>
+<br />
+ }</td></tr>
+<tr class="separator:af80fd82dc75ae7a23f246d41263dbc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f5e20034181950ad23b8921c01df92d"><td class="memItemLeft" align="right" valign="top"><a id="a9f5e20034181950ad23b8921c01df92d"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>KeyBoardKey</b> { <br />
+&#160;&#160;<b>UNKNOWN_KEYBOARD_KEY</b>, 
+<b>A</b> = 0, 
+<b>B</b>, 
+<b>C</b>, 
+<br />
+&#160;&#160;<b>D</b>, 
+<b>E</b>, 
+<b>F</b>, 
+<b>G</b>, 
+<br />
+&#160;&#160;<b>H</b>, 
+<b>I</b>, 
+<b>J</b>, 
+<b>K</b>, 
+<br />
+&#160;&#160;<b>L</b>, 
+<b>M</b>, 
+<b>N</b>, 
+<b>O</b>, 
+<br />
+&#160;&#160;<b>P</b>, 
+<b>Q</b>, 
+<b>R</b>, 
+<b>S</b>, 
+<br />
+&#160;&#160;<b>T</b>, 
+<b>U</b>, 
+<b>V</b>, 
+<b>W</b>, 
+<br />
+&#160;&#160;<b>X</b>, 
+<b>Y</b>, 
+<b>Z</b>, 
+<b>Num0</b>, 
+<br />
+&#160;&#160;<b>Num1</b>, 
+<b>Num2</b>, 
+<b>Num3</b>, 
+<b>Num4</b>, 
+<br />
+&#160;&#160;<b>Num5</b>, 
+<b>Num6</b>, 
+<b>Num7</b>, 
+<b>Num8</b>, 
+<br />
+&#160;&#160;<b>Num9</b>, 
+<b>Escape</b>, 
+<b>LControl</b>, 
+<b>LShift</b>, 
+<br />
+&#160;&#160;<b>LAlt</b>, 
+<b>LSystem</b>, 
+<b>RControl</b>, 
+<b>RShift</b>, 
+<br />
+&#160;&#160;<b>RAlt</b>, 
+<b>RSystem</b>, 
+<b>Menu</b>, 
+<b>LBracket</b>, 
+<br />
+&#160;&#160;<b>RBracket</b>, 
+<b>Semicolon</b>, 
+<b>Comma</b>, 
+<b>Period</b>, 
+<br />
+&#160;&#160;<b>Quote</b>, 
+<b>Slash</b>, 
+<b>Backslash</b>, 
+<b>Tilde</b>, 
+<br />
+&#160;&#160;<b>Equal</b>, 
+<b>Hyphen</b>, 
+<b>SPACE</b>, 
+<b>Enter</b>, 
+<br />
+&#160;&#160;<b>Backspace</b>, 
+<b>Tab</b>, 
+<b>PageUp</b>, 
+<b>PageDown</b>, 
+<br />
+&#160;&#160;<b>End</b>, 
+<b>Home</b>, 
+<b>Insert</b>, 
+<b>Delete</b>, 
+<br />
+&#160;&#160;<b>Add</b>, 
+<b>Subtract</b>, 
+<b>Multiply</b>, 
+<b>Divide</b>, 
+<br />
+&#160;&#160;<b>Left</b>, 
+<b>Right</b>, 
+<b>Up</b>, 
+<b>Down</b>, 
+<br />
+&#160;&#160;<b>Numpad0</b>, 
+<b>Numpad1</b>, 
+<b>Numpad2</b>, 
+<b>Numpad3</b>, 
+<br />
+&#160;&#160;<b>Numpad4</b>, 
+<b>Numpad5</b>, 
+<b>Numpad6</b>, 
+<b>Numpad7</b>, 
+<br />
+&#160;&#160;<b>Numpad8</b>, 
+<b>Numpad9</b>, 
+<b>F1</b>, 
+<b>F2</b>, 
+<br />
+&#160;&#160;<b>F3</b>, 
+<b>F4</b>, 
+<b>F5</b>, 
+<b>F6</b>, 
+<br />
+&#160;&#160;<b>F7</b>, 
+<b>F8</b>, 
+<b>F9</b>, 
+<b>F10</b>, 
+<br />
+&#160;&#160;<b>F11</b>, 
+<b>F12</b>, 
+<b>F13</b>, 
+<b>F14</b>, 
+<br />
+&#160;&#160;<b>F15</b>, 
+<b>Pause</b>, 
+<b>KeyCount</b>, 
+<b>Dash</b> = Hyphen, 
+<br />
+&#160;&#160;<b>BackSpace</b> = Backspace, 
+<b>BackSlash</b> = Backslash, 
+<b>SemiColon</b> = Semicolon, 
+<b>Return</b> = Enter, 
+<br />
 &#160;&#160;<b>UNKNOWN_KEYBOARD_KEY</b>, 
 <b>A</b> = 0, 
 <b>B</b>, 
@@ -240,7 +668,7 @@ Public Types</h2></td></tr>
 <tr class="separator:a9f5e20034181950ad23b8921c01df92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/client/ecs/enums/<a class="el" href="event_8hpp_source.html">event.hpp</a></li>
+<li>src/client/ecs/enums/<a class="el" href="client_2ecs_2enums_2event_8hpp_source.html">event.hpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

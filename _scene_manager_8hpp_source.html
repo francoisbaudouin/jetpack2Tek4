@@ -108,23 +108,32 @@ $(document).ready(function(){initNavTree('_scene_manager_8hpp_source.html',''); 
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        ~<a class="code" href="classrtype_1_1_scene_manager.html">SceneManager</a>();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classrtype_1_1_scene_manager.html#ae56f30b761a4e60a7014229c02900acb">run</a>();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">float</span> _scale;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        sf::RenderWindow _window;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">void</span> receiver();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="classrtype_1_1_scene_system.html">SceneSystem</a> _sceneSystem;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    };</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;} <span class="comment">// namespace rtype</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !SCENEMANAGER_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">float</span> _scale;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        sf::RenderWindow _window;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        sf::Event _event;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">size_t</span> _id;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    };</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;} <span class="comment">// namespace rtype</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !SCENEMANAGER_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassrtype_1_1_communicator_html"><div class="ttname"><a href="classrtype_1_1_communicator.html">rtype::Communicator</a></div><div class="ttdef"><b>Definition:</b> Communicator.hpp:20</div></div>
 <div class="ttc" id="aclassrtype_1_1_scene_manager_html"><div class="ttname"><a href="classrtype_1_1_scene_manager.html">rtype::SceneManager</a></div><div class="ttdef"><b>Definition:</b> SceneManager.hpp:15</div></div>
-<div class="ttc" id="aclassrtype_1_1_scene_manager_html_ae56f30b761a4e60a7014229c02900acb"><div class="ttname"><a href="classrtype_1_1_scene_manager.html#ae56f30b761a4e60a7014229c02900acb">rtype::SceneManager::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">run the scene manager, where the main loop is</div><div class="ttdef"><b>Definition:</b> SceneManager.cpp:17</div></div>
-<div class="ttc" id="aclassrtype_1_1_hub_html"><div class="ttname"><a href="classrtype_1_1_hub.html">rtype::Hub</a></div><div class="ttdef"><b>Definition:</b> Hub.hpp:15</div></div>
+<div class="ttc" id="aclassrtype_1_1_game_scene_html"><div class="ttname"><a href="classrtype_1_1_game_scene.html">rtype::GameScene</a></div><div class="ttdef"><b>Definition:</b> GameScene.hpp:15</div></div>
+<div class="ttc" id="aclassrtype_1_1_scene_manager_html_ae56f30b761a4e60a7014229c02900acb"><div class="ttname"><a href="classrtype_1_1_scene_manager.html#ae56f30b761a4e60a7014229c02900acb">rtype::SceneManager::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">run the scene manager, where the main loop is</div><div class="ttdef"><b>Definition:</b> SceneManager.cpp:59</div></div>
+<div class="ttc" id="aclassrtype_1_1_hub_html"><div class="ttname"><a href="classrtype_1_1_hub.html">rtype::Hub</a></div><div class="ttdef"><b>Definition:</b> Hub.hpp:16</div></div>
 <div class="ttc" id="aclassrtype_1_1_scene_system_html_a87cc12df47474b79b335e5d187dfe656"><div class="ttname"><a href="classrtype_1_1_scene_system.html#a87cc12df47474b79b335e5d187dfe656">rtype::SceneSystem::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">update will call the update of the current scene</div><div class="ttdef"><b>Definition:</b> SceneSystem.cpp:30</div></div>
-<div class="ttc" id="aclassrtype_1_1_scene_system_html"><div class="ttname"><a href="classrtype_1_1_scene_system.html">rtype::SceneSystem</a></div><div class="ttdef"><b>Definition:</b> SceneSystem.hpp:19</div></div>
+<div class="ttc" id="aclassrtype_1_1_scene_system_html"><div class="ttname"><a href="classrtype_1_1_scene_system.html">rtype::SceneSystem</a></div><div class="ttdef"><b>Definition:</b> SceneSystem.hpp:20</div></div>
 <div class="ttc" id="aclassrtype_1_1_scene_system_html_a3ec91542cfc5996a39b59de87e343598"><div class="ttname"><a href="classrtype_1_1_scene_system.html#a3ec91542cfc5996a39b59de87e343598">rtype::SceneSystem::SwitchTo</a></div><div class="ttdeci">void SwitchTo(const std::string &amp;sceneName)</div><div class="ttdoc">switch to the corresponding sceneName given in parameters</div><div class="ttdef"><b>Definition:</b> SceneSystem.cpp:61</div></div>
+<div class="ttc" id="aclassrtype_1_1_communicator_html_a4559f5543a50f7c6af5ef4a6a683e0d2"><div class="ttname"><a href="classrtype_1_1_communicator.html#a4559f5543a50f7c6af5ef4a6a683e0d2">rtype::Communicator::connectToServer</a></div><div class="ttdeci">void connectToServer()</div><div class="ttdoc">Connects to the server using an ipAdress and a port given as parameter during the communicator constr...</div><div class="ttdef"><b>Definition:</b> Communicator.cpp:30</div></div>
+<div class="ttc" id="aclassrtype_1_1_scene_system_html_a65f15b15c72d79a1c99319d18bbc1de6"><div class="ttname"><a href="classrtype_1_1_scene_system.html#a65f15b15c72d79a1c99319d18bbc1de6">rtype::SceneSystem::getCurrentScene</a></div><div class="ttdeci">std::shared_ptr&lt; IScene &gt; getCurrentScene()</div><div class="ttdoc">Get the Current Scene.</div><div class="ttdef"><b>Definition:</b> SceneSystem.cpp:80</div></div>
 <div class="ttc" id="aclassrtype_1_1_scene_system_html_adb7300d0ef1769c54ec35bc3fcca4b03"><div class="ttname"><a href="classrtype_1_1_scene_system.html#adb7300d0ef1769c54ec35bc3fcca4b03">rtype::SceneSystem::Add</a></div><div class="ttdeci">std::string Add(std::shared_ptr&lt; IScene &gt; scene)</div><div class="ttdoc">add a scene to the _scenes property</div><div class="ttdef"><b>Definition:</b> SceneSystem.cpp:42</div></div>
+<div class="ttc" id="aclassrtype_1_1_lobby_html"><div class="ttname"><a href="classrtype_1_1_lobby.html">rtype::Lobby</a></div><div class="ttdef"><b>Definition:</b> Lobby.hpp:15</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

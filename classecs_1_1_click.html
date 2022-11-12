@@ -113,6 +113,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ccaa1e3632f25d8b981988d6b81eb1d"><td class="memItemLeft" align="right" valign="top"><a id="a1ccaa1e3632f25d8b981988d6b81eb1d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> (const std::string &amp;sceneName, sf::RenderWindow &amp;window)</td></tr>
 <tr class="separator:a1ccaa1e3632f25d8b981988d6b81eb1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8009677a46ea4b60ee25157d906ea3c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_click.html#ae8009677a46ea4b60ee25157d906ea3c">Click</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
+<tr class="memdesc:ae8009677a46ea4b60ee25157d906ea3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">click will set all clickable's states (isHovered, isClicked) depending on mouse position  <a href="classecs_1_1_click.html#ae8009677a46ea4b60ee25157d906ea3c">More...</a><br /></td></tr>
+<tr class="separator:ae8009677a46ea4b60ee25157d906ea3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e7c58778f991cadb9a9ff60efbd5c64"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_click.html#a5e7c58778f991cadb9a9ff60efbd5c64">isMouseIn</a> (sf::RenderWindow &amp;window, <a class="el" href="classecs_1_1_hit_box.html">HitBox</a> &amp;hitBox, <a class="el" href="classecs_1_1_position.html">Position</a> &amp;position)</td></tr>
+<tr class="memdesc:a5e7c58778f991cadb9a9ff60efbd5c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the mouse is in the hitBox situated at position  <a href="classecs_1_1_click.html#a5e7c58778f991cadb9a9ff60efbd5c64">More...</a><br /></td></tr>
+<tr class="separator:a5e7c58778f991cadb9a9ff60efbd5c64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94de436a7491792f2a36a9970b165062"><td class="memItemLeft" align="right" valign="top"><a id="a94de436a7491792f2a36a9970b165062"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> (const std::string &amp;sceneName, sf::RenderWindow &amp;window)</td></tr>
+<tr class="separator:a94de436a7491792f2a36a9970b165062"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classecs_1_1_a_system"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecs_1_1_a_system')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td></tr>
 <tr class="memitem:ab3495f5e03dfd716257ae1ac92deabe0 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">ASystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
 <tr class="memdesc:ab3495f5e03dfd716257ae1ac92deabe0 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for systems.  <a href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">More...</a><br /></td></tr>
@@ -120,17 +129,23 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> (const std::s
 <tr class="memitem:aea8faa2947125d308f99e29dbb8a0db5 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#aea8faa2947125d308f99e29dbb8a0db5">run</a> (const std::string &amp;sceneName) override</td></tr>
 <tr class="memdesc:aea8faa2947125d308f99e29dbb8a0db5 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the system  <a href="classecs_1_1_a_system.html#aea8faa2947125d308f99e29dbb8a0db5">More...</a><br /></td></tr>
 <tr class="separator:aea8faa2947125d308f99e29dbb8a0db5 inherit pub_methods_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae150941b7528bbbc69bb568478e24537 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#ae150941b7528bbbc69bb568478e24537">ASystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
+<tr class="memdesc:ae150941b7528bbbc69bb568478e24537 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for systems.  <a href="classecs_1_1_a_system.html#ae150941b7528bbbc69bb568478e24537">More...</a><br /></td></tr>
+<tr class="separator:ae150941b7528bbbc69bb568478e24537 inherit pub_methods_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81e035badf7943ba9c48ed0b2177efb inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#aa81e035badf7943ba9c48ed0b2177efb">run</a> (const std::string &amp;sceneName) override</td></tr>
+<tr class="memdesc:aa81e035badf7943ba9c48ed0b2177efb inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the system  <a href="classecs_1_1_a_system.html#aa81e035badf7943ba9c48ed0b2177efb">More...</a><br /></td></tr>
+<tr class="separator:aa81e035badf7943ba9c48ed0b2177efb inherit pub_methods_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classecs_1_1_a_system"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classecs_1_1_a_system')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td></tr>
-<tr class="memitem:a782e261e3d4ef817556d55fc3c6e9001 inherit pro_attribs_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top"><a id="a782e261e3d4ef817556d55fc3c6e9001"></a>
+<tr class="memitem:aa164fb549f1af75289b042ed69f906c8 inherit pro_attribs_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top"><a id="aa164fb549f1af75289b042ed69f906c8"></a>
 std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_manager</b></td></tr>
-<tr class="separator:a782e261e3d4ef817556d55fc3c6e9001 inherit pro_attribs_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aa164fb549f1af75289b042ed69f906c8 inherit pro_attribs_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad2d171b98b13b0e48713f8ac502c473d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2d171b98b13b0e48713f8ac502c473d">&#9670;&nbsp;</a></span>Click()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2d171b98b13b0e48713f8ac502c473d">&#9670;&nbsp;</a></span>Click() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -155,9 +170,35 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 
 </div>
 </div>
+<a id="ae8009677a46ea4b60ee25157d906ea3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8009677a46ea4b60ee25157d906ea3c">&#9670;&nbsp;</a></span>Click() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ecs::Click::Click </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>manager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>click will set all clickable's states (isHovered, isClicked) depending on mouse position </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">manager</td><td>shared_ptr to the ecs </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae69a68f7e12e1913501ab124fee888ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae69a68f7e12e1913501ab124fee888ad">&#9670;&nbsp;</a></span>isMouseIn()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69a68f7e12e1913501ab124fee888ad">&#9670;&nbsp;</a></span>isMouseIn() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,8 +244,55 @@ false otherwise </dd></dl>
 
 </div>
 </div>
+<a id="a5e7c58778f991cadb9a9ff60efbd5c64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e7c58778f991cadb9a9ff60efbd5c64">&#9670;&nbsp;</a></span>isMouseIn() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ecs::Click::isMouseIn </td>
+          <td>(</td>
+          <td class="paramtype">sf::RenderWindow &amp;&#160;</td>
+          <td class="paramname"><em>window</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_hit_box.html">HitBox</a> &amp;&#160;</td>
+          <td class="paramname"><em>hitBox</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_position.html">Position</a> &amp;&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>check if the mouse is in the hitBox situated at position </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">window</td><td>window of the scene </td></tr>
+    <tr><td class="paramname">hitBox</td><td>hitBox of the <a class="el" href="classecs_1_1_clickable.html">Clickable</a> entity </td></tr>
+    <tr><td class="paramname">position</td><td>position of the hitBox </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the mouse is in hitBox parameter at position parameter and </dd>
+<dd>
+false otherwise </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/client/ecs/systems/<a class="el" href="_click_8hpp_source.html">Click.hpp</a></li>
+<li>src/client/ecs/systems/<a class="el" href="client_2ecs_2systems_2_click_8hpp_source.html">Click.hpp</a></li>
 <li>src/client/ecs/systems/Click.cpp</li>
 </ul>
 </div><!-- contents -->

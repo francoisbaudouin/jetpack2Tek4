@@ -19,9 +19,13 @@ var classrtype_1_1_communicator =
     [ "setIpAdress", "classrtype_1_1_communicator.html#a54f34cbb2812cb1c7ec6d96089b480cc", null ],
     [ "setPort", "classrtype_1_1_communicator.html#a63386604353181fb70597a574cd69f6f", null ],
     [ "setPort", "classrtype_1_1_communicator.html#abb88d969c5edaaccd12b0264ac09a5ef", null ],
+    [ "startCommunication", "classrtype_1_1_communicator.html#acaf117931e686d2288913a76dae147b4", null ],
+    [ "stopCommunication", "classrtype_1_1_communicator.html#a5566fb824c1ba532010507770c28370c", null ],
+    [ "stopCommunication", "classrtype_1_1_communicator.html#ac39ae8eabdeaba2f1dd42f41805d86fc", null ],
     [ "unlockReceiveMutex", "classrtype_1_1_communicator.html#a582dc889ef498338b442b7a7a982c9b4", null ],
     [ "unlockReceiveMutex", "classrtype_1_1_communicator.html#a8c40dbfe75a6c056f2c497fd8cc11041", null ],
     [ "unlockSendMutex", "classrtype_1_1_communicator.html#a029b57fe7f0c6cd8d02f578469ca7fc5", null ],
     [ "unlockSendMutex", "classrtype_1_1_communicator.html#aab22b7cdf257a17e5abb1e27a512a914", null ],
+    [ "_receiveStream", "classrtype_1_1_communicator.html#ac8edbfae284c3160c9d655a2ef93a572", null ],
     [ "_sendStream", "classrtype_1_1_communicator.html#a7da11158b23ccba26bf6ee74e7cd4b2e", null ]
 ];

@@ -116,6 +116,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abcefca8cb13c264aec58093a5aa9c3de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_animate.html#abcefca8cb13c264aec58093a5aa9c3de">run</a> (const std::string &amp;sceneId, <a class="el" href="classrtype_1_1_animation_database.html">rtype::AnimationDatabase</a> &amp;database)</td></tr>
 <tr class="memdesc:abcefca8cb13c264aec58093a5aa9c3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">check all entities in the curent scene and update the ones needing animation  <a href="classecs_1_1_animate.html#abcefca8cb13c264aec58093a5aa9c3de">More...</a><br /></td></tr>
 <tr class="separator:abcefca8cb13c264aec58093a5aa9c3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48bd25bb24a0c3a34a3affb339bc2013"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_animate.html#a48bd25bb24a0c3a34a3affb339bc2013">Animate</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
+<tr class="memdesc:a48bd25bb24a0c3a34a3affb339bc2013"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecs_1_1_animate.html">Animate</a> will go to the animation database do update the textureRect of a sprite and update the frames of the animation.  <a href="classecs_1_1_animate.html#a48bd25bb24a0c3a34a3affb339bc2013">More...</a><br /></td></tr>
+<tr class="separator:a48bd25bb24a0c3a34a3affb339bc2013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94821212c3415c8dafd47080f65dde9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_animate.html#a94821212c3415c8dafd47080f65dde9a">animateEntity</a> (<a class="el" href="classecs_1_1_entity.html">Entity</a> &amp;entity, <a class="el" href="classrtype_1_1_animation_database.html">rtype::AnimationDatabase</a> &amp;database)</td></tr>
+<tr class="memdesc:a94821212c3415c8dafd47080f65dde9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">will get the actual frame of the animation and update it based on the AnimationDatabase  <a href="classecs_1_1_animate.html#a94821212c3415c8dafd47080f65dde9a">More...</a><br /></td></tr>
+<tr class="separator:a94821212c3415c8dafd47080f65dde9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1427646af8e22665940e1efff6aa78d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_animate.html#ab1427646af8e22665940e1efff6aa78d">updateSprite</a> (<a class="el" href="classecs_1_1_entity.html">Entity</a> &amp;entity, <a class="el" href="classrtype_1_1_animation_database.html">rtype::AnimationDatabase</a> &amp;database)</td></tr>
+<tr class="memdesc:ab1427646af8e22665940e1efff6aa78d"><td class="mdescLeft">&#160;</td><td class="mdescRight">will update the texture rect of the sprite from the entity based on it's actual animation  <a href="classecs_1_1_animate.html#ab1427646af8e22665940e1efff6aa78d">More...</a><br /></td></tr>
+<tr class="separator:ab1427646af8e22665940e1efff6aa78d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f710869583edee0806e388f6594349"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_animate.html#a22f710869583edee0806e388f6594349">run</a> (const std::string &amp;sceneId, <a class="el" href="classrtype_1_1_animation_database.html">rtype::AnimationDatabase</a> &amp;database)</td></tr>
+<tr class="memdesc:a22f710869583edee0806e388f6594349"><td class="mdescLeft">&#160;</td><td class="mdescRight">check all entities in the curent scene and update the ones needing animation  <a href="classecs_1_1_animate.html#a22f710869583edee0806e388f6594349">More...</a><br /></td></tr>
+<tr class="separator:a22f710869583edee0806e388f6594349"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classecs_1_1_a_system"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classecs_1_1_a_system')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td></tr>
 <tr class="memitem:ab3495f5e03dfd716257ae1ac92deabe0 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">ASystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
 <tr class="memdesc:ab3495f5e03dfd716257ae1ac92deabe0 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for systems.  <a href="classecs_1_1_a_system.html#ab3495f5e03dfd716257ae1ac92deabe0">More...</a><br /></td></tr>
@@ -123,17 +135,23 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aea8faa2947125d308f99e29dbb8a0db5 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#aea8faa2947125d308f99e29dbb8a0db5">run</a> (const std::string &amp;sceneName) override</td></tr>
 <tr class="memdesc:aea8faa2947125d308f99e29dbb8a0db5 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the system  <a href="classecs_1_1_a_system.html#aea8faa2947125d308f99e29dbb8a0db5">More...</a><br /></td></tr>
 <tr class="separator:aea8faa2947125d308f99e29dbb8a0db5 inherit pub_methods_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae150941b7528bbbc69bb568478e24537 inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#ae150941b7528bbbc69bb568478e24537">ASystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
+<tr class="memdesc:ae150941b7528bbbc69bb568478e24537 inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">Abstract class for systems.  <a href="classecs_1_1_a_system.html#ae150941b7528bbbc69bb568478e24537">More...</a><br /></td></tr>
+<tr class="separator:ae150941b7528bbbc69bb568478e24537 inherit pub_methods_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81e035badf7943ba9c48ed0b2177efb inherit pub_methods_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_a_system.html#aa81e035badf7943ba9c48ed0b2177efb">run</a> (const std::string &amp;sceneName) override</td></tr>
+<tr class="memdesc:aa81e035badf7943ba9c48ed0b2177efb inherit pub_methods_classecs_1_1_a_system"><td class="mdescLeft">&#160;</td><td class="mdescRight">run the system  <a href="classecs_1_1_a_system.html#aa81e035badf7943ba9c48ed0b2177efb">More...</a><br /></td></tr>
+<tr class="separator:aa81e035badf7943ba9c48ed0b2177efb inherit pub_methods_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classecs_1_1_a_system"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classecs_1_1_a_system')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classecs_1_1_a_system.html">ecs::ASystem</a></td></tr>
-<tr class="memitem:a782e261e3d4ef817556d55fc3c6e9001 inherit pro_attribs_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top"><a id="a782e261e3d4ef817556d55fc3c6e9001"></a>
+<tr class="memitem:aa164fb549f1af75289b042ed69f906c8 inherit pro_attribs_classecs_1_1_a_system"><td class="memItemLeft" align="right" valign="top"><a id="aa164fb549f1af75289b042ed69f906c8"></a>
 std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_manager</b></td></tr>
-<tr class="separator:a782e261e3d4ef817556d55fc3c6e9001 inherit pro_attribs_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:aa164fb549f1af75289b042ed69f906c8 inherit pro_attribs_classecs_1_1_a_system"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7d35c38f73354f1085db373de12193c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d35c38f73354f1085db373de12193c2">&#9670;&nbsp;</a></span>Animate()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d35c38f73354f1085db373de12193c2">&#9670;&nbsp;</a></span>Animate() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -158,9 +176,35 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 
 </div>
 </div>
+<a id="a48bd25bb24a0c3a34a3affb339bc2013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48bd25bb24a0c3a34a3affb339bc2013">&#9670;&nbsp;</a></span>Animate() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ecs::Animate::Animate </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>manager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classecs_1_1_animate.html">Animate</a> will go to the animation database do update the textureRect of a sprite and update the frames of the animation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">manager</td><td>: shared_ptr to the ecs </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2a1e6935297a940beae1b05a190e8807"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a1e6935297a940beae1b05a190e8807">&#9670;&nbsp;</a></span>animateEntity()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a1e6935297a940beae1b05a190e8807">&#9670;&nbsp;</a></span>animateEntity() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,8 +240,82 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 
 </div>
 </div>
+<a id="a94821212c3415c8dafd47080f65dde9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94821212c3415c8dafd47080f65dde9a">&#9670;&nbsp;</a></span>animateEntity() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecs::Animate::animateEntity </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_entity.html">Entity</a> &amp;&#160;</td>
+          <td class="paramname"><em>entity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrtype_1_1_animation_database.html">rtype::AnimationDatabase</a> &amp;&#160;</td>
+          <td class="paramname"><em>database</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>will get the actual frame of the animation and update it based on the AnimationDatabase </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>: entity needing the update </td></tr>
+    <tr><td class="paramname">database</td><td>: contains all the coordinates of the animations </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a22f710869583edee0806e388f6594349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f710869583edee0806e388f6594349">&#9670;&nbsp;</a></span>run() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecs::Animate::run </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sceneId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrtype_1_1_animation_database.html">rtype::AnimationDatabase</a> &amp;&#160;</td>
+          <td class="paramname"><em>database</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>check all entities in the curent scene and update the ones needing animation </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneId</td><td>: name of the actual scene </td></tr>
+    <tr><td class="paramname">database</td><td>: database of all animations </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="abcefca8cb13c264aec58093a5aa9c3de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abcefca8cb13c264aec58093a5aa9c3de">&#9670;&nbsp;</a></span>run()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#abcefca8cb13c264aec58093a5aa9c3de">&#9670;&nbsp;</a></span>run() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,7 +352,7 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 </div>
 </div>
 <a id="a11ed3e82a0570ccee0bb4676a298a559"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11ed3e82a0570ccee0bb4676a298a559">&#9670;&nbsp;</a></span>updateSprite()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a11ed3e82a0570ccee0bb4676a298a559">&#9670;&nbsp;</a></span>updateSprite() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -270,8 +388,45 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
 
 </div>
 </div>
+<a id="ab1427646af8e22665940e1efff6aa78d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1427646af8e22665940e1efff6aa78d">&#9670;&nbsp;</a></span>updateSprite() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecs::Animate::updateSprite </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classecs_1_1_entity.html">Entity</a> &amp;&#160;</td>
+          <td class="paramname"><em>entity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classrtype_1_1_animation_database.html">rtype::AnimationDatabase</a> &amp;&#160;</td>
+          <td class="paramname"><em>database</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>will update the texture rect of the sprite from the entity based on it's actual animation </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>: entity needing the update </td></tr>
+    <tr><td class="paramname">database</td><td>: contains all the coordinates of the animations </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/client/ecs/systems/<a class="el" href="_animate_8hpp_source.html">Animate.hpp</a></li>
+<li>src/client/ecs/systems/<a class="el" href="client_2ecs_2systems_2_animate_8hpp_source.html">Animate.hpp</a></li>
 <li>src/client/ecs/systems/Animate.cpp</li>
 </ul>
 </div><!-- contents -->

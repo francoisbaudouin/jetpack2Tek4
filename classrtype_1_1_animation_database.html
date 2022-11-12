@@ -106,10 +106,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a237878f348e50e846eb6745abe9d6c19"><td class="memItemLeft" align="right" valign="top">Frame &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrtype_1_1_animation_database.html#a237878f348e50e846eb6745abe9d6c19">getFrame</a> (const std::string &amp;entityType, const std::string &amp;animationType, const size_t frameId)</td></tr>
 <tr class="memdesc:a237878f348e50e846eb6745abe9d6c19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the frame from the animation passed as parameter.  <a href="classrtype_1_1_animation_database.html#a237878f348e50e846eb6745abe9d6c19">More...</a><br /></td></tr>
 <tr class="separator:a237878f348e50e846eb6745abe9d6c19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8db0fc2f30307eb3690dcf58a446f2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrtype_1_1_animation_database.html#aa8db0fc2f30307eb3690dcf58a446f2d">onCall</a> (const std::string &amp;sceneName)</td></tr>
+<tr class="memdesc:aa8db0fc2f30307eb3690dcf58a446f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the json files needed by the current scene and fill _animationMap for use.  <a href="classrtype_1_1_animation_database.html#aa8db0fc2f30307eb3690dcf58a446f2d">More...</a><br /></td></tr>
+<tr class="separator:aa8db0fc2f30307eb3690dcf58a446f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a825bb699cbe9a08ef4931d7c5ce19d8e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrtype_1_1_animation_database.html#a825bb699cbe9a08ef4931d7c5ce19d8e">getAnimationSize</a> (const std::string &amp;entityType, const std::string &amp;animationType) const</td></tr>
+<tr class="memdesc:a825bb699cbe9a08ef4931d7c5ce19d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the animation specified as parameter.  <a href="classrtype_1_1_animation_database.html#a825bb699cbe9a08ef4931d7c5ce19d8e">More...</a><br /></td></tr>
+<tr class="separator:a825bb699cbe9a08ef4931d7c5ce19d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4532c6fbbf72a765317c164e3966467"><td class="memItemLeft" align="right" valign="top">Animation &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrtype_1_1_animation_database.html#ae4532c6fbbf72a765317c164e3966467">getAnimation</a> (const std::string &amp;entityType, const std::string &amp;animationType)</td></tr>
+<tr class="memdesc:ae4532c6fbbf72a765317c164e3966467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the animation at type of entity passed as parameter.  <a href="classrtype_1_1_animation_database.html#ae4532c6fbbf72a765317c164e3966467">More...</a><br /></td></tr>
+<tr class="separator:ae4532c6fbbf72a765317c164e3966467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a2ca57a03e4855d5e9feec50b8d2ffb"><td class="memItemLeft" align="right" valign="top">Frame &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrtype_1_1_animation_database.html#a5a2ca57a03e4855d5e9feec50b8d2ffb">getFrame</a> (const std::string &amp;entityType, const std::string &amp;animationType, const size_t frameId)</td></tr>
+<tr class="memdesc:a5a2ca57a03e4855d5e9feec50b8d2ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the frame from the animation passed as parameter.  <a href="classrtype_1_1_animation_database.html#a5a2ca57a03e4855d5e9feec50b8d2ffb">More...</a><br /></td></tr>
+<tr class="separator:a5a2ca57a03e4855d5e9feec50b8d2ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a3d75aa1a219c1fd0febc1e3e4308b982"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d75aa1a219c1fd0febc1e3e4308b982">&#9670;&nbsp;</a></span>getAnimation()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d75aa1a219c1fd0febc1e3e4308b982">&#9670;&nbsp;</a></span>getAnimation() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,8 +158,46 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae4532c6fbbf72a765317c164e3966467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4532c6fbbf72a765317c164e3966467">&#9670;&nbsp;</a></span>getAnimation() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Animation&amp; rtype::AnimationDatabase::getAnimation </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>entityType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>animationType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the animation at type of entity passed as parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entityType</td><td>: type of the entity needed </td></tr>
+    <tr><td class="paramname">animationType</td><td>: type of the animation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Animation&amp; : animation to return </dd></dl>
+
+</div>
+</div>
 <a id="a0740c53e61a0589a6f207129d66faa86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0740c53e61a0589a6f207129d66faa86">&#9670;&nbsp;</a></span>getAnimationSize()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0740c53e61a0589a6f207129d66faa86">&#9670;&nbsp;</a></span>getAnimationSize() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -184,8 +234,46 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a825bb699cbe9a08ef4931d7c5ce19d8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a825bb699cbe9a08ef4931d7c5ce19d8e">&#9670;&nbsp;</a></span>getAnimationSize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t rtype::AnimationDatabase::getAnimationSize </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>entityType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>animationType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the size of the animation specified as parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entityType</td><td>: type of the entity that refer to it's animation </td></tr>
+    <tr><td class="paramname">animationType</td><td>: type of the animation to check </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>size_t : size of the animation </dd></dl>
+
+</div>
+</div>
 <a id="a237878f348e50e846eb6745abe9d6c19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a237878f348e50e846eb6745abe9d6c19">&#9670;&nbsp;</a></span>getFrame()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a237878f348e50e846eb6745abe9d6c19">&#9670;&nbsp;</a></span>getFrame() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,8 +317,53 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5a2ca57a03e4855d5e9feec50b8d2ffb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a2ca57a03e4855d5e9feec50b8d2ffb">&#9670;&nbsp;</a></span>getFrame() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Frame&amp; rtype::AnimationDatabase::getFrame </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>entityType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>animationType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>frameId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the frame from the animation passed as parameter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entityType</td><td>: type of the entity needing the aimation </td></tr>
+    <tr><td class="paramname">animationType</td><td>: type of the animation </td></tr>
+    <tr><td class="paramname">frameId</td><td>: id of the frame in the animation </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Frame&amp; : frame to return </dd></dl>
+
+</div>
+</div>
 <a id="a6710cb8c9ee76e0e3cd913064351bb00"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6710cb8c9ee76e0e3cd913064351bb00">&#9670;&nbsp;</a></span>onCall()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6710cb8c9ee76e0e3cd913064351bb00">&#9670;&nbsp;</a></span>onCall() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,8 +388,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa8db0fc2f30307eb3690dcf58a446f2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8db0fc2f30307eb3690dcf58a446f2d">&#9670;&nbsp;</a></span>onCall() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void rtype::AnimationDatabase::onCall </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sceneName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Load the json files needed by the current scene and fill _animationMap for use. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneName</td><td>: id of the current scene </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/client/assetsManager/<a class="el" href="_animation_database_8hpp_source.html">AnimationDatabase.hpp</a></li>
+<li>src/client/assetsManager/<a class="el" href="client_2assets_manager_2_animation_database_8hpp_source.html">AnimationDatabase.hpp</a></li>
 <li>src/client/assetsManager/AnimationDatabase.cpp</li>
 </ul>
 </div><!-- contents -->

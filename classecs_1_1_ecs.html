@@ -114,10 +114,30 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a805ecb917b33b865545c6ad0e51bf582"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a805ecb917b33b865545c6ad0e51bf582">clearSystems</a> ()</td></tr>
 <tr class="memdesc:a805ecb917b33b865545c6ad0e51bf582"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear the system stocke in the ecs  <a href="classecs_1_1_ecs.html#a805ecb917b33b865545c6ad0e51bf582">More...</a><br /></td></tr>
 <tr class="separator:a805ecb917b33b865545c6ad0e51bf582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae76b7f1ed69e1328f6cbcd4905d25f57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#ae76b7f1ed69e1328f6cbcd4905d25f57">createEntityManager</a> (const std::string &amp;sceneName)</td></tr>
+<tr class="memdesc:ae76b7f1ed69e1328f6cbcd4905d25f57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classecs_1_1_entity.html">Entity</a> Manager for the scene specified by it's Id.  <a href="classecs_1_1_ecs.html#ae76b7f1ed69e1328f6cbcd4905d25f57">More...</a><br /></td></tr>
+<tr class="separator:ae76b7f1ed69e1328f6cbcd4905d25f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d2de4591e4a4337529fad29f15fa0f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a2d2de4591e4a4337529fad29f15fa0f0">getEntityManager</a> (const std::string &amp;sceneName)</td></tr>
+<tr class="memdesc:a2d2de4591e4a4337529fad29f15fa0f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classecs_1_1_entity.html">Entity</a> Manager for the scene specified by it's Id.  <a href="classecs_1_1_ecs.html#a2d2de4591e4a4337529fad29f15fa0f0">More...</a><br /></td></tr>
+<tr class="separator:a2d2de4591e4a4337529fad29f15fa0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b491b700ad109e1b78394af6ffc0972"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a1b491b700ad109e1b78394af6ffc0972">clearEntityManagers</a> ()</td></tr>
+<tr class="memdesc:a1b491b700ad109e1b78394af6ffc0972"><td class="mdescLeft">&#160;</td><td class="mdescRight">destroy all managers  <a href="classecs_1_1_ecs.html#a1b491b700ad109e1b78394af6ffc0972">More...</a><br /></td></tr>
+<tr class="separator:a1b491b700ad109e1b78394af6ffc0972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c8d81cf49248a56ac6a0429e6a0e976"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
+<tr class="memitem:a2c8d81cf49248a56ac6a0429e6a0e976"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a2c8d81cf49248a56ac6a0429e6a0e976">createSystem</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
+<tr class="memdesc:a2c8d81cf49248a56ac6a0429e6a0e976"><td class="mdescLeft">&#160;</td><td class="mdescRight">add a system to the ecs from the type specified, exception is thrown if the system already exist  <a href="classecs_1_1_ecs.html#a2c8d81cf49248a56ac6a0429e6a0e976">More...</a><br /></td></tr>
+<tr class="separator:a2c8d81cf49248a56ac6a0429e6a0e976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a232969d3037e321dd8331b02e3e23924"><td class="memTemplParams" colspan="2">template&lt;class System &gt; </td></tr>
+<tr class="memitem:a232969d3037e321dd8331b02e3e23924"><td class="memTemplItemLeft" align="right" valign="top">System &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924">getSystem</a> ()</td></tr>
+<tr class="memdesc:a232969d3037e321dd8331b02e3e23924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a system from the type specified, exception is thrown if the system doesn't exist.  <a href="classecs_1_1_ecs.html#a232969d3037e321dd8331b02e3e23924">More...</a><br /></td></tr>
+<tr class="separator:a232969d3037e321dd8331b02e3e23924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abff8d2d52b6abd3c0a756fbfcf0123b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_ecs.html#abff8d2d52b6abd3c0a756fbfcf0123b4">clearSystems</a> ()</td></tr>
+<tr class="memdesc:abff8d2d52b6abd3c0a756fbfcf0123b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">clear the system stocke in the ecs  <a href="classecs_1_1_ecs.html#abff8d2d52b6abd3c0a756fbfcf0123b4">More...</a><br /></td></tr>
+<tr class="separator:abff8d2d52b6abd3c0a756fbfcf0123b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa3c167f355bbaf6ae30a9ca1d223e706"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3c167f355bbaf6ae30a9ca1d223e706">&#9670;&nbsp;</a></span>clearEntityManagers()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c167f355bbaf6ae30a9ca1d223e706">&#9670;&nbsp;</a></span>clearEntityManagers() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -135,8 +155,27 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a1b491b700ad109e1b78394af6ffc0972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b491b700ad109e1b78394af6ffc0972">&#9670;&nbsp;</a></span>clearEntityManagers() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecs::Ecs::clearEntityManagers </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>destroy all managers </p>
+
+</div>
+</div>
 <a id="a805ecb917b33b865545c6ad0e51bf582"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a805ecb917b33b865545c6ad0e51bf582">&#9670;&nbsp;</a></span>clearSystems()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a805ecb917b33b865545c6ad0e51bf582">&#9670;&nbsp;</a></span>clearSystems() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,8 +193,27 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="abff8d2d52b6abd3c0a756fbfcf0123b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abff8d2d52b6abd3c0a756fbfcf0123b4">&#9670;&nbsp;</a></span>clearSystems() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecs::Ecs::clearSystems </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>clear the system stocke in the ecs </p>
+
+</div>
+</div>
 <a id="a1d2439393f90045ea766b71a8e3bd4c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d2439393f90045ea766b71a8e3bd4c2">&#9670;&nbsp;</a></span>createEntityManager()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d2439393f90045ea766b71a8e3bd4c2">&#9670;&nbsp;</a></span>createEntityManager() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,8 +239,77 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ae76b7f1ed69e1328f6cbcd4905d25f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae76b7f1ed69e1328f6cbcd4905d25f57">&#9670;&nbsp;</a></span>createEntityManager() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a>&amp; ecs::Ecs::createEntityManager </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sceneName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a <a class="el" href="classecs_1_1_entity.html">Entity</a> Manager for the scene specified by it's Id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneName</td><td>: Name of the scene using the manager </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a>&amp; : reference to the newly created manager </dd></dl>
+
+</div>
+</div>
 <a id="a2c8d81cf49248a56ac6a0429e6a0e976"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c8d81cf49248a56ac6a0429e6a0e976">&#9670;&nbsp;</a></span>createSystem()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c8d81cf49248a56ac6a0429e6a0e976">&#9670;&nbsp;</a></span>createSystem() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class System &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ecs::Ecs::createSystem </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>manager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>add a system to the ecs from the type specified, exception is thrown if the system already exist </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">System</td><td>: type of the system </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">manager</td><td>: shared_ptr to the ecs </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2c8d81cf49248a56ac6a0429e6a0e976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c8d81cf49248a56ac6a0429e6a0e976">&#9670;&nbsp;</a></span>createSystem() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -224,7 +351,7 @@ template&lt;class System &gt; </div>
 </div>
 </div>
 <a id="aac30bf7d690df5bde586f9d41904d2ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac30bf7d690df5bde586f9d41904d2ae">&#9670;&nbsp;</a></span>getEntityManager()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aac30bf7d690df5bde586f9d41904d2ae">&#9670;&nbsp;</a></span>getEntityManager() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,8 +377,71 @@ template&lt;class System &gt; </div>
 
 </div>
 </div>
+<a id="a2d2de4591e4a4337529fad29f15fa0f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d2de4591e4a4337529fad29f15fa0f0">&#9670;&nbsp;</a></span>getEntityManager() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a>&amp; ecs::Ecs::getEntityManager </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sceneName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the <a class="el" href="classecs_1_1_entity.html">Entity</a> Manager for the scene specified by it's Id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneName</td><td>: Name of the scene using the manager </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classecs_1_1_entity_manager.html">EntityManager</a>&amp; : reference to the manager needed </dd></dl>
+
+</div>
+</div>
 <a id="a232969d3037e321dd8331b02e3e23924"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a232969d3037e321dd8331b02e3e23924">&#9670;&nbsp;</a></span>getSystem()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a232969d3037e321dd8331b02e3e23924">&#9670;&nbsp;</a></span>getSystem() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class System &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System&amp; ecs::Ecs::getSystem </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a system from the type specified, exception is thrown if the system doesn't exist. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">System</td><td>: type of the system </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>System&amp; : system to return </dd></dl>
+
+</div>
+</div>
+<a id="a232969d3037e321dd8331b02e3e23924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a232969d3037e321dd8331b02e3e23924">&#9670;&nbsp;</a></span>getSystem() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -287,7 +477,7 @@ template&lt;class System &gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/client/ecs/<a class="el" href="_ecs_8hpp_source.html">Ecs.hpp</a></li>
+<li>src/client/ecs/<a class="el" href="client_2ecs_2_ecs_8hpp_source.html">Ecs.hpp</a></li>
 <li>src/client/ecs/Ecs.cpp</li>
 </ul>
 </div><!-- contents -->

@@ -60,10 +60,11 @@ var annotated_dup =
       [ "GameScene", "classrtype_1_1_game_scene.html", "classrtype_1_1_game_scene" ],
       [ "Hub", "classrtype_1_1_hub.html", "classrtype_1_1_hub" ],
       [ "IScene", "classrtype_1_1_i_scene.html", "classrtype_1_1_i_scene" ],
+      [ "Lobby", "classrtype_1_1_lobby.html", "classrtype_1_1_lobby" ],
       [ "MainMenu", "classrtype_1_1_main_menu.html", "classrtype_1_1_main_menu" ],
       [ "SceneManager", "classrtype_1_1_scene_manager.html", "classrtype_1_1_scene_manager" ],
       [ "SceneSystem", "classrtype_1_1_scene_system.html", "classrtype_1_1_scene_system" ],
+      [ "Server", "classrtype_1_1_server.html", "classrtype_1_1_server" ],
       [ "TextureDatabase", "classrtype_1_1_texture_database.html", "classrtype_1_1_texture_database" ]
-    ] ],
-    [ "Test", "class_test.html", "class_test" ]
+    ] ]
 ];

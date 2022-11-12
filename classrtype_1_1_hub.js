@@ -1,6 +1,6 @@
 var classrtype_1_1_hub =
 [
-    [ "Hub", "classrtype_1_1_hub.html#ad29307fb9133effbaacd47d7c4aaff13", null ],
+    [ "Hub", "classrtype_1_1_hub.html#adeb5b59b813637978d89bd88cb172735", null ],
     [ "~Hub", "classrtype_1_1_hub.html#aeb43a79c823bf9875703db01bf71bc61", null ],
     [ "Draw", "classrtype_1_1_hub.html#aa7769fb496e267e95f75cf3b1fe8be1b", null ],
     [ "OnActivate", "classrtype_1_1_hub.html#a23f9db84c6c4584f8fa2cbf9dcd51567", null ],

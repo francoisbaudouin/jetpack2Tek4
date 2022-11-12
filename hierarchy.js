@@ -49,6 +49,7 @@ var hierarchy =
       [ "rtype::AScene", "classrtype_1_1_a_scene.html", [
         [ "rtype::GameScene", "classrtype_1_1_game_scene.html", null ],
         [ "rtype::Hub", "classrtype_1_1_hub.html", null ],
+        [ "rtype::Lobby", "classrtype_1_1_lobby.html", null ],
         [ "rtype::MainMenu", "classrtype_1_1_main_menu.html", null ]
       ] ]
     ] ],
@@ -69,6 +70,6 @@ var hierarchy =
     [ "ecs::RTypeEvent", "structecs_1_1_r_type_event.html", null ],
     [ "rtype::SceneManager", "classrtype_1_1_scene_manager.html", null ],
     [ "rtype::SceneSystem", "classrtype_1_1_scene_system.html", null ],
-    [ "Test", "class_test.html", null ],
+    [ "rtype::Server", "classrtype_1_1_server.html", null ],
     [ "rtype::TextureDatabase", "classrtype_1_1_texture_database.html", null ]
 ];
