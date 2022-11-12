@@ -1,6 +1,7 @@
 {
   "Player": "assets/sprites/Character.png",
   "Enemy": "assets/sprites/Peeper-Sheet.png",
-  "PlayerProjectile": "assets/sprites/projecktile.png",
+  "PlayerProjectile": "assets/sprites/Player_Projectile.png",
+  "EnemyProjectile": "assets/sprites/Enemy_Projectile.png",
   "Background": "assets/sprites/Parallax.png"
 }

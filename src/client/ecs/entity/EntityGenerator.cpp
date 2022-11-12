@@ -14,10 +14,11 @@
 namespace ecs
 {
     static std::unordered_map<std::string, std::vector<std::string>> types = {
-        {"Player", {"Controllable", "HitBox", "Velocity", "Weapon"}}, {"Enemy", {"HitBox", "Velocity"}},
-        {"PlayerProjectile", {"HitBox", "Velocity"}},
-        {"Placeholder", {"HitBox", "TextBox", "Selectable", "Text", "Clickable"}},
-        {"Button", {"HitBox", "Clickable", "Text"}}, {"Default", {}}};
+        {"Player", {"Controllable", "HitBox", "Velocity", "Weapon", "DrawbleServerSide"}},
+        {"Enemy", {"HitBox", "Velocity", "DrawbleServerSide"}},
+        {"PlayerProjectile", {"HitBox", "Velocity", "DrawbleServerSide"}},
+        {"Placeholder", {"HitBox", "TextBox", "Selectable", "Text", "Clickable", "DrawbleServerSide"}},
+        {"Button", {"HitBox", "Clickable", "Text", "DrawbleServerSide"}}, {"Default", {}}};
 
     static std::unordered_map<std::string, functionType> componentAdder = {
         {"Controllable", addControllable},
@@ -28,6 +29,7 @@ namespace ecs
         {"Clickable", addClickable},
         {"Text", addText},
         {"Selectable", addSelectable},
+        {"DrawbleServerSide", addSelectable},
     };
 
     void addPattern(Entity &entity, const std::string &component) { componentAdder[component](entity); }

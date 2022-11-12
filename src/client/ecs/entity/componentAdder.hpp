@@ -60,6 +60,7 @@ namespace ecs
      * @param entity : entity to add
      */
     void addSelectable(Entity &entity);
+    void addDrawableServer(Entity &entity);
 
 } // namespace ecs
 

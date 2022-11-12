@@ -11,10 +11,12 @@
 
 #include "../components/Clickable.hpp"
 #include "../components/Controllable.hpp"
+#include "../components/DrawableServerSide.hpp"
 #include "../components/HitBox.hpp"
 #include "../components/Selectable.hpp"
 #include "../components/Text.hpp"
 #include "../components/TextBox.hpp"
+#include "../components/Type.hpp"
 #include "../components/Velocity.hpp"
 #include "../components/Weapon.hpp"
 
@@ -41,4 +43,9 @@ namespace ecs
     void addText(Entity &entity) { entity.addComponent<Text>(); }
 
     void addSelectable(Entity &entity) { entity.addComponent<Selectable>(); }
+
+    void addDrawableServer(Entity &entity)
+    {
+        entity.addComponent<DrawableServerSide>(entity.getComponent<Type>().getEntityType());
+    }
 } // namespace ecs

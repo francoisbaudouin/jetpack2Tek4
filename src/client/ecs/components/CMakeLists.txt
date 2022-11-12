@@ -34,6 +34,8 @@ set(SRC
     ${SRCROOT}/Text.hpp
     ${SRCROOT}/Selectable.cpp
     ${SRCROOT}/Selectable.hpp
+    ${SRCROOT}/Stat.cpp
+    ${SRCROOT}/Stat.hpp
     PARENT_SCOPE
 )
 

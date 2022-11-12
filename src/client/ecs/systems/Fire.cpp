@@ -6,6 +6,12 @@
 */
 
 #include "Fire.hpp"
+#include "../components/DrawableServerSide.hpp"
+#include "../components/HitBox.hpp"
+#include "../components/Position.hpp"
+#include "../components/Velocity.hpp"
+#include "../components/Weapon.hpp"
+#include "ColliderReaction.hpp"
 
 using namespace ecs;
 
@@ -18,10 +24,10 @@ void Fire::createProjectile(const std::string &sceneName, const size_t entityId)
     Position &position = _manager->getEntityManager(sceneName).getEntity(entityId).getComponent<Position>();
     auto &projectile = _manager->getEntityManager(sceneName).createEntity();
     projectile.addComponent<Position>(position.getX(), position.getY());
-    projectile.addComponent<DrawableServerSide>("projectile");
+    projectile.addComponent<Type>("PlayerProjectile");
+    projectile.addComponent<DrawableServerSide>("PlayerProjectile");
     projectile.addComponent<Velocity>(0.3, 0.0);
     projectile.addComponent<HitBox>(32, 10);
-    projectile.addComponent<Type>("projectile");
     _lastTimeTriggered = _triggeredTime;
 }
 
