@@ -6,6 +6,11 @@
 */
 
 #include "Display.hpp"
+#include "../components/DrawableClientSide.hpp"
+#include "../components/Position.hpp"
+#include "../components/Text.hpp"
+#include "../components/TextBox.hpp"
+#include "../components/Type.hpp"
 
 using namespace ecs;
 

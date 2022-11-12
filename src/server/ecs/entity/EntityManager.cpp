@@ -25,6 +25,15 @@ Entity &EntityManager::createEntity()
     return (*entity);
 }
 
+Entity &EntityManager::createEntity(const size_t id)
+{
+    Entity *entity = new Entity(id);
+    std::shared_ptr<Entity> shEntity(entity);
+
+    _entities.insert_or_assign(shEntity->getId(), std::move(shEntity));
+    return (*entity);
+}
+
 Entity &EntityManager::getEntity(const size_t id)
 {
     if (!_entities.contains(id))

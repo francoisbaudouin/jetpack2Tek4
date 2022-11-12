@@ -29,11 +29,20 @@ namespace ecs
          */
         Entity &createEntity();
         /**
+         * @brief Create a Entity object
+         * 
+         * @param id id to specify
+         * @return Entity& : entity that was created
+         */
+        Entity &createEntity(const size_t id);
+
+        /**
          * @brief Get an entity from it's id, exception is thrown if the entity doesn't exist
          *
          * @param id : id of the entity to get
          * @return Entity& : entity in question
          */
+
         Entity &getEntity(const size_t id);
         /**
          * @brief Get the map of the entities
@@ -54,7 +63,6 @@ namespace ecs
          */
         size_t getNumberEntities() const;
 
-      protected:
       private:
         std::unordered_map<size_t, std::shared_ptr<Entity>> _entities;
         size_t _id;
