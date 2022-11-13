@@ -56,7 +56,6 @@ void MainMenu::OnCreate()
     auto &multiplayerButton = hereManager.getEntity(ecs::generateEntity(hereManager, "Button"));
     auto &quitbutton = hereManager.getEntity(ecs::generateEntity(hereManager, "Button"));
 
-
     parallaxFirstImage.addComponent<DrawableClientSide>(
         _sceneSystem->getTextureDatabase()->getTexture("Background"), (2 * _scale));
     parallaxFirstImage.addComponent<Velocity>(-0.005 * _scale, 0);

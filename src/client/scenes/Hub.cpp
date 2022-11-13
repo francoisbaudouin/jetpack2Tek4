@@ -12,10 +12,9 @@
 #include "../ecs/components/DrawableClientSide.hpp"
 #include "../ecs/components/HitBox.hpp"
 #include "../ecs/components/Position.hpp"
+#include "../ecs/components/Selectable.hpp"
 #include "../ecs/components/Text.hpp"
 #include "../ecs/components/TextBox.hpp"
-#include "../ecs/components/Selectable.hpp"
-
 
 #include "../ecs/systems/Animate.hpp"
 #include "../ecs/systems/Click.hpp"
@@ -66,7 +65,6 @@ void Hub::OnCreate()
     ipText.addComponent<HitBox>(
         ipText.getComponent<Text>().getTextWidth(), ipText.getComponent<Text>().getTextHeight() * _scale);
 
-
     portText.addComponent<Text>();
     portText.getComponent<Text>().setFontSize(30 * _scale);
 
@@ -78,7 +76,6 @@ void Hub::OnCreate()
     portText.addComponent<HitBox>(
         portText.getComponent<Text>().getTextWidth(), portText.getComponent<Text>().getTextHeight() * _scale);
 
-
     ipPlaceholder.getComponent<Text>().setText(std::string(""));
     ipPlaceholder.getComponent<Text>().setFontSize(30 * _scale);
     ipPlaceholder.getComponent<Position>().setPosition(
@@ -86,7 +83,6 @@ void Hub::OnCreate()
     ipPlaceholder.getComponent<TextBox>().setMaxLenght(20);
     ipPlaceholder.getComponent<HitBox>().setHitBox(
         ipText.getComponent<Text>().getTextWidth(), ipText.getComponent<Text>().getTextHeight() * _scale);
-
 
     portPlaceholder.getComponent<Text>().setText(std::string(""));
     portPlaceholder.getComponent<Text>().setFontSize(30 * _scale);

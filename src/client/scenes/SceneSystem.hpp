@@ -9,12 +9,12 @@
 #define SCENESYSTEM_HPP_
 
 #include <SFML/Audio.hpp>
+#include <map>
 #include <memory>
 #include "../Communicator.hpp"
 #include "../assetsManager/TextureDatabase.hpp"
 #include "../ecs/Ecs.hpp"
 #include "IScene.hpp"
-#include <map>
 
 namespace rtype
 {

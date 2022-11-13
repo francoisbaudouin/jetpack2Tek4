@@ -77,8 +77,8 @@ void Server::manageReceiveData()
         header = receiveMessage.substr(0, receiveMessage.find_first_of(' '));
         if (header == "connect" && n < 4) {
             _sceneName = "Lobby";
-            auto &player = this->_ecs->getEntityManager("Lobby")
-                               .getEntity(generateEntity(this->_ecs->getEntityManager("Lobby"), "Player"));
+            auto &player = this->_ecs->getEntityManager("Lobby").getEntity(
+                generateEntity(this->_ecs->getEntityManager("Lobby"), "Player"));
             player.addComponent<DrawableServerSide>("Player");
             player.getComponent<Position>().setPosition(40, n * 48 + 50);
             n += 1;
@@ -91,7 +91,7 @@ void Server::manageReceiveData()
                 context = "Launch%";
                 _sceneName = "GameScene";
             }
-            this->_communicator->_receiveStream.str(std::string()); 
+            this->_communicator->_receiveStream.str(std::string());
         } else if (header == "notready") {
             nbReady -= 1;
             this->_communicator->_receiveStream.str(std::string());
