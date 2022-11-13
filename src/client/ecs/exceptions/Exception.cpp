@@ -103,7 +103,4 @@ JsonFileOpenerFailed::JsonFileOpenerFailed(std::string const &file)
 {
 }
 
-CannotOpenMusic::CannotOpenMusic(std::string const &file)
-    : Exception("error 881: cannot open '" + file + "'")
-{
-}
+CannotOpenMusic::CannotOpenMusic(std::string const &file) : Exception("error 881: cannot open '" + file + "'") {}
