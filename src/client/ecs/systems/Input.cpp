@@ -69,7 +69,6 @@ std::vector<RTypeEvent> Input::getInput(const sf::Event &event)
     bindKeyboardKey(event);
     bindMouseKey(event);
     updateEvents();
-    std::cout << _events.size() << " ";
 
     return (_events);
 }
