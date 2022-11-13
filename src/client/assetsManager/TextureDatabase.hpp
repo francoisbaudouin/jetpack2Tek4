@@ -9,8 +9,8 @@
 #define TEXTUREDATABASE_HPP_
 
 #include <SFML/Graphics.hpp>
+#include <map>
 #include <string>
-#include <unordered_map>
 
 namespace rtype
 {
@@ -22,10 +22,12 @@ namespace rtype
         void onCall(const std::string &sceneName);
         sf::Texture &getTexture(const std::string type);
         void replaceTexturePath(const std::string type, sf::Texture &newTexturePath);
+        size_t getSizeX(const std::string type);
+        size_t getSizeY(const std::string type);
 
       protected:
       private:
-        std::unordered_map<std::string, sf::Texture> _textureMap;
+        std::map<std::string, sf::Texture> _textureMap;
     };
 } // namespace rtype
 

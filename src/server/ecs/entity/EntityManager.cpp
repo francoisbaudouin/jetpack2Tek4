@@ -41,7 +41,7 @@ Entity &EntityManager::getEntity(const size_t id)
     return (*_entities.at(id).get());
 }
 
-std::unordered_map<size_t, std::shared_ptr<Entity>> &EntityManager::getEntities() { return (_entities); }
+std::map<size_t, std::shared_ptr<Entity>> &EntityManager::getEntities() { return (_entities); }
 
 void EntityManager::removeEntity(const size_t id)
 {

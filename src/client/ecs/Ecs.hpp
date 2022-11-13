@@ -79,8 +79,8 @@ namespace ecs
         void clearSystems();
 
       private:
-        std::unordered_map<std::string, EntityManager *> _entityManagers;
-        std::unordered_map<std::type_index, ISystem *> _systems;
+        std::map<std::string, EntityManager *> _entityManagers;
+        std::map<std::type_index, ISystem *> _systems;
     };
 } // namespace ecs
 

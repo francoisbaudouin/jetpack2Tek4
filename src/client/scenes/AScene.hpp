@@ -13,13 +13,12 @@
 #include "../ecs/entity/EntityGenerator.hpp"
 #include "IScene.hpp"
 #include "SceneSystem.hpp"
-
 namespace rtype
 {
     class AScene : public IScene {
       public:
-        AScene(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale,
-            std::shared_ptr<Communicator> communicator, boost::thread *thread);
+        AScene(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, const std::string &sceneName,
+            const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread);
         ~AScene() = default;
         /**
          * @brief Get the Name of the scene
@@ -39,14 +38,17 @@ namespace rtype
          * @return shared_ptr to the communicator of the scene
          */
         std::shared_ptr<Communicator> getCommunicator() override;
+        size_t getId() const override;
+        void setId(const size_t &id) override;
 
       protected:
-        rtype::SceneSystem &_sceneSystem;
+        std::shared_ptr<rtype::SceneSystem> _sceneSystem;
         sf::RenderWindow &_window;
         std::string _sceneName;
         float _scale;
         std::shared_ptr<Communicator> _communicator;
         boost::thread *_thread;
+        size_t _id;
 
       private:
     };

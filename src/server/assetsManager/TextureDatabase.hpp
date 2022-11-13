@@ -9,8 +9,8 @@
 #define TEXTUREDATABASE_HPP_
 
 #include <SFML/Graphics.hpp>
+#include <map>
 #include <string>
-#include <unordered_map>
 
 namespace rtype
 {
@@ -25,7 +25,7 @@ namespace rtype
 
       protected:
       private:
-        std::unordered_map<std::string, sf::Texture> _textureMap;
+        std::map<std::string, sf::Texture> _textureMap;
     };
 } // namespace rtype
 

@@ -25,8 +25,8 @@ namespace ecs
          * @param color color of the font
          * @param scale scale of the font
          */
-        Text(const size_t entityId, const std::string &fontPath = "assets/Boxy-Bold.ttf", const size_t fontSize = 20,
-            const std::string &baseString = "Default", const sf::Color color = sf::Color::Black, const float scale = 1);
+        Text(const size_t entityId, const std::string &fontPath = "assets/pixel.ttf", const size_t fontSize = 20,
+            const std::string &baseString = "Default", const sf::Color color = sf::Color::White, const float scale = 1);
         ~Text();
         /**
          * @brief Set the text Property
@@ -87,6 +87,30 @@ namespace ecs
          * @return size_t size of the text
          */
         size_t getFontSize() const;
+        /**
+         * @brief Set the Scale of the text
+         *
+         * @param scale scale of the text
+         */
+        void setScale(const size_t scale);
+        /**
+         * @brief Get the size of the Text
+         *
+         * @return size_t size of the text
+         */
+        size_t getTextSize() const;
+        /**
+         * @brief get the text width but scaled to the font size
+         *
+         * @return size_t scaled width of the text
+         */
+        float getTextWidth() const;
+        /**
+         * @brief get the text height but scaled to the font size
+         *
+         * @return size_t scaled height of the text
+         */
+        float getTextHeight() const;
 
       protected:
       private:

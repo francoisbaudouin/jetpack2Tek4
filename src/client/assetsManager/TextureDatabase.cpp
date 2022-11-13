@@ -40,3 +40,16 @@ void TextureDatabase::replaceTexturePath(const std::string type, sf::Texture &ne
 }
 
 TextureDatabase::~TextureDatabase() {}
+
+size_t TextureDatabase::getSizeX(const std::string type)
+{
+    if (_textureMap.contains(type) == false)
+        throw ecs::TextureNotInDatabase(type);
+    return _textureMap[type].getSize().x;
+}
+size_t TextureDatabase::getSizeY(const std::string type)
+{
+    if (_textureMap.contains(type) == false)
+        throw ecs::TextureNotInDatabase(type);
+    return _textureMap[type].getSize().y;
+}
