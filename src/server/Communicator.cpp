@@ -37,13 +37,8 @@ void Communicator::run()
     boost::asio::ip::udp::socket socket(
         this->_ioContext, boost::asio::ip::udp::endpoint(boost::asio::ip::udp::v4(), this->_port));
 
-    using namespace std::chrono;
-    auto next = steady_clock::now();
-    auto prev = next - 200ms;
-
     this->_sendStream << "Default ";
     while (_isRunning) {
-        auto now = steady_clock::now();
         // receive
         this->lockReceiveMutex();
         this->_receiveStream.str(std::string());
@@ -55,9 +50,6 @@ void Communicator::run()
         this->lockSendMutex();
         socket.send_to(boost::asio::buffer(this->_sendStream.str()), this->_remoteEndpoint);
         this->unlockSendMutex();
-        prev = now;
-        next += 300ms;
-        std::this_thread::sleep_until(next);
     }
 }
 

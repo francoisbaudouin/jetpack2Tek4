@@ -27,6 +27,8 @@ namespace rtype
         virtual std::string getName() const = 0;
         virtual boost::thread *getThread() = 0;
         virtual std::shared_ptr<Communicator> getCommunicator() = 0;
+        virtual size_t getId() const = 0;
+        virtual void setId(const size_t &id) = 0;
     };
 } // namespace rtype
 

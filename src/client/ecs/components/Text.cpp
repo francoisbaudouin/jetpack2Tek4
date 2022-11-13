@@ -29,6 +29,14 @@ void Text::setText(const std::string &text) { _text.setString(text); }
 
 void Text::setText(const sf::String &text) { _text.setString(text); }
 
+void Text::setScale(const size_t scale) { _text.setScale(sf::Vector2f(scale, scale)); }
+
+size_t Text::getTextSize() const { return _text.getString().getSize(); }
+
+float Text::getTextWidth() const { return _text.getGlobalBounds().width; }
+
+float Text::getTextHeight() const { return _text.getGlobalBounds().height; }
+
 sf::Text &Text::getText() { return _text; }
 
 void Text::setColor(const sf::Color &color)
@@ -43,7 +51,7 @@ void Text::setFontSize(const size_t size) { _text.setCharacterSize(size); }
 
 void Text::setFont(const std::string &fontPath)
 {
-    if (_font.loadFromFile(fontPath)) {
+    if (!_font.loadFromFile(fontPath)) {
         throw FontNotLoadedSuccessfully(fontPath);
         return;
     }
@@ -57,3 +65,5 @@ void Text::setFont(sf::Font &font)
 }
 
 sf::Font Text::getFont() const { return _font; }
+
+size_t Text::getFontSize() const { return _text.getCharacterSize(); }

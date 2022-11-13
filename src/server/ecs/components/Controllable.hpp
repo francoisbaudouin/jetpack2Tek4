@@ -11,7 +11,7 @@
 #include "../enums/controlls.hpp"
 #include "../enums/event.hpp"
 #include "AComponent.hpp"
-#include <unordered_map>
+#include <map>
 
 namespace ecs
 {
@@ -41,7 +41,7 @@ namespace ecs
 
       protected:
       private:
-        std::unordered_map<Device::KeyBoardKey, Controlls> _controllMap;
+        std::map<Device::KeyBoardKey, Controlls> _controllMap;
     };
 } // namespace ecs
 

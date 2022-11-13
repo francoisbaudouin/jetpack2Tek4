@@ -10,7 +10,7 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
-#include <unordered_map>
+#include <map>
 
 namespace rtype
 {
@@ -25,7 +25,7 @@ namespace rtype
 
       protected:
       private:
-        std::unordered_map<std::string, sf::Texture> _textureMap;
+        std::map<std::string, sf::Texture> _textureMap;
     };
 } // namespace rtype
 

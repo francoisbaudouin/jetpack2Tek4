@@ -13,13 +13,13 @@
 #include <array>
 #include <string>
 #include <vector>
-#include <unordered_map>
+#include <map>
 
 namespace rtype
 {
     using Frame = std::array<int, 4>;
     using Animation = std::vector<Frame>;
-    using Animations = std::unordered_map<std::string, Animation>;
+    using Animations = std::map<std::string, Animation>;
 
     class AnimationDatabase {
       public:
@@ -58,7 +58,7 @@ namespace rtype
         Frame &getFrame(const std::string &entityType, const std::string &animationType, const size_t frameId);
 
       private:
-        std::unordered_map<std::string, Animations> _animationMap;
+        std::map<std::string, Animations> _animationMap;
     };
 } // namespace rtype
 

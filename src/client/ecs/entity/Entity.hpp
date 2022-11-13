@@ -10,7 +10,8 @@
 
 #include <typeindex>
 #include <typeinfo>
-#include <unordered_map>
+#include <map>
+#include <map>
 
 #include "../components/IComponent.hpp"
 #include "../exceptions/Exception.hpp"
@@ -106,7 +107,7 @@ namespace ecs
         void setId(const size_t id);
 
       private:
-        std::unordered_map<std::type_index, IComponent *> _components;
+        std::map<std::type_index, IComponent *> _components;
         size_t _id;
     };
 } // namespace ecs

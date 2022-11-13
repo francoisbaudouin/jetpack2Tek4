@@ -22,8 +22,9 @@ namespace rtype
          * @param sceneName name of the scene
          * @param scale scale of the scene
          */
-        GameScene(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
-            const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread);
+        GameScene(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, sf::Event &event,
+            const std::string &sceneName, const float scale, std::shared_ptr<Communicator> communicator,
+            boost::thread *thread);
         ~GameScene();
         /**
          * @brief function called at creation of the scene (Add of sceneSystem)
@@ -55,6 +56,8 @@ namespace rtype
 
       private:
         sf::Event _event;
+        void updateEntity(ecs::Entity &entity, std::string data);
+        void createEntity(std::string data, const size_t entityId);
     };
 } // namespace rtype
 

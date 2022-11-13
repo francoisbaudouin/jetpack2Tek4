@@ -29,6 +29,7 @@ namespace rtype
 
       protected:
       private:
+        std::string _sceneName;
         boost::thread *_communicationThread;
         std::shared_ptr<Communicator> _communicator;
         std::shared_ptr<ecs::Ecs> _ecs;

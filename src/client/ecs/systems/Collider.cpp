@@ -30,7 +30,7 @@ void Collider::compareEntities(const std::string &sceneName, const size_t entity
 }
 
 void Collider::checkEntities(
-    const std::string &sceneName, const std::unordered_map<size_t, std::shared_ptr<Entity>>::iterator &entity)
+    const std::string &sceneName, const std::map<size_t, std::shared_ptr<Entity>>::iterator &entity)
 {
     auto iterator = entity;
     size_t entityId = entity->first;

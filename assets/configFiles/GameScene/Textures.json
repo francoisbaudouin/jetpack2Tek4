@@ -2,5 +2,5 @@
   "Player": "assets/sprites/Character.png",
   "Enemy": "assets/sprites/Peeper-Sheet.png",
   "PlayerProjectile": "assets/sprites/projecktile.png",
-  "Background": "assets/sprites/Parallax.png"
+  "Background": "assets/sprites/mainMenuBackground.png"
 }

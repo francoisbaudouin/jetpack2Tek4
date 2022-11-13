@@ -12,9 +12,12 @@
 
 #include "ecs/components/DrawableServerSide.hpp"
 #include "ecs/components/Position.hpp"
-#include "ecs/components/Velocity.hpp"
 #include "ecs/components/Type.hpp"
+#include "ecs/components/Velocity.hpp"
 
+#include "ecs/entity/EntityGenerator.hpp"
+
+#include "ecs/systems/Controll.hpp"
 #include "ecs/systems/Move.hpp"
 
 using namespace rtype;
@@ -22,6 +25,7 @@ using namespace ecs;
 
 Server::Server()
 {
+    _sceneName = "Hub";
     rtype::Communicator communicator;
     _communicator = std::make_shared<rtype::Communicator>(communicator);
     _communicationThread = new boost::thread(boost::bind(&rtype::Communicator::run, _communicator));
@@ -30,23 +34,18 @@ Server::Server()
 
     // entity generation
 
+    this->_ecs->createEntityManager("Hub");
     this->_ecs->createEntityManager("Lobby");
     this->_ecs->createEntityManager("GameScene");
     this->_ecs->createSystem<Move>(this->_ecs);
-
-    auto &enemy = this->_ecs->getEntityManager("GameScene").createEntity();
-    enemy.addComponent<Position>(0, 0);
-    enemy.addComponent<Type>("Enemy");
-    enemy.addComponent<DrawableServerSide>("Enemy");
-    enemy.addComponent<Velocity>(0.001, 0);
-
+    this->_ecs->createSystem<Controll>(this->_ecs);
 }
 
 std::string Server::fillSendStream()
 {
     std::string fillString = " ";
 
-    for (auto &entity : this->_ecs->getEntityManager("GameScene").getEntities()) {
+    for (auto &entity : this->_ecs->getEntityManager(_sceneName).getEntities()) {
         fillString += std::to_string(entity.second->getId()) + "_";
         if (entity.second->hasComponent<DrawableServerSide>()) {
             fillString += entity.second->getComponent<DrawableServerSide>().getTextureType() + ":";
@@ -71,10 +70,11 @@ void Server::manageReceiveData()
     if (!receiveMessage.empty()) {
         header = receiveMessage.substr(0, receiveMessage.find_first_of(' '));
         if (header == "connect" && n < 4) {
-            auto &player = this->_ecs->getEntityManager("GameScene").createEntity();
-            player.addComponent<Position>(0, 0);
-            player.addComponent<Type>("Player");
+            _sceneName = "Lobby";
+            auto &player = this->_ecs->getEntityManager("Lobby")
+                               .getEntity(generateEntity(this->_ecs->getEntityManager("Lobby"), "Player"));
             player.addComponent<DrawableServerSide>("Player");
+            player.getComponent<Position>().setPosition(40, n * 48 + 50);
             n += 1;
             this->_communicator->_receiveStream.str(std::string());
         } else if (header == "connect" && n >= 4) {
@@ -83,8 +83,16 @@ void Server::manageReceiveData()
             nbReady += 1;
             if (nbReady == n) {
                 context = "Launch%";
+                _sceneName = "GameScene";
             }
+            this->_communicator->_receiveStream.str(std::string()); 
+        } else if (header == "notready") {
+            nbReady -= 1;
             this->_communicator->_receiveStream.str(std::string());
+        } else if (receiveMessage.substr(0, 4) == "move") {
+            if (receiveMessage.size() > 5)
+                this->_ecs->getSystem<Controll>().run("GameScene", receiveMessage,
+                    atoi(receiveMessage.substr(receiveMessage.find_first_of('%') + 1, 1).c_str()));
         }
     }
     this->_communicator->unlockReceiveMutex();
@@ -94,23 +102,11 @@ void Server::manageReceiveData()
     this->_communicator->unlockSendMutex();
 }
 
-void Server::manageSendData()
-{
-    // this->_communicator->lockSendMutex();
-    // this->_communicator->unlockSendMutex();
-}
-
 void Server::run()
 {
     while (RUNNING) {
-        // this->_communicator->lockSendMutex();
-        // this->_communicator->_sendStream.str(std::string());
-        // this->_communicator->_sendStream << test << " " << test1 << " " << test2 << " ";
-        // this->_communicator->unlockSendMutex();
         this->manageReceiveData();
-        this->manageSendData();
-        _ecs->getSystem<Move>().run("GameScene");
-        // this->_communicator->_receiveStream.str(std::string());
+        this->_ecs->getSystem<Move>().run("GameScene");
     }
     _communicator->stopCommunication();
     _communicationThread->join();

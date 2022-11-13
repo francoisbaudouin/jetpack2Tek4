@@ -102,3 +102,5 @@ JsonFileOpenerFailed::JsonFileOpenerFailed(std::string const &file)
     : Exception("error 880: Json file does not exist: '" + file + "'")
 {
 }
+
+CannotOpenMusic::CannotOpenMusic(std::string const &file) : Exception("error 881: cannot open '" + file + "'") {}

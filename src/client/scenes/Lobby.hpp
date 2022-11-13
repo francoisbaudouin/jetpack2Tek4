@@ -23,8 +23,9 @@ namespace rtype
          * @param scale scale of the scene
          *
          */
-        Lobby(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
-            const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread);
+        Lobby(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, sf::Event &event,
+            const std::string &sceneName, const float scale, std::shared_ptr<Communicator> communicator,
+            boost::thread *thread);
         ~Lobby();
         /**
          * @brief function called at creation of the scene (Add of sceneSystem)
