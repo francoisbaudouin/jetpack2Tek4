@@ -35,23 +35,24 @@ void GameScene::ProcessInput() {}
 
 void GameScene::Update()
 {
-    std::cout << _sceneSystem.getEcs()->getSystem<Input>().getInput(_event).size() << " ";
+    // std::cout << _sceneSystem.getEcs()->getSystem<Input>().getInput(_event).size() << " ";
     // std::vector<RTypeEvent> rTypeEvent(_sceneSystem.getEcs()->getSystem<Input>().getInput(_event));
 
-    // _communicator->lockSendMutex();
-    // for (auto iterator : rTypeEvent) {
-    //     std::cout << "ici ";
-    //     if (iterator.keyboardKey == Device::KeyBoardKey::Z) {
-    //         _communicator->_sendStream << this->_id << " up ";
-    //     } else if (iterator.keyboardKey == Device::KeyBoardKey::Q) {
-    //         _communicator->_sendStream << this->_id << " left ";
-    //     } else if (iterator.keyboardKey == Device::KeyBoardKey::S) {
-    //         _communicator->_sendStream << this->_id << " down ";
-    //     } else if (iterator.keyboardKey == Device::KeyBoardKey::D) {
-    //         _communicator->_sendStream << this->_id << " right ";
-    //     }
-    // }
-    // _communicator->unlockSendMutex();
+    // std::cout << rTypeEvent.size() << " ";
+
+    _communicator->lockSendMutex();
+    _communicator->_sendStream.str(std::string());
+    _communicator->_sendStream << "move%";
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+        _communicator->_sendStream << this->_id << "_up ";
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
+        _communicator->_sendStream << this->_id << "_left ";
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        _communicator->_sendStream << this->_id << "_down ";
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        _communicator->_sendStream << this->_id << "_right ";
+    _communicator->unlockSendMutex();
+
     return;
 }
 

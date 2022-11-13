@@ -34,6 +34,7 @@ namespace ecs
          * @param entityId id of the controllable entity
          **/
         void run(const std::string &sceneName, const std::vector<RTypeEvent> &controll, const size_t entityId);
+        void run(const std::string &sceneName, const std::string event, const size_t entityId);
 
       private:
         /**

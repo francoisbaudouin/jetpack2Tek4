@@ -26,6 +26,25 @@ void Controll::run(const std::string &sceneName, const std::vector<RTypeEvent> &
     }
 }
 
+void Controll::run(const std::string &sceneName, const std::string event, const size_t entityId)
+{
+    if (_manager->getEntityManager(sceneName).getNumberEntities() == 0)
+        return;
+    if (_manager->getEntityManager(sceneName).getEntity(entityId - 1).hasComponent<Controllable>()
+        && _manager->getEntityManager(sceneName).getEntity(entityId - 1).hasComponent<Velocity>()) {
+        Velocity &velocity = _manager->getEntityManager(sceneName).getEntity(entityId - 1).getComponent<Velocity>();
+        Controllable &controllable =
+            _manager->getEntityManager(sceneName).getEntity(entityId - 1).getComponent<Controllable>();
+        // keyReaction(sceneName, velocity, controllable, rTypeEvents, entityId);
+        std::cout << event.substr(event.find_first_of('_') + 1, 2) << std::endl;
+        if (event.substr(event.find_first_of('_') + 1, 2) == "up") {
+            std::cout << "ici" << std::endl;
+            velocity.setVelocity(0.075, 0.075);
+        } else
+            velocity.setVelocity(0, 0);
+    }
+}
+
 void Controll::keyReaction(const std::string &sceneName, Velocity &velocity, Controllable &controllable,
     const std::vector<RTypeEvent> &rTypeEvents, const size_t entityId)
 {
