@@ -20,9 +20,9 @@
 #include "../ecs/systems/Animate.hpp"
 #include "../ecs/systems/Click.hpp"
 #include "../ecs/systems/Display.hpp"
-#include "../ecs/systems/WriteInBox.hpp"
-#include "../ecs/systems/Input.hpp"
 #include "../ecs/systems/Fire.hpp"
+#include "../ecs/systems/Input.hpp"
+#include "../ecs/systems/WriteInBox.hpp"
 
 using namespace ecs;
 using namespace rtype;
@@ -40,7 +40,6 @@ void Hub::OnCreate()
     /* We are going to create system here,
     dont forget to create the corresponding entityManager */
     _sceneSystem->getEcs()->createEntityManager(this->getName());
-
 
     auto &hereManager = _sceneSystem->getEcs()->getEntityManager(this->getName());
 
@@ -110,7 +109,6 @@ void Hub::OnCreate()
         confirmButton.getComponent<Text>().getTextWidth(), confirmButton.getComponent<Text>().getTextHeight() * _scale);
     confirmButton.getComponent<Position>().setPosition(
         backButton.getComponent<Position>().getX() + (250 * _scale), backButton.getComponent<Position>().getY());
-
 }
 
 void Hub::OnDestroy() {}

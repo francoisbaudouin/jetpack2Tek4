@@ -103,16 +103,18 @@ void GameScene::updateEntity(ecs::Entity &entity, std::string data)
 void GameScene::Update()
 {
     _communicator->lockSendMutex();
-    _communicator->_sendStream.str(std::string());
-    _communicator->_sendStream << "move%";
+    // _communicator->_sendStream.str(std::string());
+    _communicator->_sendStream << "action%" << this->_id << " ";
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
-        _communicator->_sendStream << this->_id << "_up ";
+        _communicator->_sendStream << "_up ";
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q))
-        _communicator->_sendStream << this->_id << "_left ";
+        _communicator->_sendStream << "_left ";
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-        _communicator->_sendStream << this->_id << "_down ";
+        _communicator->_sendStream << "_down ";
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-        _communicator->_sendStream << this->_id << "_right ";
+        _communicator->_sendStream << "_right ";
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+        _communicator->_sendStream << "_fire ";
     _communicator->unlockSendMutex();
     return;
 }
@@ -134,7 +136,7 @@ void GameScene::Draw()
         secondParallaxImage.getComponent<Position>().setPosition(
             _sceneSystem->getTextureDatabase()->getSizeX("Background") * 2, 0);
 
-    //other
+    // receive packet
     std::string receivedData(_sceneSystem->getReceivedData());
     receivedData.erase(0, receivedData.find('%') + 3);
 

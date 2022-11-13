@@ -53,11 +53,11 @@ namespace rtype
          */
         void Update() override;
         void Draw() override;
+        void updateEntity(ecs::Entity &entity, std::string data);
+        void createEntity(std::string data, const size_t entityId);
 
       private:
         sf::Event _event;
-        void updateEntity(ecs::Entity &entity, std::string data);
-        void createEntity(std::string data, const size_t entityId);
     };
 } // namespace rtype
 

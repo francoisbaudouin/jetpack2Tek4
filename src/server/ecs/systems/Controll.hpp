@@ -48,6 +48,8 @@ namespace ecs
          */
         void keyReaction(const std::string &sceneName, Velocity &velocity, Controllable &controllable,
             const std::vector<RTypeEvent> &rTypeEvents, const size_t entityId);
+        void keyReaction(const std::string &sceneName, Velocity &velocity, Controllable &controllable,
+            const std::string event, const size_t entityId);
     };
 } // namespace ecs
 

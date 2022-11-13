@@ -23,10 +23,8 @@ namespace rtype
 
         void manageReceiveData();
         void manageSendData();
-
         void run();
         std::string fillSendStream();
-
       protected:
       private:
         std::string _sceneName;

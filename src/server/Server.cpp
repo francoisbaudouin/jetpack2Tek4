@@ -18,6 +18,7 @@
 #include "ecs/entity/EntityGenerator.hpp"
 
 #include "ecs/systems/Controll.hpp"
+#include "ecs/systems/Fire.hpp"
 #include "ecs/systems/Move.hpp"
 
 using namespace rtype;
@@ -39,6 +40,11 @@ Server::Server()
     this->_ecs->createEntityManager("GameScene");
     this->_ecs->createSystem<Move>(this->_ecs);
     this->_ecs->createSystem<Controll>(this->_ecs);
+
+    auto &Player = this->_ecs->getEntityManager("GameScene")
+                       .getEntity(generateEntity(this->_ecs->getEntityManager("GameScene"), "Player"));
+    Player.addComponent<DrawableServerSide>("Player");
+    this->_ecs->createSystem<Fire>(this->_ecs);
 }
 
 std::string Server::fillSendStream()
@@ -89,10 +95,10 @@ void Server::manageReceiveData()
         } else if (header == "notready") {
             nbReady -= 1;
             this->_communicator->_receiveStream.str(std::string());
-        } else if (receiveMessage.substr(0, 4) == "move") {
-            if (receiveMessage.size() > 5)
-                this->_ecs->getSystem<Controll>().run("GameScene", receiveMessage,
-                    atoi(receiveMessage.substr(receiveMessage.find_first_of('%') + 1, 1).c_str()));
+        } else if (receiveMessage.substr(0, receiveMessage.find_first_of('%')) == "action") {
+            this->_ecs->getSystem<Controll>().run("GameScene",
+                receiveMessage.substr(receiveMessage.find_first_of('_') + 1),
+                atoi(receiveMessage.substr(receiveMessage.find_first_of('%') + 1, 1).c_str()));
         }
     }
     this->_communicator->unlockReceiveMutex();
