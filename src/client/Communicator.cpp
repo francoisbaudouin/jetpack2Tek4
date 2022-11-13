@@ -9,7 +9,7 @@
 using namespace rtype;
 
 Communicator::Communicator(const std::string &ipAdress, const size_t &port)
-    : _ipAdress(ipAdress), _port(port), _isRunning(true), _bind(false)
+    : _ipAdress(ipAdress), _port(port), _isRunning(true), _bind(false), _exit(false)
 {
 }
 
