@@ -14,10 +14,10 @@
 #include "../ecs/systems/Animate.hpp"
 #include "../ecs/systems/Click.hpp"
 #include "../ecs/systems/Display.hpp"
+#include "../ecs/systems/Fire.hpp"
+#include "../ecs/systems/Input.hpp"
 #include "../ecs/systems/Move.hpp"
 #include "../ecs/systems/WriteInBox.hpp"
-#include "../ecs/systems/Input.hpp"
-#include "../ecs/systems/Fire.hpp"
 
 using namespace ecs;
 using namespace rtype;
