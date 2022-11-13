@@ -6,6 +6,8 @@
 */
 
 #include "SceneManager.hpp"
+#include "../assetsManager/fileOpener.hpp"
+#include "../ecs/exceptions/Exception.hpp"
 #include "GameScene.hpp"
 #include "Hub.hpp"
 #include "Lobby.hpp"
@@ -42,6 +44,14 @@ SceneManager::SceneManager() : _scale(2), _window(sf::VideoMode(640 * _scale, 36
     std::shared_ptr<GameScene> sharedGameScene = std::make_shared<GameScene>(gameScene);
     _sceneSystem->Add(sharedGameScene);
 
+    // sf::Music music;
+    std::string path("assets/MenuMusic.wav");
+    if (!_music.openFromFile(fileTraduction(path)))
+        throw ecs::CannotOpenMusic(path);
+    _music.setVolume(70);
+    _music.setLoop(true);
+    _music.play();
+
     _sceneSystem->SwitchTo(tmpStringScene);
 }
 
@@ -61,8 +71,16 @@ void SceneManager::receiver()
         }
     }
     if (!_sceneSystem->getReceivedData().empty() && _sceneSystem->getCurrentScene()->getName() == "Lobby") {
-        if (_sceneSystem->getReceivedData().substr(0, _sceneSystem->getReceivedData().find('%')) == "Launch")
+        if (_sceneSystem->getReceivedData().substr(0, _sceneSystem->getReceivedData().find('%')) == "Launch") {
+            _music.stop();
+            std::string path("assets/RunMusic.wav");
+            if (!_music.openFromFile(fileTraduction(path)))
+                throw ecs::CannotOpenMusic(path);
+            _music.setVolume(70);
+            _music.setLoop(true);
+            _music.play();
             _sceneSystem->SwitchTo("GameScene");
+        }
     }
     _sceneSystem->getCurrentScene()->getCommunicator()->unlockReceiveMutex();
 }

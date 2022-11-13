@@ -32,6 +32,7 @@ void MainMenu::OnCreate()
 {
     /* We are going to create system here,
     dont forget to create the corresponding entityManager */
+
     _sceneSystem->getEcs()->createEntityManager(this->getName());
     _sceneSystem->getEcs()->createSystem<WriteInBox>(_sceneSystem->getEcs());
     _sceneSystem->getEcs()->createSystem<Display>(_sceneSystem->getEcs());
@@ -130,18 +131,18 @@ void MainMenu::Update()
 
 void MainMenu::Draw()
 {
-    auto &firstParallaxImage = _sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(1);
-    auto &secondParallaxImage = _sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(2);
+    auto &firstParallaxImage = _sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(4);
+    auto &secondParallaxImage = _sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(5);
 
     float firstParallaxImagePositionX = firstParallaxImage.getComponent<Position>().getX();
     float secondParallaxImagePositionX = secondParallaxImage.getComponent<Position>().getX();
 
-    if (firstParallaxImagePositionX <= -(_sceneSystem->getTextureDatabase()->getSizeX("Background") * _scale))
+    if (firstParallaxImagePositionX <= -(_sceneSystem->getTextureDatabase()->getSizeX("Background") * _scale * 2))
         firstParallaxImage.getComponent<Position>().setPosition(
-            _sceneSystem->getTextureDatabase()->getSizeX("Background") * _scale, 0);
-    if (secondParallaxImagePositionX <= -(_sceneSystem->getTextureDatabase()->getSizeX("Background") * _scale))
+            _sceneSystem->getTextureDatabase()->getSizeX("Background") * 2, 0);
+    if (secondParallaxImagePositionX <= -(_sceneSystem->getTextureDatabase()->getSizeX("Background") * _scale * 2))
         secondParallaxImage.getComponent<Position>().setPosition(
-            _sceneSystem->getTextureDatabase()->getSizeX("Background") * _scale, 0);
+            _sceneSystem->getTextureDatabase()->getSizeX("Background") * 2, 0);
 
     _sceneSystem->getEcs()->getSystem<Animate>().runButton(this->getName());
     _sceneSystem->getEcs()->getSystem<Move>().run(this->getName());
