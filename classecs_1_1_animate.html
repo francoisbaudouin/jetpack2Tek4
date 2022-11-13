@@ -116,6 +116,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abcefca8cb13c264aec58093a5aa9c3de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_animate.html#abcefca8cb13c264aec58093a5aa9c3de">run</a> (const std::string &amp;sceneId, <a class="el" href="classrtype_1_1_animation_database.html">rtype::AnimationDatabase</a> &amp;database)</td></tr>
 <tr class="memdesc:abcefca8cb13c264aec58093a5aa9c3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">check all entities in the curent scene and update the ones needing animation  <a href="classecs_1_1_animate.html#abcefca8cb13c264aec58093a5aa9c3de">More...</a><br /></td></tr>
 <tr class="separator:abcefca8cb13c264aec58093a5aa9c3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecca191ceee0eeda4d2140b1de84cc73"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_animate.html#aecca191ceee0eeda4d2140b1de84cc73">runButton</a> (const std::string &amp;sceneId)</td></tr>
+<tr class="memdesc:aecca191ceee0eeda4d2140b1de84cc73"><td class="mdescLeft">&#160;</td><td class="mdescRight">special animate function that is called when theres only button in scene  <a href="classecs_1_1_animate.html#aecca191ceee0eeda4d2140b1de84cc73">More...</a><br /></td></tr>
+<tr class="separator:aecca191ceee0eeda4d2140b1de84cc73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8a248855ad5218e3876658d8a0b4a45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_animate.html#ad8a248855ad5218e3876658d8a0b4a45">runSelectable</a> (const std::string &amp;sceneId)</td></tr>
+<tr class="memdesc:ad8a248855ad5218e3876658d8a0b4a45"><td class="mdescLeft">&#160;</td><td class="mdescRight">special animate function that is change the color of the text when selected  <a href="classecs_1_1_animate.html#ad8a248855ad5218e3876658d8a0b4a45">More...</a><br /></td></tr>
+<tr class="separator:ad8a248855ad5218e3876658d8a0b4a45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48bd25bb24a0c3a34a3affb339bc2013"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classecs_1_1_animate.html#a48bd25bb24a0c3a34a3affb339bc2013">Animate</a> (std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt; &amp;manager)</td></tr>
 <tr class="memdesc:a48bd25bb24a0c3a34a3affb339bc2013"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classecs_1_1_animate.html">Animate</a> will go to the animation database do update the textureRect of a sprite and update the frames of the animation.  <a href="classecs_1_1_animate.html#a48bd25bb24a0c3a34a3affb339bc2013">More...</a><br /></td></tr>
 <tr class="separator:a48bd25bb24a0c3a34a3affb339bc2013"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -345,6 +351,58 @@ std::shared_ptr&lt; <a class="el" href="classecs_1_1_ecs.html">Ecs</a> &gt;&#160
   <table class="params">
     <tr><td class="paramname">sceneId</td><td>: name of the actual scene </td></tr>
     <tr><td class="paramname">database</td><td>: database of all animations </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aecca191ceee0eeda4d2140b1de84cc73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecca191ceee0eeda4d2140b1de84cc73">&#9670;&nbsp;</a></span>runButton()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Animate::runButton </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sceneId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>special animate function that is called when theres only button in scene </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneId</td><td>: id of the current scene </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad8a248855ad5218e3876658d8a0b4a45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8a248855ad5218e3876658d8a0b4a45">&#9670;&nbsp;</a></span>runSelectable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Animate::runSelectable </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sceneId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>special animate function that is change the color of the text when selected </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sceneId</td><td>: id of the current scene </td></tr>
   </table>
   </dd>
 </dl>

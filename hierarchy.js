@@ -9,6 +9,7 @@ var hierarchy =
     [ "exception", null, [
       [ "ecs::Exception", "classecs_1_1_exception.html", [
         [ "ecs::AnimationFrameOutOfRange", "classecs_1_1_animation_frame_out_of_range.html", null ],
+        [ "ecs::CannotOpenMusic", "classecs_1_1_cannot_open_music.html", null ],
         [ "ecs::ComponentAlreadyExisting", "classecs_1_1_component_already_existing.html", null ],
         [ "ecs::ComponentNotCompatible", "classecs_1_1_component_not_compatible.html", null ],
         [ "ecs::ComponentNotExisting", "classecs_1_1_component_not_existing.html", null ],

@@ -1,6 +1,6 @@
 var classrtype_1_1_game_scene =
 [
-    [ "GameScene", "classrtype_1_1_game_scene.html#a93b5d99a7d7305ed051055ac7c5c3bf7", null ],
+    [ "GameScene", "classrtype_1_1_game_scene.html#ac073155245526b2d81b52214009fe6b1", null ],
     [ "~GameScene", "classrtype_1_1_game_scene.html#add5bc48c372aaa7f526c02558a8adf00", null ],
     [ "Draw", "classrtype_1_1_game_scene.html#ab41573e98b833b0e922f88a0fd226eb1", null ],
     [ "OnActivate", "classrtype_1_1_game_scene.html#a5912736fe3806cd89a9255342d40e288", null ],

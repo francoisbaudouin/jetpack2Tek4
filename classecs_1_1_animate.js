@@ -8,6 +8,8 @@ var classecs_1_1_animate =
     [ "animateEntity", "classecs_1_1_animate.html#a94821212c3415c8dafd47080f65dde9a", null ],
     [ "run", "classecs_1_1_animate.html#a22f710869583edee0806e388f6594349", null ],
     [ "run", "classecs_1_1_animate.html#abcefca8cb13c264aec58093a5aa9c3de", null ],
+    [ "runButton", "classecs_1_1_animate.html#aecca191ceee0eeda4d2140b1de84cc73", null ],
+    [ "runSelectable", "classecs_1_1_animate.html#ad8a248855ad5218e3876658d8a0b4a45", null ],
     [ "updateSprite", "classecs_1_1_animate.html#a11ed3e82a0570ccee0bb4676a298a559", null ],
     [ "updateSprite", "classecs_1_1_animate.html#ab1427646af8e22665940e1efff6aa78d", null ]
 ];

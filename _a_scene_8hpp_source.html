@@ -103,42 +103,40 @@ $(document).ready(function(){initNavTree('_a_scene_8hpp_source.html',''); initRe
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../ecs/entity/EntityGenerator.hpp&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;IScene.hpp&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;SceneSystem.hpp&quot;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span>rtype</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classrtype_1_1_a_scene.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classrtype_1_1_a_scene.html">AScene</a> : <span class="keyword">public</span> <a class="code" href="classrtype_1_1_i_scene.html">IScene</a> {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classrtype_1_1_a_scene.html">AScene</a>(<a class="code" href="classrtype_1_1_scene_system.html">SceneSystem</a> &amp;sceneSystem, sf::RenderWindow &amp;window, <span class="keyword">const</span> std::string &amp;sceneName, <span class="keyword">const</span> <span class="keywordtype">float</span> scale,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            std::shared_ptr&lt;Communicator&gt; communicator, boost::thread *thread);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        ~<a class="code" href="classrtype_1_1_a_scene.html">AScene</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        std::string <a class="code" href="classrtype_1_1_a_scene.html#a7906170e01ad823cdfcffbd5b942d2ea">getName</a>() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        boost::thread *<a class="code" href="classrtype_1_1_a_scene.html#a46c122d195804ed4758d08f791c5f1ca">getThread</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        std::shared_ptr&lt;Communicator&gt; <a class="code" href="classrtype_1_1_a_scene.html#a206b42ad4385444858fe647660e07def">getCommunicator</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classrtype_1_1_scene_system.html">rtype::SceneSystem</a> &amp;_sceneSystem;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        sf::RenderWindow &amp;_window;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        std::string _sceneName;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">float</span> _scale;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::shared_ptr&lt;Communicator&gt; _communicator;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        boost::thread *_thread;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    };</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;} <span class="comment">// namespace rtype</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ASCENE_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keyword">namespace </span>rtype</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classrtype_1_1_a_scene.html">   18</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classrtype_1_1_a_scene.html">AScene</a> : <span class="keyword">public</span> <a class="code" href="classrtype_1_1_i_scene.html">IScene</a> {</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classrtype_1_1_a_scene.html">AScene</a>(std::shared_ptr&lt;SceneSystem&gt; sceneSystem, sf::RenderWindow &amp;window, <span class="keyword">const</span> std::string &amp;sceneName,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">float</span> scale, std::shared_ptr&lt;Communicator&gt; communicator, boost::thread *thread);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        ~<a class="code" href="classrtype_1_1_a_scene.html">AScene</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        std::string <a class="code" href="classrtype_1_1_a_scene.html#a7906170e01ad823cdfcffbd5b942d2ea">getName</a>() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        boost::thread *<a class="code" href="classrtype_1_1_a_scene.html#a46c122d195804ed4758d08f791c5f1ca">getThread</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        std::shared_ptr&lt;Communicator&gt; <a class="code" href="classrtype_1_1_a_scene.html#a206b42ad4385444858fe647660e07def">getCommunicator</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;      <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        std::shared_ptr&lt;rtype::SceneSystem&gt; _sceneSystem;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        sf::RenderWindow &amp;_window;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::string _sceneName;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">float</span> _scale;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        std::shared_ptr&lt;Communicator&gt; _communicator;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        boost::thread *_thread;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    };</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;} <span class="comment">// namespace rtype</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !ASCENE_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassrtype_1_1_scene_manager_html"><div class="ttname"><a href="classrtype_1_1_scene_manager.html">rtype::SceneManager</a></div><div class="ttdef"><b>Definition:</b> SceneManager.hpp:15</div></div>
 <div class="ttc" id="aclassrtype_1_1_server_html"><div class="ttname"><a href="classrtype_1_1_server.html">rtype::Server</a></div><div class="ttdef"><b>Definition:</b> Server.hpp:19</div></div>
 <div class="ttc" id="aclassrtype_1_1_a_scene_html_a46c122d195804ed4758d08f791c5f1ca"><div class="ttname"><a href="classrtype_1_1_a_scene.html#a46c122d195804ed4758d08f791c5f1ca">rtype::AScene::getThread</a></div><div class="ttdeci">boost::thread * getThread() override</div><div class="ttdoc">Get the Thread of the scene.</div><div class="ttdef"><b>Definition:</b> AScene.cpp:21</div></div>
-<div class="ttc" id="aclassrtype_1_1_scene_manager_html_ae56f30b761a4e60a7014229c02900acb"><div class="ttname"><a href="classrtype_1_1_scene_manager.html#ae56f30b761a4e60a7014229c02900acb">rtype::SceneManager::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">run the scene manager, where the main loop is</div><div class="ttdef"><b>Definition:</b> SceneManager.cpp:59</div></div>
+<div class="ttc" id="aclassrtype_1_1_scene_manager_html_ae56f30b761a4e60a7014229c02900acb"><div class="ttname"><a href="classrtype_1_1_scene_manager.html#ae56f30b761a4e60a7014229c02900acb">rtype::SceneManager::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">run the scene manager, where the main loop is</div><div class="ttdef"><b>Definition:</b> SceneManager.cpp:88</div></div>
 <div class="ttc" id="aclassrtype_1_1_a_scene_html_a7906170e01ad823cdfcffbd5b942d2ea"><div class="ttname"><a href="classrtype_1_1_a_scene.html#a7906170e01ad823cdfcffbd5b942d2ea">rtype::AScene::getName</a></div><div class="ttdeci">std::string getName() const override</div><div class="ttdoc">Get the Name of the scene.</div><div class="ttdef"><b>Definition:</b> AScene.cpp:19</div></div>
 <div class="ttc" id="aclassrtype_1_1_i_scene_html"><div class="ttname"><a href="classrtype_1_1_i_scene.html">rtype::IScene</a></div><div class="ttdef"><b>Definition:</b> IScene.hpp:17</div></div>
-<div class="ttc" id="aclassrtype_1_1_scene_system_html"><div class="ttname"><a href="classrtype_1_1_scene_system.html">rtype::SceneSystem</a></div><div class="ttdef"><b>Definition:</b> SceneSystem.hpp:20</div></div>
 <div class="ttc" id="aclassrtype_1_1_a_scene_html_a206b42ad4385444858fe647660e07def"><div class="ttname"><a href="classrtype_1_1_a_scene.html#a206b42ad4385444858fe647660e07def">rtype::AScene::getCommunicator</a></div><div class="ttdeci">std::shared_ptr&lt; Communicator &gt; getCommunicator() override</div><div class="ttdoc">get a shared ptr to the communicator</div><div class="ttdef"><b>Definition:</b> AScene.cpp:23</div></div>
-<div class="ttc" id="aclassrtype_1_1_a_scene_html"><div class="ttname"><a href="classrtype_1_1_a_scene.html">rtype::AScene</a></div><div class="ttdef"><b>Definition:</b> AScene.hpp:19</div></div>
+<div class="ttc" id="aclassrtype_1_1_a_scene_html"><div class="ttname"><a href="classrtype_1_1_a_scene.html">rtype::AScene</a></div><div class="ttdef"><b>Definition:</b> AScene.hpp:18</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

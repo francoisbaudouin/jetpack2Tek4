@@ -6,6 +6,7 @@ var annotated_dup =
       [ "AnimationFrame", "classecs_1_1_animation_frame.html", "classecs_1_1_animation_frame" ],
       [ "AnimationFrameOutOfRange", "classecs_1_1_animation_frame_out_of_range.html", "classecs_1_1_animation_frame_out_of_range" ],
       [ "ASystem", "classecs_1_1_a_system.html", "classecs_1_1_a_system" ],
+      [ "CannotOpenMusic", "classecs_1_1_cannot_open_music.html", "classecs_1_1_cannot_open_music" ],
       [ "Click", "classecs_1_1_click.html", "classecs_1_1_click" ],
       [ "Clickable", "classecs_1_1_clickable.html", "classecs_1_1_clickable" ],
       [ "Collider", "classecs_1_1_collider.html", "classecs_1_1_collider" ],
