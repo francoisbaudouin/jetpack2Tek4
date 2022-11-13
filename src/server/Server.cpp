@@ -76,7 +76,7 @@ void Server::manageReceiveData()
     this->_communicator->unlockReceiveMutex();
     this->_communicator->lockSendMutex();
     this->_communicator->_sendStream.str(std::string());
-    this->_communicator->_sendStream << context << n << " 0_Player:100,100 1_Enemy:25,25 ";
+    this->_communicator->_sendStream << context << n << " ";
     this->_communicator->unlockSendMutex();
 }
 

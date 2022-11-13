@@ -15,19 +15,19 @@
 using namespace rtype;
 using namespace ecs;
 
-GameScene::GameScene(SceneSystem &sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
-    const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread)
+GameScene::GameScene(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, sf::Event &event,
+    const std::string &sceneName, const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread)
     : AScene(sceneSystem, window, sceneName, scale, communicator, thread), _event(event)
 {
 }
 
 GameScene::~GameScene() {}
 
-void GameScene::OnCreate() { _sceneSystem.getEcs()->createEntityManager(this->getName()); }
+void GameScene::OnCreate() { _sceneSystem->getEcs()->createEntityManager(this->getName()); }
 
 void GameScene::OnDestroy() {}
 
-void GameScene::OnActivate() { _sceneSystem.getTextureDatabase()->onCall(this->getName()); }
+void GameScene::OnActivate() { _sceneSystem->getTextureDatabase()->onCall(this->getName()); }
 
 void GameScene::OnDeactivate() {}
 
@@ -35,11 +35,6 @@ void GameScene::ProcessInput() {}
 
 void GameScene::Update()
 {
-    // std::cout << _sceneSystem.getEcs()->getSystem<Input>().getInput(_event).size() << " ";
-    // std::vector<RTypeEvent> rTypeEvent(_sceneSystem.getEcs()->getSystem<Input>().getInput(_event));
-
-    // std::cout << rTypeEvent.size() << " ";
-
     _communicator->lockSendMutex();
     _communicator->_sendStream.str(std::string());
     _communicator->_sendStream << "move%";

@@ -8,8 +8,8 @@
 #ifndef SCENEMANAGER_HPP_
 #define SCENEMANAGER_HPP_
 
+#include <SFML/Audio.hpp>
 #include "SceneSystem.hpp"
-
 namespace rtype
 {
     class SceneManager {
@@ -26,7 +26,8 @@ namespace rtype
         void receiver();
 
       private:
-        SceneSystem _sceneSystem;
+        sf::Music _music;
+        std::shared_ptr<SceneSystem> _sceneSystem;
         float _scale;
         sf::RenderWindow _window;
         sf::Event _event;

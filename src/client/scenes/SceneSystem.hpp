@@ -8,6 +8,7 @@
 #ifndef SCENESYSTEM_HPP_
 #define SCENESYSTEM_HPP_
 
+#include <SFML/Audio.hpp>
 #include <memory>
 #include "../Communicator.hpp"
 #include "../assetsManager/TextureDatabase.hpp"
