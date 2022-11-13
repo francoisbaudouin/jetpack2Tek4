@@ -53,4 +53,3 @@ size_t TextureDatabase::getSizeY(const std::string type)
         throw ecs::TextureNotInDatabase(type);
     return _textureMap[type].getSize().y;
 }
-
