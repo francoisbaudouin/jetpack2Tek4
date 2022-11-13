@@ -63,6 +63,7 @@ void Controll::keyReaction(const std::string &sceneName, Velocity &velocity, Con
 void Controll::keyReaction(const std::string &sceneName, Velocity &velocity, Controllable &controllable,
     const std::string event, const size_t entityId)
 {
+    (void)controllable;
     float velocityValueX = 0;
     float velocityValueY = 0;
     float velocityValue = 0.075;
