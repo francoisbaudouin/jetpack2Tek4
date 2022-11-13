@@ -9,8 +9,8 @@
 #define TEXTUREDATABASE_HPP_
 
 #include <SFML/Graphics.hpp>
-#include <string>
 #include <map>
+#include <string>
 
 namespace rtype
 {

@@ -8,9 +8,9 @@
 #ifndef __ENTITY__
 #define __ENTITY__
 
+#include <map>
 #include <typeindex>
 #include <typeinfo>
-#include <map>
 
 #include "../components/IComponent.hpp"
 #include "../exceptions/Exception.hpp"

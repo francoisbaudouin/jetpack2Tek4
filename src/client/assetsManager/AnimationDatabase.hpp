@@ -11,9 +11,9 @@
 #define DEFAULT "Idle"
 
 #include <array>
+#include <map>
 #include <string>
 #include <vector>
-#include <map>
 
 namespace rtype
 {

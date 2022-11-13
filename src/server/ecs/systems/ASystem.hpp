@@ -8,10 +8,10 @@
 #ifndef ASYSTEM_HPP_
 #define ASYSTEM_HPP_
 
+#include <map>
 #include <memory>
 #include "../Ecs.hpp"
 #include "ISystem.hpp"
-#include <map>
 
 namespace ecs
 {

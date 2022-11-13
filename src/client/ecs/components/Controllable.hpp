@@ -8,10 +8,10 @@
 #ifndef CONTROLLABLE_HPP_
 #define CONTROLLABLE_HPP_
 
+#include <map>
 #include "../enums/controlls.hpp"
 #include "../enums/event.hpp"
 #include "AComponent.hpp"
-#include <map>
 
 namespace ecs
 {
