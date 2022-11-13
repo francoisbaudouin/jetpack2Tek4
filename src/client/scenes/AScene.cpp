@@ -9,8 +9,8 @@
 
 using namespace rtype;
 
-AScene::AScene(SceneSystem &sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale,
-    std::shared_ptr<Communicator> communicator, boost::thread *thread)
+AScene::AScene(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, const std::string &sceneName,
+    const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread)
     : _sceneSystem(sceneSystem), _window(window), _sceneName(sceneName), _scale(scale), _communicator(communicator),
       _thread(thread)
 {

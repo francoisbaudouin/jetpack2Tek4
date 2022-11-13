@@ -126,7 +126,10 @@ namespace ecs
       public:
         JsonFileOpenerFailed(std::string const &file);
     };
-
+    class CannotOpenMusic : public Exception {
+      public:
+        CannotOpenMusic(std::string const &file);
+    };
 } // namespace ecs
 
 #endif /* !EXCEPTION_HPP_ */
