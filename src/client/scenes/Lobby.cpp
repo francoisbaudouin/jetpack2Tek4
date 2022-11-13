@@ -91,7 +91,7 @@ void Lobby::createEntity(std::string data, size_t entityId)
     std::string positions = data.substr(0, data.find(':'));
     std::string positionX = positions.substr(0, data.find(','));
     std::string positionY = positions.substr(data.find(',') + 1, positions.size());
-    entity.addComponent<Position>(stoi(positionX) * _scale, stoi(positionY) * _scale);
+    entity.addComponent<Position>(stof(positionX) * _scale, stof(positionY) * _scale);
     data.erase(0, data.find(':') + 1);
 }
 
@@ -109,7 +109,7 @@ void Lobby::updateEntity(ecs::Entity &entity, std::string data)
     std::string positions = data.substr(0, data.find(':'));
     std::string positionX = positions.substr(0, data.find(','));
     std::string positionY = positions.substr(data.find(',') + 1, positions.size());
-    entity.getComponent<Position>().setPosition(stoi(positionX) * _scale, stoi(positionY) * _scale);
+    entity.getComponent<Position>().setPosition(stof(positionX) * _scale, stof(positionY) * _scale);
     data.erase(0, data.find(':') + 1);
 }
 

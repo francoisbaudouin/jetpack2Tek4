@@ -25,6 +25,7 @@ namespace rtype
         void manageSendData();
 
         void run();
+        std::string fillSendStream();
 
       protected:
       private:

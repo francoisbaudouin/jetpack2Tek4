@@ -12,7 +12,10 @@
 
 #include "ecs/components/DrawableServerSide.hpp"
 #include "ecs/components/Position.hpp"
+#include "ecs/components/Velocity.hpp"
 #include "ecs/components/Type.hpp"
+
+#include "ecs/systems/Move.hpp"
 
 using namespace rtype;
 using namespace ecs;
@@ -28,15 +31,29 @@ Server::Server()
     // entity generation
 
     this->_ecs->createEntityManager("Lobby");
-    auto &entityOne = this->_ecs->getEntityManager("Lobby").createEntity();
-    entityOne.addComponent<Position>(100, 100);
-    entityOne.addComponent<Type>("Player");
-    entityOne.addComponent<DrawableServerSide>("Player");
+    this->_ecs->createEntityManager("GameScene");
+    this->_ecs->createSystem<Move>(this->_ecs);
+}
+
+std::string Server::fillSendStream()
+{
+    std::string fillString = " ";
+
+    for (auto &entity : this->_ecs->getEntityManager("GameScene").getEntities()) {
+        fillString += std::to_string(entity.second->getId()) + "_";
+        if (entity.second->hasComponent<DrawableServerSide>()) {
+            fillString += entity.second->getComponent<DrawableServerSide>().getTextureType() + ":";
+        }
+        if (entity.second->hasComponent<Position>()) {
+            fillString += std::to_string(entity.second->getComponent<Position>().getX()) + ","
+                + std::to_string(entity.second->getComponent<Position>().getY()) + " ";
+        }
+    }
+    return fillString;
 }
 
 void Server::manageReceiveData()
 {
-    // this->_communicator->lockSendMutex();
     this->_communicator->lockReceiveMutex();
     std::string receiveMessage(this->_communicator->_receiveStream.str());
     std::string header;
@@ -47,21 +64,27 @@ void Server::manageReceiveData()
     if (!receiveMessage.empty()) {
         header = receiveMessage.substr(0, receiveMessage.find_first_of(' '));
         if (header == "connect" && n < 4) {
+            auto &player = this->_ecs->getEntityManager("GameScene").createEntity();
+            player.addComponent<Position>(0, 0);
+            player.addComponent<Type>("Player");
+            player.addComponent<DrawableServerSide>("Player");
             n += 1;
             this->_communicator->_receiveStream.str(std::string());
         } else if (header == "connect" && n >= 4) {
             this->_communicator->_sendStream << "reject ";
         } else if (header == "ready") {
             nbReady += 1;
-            if (nbReady == n)
+
+            if (nbReady == n) {
                 context = "Launch%";
+            }
             this->_communicator->_receiveStream.str(std::string());
         }
     }
     this->_communicator->unlockReceiveMutex();
     this->_communicator->lockSendMutex();
     this->_communicator->_sendStream.str(std::string());
-    this->_communicator->_sendStream << context << n << " 0_Player:100,100 1_Enemy:25,25 ";
+    this->_communicator->_sendStream << context << n << fillSendStream();
     this->_communicator->unlockSendMutex();
 }
 
@@ -80,6 +103,7 @@ void Server::run()
         // this->_communicator->unlockSendMutex();
         this->manageReceiveData();
         this->manageSendData();
+        _ecs->getSystem<Move>().run("GameScene");
         // this->_communicator->_receiveStream.str(std::string());
     }
     _communicator->stopCommunication();

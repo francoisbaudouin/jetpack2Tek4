@@ -14,6 +14,7 @@ using namespace rtype;
 
 SceneManager::SceneManager() : _scale(1), _window(sf::VideoMode(640 * _scale, 360 * _scale), "Subaquatica"), _id(5)
 {
+    _window.setFramerateLimit(30);
     // communicator creation that will be usefull for all scenes
     Communicator communicator;
     std::shared_ptr<Communicator> sharedCommunicator = std::make_shared<Communicator>(communicator);
