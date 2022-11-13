@@ -17,8 +17,8 @@
 
 #include "../ecs/systems/Click.hpp"
 #include "../ecs/systems/Display.hpp"
-#include "../ecs/systems/Input.hpp"
 #include "../ecs/systems/Fire.hpp"
+#include "../ecs/systems/Input.hpp"
 #include "../ecs/systems/Move.hpp"
 
 using namespace rtype;
@@ -32,7 +32,7 @@ GameScene::GameScene(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow 
 
 GameScene::~GameScene() {}
 
-void GameScene::OnCreate() 
+void GameScene::OnCreate()
 {
     _sceneSystem->getEcs()->createEntityManager(this->getName());
 
@@ -51,8 +51,6 @@ void GameScene::OnCreate()
     parallaxSecondImage.addComponent<Velocity>(-0.1 * _scale, 0);
     parallaxSecondImage.getComponent<Position>().setPosition(
         _sceneSystem->getTextureDatabase()->getSizeX("Background") * _scale, 0);
-
-
 }
 
 void GameScene::OnDestroy() {}
@@ -99,7 +97,6 @@ void GameScene::updateEntity(ecs::Entity &entity, std::string data)
     data.erase(0, data.find(':') + 1);
 }
 
-
 void GameScene::Update()
 {
     _communicator->lockSendMutex();
@@ -121,7 +118,7 @@ void GameScene::Update()
 
 void GameScene::Draw()
 {
-    //Parallax
+    // Parallax
 
     auto &firstParallaxImage = _sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(0);
     auto &secondParallaxImage = _sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(1);
