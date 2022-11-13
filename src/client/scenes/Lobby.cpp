@@ -37,10 +37,10 @@ void Lobby::OnCreate()
     auto &hereManager = _sceneSystem->getEcs()->getEntityManager(this->getName());
 
     auto &readyButton = hereManager.getEntity(generateEntity(hereManager, "Button", 5));
-    //auto &background = hereManager.getEntity(generateEntity(hereManager, "Default", 6));
+    auto &background = hereManager.getEntity(generateEntity(hereManager, "Default", 6));
 
-    // background.addComponent<DrawableClientSide>(
-    //     _sceneSystem->getTextureDatabase()->getTexture("Background"), _scale * 2);
+    background.addComponent<DrawableClientSide>(
+        _sceneSystem->getTextureDatabase()->getTexture("Background"), _scale * 2);
 
     readyButton.getComponent<Text>().setText(std::string("CONFIRM"));
     readyButton.getComponent<Text>().setFontSize(20 * _scale);
