@@ -33,6 +33,13 @@ Server::Server()
     this->_ecs->createEntityManager("Lobby");
     this->_ecs->createEntityManager("GameScene");
     this->_ecs->createSystem<Move>(this->_ecs);
+
+    auto &enemy = this->_ecs->getEntityManager("GameScene").createEntity();
+    enemy.addComponent<Position>(0, 0);
+    enemy.addComponent<Type>("Enemy");
+    enemy.addComponent<DrawableServerSide>("Enemy");
+    enemy.addComponent<Velocity>(0.001, 0);
+
 }
 
 std::string Server::fillSendStream()
@@ -74,7 +81,6 @@ void Server::manageReceiveData()
             this->_communicator->_sendStream << "reject ";
         } else if (header == "ready") {
             nbReady += 1;
-
             if (nbReady == n) {
                 context = "Launch%";
             }
