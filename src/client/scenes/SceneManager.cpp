@@ -81,5 +81,4 @@ void SceneManager::run()
     }
     _sceneSystem->getCurrentScene()->getCommunicator()->stopCommunication();
     _sceneSystem->getCurrentScene()->getThread()->join();
-    //}
 }
