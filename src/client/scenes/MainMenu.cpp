@@ -97,7 +97,6 @@ void MainMenu::OnActivate()
     /* wa are going to create different entity here (with they're components),
     dont forget to init the textureDatabase of the corresponding scene */
 
-
     // if we want it as a text, decomment this section
     // title.addComponent<Text>();
     // title.getComponent<Text>().setText(std::string("SUBAQUATICA"));

@@ -8,8 +8,8 @@
 #include "SceneManager.hpp"
 #include "GameScene.hpp"
 #include "Hub.hpp"
-#include "MainMenu.hpp"
 #include "Lobby.hpp"
+#include "MainMenu.hpp"
 
 using namespace rtype;
 
@@ -23,7 +23,7 @@ SceneManager::SceneManager() : _scale(2), _window(sf::VideoMode(640 * _scale, 36
     std::shared_ptr<Communicator> sharedCommunicator = std::make_shared<Communicator>(communicator);
     boost::thread *thread = new boost::thread(boost::bind(&rtype::Communicator::connectToServer, sharedCommunicator));
 
-    //MainMenu scene
+    // MainMenu scene
     MainMenu mainMenu(_sceneSystem, _window, _event, "MainMenu", _scale, sharedCommunicator, thread);
     std::shared_ptr<MainMenu> sharedMainMenu = std::make_shared<MainMenu>(mainMenu);
     std::string tmpStringScene = _sceneSystem->Add(sharedMainMenu);
@@ -55,7 +55,8 @@ void SceneManager::receiver()
         if (_sceneSystem->getReceivedData().substr(0, _sceneSystem->getReceivedData().find('%')) == "reject")
             exit(84);
         else {
-            _id = atoi(_sceneSystem->getReceivedData().substr(_sceneSystem->getReceivedData().find('%') + 1, 1).c_str());
+            _id =
+                atoi(_sceneSystem->getReceivedData().substr(_sceneSystem->getReceivedData().find('%') + 1, 1).c_str());
             _sceneSystem->SwitchTo("Lobby");
         }
     }

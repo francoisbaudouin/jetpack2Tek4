@@ -88,7 +88,6 @@ void Hub::OnCreate()
         backButton.getComponent<Text>().getTextWidth(), backButton.getComponent<Text>().getTextHeight() * _scale);
     backButton.getComponent<Position>().setPosition(
         portText.getComponent<Position>().getX(), portText.getComponent<Position>().getY() + (60 * _scale));
-        
 
     confirmButton.getComponent<Text>().setText(std::string("CONFIRM"));
     confirmButton.getComponent<Text>().setFontSize(20 * _scale);
@@ -100,10 +99,7 @@ void Hub::OnCreate()
 
 void Hub::OnDestroy() {}
 
-void Hub::OnActivate()
-{
-    _sceneSystem->getTextureDatabase()->onCall(this->getName());
-}
+void Hub::OnActivate() { _sceneSystem->getTextureDatabase()->onCall(this->getName()); }
 
 void Hub::OnDeactivate() {}
 
@@ -111,10 +107,13 @@ void Hub::ProcessInput() {}
 
 void Hub::Update()
 {
-
     if (_sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(4).getComponent<Clickable>().isClicked()) {
         _sceneSystem->SwitchTo("MainMenu");
-    } else if (_sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(5).getComponent<Clickable>().isClicked()) {
+    } else if (_sceneSystem->getEcs()
+                   ->getEntityManager(this->getName())
+                   .getEntity(5)
+                   .getComponent<Clickable>()
+                   .isClicked()) {
         _ipServer = _sceneSystem->getEcs()
                         ->getEntityManager(this->getName())
                         .getEntity(0)

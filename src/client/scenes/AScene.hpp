@@ -17,8 +17,8 @@ namespace rtype
 {
     class AScene : public IScene {
       public:
-        AScene(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, const std::string &sceneName, const float scale,
-            std::shared_ptr<Communicator> communicator, boost::thread *thread);
+        AScene(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, const std::string &sceneName,
+            const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread);
         ~AScene() = default;
         /**
          * @brief Get the Name of the scene

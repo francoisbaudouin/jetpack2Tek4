@@ -19,8 +19,8 @@
 using namespace rtype;
 using namespace ecs;
 
-Lobby::Lobby(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
-    const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread)
+Lobby::Lobby(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, sf::Event &event,
+    const std::string &sceneName, const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread)
     : AScene(sceneSystem, window, sceneName, scale, communicator, thread), _event(event)
 {
 }
@@ -32,6 +32,21 @@ void Lobby::OnCreate()
     /* We are going to create system here,
     dont forget to create the corresponding entityManager */
     _sceneSystem->getEcs()->createEntityManager(this->getName());
+    _sceneSystem->getTextureDatabase()->onCall(this->getName());
+
+    auto &hereManager = _sceneSystem->getEcs()->getEntityManager(this->getName());
+
+    auto &readyButton = hereManager.getEntity(generateEntity(hereManager, "Button", 5));
+    //auto &background = hereManager.getEntity(generateEntity(hereManager, "Default", 6));
+
+    // background.addComponent<DrawableClientSide>(
+    //     _sceneSystem->getTextureDatabase()->getTexture("Background"), _scale * 2);
+
+    readyButton.getComponent<Text>().setText(std::string("CONFIRM"));
+    readyButton.getComponent<Text>().setFontSize(20 * _scale);
+    readyButton.getComponent<HitBox>().setHitBox(
+        readyButton.getComponent<Text>().getTextWidth(), readyButton.getComponent<Text>().getTextHeight() * _scale);
+    readyButton.getComponent<Position>().setPosition(100, 100);
 }
 
 void Lobby::OnDestroy() {}
@@ -40,14 +55,7 @@ void Lobby::OnActivate()
 {
     /* wa are going to create different entity here (with they're components),
     dont forget to init the textureDatabase of the corresponding scene */
-    _sceneSystem->getTextureDatabase()->onCall(this->getName());
-    auto &hereManager = _sceneSystem->getEcs()->getEntityManager(this->getName());
-
-    auto &readyButton = hereManager.getEntity(generateEntity(hereManager, "Button", 5));
-    readyButton.getComponent<HitBox>().setHitBox(100 * _scale, 20 * _scale);
-    readyButton.getComponent<Text>().setText(std::string("CONFIRM"));
-    readyButton.getComponent<Text>().setFontSize(10 * _scale);
-    readyButton.getComponent<Position>().setPosition(100, 100);
+    //_sceneSystem->getTextureDatabase()->onCall(this->getName());
 }
 void Lobby::OnDeactivate() {}
 
@@ -129,5 +137,4 @@ void Lobby::Draw()
         receivedData.erase(0, receivedData.find(' ') + 1);
     }
     _sceneSystem->getEcs()->getSystem<Display>().run(_sceneName, _window);
-
 }
