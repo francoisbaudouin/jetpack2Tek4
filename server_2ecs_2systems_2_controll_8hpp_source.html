@@ -112,14 +112,17 @@ $(document).ready(function(){initNavTree('server_2ecs_2systems_2_controll_8hpp_s
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="classecs_1_1_controll.html#a74ff3ca8a36fdf1e158f8d0806d2c83c">Controll</a>(std::shared_ptr&lt;Ecs&gt; &amp;manager);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        ~<a class="code" href="classecs_1_1_controll.html#a74ff3ca8a36fdf1e158f8d0806d2c83c">Controll</a>();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_controll.html#abe7a14b0c0bec522bf311c79738116eb">run</a>(<span class="keyword">const</span> std::string &amp;sceneName, <span class="keyword">const</span> std::vector&lt;RTypeEvent&gt; &amp;controll, <span class="keyword">const</span> <span class="keywordtype">size_t</span> entityId);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> keyReaction(<span class="keyword">const</span> std::string &amp;sceneName, Velocity &amp;velocity, Controllable &amp;controllable,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">const</span> std::vector&lt;RTypeEvent&gt; &amp;rTypeEvents, <span class="keyword">const</span> <span class="keywordtype">size_t</span> entityId);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    };</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;} <span class="comment">// namespace ecs</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !CONTROLL_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_controll.html#abe7a14b0c0bec522bf311c79738116eb">run</a>(<span class="keyword">const</span> std::string &amp;sceneName, <span class="keyword">const</span> std::string event, <span class="keyword">const</span> <span class="keywordtype">size_t</span> entityId);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;      <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> keyReaction(<span class="keyword">const</span> std::string &amp;sceneName, Velocity &amp;velocity, Controllable &amp;controllable,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keyword">const</span> std::vector&lt;RTypeEvent&gt; &amp;rTypeEvents, <span class="keyword">const</span> <span class="keywordtype">size_t</span> entityId);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordtype">void</span> keyReaction(<span class="keyword">const</span> std::string &amp;sceneName, Velocity &amp;velocity, Controllable &amp;controllable,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keyword">const</span> std::string event, <span class="keyword">const</span> <span class="keywordtype">size_t</span> entityId);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    };</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;} <span class="comment">// namespace ecs</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* !CONTROLL_HPP_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclassecs_1_1_controll_html_a74ff3ca8a36fdf1e158f8d0806d2c83c"><div class="ttname"><a href="classecs_1_1_controll.html#a74ff3ca8a36fdf1e158f8d0806d2c83c">ecs::Controll::Controll</a></div><div class="ttdeci">Controll(std::shared_ptr&lt; Ecs &gt; &amp;manager)</div><div class="ttdoc">Contruct a Controll system interpret Rtype's events and link it to the controllable entity.</div><div class="ttdef"><b>Definition:</b> Controll.cpp:12</div></div>

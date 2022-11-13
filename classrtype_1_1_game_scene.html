@@ -128,6 +128,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>ProcessInput</b> () o
 <tr class="memitem:ab41573e98b833b0e922f88a0fd226eb1"><td class="memItemLeft" align="right" valign="top"><a id="ab41573e98b833b0e922f88a0fd226eb1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> () override</td></tr>
 <tr class="separator:ab41573e98b833b0e922f88a0fd226eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3290f33598bb98340eb88b76516729e9"><td class="memItemLeft" align="right" valign="top"><a id="a3290f33598bb98340eb88b76516729e9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>updateEntity</b> (<a class="el" href="classecs_1_1_entity.html">ecs::Entity</a> &amp;entity, std::string data)</td></tr>
+<tr class="separator:a3290f33598bb98340eb88b76516729e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a046113c32719ba36760e2cdbd2fde94c"><td class="memItemLeft" align="right" valign="top"><a id="a046113c32719ba36760e2cdbd2fde94c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>createEntity</b> (std::string data, const size_t entityId)</td></tr>
+<tr class="separator:a046113c32719ba36760e2cdbd2fde94c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classrtype_1_1_a_scene"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrtype_1_1_a_scene')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classrtype_1_1_a_scene.html">rtype::AScene</a></td></tr>
 <tr class="memitem:a0facc269883d693887e8e12969d514be inherit pub_methods_classrtype_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a id="a0facc269883d693887e8e12969d514be"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>AScene</b> (std::shared_ptr&lt; <a class="el" href="classrtype_1_1_scene_system.html">SceneSystem</a> &gt; sceneSystem, sf::RenderWindow &amp;window, const std::string &amp;sceneName, const float scale, std::shared_ptr&lt; <a class="el" href="classrtype_1_1_communicator.html">Communicator</a> &gt; communicator, boost::thread *thread)</td></tr>
@@ -141,6 +147,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>Draw</b> () override<
 <tr class="memitem:a206b42ad4385444858fe647660e07def inherit pub_methods_classrtype_1_1_a_scene"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classrtype_1_1_communicator.html">Communicator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrtype_1_1_a_scene.html#a206b42ad4385444858fe647660e07def">getCommunicator</a> () override</td></tr>
 <tr class="memdesc:a206b42ad4385444858fe647660e07def inherit pub_methods_classrtype_1_1_a_scene"><td class="mdescLeft">&#160;</td><td class="mdescRight">get a shared ptr to the communicator  <a href="classrtype_1_1_a_scene.html#a206b42ad4385444858fe647660e07def">More...</a><br /></td></tr>
 <tr class="separator:a206b42ad4385444858fe647660e07def inherit pub_methods_classrtype_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33bc95784c74997111960159d6af6e93 inherit pub_methods_classrtype_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a id="a33bc95784c74997111960159d6af6e93"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>getId</b> () const override</td></tr>
+<tr class="separator:a33bc95784c74997111960159d6af6e93 inherit pub_methods_classrtype_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf2603d024c528be3adc32193f9dcadb inherit pub_methods_classrtype_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a id="aaf2603d024c528be3adc32193f9dcadb"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setId</b> (const size_t &amp;id) override</td></tr>
+<tr class="separator:aaf2603d024c528be3adc32193f9dcadb inherit pub_methods_classrtype_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -163,6 +175,9 @@ std::shared_ptr&lt; <a class="el" href="classrtype_1_1_communicator.html">Commun
 <tr class="memitem:a255be2c9fd0a82771dd0eec82cff8d67 inherit pro_attribs_classrtype_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a id="a255be2c9fd0a82771dd0eec82cff8d67"></a>
 boost::thread *&#160;</td><td class="memItemRight" valign="bottom"><b>_thread</b></td></tr>
 <tr class="separator:a255be2c9fd0a82771dd0eec82cff8d67 inherit pro_attribs_classrtype_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaffc4f43f4f2b7f4fa10b35abcb3a4e9 inherit pro_attribs_classrtype_1_1_a_scene"><td class="memItemLeft" align="right" valign="top"><a id="aaffc4f43f4f2b7f4fa10b35abcb3a4e9"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>_id</b></td></tr>
+<tr class="separator:aaffc4f43f4f2b7f4fa10b35abcb3a4e9 inherit pro_attribs_classrtype_1_1_a_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac073155245526b2d81b52214009fe6b1"></a>
