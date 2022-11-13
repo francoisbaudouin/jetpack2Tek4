@@ -1,5 +1,5 @@
 {
-  "Player": "assets/sprites/Character.png",
+  "Player": "assets/sprites/Character-Sheet.png",
   "Enemy": "assets/sprites/Peeper-Sheet.png",
   "PlaceHolder": "assets/sprites/plasseOldeure.png",
   "HubForm": "assets/sprites/Hube.png",
