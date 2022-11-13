@@ -101,15 +101,15 @@ $(document).ready(function(){initNavTree('client_2assets_manager_2_animation_dat
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define DEFAULT &quot;Idle&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">namespace </span>rtype</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">using</span> Frame = std::array&lt;int, 4&gt;;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">using</span> Animation = std::vector&lt;Frame&gt;;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">using</span> Animations = std::unordered_map&lt;std::string, Animation&gt;;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">using</span> Animations = std::map&lt;std::string, Animation&gt;;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classrtype_1_1_animation_database.html">   24</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classrtype_1_1_animation_database.html">AnimationDatabase</a> {</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keyword">public</span>:</div>
@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('client_2assets_manager_2_animation_dat
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        Frame &amp;<a class="code" href="classrtype_1_1_animation_database.html#a237878f348e50e846eb6745abe9d6c19">getFrame</a>(<span class="keyword">const</span> std::string &amp;entityType, <span class="keyword">const</span> std::string &amp;animationType, <span class="keyword">const</span> <span class="keywordtype">size_t</span> frameId);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::unordered_map&lt;std::string, Animations&gt; _animationMap;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::map&lt;std::string, Animations&gt; _animationMap;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    };</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;} <span class="comment">// namespace rtype</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>

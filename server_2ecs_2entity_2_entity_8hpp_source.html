@@ -98,9 +98,9 @@ $(document).ready(function(){initNavTree('server_2ecs_2entity_2_entity_8hpp_sour
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#ifndef __ENTITY__</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define __ENTITY__</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;typeindex&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;typeindex&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;../components/IComponent.hpp&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &quot;../exceptions/Exception.hpp&quot;</span></div>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('server_2ecs_2entity_2_entity_8hpp_sour
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_entity.html#aefb37c28a300d57788b8b23896fc2dc0">setId</a>(<span class="keyword">const</span> <span class="keywordtype">size_t</span> <span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        std::unordered_map&lt;std::type_index, IComponent *&gt; _components;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        std::map&lt;std::type_index, IComponent *&gt; _components;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordtype">size_t</span> _id;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    };</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;} <span class="comment">// namespace ecs</span></div>

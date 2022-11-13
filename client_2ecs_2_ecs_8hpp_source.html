@@ -137,8 +137,8 @@ $(document).ready(function(){initNavTree('client_2ecs_2_ecs_8hpp_source.html',''
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classecs_1_1_ecs.html#a805ecb917b33b865545c6ad0e51bf582">clearSystems</a>();</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        std::unordered_map&lt;std::string, EntityManager *&gt; _entityManagers;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        std::unordered_map&lt;std::type_index, ISystem *&gt; _systems;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        std::map&lt;std::string, EntityManager *&gt; _entityManagers;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        std::map&lt;std::type_index, ISystem *&gt; _systems;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    };</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;} <span class="comment">// namespace ecs</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
