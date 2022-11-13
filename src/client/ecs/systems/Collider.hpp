@@ -36,7 +36,7 @@ namespace ecs
          * @param entity : entity to compare
          */
         void checkEntities(
-            const std::string &sceneName, const std::unordered_map<size_t, std::shared_ptr<Entity>>::iterator &entity);
+            const std::string &sceneName, const std::map<size_t, std::shared_ptr<Entity>>::iterator &entity);
 
         /**
          * @brief run the system to check if there are entities that collide

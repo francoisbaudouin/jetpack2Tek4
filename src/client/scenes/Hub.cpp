@@ -12,6 +12,7 @@
 #include "../ecs/components/DrawableClientSide.hpp"
 #include "../ecs/components/HitBox.hpp"
 #include "../ecs/components/Position.hpp"
+#include "../ecs/components/Selectable.hpp"
 #include "../ecs/components/Text.hpp"
 #include "../ecs/components/TextBox.hpp"
 
@@ -43,13 +44,13 @@ void Hub::OnCreate()
 
     _sceneSystem->getTextureDatabase()->onCall(this->getName());
 
+    auto &background = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
     auto &ipPlaceholder = hereManager.getEntity(ecs::generateEntity(hereManager, "Placeholder"));
     auto &ipText = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
     auto &portPlaceholder = hereManager.getEntity(ecs::generateEntity(hereManager, "Placeholder"));
     auto &portText = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
     auto &backButton = hereManager.getEntity(ecs::generateEntity(hereManager, "Button"));
     auto &confirmButton = hereManager.getEntity(ecs::generateEntity(hereManager, "Button"));
-    auto &background = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
 
     background.addComponent<DrawableClientSide>(
         _sceneSystem->getTextureDatabase()->getTexture("Background"), _scale * 2);
@@ -59,6 +60,10 @@ void Hub::OnCreate()
         _window.getSize().x / 3 - (70 * _scale), _window.getSize().y / 3 - (15 * _scale));
     ipText.getComponent<Text>().setText(std::string("IP:________________"));
     ipText.getComponent<Text>().setFontSize(30 * _scale);
+    ipText.addComponent<Clickable>();
+    ipText.addComponent<Selectable>();
+    ipText.addComponent<HitBox>(
+        ipText.getComponent<Text>().getTextWidth(), ipText.getComponent<Text>().getTextHeight() * _scale);
 
     portText.addComponent<Text>();
     portText.getComponent<Text>().setFontSize(30 * _scale);
@@ -66,6 +71,10 @@ void Hub::OnCreate()
     portText.getComponent<Position>().setPosition(ipText.getComponent<Position>().getX(),
         ipText.getComponent<Position>().getY() + (2 * ipText.getComponent<Text>().getFontSize()));
     portText.getComponent<Text>().setText(std::string("PORT:______________"));
+    portText.addComponent<Clickable>();
+    portText.addComponent<Selectable>();
+    portText.addComponent<HitBox>(
+        portText.getComponent<Text>().getTextWidth(), portText.getComponent<Text>().getTextHeight() * _scale);
 
     ipPlaceholder.getComponent<Text>().setText(std::string(""));
     ipPlaceholder.getComponent<Text>().setFontSize(30 * _scale);
@@ -73,7 +82,7 @@ void Hub::OnCreate()
         ipText.getComponent<Position>().getX() + (60 * _scale), ipText.getComponent<Position>().getY() - (10 * _scale));
     ipPlaceholder.getComponent<TextBox>().setMaxLenght(20);
     ipPlaceholder.getComponent<HitBox>().setHitBox(
-        ipText.getComponent<Text>().getTextWidth(), portText.getComponent<Text>().getTextHeight() * _scale);
+        ipText.getComponent<Text>().getTextWidth(), ipText.getComponent<Text>().getTextHeight() * _scale);
 
     portPlaceholder.getComponent<Text>().setText(std::string(""));
     portPlaceholder.getComponent<Text>().setFontSize(30 * _scale);
@@ -108,21 +117,21 @@ void Hub::ProcessInput() {}
 
 void Hub::Update()
 {
-    if (_sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(4).getComponent<Clickable>().isClicked()) {
+    if (_sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(5).getComponent<Clickable>().isClicked()) {
         _sceneSystem->SwitchTo("MainMenu");
     } else if (_sceneSystem->getEcs()
                    ->getEntityManager(this->getName())
-                   .getEntity(5)
+                   .getEntity(6)
                    .getComponent<Clickable>()
                    .isClicked()) {
         _ipServer = _sceneSystem->getEcs()
                         ->getEntityManager(this->getName())
-                        .getEntity(0)
+                        .getEntity(1)
                         .getComponent<TextBox>()
                         .getReferenceString();
         _portServer = _sceneSystem->getEcs()
                           ->getEntityManager(this->getName())
-                          .getEntity(2)
+                          .getEntity(3)
                           .getComponent<TextBox>()
                           .getReferenceString();
         _communicator->setIpAdress(_ipServer);

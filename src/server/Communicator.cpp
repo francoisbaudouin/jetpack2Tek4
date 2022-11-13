@@ -8,6 +8,10 @@
 #include "Communicator.hpp"
 #include <iostream>
 
+#include <chrono>
+#include <iostream>
+#include <thread>
+
 using namespace rtype;
 
 Communicator::Communicator(const size_t &port) : _port(port), _isRunning(true) {}

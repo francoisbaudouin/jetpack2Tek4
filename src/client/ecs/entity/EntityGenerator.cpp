@@ -13,13 +13,13 @@
 
 namespace ecs
 {
-    static std::unordered_map<std::string, std::vector<std::string>> types = {
+    static std::map<std::string, std::vector<std::string>> types = {
         {"Player", {"Controllable", "HitBox", "Velocity", "Weapon"}}, {"Enemy", {"HitBox", "Velocity"}},
         {"PlayerProjectile", {"HitBox", "Velocity"}},
         {"Placeholder", {"HitBox", "TextBox", "Selectable", "Text", "Clickable"}},
         {"Button", {"HitBox", "Clickable", "Text"}}, {"Default", {}}};
 
-    static std::unordered_map<std::string, functionType> componentAdder = {
+    static std::map<std::string, functionType> componentAdder = {
         {"Controllable", addControllable},
         {"HitBox", addHitBox},
         {"Velocity", addVelocity},

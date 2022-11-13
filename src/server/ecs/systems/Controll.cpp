@@ -66,7 +66,7 @@ void Controll::keyReaction(const std::string &sceneName, Velocity &velocity, Con
     (void)controllable;
     float velocityValueX = 0;
     float velocityValueY = 0;
-    float velocityValue = 0.075;
+    float velocityValue = 0.0075;
     float none = 0;
     std::string orders = event;
     std::string order = orders.substr(0, orders.find_first_of(' '));

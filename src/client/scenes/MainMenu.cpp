@@ -48,14 +48,13 @@ void MainMenu::OnCreate()
 
     auto &hereManager = _sceneSystem->getEcs()->getEntityManager(this->getName());
 
-    auto &title = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
+    auto &parallaxFirstImage = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
+    auto &parallaxSecondImage = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
 
+    auto &title = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
     auto &soloButton = hereManager.getEntity(ecs::generateEntity(hereManager, "Button"));
     auto &multiplayerButton = hereManager.getEntity(ecs::generateEntity(hereManager, "Button"));
     auto &quitbutton = hereManager.getEntity(ecs::generateEntity(hereManager, "Button"));
-
-    auto &parallaxFirstImage = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
-    auto &parallaxSecondImage = hereManager.getEntity(ecs::generateEntity(hereManager, "Default"));
 
     parallaxFirstImage.addComponent<DrawableClientSide>(
         _sceneSystem->getTextureDatabase()->getTexture("Background"), (2 * _scale));
@@ -122,13 +121,13 @@ void MainMenu::ProcessInput() {}
 void MainMenu::Update()
 {
     _sceneSystem->getEcs()->getSystem<Click>().run(_sceneName, _window);
-    if (_sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(1).getComponent<Clickable>().isClicked()) {
+    if (_sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(3).getComponent<Clickable>().isClicked()) {
         /* solo */
     }
-    if (_sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(2).getComponent<Clickable>().isClicked()) {
+    if (_sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(4).getComponent<Clickable>().isClicked()) {
         _sceneSystem->SwitchTo("Hub");
     }
-    if (_sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(3).getComponent<Clickable>().isClicked()) {
+    if (_sceneSystem->getEcs()->getEntityManager(this->getName()).getEntity(5).getComponent<Clickable>().isClicked()) {
         _window.close();
     }
 }

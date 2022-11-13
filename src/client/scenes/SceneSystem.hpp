@@ -9,12 +9,12 @@
 #define SCENESYSTEM_HPP_
 
 #include <SFML/Audio.hpp>
+#include <map>
 #include <memory>
 #include "../Communicator.hpp"
 #include "../assetsManager/TextureDatabase.hpp"
 #include "../ecs/Ecs.hpp"
 #include "IScene.hpp"
-#include <unordered_map>
 
 namespace rtype
 {
@@ -78,7 +78,7 @@ namespace rtype
 
       private:
         std::string _receivedData;
-        std::unordered_map<std::string, std::shared_ptr<IScene>> _scenes;
+        std::map<std::string, std::shared_ptr<IScene>> _scenes;
         std::shared_ptr<IScene> _curScene;
         std::shared_ptr<ecs::Ecs> _manager;
         std::shared_ptr<TextureDatabase> _textureDatabase; //-> to be replaced by assetsManager

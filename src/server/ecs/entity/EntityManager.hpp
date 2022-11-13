@@ -47,9 +47,9 @@ namespace ecs
         /**
          * @brief Get the map of the entities
          *
-         * @return std::unordered_map<size_t, std::shared_ptr<Entity>>& : map of the entities
+         * @return std::map<size_t, std::shared_ptr<Entity>>& : map of the entities
          */
-        std::unordered_map<size_t, std::shared_ptr<Entity>> &getEntities();
+        std::map<size_t, std::shared_ptr<Entity>> &getEntities();
         /**
          * @brief remove an entity from the map, exception is thrown if the entity doesn't exist
          *
@@ -64,7 +64,7 @@ namespace ecs
         size_t getNumberEntities() const;
 
       private:
-        std::unordered_map<size_t, std::shared_ptr<Entity>> _entities;
+        std::map<size_t, std::shared_ptr<Entity>> _entities;
         size_t _id;
     };
 } // namespace ecs
