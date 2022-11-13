@@ -18,6 +18,8 @@
 #include "../ecs/systems/Animate.hpp"
 #include "../ecs/systems/Click.hpp"
 #include "../ecs/systems/Display.hpp"
+#include "../ecs/systems/Fire.hpp"
+#include "../ecs/systems/Input.hpp"
 #include "../ecs/systems/WriteInBox.hpp"
 
 using namespace ecs;
@@ -36,8 +38,7 @@ void Hub::OnCreate()
     /* We are going to create system here,
     dont forget to create the corresponding entityManager */
     _sceneSystem->getEcs()->createEntityManager(this->getName());
-    /* wa are going to create different entity here (with they're components),
-    dont forget to init the textureDatabase of the corresponding scene */
+
     auto &hereManager = _sceneSystem->getEcs()->getEntityManager(this->getName());
 
     _sceneSystem->getTextureDatabase()->onCall(this->getName());

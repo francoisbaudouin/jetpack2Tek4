@@ -57,6 +57,10 @@ SceneManager::SceneManager() : _scale(2), _window(sf::VideoMode(640 * _scale, 36
 
 SceneManager::~SceneManager() {}
 
+size_t SceneManager::getId() const { return this->_id; }
+
+void SceneManager::setId(const size_t &id) { this->_id = id; }
+
 void SceneManager::receiver()
 {
     _sceneSystem->getCurrentScene()->getCommunicator()->lockReceiveMutex();
@@ -80,6 +84,7 @@ void SceneManager::receiver()
             _music.setLoop(true);
             _music.play();
             _sceneSystem->SwitchTo("GameScene");
+            _sceneSystem->getCurrentScene()->setId(_id);
         }
     }
     _sceneSystem->getCurrentScene()->getCommunicator()->unlockReceiveMutex();

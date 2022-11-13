@@ -18,10 +18,10 @@ void Fire::createProjectile(const std::string &sceneName, const size_t entityId)
     Position &position = _manager->getEntityManager(sceneName).getEntity(entityId).getComponent<Position>();
     auto &projectile = _manager->getEntityManager(sceneName).createEntity();
     projectile.addComponent<Position>(position.getX(), position.getY());
-    projectile.addComponent<DrawableServerSide>("projectile");
+    projectile.addComponent<DrawableServerSide>("PlayerProjectile");
     projectile.addComponent<Velocity>(0.3, 0.0);
     projectile.addComponent<HitBox>(32, 10);
-    projectile.addComponent<Type>("projectile");
+    projectile.addComponent<Type>("PlayerProjectile");
     _lastTimeTriggered = _triggeredTime;
 }
 

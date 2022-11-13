@@ -14,6 +14,8 @@
 #include "../ecs/systems/Animate.hpp"
 #include "../ecs/systems/Click.hpp"
 #include "../ecs/systems/Display.hpp"
+#include "../ecs/systems/Fire.hpp"
+#include "../ecs/systems/Input.hpp"
 #include "../ecs/systems/Move.hpp"
 #include "../ecs/systems/WriteInBox.hpp"
 
@@ -39,6 +41,8 @@ void MainMenu::OnCreate()
     _sceneSystem->getEcs()->createSystem<Click>(_sceneSystem->getEcs());
     _sceneSystem->getEcs()->createSystem<Move>(_sceneSystem->getEcs());
     _sceneSystem->getEcs()->createSystem<Animate>(_sceneSystem->getEcs());
+    _sceneSystem->getEcs()->createSystem<Input>(_sceneSystem->getEcs());
+    _sceneSystem->getEcs()->createSystem<Fire>(_sceneSystem->getEcs());
 
     _sceneSystem->getTextureDatabase()->onCall(this->getName());
 

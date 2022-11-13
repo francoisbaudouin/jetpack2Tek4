@@ -21,3 +21,7 @@ std::string AScene::getName() const { return _sceneName; }
 boost::thread *AScene::getThread() { return _thread; }
 
 std::shared_ptr<Communicator> AScene::getCommunicator() { return _communicator; }
+
+size_t AScene::getId() const { return this->_id; }
+
+void AScene::setId(const size_t &id) { this->_id = id; }

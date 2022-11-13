@@ -21,7 +21,8 @@ namespace rtype
          *
          */
         void run();
-
+        size_t getId() const;
+        void setId(const size_t &id);
         void receiver();
 
       private:

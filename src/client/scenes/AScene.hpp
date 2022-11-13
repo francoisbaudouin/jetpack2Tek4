@@ -38,6 +38,8 @@ namespace rtype
          * @return shared_ptr to the communicator of the scene
          */
         std::shared_ptr<Communicator> getCommunicator() override;
+        size_t getId() const override;
+        void setId(const size_t &id) override;
 
       protected:
         std::shared_ptr<rtype::SceneSystem> _sceneSystem;
@@ -46,6 +48,7 @@ namespace rtype
         float _scale;
         std::shared_ptr<Communicator> _communicator;
         boost::thread *_thread;
+        size_t _id;
 
       private:
     };
