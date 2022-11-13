@@ -4,13 +4,18 @@
 ** File description:
 ** main
 */
-
-#include "TestGame.hpp"
+#include "Communicator.hpp"
+#include "scenes/SceneManager.hpp"
 
 int main(void)
 {
-    rtype::TestGame test;
+    try {
+        rtype::SceneManager sceneManager;
+        sceneManager.run();
+    } catch (std::exception &exception) {
+        std::cerr << exception.what() << std::endl;
+        return 84;
+    }
 
-    test.run();
     return 0;
 }

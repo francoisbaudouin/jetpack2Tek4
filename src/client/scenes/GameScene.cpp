@@ -13,6 +13,7 @@
 #include "../ecs/components/DrawableClientSide.hpp"
 #include "../ecs/components/HitBox.hpp"
 #include "../ecs/components/Position.hpp"
+#include "../ecs/components/Velocity.hpp"
 #include "../ecs/components/Text.hpp"
 
 #include "../ecs/systems/Click.hpp"
