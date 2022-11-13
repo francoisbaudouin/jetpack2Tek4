@@ -31,7 +31,7 @@ void Controll::keyReaction(const std::string &sceneName, Velocity &velocity, Con
 {
     float velocityValueX = 0;
     float velocityValueY = 0;
-    float velocityValue = 0.075;
+    float velocityValue = 5;
     float none = 0;
 
     for (auto iterator = rTypeEvents.begin(); iterator < rTypeEvents.end(); iterator++) {

@@ -1,5 +1,5 @@
 {
-  "Player": "assets/sprites/Character.png",
+  "Player": "assets/sprites/Character-Sheet.png",
   "Enemy": "assets/sprites/Peeper-Sheet.png",
   "PlayerProjectile": "assets/sprites/Player_Projectile.png",
   "EnemyProjectile": "assets/sprites/Enemy_Projectile.png",

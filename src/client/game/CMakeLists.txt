@@ -5,6 +5,8 @@ set(SRC
     ${SRC}
     ${SRCROOT}/Timer.cpp
     ${INCROOT}/Timer.hpp
+    ${SRCROOT}/EnemyWave.cpp
+    ${INCROOT}/EnemyWave.hpp
     PARENT_SCOPE
 )
 

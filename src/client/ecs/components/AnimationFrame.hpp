@@ -21,7 +21,7 @@ namespace ecs
          * @param animation : name of the current animation
          * @param frame : id of the used frame in the current animation
          */
-        AnimationFrame(const size_t entityId, const std::string &animation = "", const size_t frame = 0);
+        AnimationFrame(const size_t entityId, const std::string &animation = "Idle", const size_t frame = 0);
         ~AnimationFrame();
         /**
          * @brief Get the name of the current animation
