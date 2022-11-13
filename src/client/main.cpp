@@ -6,7 +6,6 @@
 */
 #include "Communicator.hpp"
 #include "scenes/SceneManager.hpp"
-#include "SFML/Audio.hpp"
 
 int main(void)
 {
