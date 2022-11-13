@@ -23,6 +23,16 @@ static void projectileHitWall(
     manager->getEntityManager(sceneName).removeEntity(entity1.getId());
 }
 
+static void enemyHitWall(
+    const std::string &sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
+{
+    (void)entity2;
+    if (entity1.getComponent<Type>().getEntityType() == "Enemy")
+        manager->getEntityManager(sceneName).removeEntity(entity1.getId());
+    else
+        manager->getEntityManager(sceneName).removeEntity(entity2.getId());
+}
+
 static void playerHitWall(const std::string &sceneName, std::shared_ptr<Ecs> &manager, Entity &entity1, Entity &entity2)
 {
     (void)entity2;
@@ -30,20 +40,21 @@ static void playerHitWall(const std::string &sceneName, std::shared_ptr<Ecs> &ma
     auto &playerVelocity = manager->getEntityManager(sceneName).getEntity(entity1.getId()).getComponent<Velocity>();
 
     if (playerVelocity.getY() > 0)
-        playerPosition.setY(playerPosition.getY() - 1);
+        playerPosition.setY(playerPosition.getY() - 5);
     if (playerVelocity.getY() < 0)
-        playerPosition.setY(playerPosition.getY() + 1);
+        playerPosition.setY(playerPosition.getY() + 5);
     if (playerVelocity.getX() > 0)
-        playerPosition.setX(playerPosition.getX() - 1);
+        playerPosition.setX(playerPosition.getX() - 5);
     if (playerVelocity.getX() < 0)
-        playerPosition.setX(playerPosition.getX() + 1);
+        playerPosition.setX(playerPosition.getX() + 5);
 }
 
 ColliderReaction::ColliderReaction(std::shared_ptr<Ecs> manager) : ASystem(manager), _reactionMap()
 {
-    _reactionMap[std::make_pair<std::string, std::string>("Enemy", "Projectile")] = &projectileHitEnnemy;
+    _reactionMap[std::make_pair<std::string, std::string>("Enemy", "PlayerProjectile")] = &projectileHitEnnemy;
     _reactionMap[std::make_pair<std::string, std::string>("Player", "Wall")] = &playerHitWall;
-    _reactionMap[std::make_pair<std::string, std::string>("Projectile", "Wall")] = &projectileHitWall;
+    _reactionMap[std::make_pair<std::string, std::string>("PlayerProjectile", "Wall")] = &projectileHitWall;
+    _reactionMap[std::make_pair<std::string, std::string>("Enemy", "Wall")] = &enemyHitWall;
 }
 
 void ColliderReaction::run(const std::string &sceneName, const size_t entityId1, const size_t entityId2)

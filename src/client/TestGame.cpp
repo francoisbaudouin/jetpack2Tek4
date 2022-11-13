@@ -61,7 +61,23 @@ TestGame::~TestGame() {}
 
 void TestGame::createWalls()
 {
+    ecs::Entity &wall1 = _manager->getEntityManager("GameScene")
+                             .getEntity(ecs::generateEntity(_manager->getEntityManager("GameScene"), "Wall"));
+    ecs::Entity &wall2 = _manager->getEntityManager("GameScene")
+                             .getEntity(ecs::generateEntity(_manager->getEntityManager("GameScene"), "Wall"));
+    ecs::Entity &wall3 = _manager->getEntityManager("GameScene")
+                             .getEntity(ecs::generateEntity(_manager->getEntityManager("GameScene"), "Wall"));
+    ecs::Entity &wall4 = _manager->getEntityManager("GameScene")
+                             .getEntity(ecs::generateEntity(_manager->getEntityManager("GameScene"), "Wall"));
 
+    wall1.getComponent<ecs::Position>().setPosition(-50, -50);
+    wall1.getComponent<ecs::HitBox>().setHitBox(740, 18);
+    wall2.getComponent<ecs::Position>().setPosition(-50, 392);
+    wall2.getComponent<ecs::HitBox>().setHitBox(740, 18);
+    wall3.getComponent<ecs::Position>().setPosition(-50, -50);
+    wall3.getComponent<ecs::HitBox>().setHitBox(18, 460);
+    wall4.getComponent<ecs::Position>().setPosition(672, -50);
+    wall4.getComponent<ecs::HitBox>().setHitBox(18, 460);
 }
 
 void TestGame::checkEntitiesDrawable()
@@ -106,8 +122,8 @@ void TestGame::run()
     EnemyWave wave;
 
     wave.spawn(20, _manager->getEntityManager("GameScene"));
+    this->createWalls();
     while (_window.isOpen()) {
-        std::cout << _manager->getEntityManager("GameScene").getNumberEntities() << std::endl;
         this->checkEntitiesDrawable();
         _window.clear();
         while (_window.pollEvent(event)) {

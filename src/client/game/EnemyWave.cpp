@@ -25,8 +25,8 @@ void EnemyWave::spawn(size_t nbEnemies, ecs::EntityManager &manager)
     while (nbEnemies > 0) {
         _entitiesId.push_back(ecs::generateEntity(manager, "Enemy"));
         ecs::Entity &entity = manager.getEntity(_entitiesId.back());
-        entity.getComponent<ecs::Position>().setPosition(640, std::rand() % 300);
-        entity.getComponent<ecs::Velocity>().setX(std::rand() % 7 * -1);
+        entity.getComponent<ecs::Position>().setPosition(640, std::rand() % 250 + 50);
+        entity.getComponent<ecs::Velocity>().setX(std::rand() % 5 * -1 - 2);
         entity.addComponent<ecs::AnimationFrame>();
         nbEnemies--;
     }
