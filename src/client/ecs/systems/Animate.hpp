@@ -46,16 +46,17 @@ namespace ecs
         void run(const std::string &sceneId, rtype::AnimationDatabase &database);
         /**
          * @brief special animate function that is called when theres only button in scene
-         * 
+         *
          * @param sceneId : id of the current scene
          */
         void runButton(const std::string &sceneId);
         /**
          * @brief special animate function that is change the color of the text when selected
-         * 
+         *
          * @param sceneId : id of the current scene
          */
         void runSelectable(const std::string &sceneId);
+
       private:
     };
 } // namespace ecs

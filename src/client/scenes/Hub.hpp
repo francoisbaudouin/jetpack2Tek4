@@ -24,8 +24,9 @@ namespace rtype
          * @param scale scale of the scene
          *
          */
-        Hub(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, sf::Event &event, const std::string &sceneName,
-            const float scale, std::shared_ptr<Communicator> communicator, boost::thread *thread);
+        Hub(std::shared_ptr<SceneSystem> sceneSystem, sf::RenderWindow &window, sf::Event &event,
+            const std::string &sceneName, const float scale, std::shared_ptr<Communicator> communicator,
+            boost::thread *thread);
         ~Hub();
         /**
          * @brief function called at creation of the scene (Add of sceneSystem)
