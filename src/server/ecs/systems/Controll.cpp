@@ -35,13 +35,7 @@ void Controll::run(const std::string &sceneName, const std::string event, const 
         Velocity &velocity = _manager->getEntityManager(sceneName).getEntity(entityId - 1).getComponent<Velocity>();
         Controllable &controllable =
             _manager->getEntityManager(sceneName).getEntity(entityId - 1).getComponent<Controllable>();
-        // keyReaction(sceneName, velocity, controllable, rTypeEvents, entityId);
-        std::cout << event.substr(event.find_first_of('_') + 1, 2) << std::endl;
-        if (event.substr(event.find_first_of('_') + 1, 2) == "up") {
-            std::cout << "ici" << std::endl;
-            velocity.setVelocity(0.075, 0.075);
-        } else
-            velocity.setVelocity(0, 0);
+        keyReaction(sceneName, velocity, controllable, event, entityId - 1);
     }
 }
 
@@ -62,6 +56,36 @@ void Controll::keyReaction(const std::string &sceneName, Velocity &velocity, Con
             case Controlls::FIRE: _manager->getSystem<Fire>().run(sceneName, entityId); continue;
             default: velocity.setVelocity(none, none); continue;
         }
+    }
+    velocity.setVelocity(velocityValueX, velocityValueY);
+}
+
+void Controll::keyReaction(const std::string &sceneName, Velocity &velocity, Controllable &controllable,
+    const std::string event, const size_t entityId)
+{
+    float velocityValueX = 0;
+    float velocityValueY = 0;
+    float velocityValue = 0.075;
+    float none = 0;
+    std::string orders = event;
+    std::string order = orders.substr(0, orders.find_first_of(' '));
+
+    while (!order.empty()) {
+        order = orders.substr(0, orders.find_first_of(' '));
+        if (order == "up")
+            velocityValueY -= velocityValue;
+        if (order == "down")
+            velocityValueY += velocityValue;
+        if (order == "left")
+            velocityValueX -= velocityValue;
+        if (order == "right")
+            velocityValueX += velocityValue;
+        if (order == "fire")
+            _manager->getSystem<Fire>().run(sceneName, entityId);
+        if (order != "up" && order != "down" && order != "left" && order != "right" && order != "fire") {
+            velocity.setVelocity(none, none);
+        }
+        orders = orders.substr(orders.find_first_of(' ') + 1);
     }
     velocity.setVelocity(velocityValueX, velocityValueY);
 }

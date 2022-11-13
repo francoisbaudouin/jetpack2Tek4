@@ -23,6 +23,7 @@ namespace rtype
 
         void manageReceiveData();
         void manageSendData();
+        std::string fillSendStream();
 
         void run();
 
