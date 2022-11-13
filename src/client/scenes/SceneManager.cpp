@@ -77,7 +77,6 @@ void SceneManager::run()
                 _window.close();
         }
         _sceneSystem->Draw();
-        //std::cout << _sceneSystem->getCurrentScene()->getName() << std::endl;
         _window.display();
     }
     _sceneSystem->getCurrentScene()->getCommunicator()->stopCommunication();

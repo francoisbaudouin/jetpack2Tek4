@@ -38,14 +38,7 @@ void MainMenu::OnCreate()
     _sceneSystem->getEcs()->createSystem<Click>(_sceneSystem->getEcs());
     _sceneSystem->getEcs()->createSystem<Move>(_sceneSystem->getEcs());
     _sceneSystem->getEcs()->createSystem<Animate>(_sceneSystem->getEcs());
-}
 
-void MainMenu::OnDestroy() {}
-
-void MainMenu::OnActivate()
-{
-    /* wa are going to create different entity here (with they're components),
-    dont forget to init the textureDatabase of the corresponding scene */
     _sceneSystem->getTextureDatabase()->onCall(this->getName());
 
     auto &hereManager = _sceneSystem->getEcs()->getEntityManager(this->getName());
@@ -76,33 +69,34 @@ void MainMenu::OnActivate()
 
     soloButton.getComponent<Text>().setText(std::string("Local"));
     soloButton.getComponent<Text>().setFontSize(50 * _scale);
-    soloButton.getComponent<Position>().setPosition(
-        title.getComponent<Position>().getX(),
+    soloButton.getComponent<Position>().setPosition(title.getComponent<Position>().getX(),
         _window.getSize().y / 2 - (1 * soloButton.getComponent<Text>().getFontSize()));
     soloButton.getComponent<HitBox>().setHitBox(
-        (soloButton.getComponent<Text>().getFontSize()
-            * (soloButton.getComponent<Text>().getText().getString().getSize() - 1)),
-        soloButton.getComponent<Text>().getFontSize());
+        soloButton.getComponent<Text>().getTextWidth(), soloButton.getComponent<Text>().getTextHeight() * _scale);
 
     multiplayerButton.getComponent<Text>().setText(std::string("Multiplayer"));
     multiplayerButton.getComponent<Text>().setFontSize(50 * _scale);
-    multiplayerButton.getComponent<Position>().setPosition(
-        title.getComponent<Position>().getX(),
+    multiplayerButton.getComponent<Position>().setPosition(title.getComponent<Position>().getX(),
         soloButton.getComponent<Position>().getY() + (1.5 * multiplayerButton.getComponent<Text>().getFontSize()));
-    multiplayerButton.getComponent<HitBox>().setHitBox(
-        (multiplayerButton.getComponent<Text>().getFontSize()
-            * (multiplayerButton.getComponent<Text>().getText().getString().getSize() - 1)),
-        multiplayerButton.getComponent<Text>().getFontSize());
+    multiplayerButton.getComponent<HitBox>().setHitBox(multiplayerButton.getComponent<Text>().getTextWidth(),
+        multiplayerButton.getComponent<Text>().getTextHeight() * _scale);
 
     quitbutton.getComponent<Text>().setText(std::string("Quit"));
     quitbutton.getComponent<Text>().setFontSize(50 * _scale);
-    quitbutton.getComponent<Position>().setPosition(
-        title.getComponent<Position>().getX(),
+    quitbutton.getComponent<Position>().setPosition(title.getComponent<Position>().getX(),
         multiplayerButton.getComponent<Position>().getY() + (1.5 * quitbutton.getComponent<Text>().getFontSize()));
     quitbutton.getComponent<HitBox>().setHitBox(
-        (quitbutton.getComponent<Text>().getFontSize()
-            * (quitbutton.getComponent<Text>().getText().getString().getSize() - 1)),
-        quitbutton.getComponent<Text>().getFontSize());
+        quitbutton.getComponent<Text>().getTextWidth(), quitbutton.getComponent<Text>().getTextHeight() * _scale);
+}
+
+void MainMenu::OnDestroy() {}
+
+void MainMenu::OnActivate()
+{
+    _sceneSystem->getTextureDatabase()->onCall(this->getName());
+    /* wa are going to create different entity here (with they're components),
+    dont forget to init the textureDatabase of the corresponding scene */
+
 
     // if we want it as a text, decomment this section
     // title.addComponent<Text>();
@@ -150,7 +144,7 @@ void MainMenu::Draw()
         secondParallaxImage.getComponent<Position>().setPosition(
             _sceneSystem->getTextureDatabase()->getSizeX("Background") * _scale, 0);
 
-    _sceneSystem->getEcs()->getSystem<Animate>().runButton(_sceneName);
-    _sceneSystem->getEcs()->getSystem<Move>().run(_sceneName);
-    _sceneSystem->getEcs()->getSystem<Display>().run(_sceneName, _window);
+    _sceneSystem->getEcs()->getSystem<Animate>().runButton(this->getName());
+    _sceneSystem->getEcs()->getSystem<Move>().run(this->getName());
+    _sceneSystem->getEcs()->getSystem<Display>().run(this->getName(), _window);
 }
