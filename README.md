@@ -4,6 +4,8 @@
 This project is based on the famous game R-TYPE
 You have the posibilty to play in mutiplayer or solo game
 
+- Here is [User docs](https://rare-distance-b4b.notion.site/R-TYPE-JETPACK2TEK4-849b6649780441c988a669b03cef8358)
+
 ##
 
 ## INSTALLATION
@@ -31,9 +33,6 @@ cmake -B build/release_unix .. -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Release
 # Build the executable and libraries
 cmake --build release_unix
 ```
-
-for Windob
- (is comming soon)
 
 Run Server:
 All server **configuration** are located in conf.ini
