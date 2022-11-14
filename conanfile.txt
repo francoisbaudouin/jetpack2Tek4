@@ -11,7 +11,7 @@
     zlib/1.2.12
     asio/1.16.0
     sfml/2.5.1
-    gtest/1.10.0 
+    gtest/1.10.0
 
 [options]
     boost:shared=True

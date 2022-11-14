@@ -1,0 +1,9 @@
+[settings]
+    setting=value
+
+[options]
+    *:shared=True
+
+[tool_requires]
+    mingw_installer/1.0@conan/stable
+    msys2/20190524
